@@ -1,7 +1,29 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
+    <style>
+        .select2-container--default.select2-container--focus .select2-selection--multiple,
+        .select2-container--default .select2-selection--multiple {
+            display: flex !important;
+            flex-direction: row-reverse !important;
+            align-items: center !important;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+            color: #000;
+        }
+        .table td {
+            padding: .25rem 0.75rem;
+        }
+        #companyTable td {
+            padding: 0.5rem;
+        }
+        .select2-container {
+            width: 100%;
+        }
+        
+    </style>
+
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -160,23 +182,19 @@
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Horizontal Form</h4>
                             <p class="card-description">
-                                You can type 'a'
+                                You can start typring...
                             </p>
                                 <div>
-                                    <div class="ui-widget row mb-2">
-                                        <input id="tags" class="form-control col-auto" placeholder="Enter Ticker">
-                                    </div>
-                                    <div class="table-responsive" style="margin-top: 60px;">
+                                    <select id="stockSelect" class="stock-select form-control" multiple="multiple" >
+                                    </select>
+                  
+                                    <div class="table-responsive" style="max-height: 500px;">
                                         <table class="table">
                                             <thead class="table-dark">
                                                 <th></th>
                                                 <th>Ticker</th>
                                                 <th>Company</th>
-                                                <th>BAW</th>
-                                                <th>A Max</th>
-                                                <th>BA ($)</th>
                                                 <th>Sector</th>
                                                 <th>Market</th>
                                             </thead>
@@ -214,68 +232,71 @@
       </div>
       <!-- main-panel ends -->
    
-    <script>
-        $(document).ready(function() {
-            // Dummy data for company list and their details
-            var companyData = {
-                "AAPL": { company: "Apple Inc.", sector: "Technology", market: "NASDAQ", baw: "10", amax: "100", ba: "145.09" },
-                "GOOGL": { company: "Alphabet Inc.", sector: "Technology", market: "NASDAQ", baw: "5", amax: "120", ba: "2729.89" },
-                "TSLA": { company: "Tesla Inc.", sector: "Automotive", market: "NASDAQ", baw: "20", amax: "200", ba: "650.89" },
-                "AMZN": { company: "Amazon.com, Inc.", sector: "Consumer", market: "NASDAQ", baw: "15", amax: "150", ba: "3450.22" },
-            };
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      <script>
+          const jsonUrl = "{% static 'tricker.json' %}";
+  
+          fetch(jsonUrl)
+              .then(response => response.json())
+              .then(data => {
+                  let options = data.map(item => `<option value="${item.id}">${item.Symbol}</option>`);
+                  document.getElementById('stockSelect').innerHTML = options.join('');
+  
+                  $('#stockSelect').select2({
+                      placeholder: "Select stocks",
+                      allowClear: true
+                  });
+  
+                  $('#stockSelect').on('select2:select', function(e) {
+                      const selectedId = e.params.data.id;
+                      const selectedItem = data.find(item => item.id == selectedId);
+  
+                      if (selectedItem) {
+                          addRow(selectedItem);
+                      }
+                  });
+  
+                  $('#stockSelect').on('select2:unselect', function(e) {
+                      const unselectedId = e.params.data.id;
+                      removeRow(unselectedId);
+                  });
+              })
+              .catch(error => console.error('Error fetching JSON:', error));
+  
+              function addRow(item) {
+                const tbody = document.getElementById('companyTable');
+                const newRow = `
+                    <tr id="row-${item.id}">
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(${item.id}, event)">x</button>
+                        </td>
+                        <td><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control" /></td>
+                        <td><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control" /></td>
+                        <td><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control" /></td>
+                        <td><input type="text" name="marketcaps[]" value="${item.Marketcap || ''}" class="form-control" /></td>
+                    </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', newRow);
+            }
 
-            // Extracting company tickers for autocomplete suggestions
-            var availableTags = Object.keys(companyData);
-
-            // Store selected companies
-            var selectedCompanies = [];
-
-            // Autocomplete setup
-            $("#tags").autocomplete({
-                source: function(request, response) {
-                    // Filter companies that are not already selected
-                    var filteredTags = availableTags.filter(function(tag) {
-                        return selectedCompanies.indexOf(tag) === -1 && tag.toLowerCase().startsWith(request.term.toLowerCase());
-                    });
-                    response(filteredTags);
-                },
-                select: function(event, ui) {
-                    // When a company is selected
-                    var selectedTicker = ui.item.value;
-                    var companyDetails = companyData[selectedTicker];
-
-                    // Add the selected company to the table with input fields
-                    var tableRow = `
-                        <tr>
-                            <td><button class="btn btn-danger btn-sm remove-row">Remove</button></td>
-                            <td><input type="text" name="tickers[]" class="" value="${selectedTicker}" readonly></td>
-                            <td><input type="text" class="" value="${companyDetails.company}" readonly></td>
-                            <td><input type="number" name="baw[]" class="" value="${companyDetails.baw}"></td>
-                            <td><input type="number" name="amax[]" class="" value="${companyDetails.amax}"></td>
-                            <td><input type="number" name="ba[]" class="" value="${companyDetails.ba}" readonly></td>
-                            <td><input type="text" class="" value="${companyDetails.sector}" readonly></td>
-                            <td><input type="text" class="" value="${companyDetails.market}" readonly></td>
-                        </tr>
-                    `;
-                    $("#companyTable").append(tableRow);
-
-                    // Add company to the selected companies list
-                    selectedCompanies.push(selectedTicker);
-
-                    // Clear input field
-                    $(this).val('');
-                    return false;
-                }
-            });
-
-            // Remove a company from the table and allow it to be selected again
-            $(document).on('click', '.remove-row', function() {
-                var tickerToRemove = $(this).closest('tr').find('input[name="companies[][symbol]"]').val();
-                selectedCompanies = selectedCompanies.filter(ticker => ticker !== tickerToRemove);
-                $(this).closest('tr').remove();
-            });
-        });
-    </script>
+  
+          function removeRow(id, event) {
+              if (event) {
+                  event.preventDefault();
+              }
+  
+              const row = document.getElementById(`row-${id}`);
+              if (row) {
+                  row.remove();
+              }
+  
+              const selectElement = $('#stockSelect');
+              const selectedValues = selectElement.val();
+              const newSelectedValues = selectedValues.filter(val => val != id);
+              selectElement.val(newSelectedValues).trigger('change');
+          }
+      </script>
 
 
 {% endblock content %}

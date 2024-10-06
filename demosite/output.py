@@ -1,3 +1,5 @@
+# frontier graph - frontier_runs[x]
+
 output_data = {
     "error": True,
     "messages": [
@@ -326,6 +328,7 @@ output_data = {
                     "index": "^GSPC",
                     "ratio": 0.2483171135574223
                 },
+
                 "symbol_portfolios": [
                     {
                         "symbol": "NFLX",

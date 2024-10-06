@@ -87,7 +87,7 @@ def api_data_view(request):
         dendogram_segment = request.POST.get('dendogram_segment')
         
         # Ticker data - assuming the tickers and their related data are sent as lists
-        tickers = request.POST.getlist('tickers[]')  # Ticker symbols
+        symbols = request.POST.getlist('symbols[]')  # Ticker symbols
         baw_list = request.POST.getlist('baw[]')     # Benchmark asset weight
         amax_list = request.POST.getlist('amax[]')   # Asset maximum weight
         ba_list = request.POST.getlist('ba[]')       # Benchmark amount
@@ -541,21 +541,19 @@ def process_form(rq):
     dendogram_segment = rq.POST.get('dendogram_segment')
     
     # Ticker data - assuming the tickers and their related data are sent as lists
-    tickers = rq.POST.getlist('tickers[]')  # Ticker symbols
-    baw_list = rq.POST.getlist('baw[]')     # Benchmark asset weight
-    amax_list = rq.POST.getlist('amax[]')   # Asset maximum weight
-    ba_list = rq.POST.getlist('ba[]')       # Benchmark amount
+    symbols = rq.POST.getlist('symbols[]')
+    shortnames = rq.POST.getlist('shortnames[]')    
+    sectors = rq.POST.getlist('sectors[]') 
+    marketcaps = rq.POST.getlist('marketcaps[]') 
 
     # Create the ticker data structure
     ticker_data = []
-    for i in range(len(tickers)):
+    for i in range(len(symbols)):
         ticker_data.append({
-            "symbol": tickers[i],
-            "benchmark_asset_weight": float(baw_list[i]),
-            "asset_minimum_weight": 0,  # Modify this if you need it from form
-            "asset_maximum_weight": float(amax_list[i]),
-            "benchmark_amount": float(ba_list[i]),
-            "stock_prices": []  # You can handle stock prices data here if needed
+            "symbol": symbols[i],
+            "shortname": shortnames[i],
+            "sector": sectors[i],
+            "marketcaps": marketcaps[i] 
         })
     
     # Construct final JSON structure
