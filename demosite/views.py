@@ -9,6 +9,7 @@ import json
 import plotly.graph_objects as go
 from plotly.utils import PlotlyJSONEncoder
 import time
+from .model_result_new import model_output_data
 
 from .output import output_data
 
@@ -18,6 +19,8 @@ def home_view(request):
     context = {
         'page_title': 'Welcome to the template home page'
     }
+    
+
     return render(request, 'data2.html', context)
 
 
@@ -543,6 +546,9 @@ def process_form(rq):
     # Ticker data - assuming the tickers and their related data are sent as lists
     symbols = rq.POST.getlist('symbols[]')
     shortnames = rq.POST.getlist('shortnames[]')    
+    baws = rq.POST.getlist('baws[]')    
+    amins = rq.POST.getlist('amins[]')    
+    amaxs = rq.POST.getlist('amaxs[]')    
     sectors = rq.POST.getlist('sectors[]') 
     marketcaps = rq.POST.getlist('marketcaps[]') 
 
@@ -552,8 +558,11 @@ def process_form(rq):
         ticker_data.append({
             "symbol": symbols[i],
             "shortname": shortnames[i],
+            "baw": baws[i],
+            "amin": amins[i],
+            "amax": amaxs[i],
             "sector": sectors[i],
-            "marketcaps": marketcaps[i] 
+            "marketcap": marketcaps[i] 
         })
     
     # Construct final JSON structure
@@ -704,6 +713,7 @@ def create_return_risk_chart(frontier_runs, strategy_x, strategy_y, scatter_do_c
 
 
 def api_data_view_4(request):
+
     if request.method == 'POST':
         form_data = process_form(request)
         print("=========================================================")
@@ -824,3 +834,184 @@ def api_data_view_4(request):
 
         # Pass the results to your template
         return render(request, 'data4.html', context)
+    
+
+def api_data_view_5(request):
+
+    if request.method == 'POST':
+        form_data = process_form(request)
+        # Form data
+        print("Form Data: ", form_data)
+
+        start_time = time.perf_counter()
+        model_output = model_output_data
+
+        frontier_runs_x = model_output.get('frontier_runs').get('x')
+        frontier_runs_y = model_output.get('frontier_runs').get('y')
+        frontier_positions_random_x = model_output.get('frontier_positions_random').get('x')
+        frontier_positions_random_y = model_output.get('frontier_positions_random').get('y')
+
+        frontier_runs_x = [x * 100 for x in frontier_runs_x]
+        frontier_runs_y = [y * 100 for y in frontier_runs_y]
+        frontier_positions_random_x = [x * 100 for x in frontier_positions_random_x]
+        frontier_positions_random_y = [y * 100 for y in frontier_positions_random_y]
+
+        frontier_runs = model_output.get('frontier_runs')
+        frontier_positions = model_output.get('frontier_positions')
+        
+        
+        strategy_allocation_data = []
+        strategy_purchase_allocations = model_output.get('strategy_results', {}).get('strategy_purchase_allocation', {})
+        strategy_current_allocations = model_output.get('strategy_results', {}).get('strategy_current_allocation', {})
+        strategy_sector_purchase_allocations = model_output.get('strategy_results', {}).get('strategy_sector_purchase_allocation', {})
+        strategy_sector_current_allocations = model_output.get('strategy_results', {}).get('strategy_sector_current_allocation', {})
+        strategy_performances = model_output.get('strategy_results', {}).get('strategy_performance', {})
+        strategy_stats_descriptives = model_output.get('strategy_results', {}).get('strategy_stats_descriptive', {})
+        strategy_stats_moments = model_output.get('strategy_results', {}).get('strategy_stats_moments', {})
+        strategy_stats_risk_measures = model_output.get('strategy_results', {}).get('strategy_stats_risk_measures', {})
+        strategy_stats_ratios = model_output.get('strategy_results', {}).get('strategy_stats_ratios', {})
+
+        formatted_allocations = {}
+        for strategy, allocations in strategy_purchase_allocations.items():
+            # Prepare the allocations as a JSON serializable format
+            formatted_allocations[strategy] = [
+                {"value": round(allocation  * 100, 2), "name": stock}  # Correct format for the chart data
+                for stock, allocation in allocations.items()
+            ]
+        
+        formatted_strategy_current_allocations = {} 
+        for strategy, allocations in strategy_current_allocations.items():
+            # Prepare the allocations as a JSON serializable format
+            formatted_strategy_current_allocations[strategy] = [
+                {"value": round(allocation  * 100, 2), "name": stock}  
+                for stock, allocation in allocations.items()
+            ]
+
+        formatted_sector_allocations = {}
+        for strategy, allocations in strategy_sector_purchase_allocations.items():
+            # Prepare the allocations as a JSON serializable format
+            formatted_sector_allocations[strategy] = [
+                {"value": round(allocation  * 100, 2), "name": stock}  # Correct format for the chart data
+                for stock, allocation in allocations.items()
+            ]
+
+        formatted_strategy_sector_current_allocations = {}
+        for strategy, allocations in strategy_sector_current_allocations.items():
+            # Prepare the allocations as a JSON serializable format
+            formatted_strategy_sector_current_allocations[strategy] = [
+                {"value": round(allocation  * 100, 2), "name": stock}  # Correct format for the chart data
+                for stock, allocation in allocations.items()
+            ]
+
+        strategy_allocation_data.append({
+            'strategy_performances': strategy_performances,
+            'strategy_stats_descriptives': strategy_stats_descriptives,
+            'strategy_stats_moments': strategy_stats_moments,
+            'strategy_stats_risk_measures': strategy_stats_risk_measures,
+            'strategy_stats_ratios': strategy_stats_ratios,
+            'strategy_purchase_allocations': formatted_allocations,
+            'strategy_current_allocations': formatted_strategy_current_allocations,
+            'strategy_sector_purchase_allocations': formatted_sector_allocations,
+            'strategy_sector_current_allocations': formatted_strategy_sector_current_allocations
+        })
+
+        covariance_data = model_output.get('covariance', {})
+        covariance_stock_symbols = list(covariance_data.keys())
+        covariance_heatmap_data = []
+        for i, stock_x in enumerate(covariance_stock_symbols):
+            for j, stock_y in enumerate(covariance_stock_symbols):
+                covariance_heatmap_data.append([i, j, covariance_data[stock_x][stock_y]])
+
+        correlation_data = model_output.get('correlation', {})
+        correlation_stock_symbols = list(correlation_data.keys())
+        correlation_heatmap_data = []
+        for i, stock_x in enumerate(correlation_stock_symbols):
+            for j, stock_y in enumerate(correlation_stock_symbols):
+                correlation_heatmap_data.append([i, j, correlation_data[stock_x][stock_y]])
+
+
+        symbol_portfolios_data = []
+
+        symbol_portfolios = model_output.get('symbol_portfolios')
+        stock_symbols = ['AAPL', 'CSCO', 'NFLX', 'AMD', 'CVX', 'PFE', 'MMM', 'MSFT']
+
+        for key in symbol_portfolios:
+            metrics = symbol_portfolios.get(key)
+
+            # Iterate through each metric to create rows
+            for metric in metrics:
+                row = {
+                    "key": key,
+                    "metric": metric,
+                    **{symbol: "{:.2f}%".format(metrics[metric].get(symbol, "N/A") * 100) if isinstance(metrics[metric].get(symbol), (int, float)) else "N/A" 
+                    for symbol in stock_symbols}
+                }
+                symbol_portfolios_data.append(row)
+
+
+        structured_strategies = []
+        strategy_summaries = model_output.get('strategy_results', {}).get('strategy_performance', {})
+        
+        for strategy_name, strategy_data in strategy_summaries.items():
+            # Create the structure for each strategy
+            structured_strategy = {
+                "strategy_name": strategy_name.replace('_', ' ').title(),
+                "annual_expected_return": round(strategy_data.get('annual_expected_return', 0) * 100, 2),
+                "annual_standard_deviation": round(strategy_data.get('annual_standard_deviation', 0) * 100, 2),
+                "annual_sharpe_ratio": round(strategy_data.get('annual_sharpe_ratio', 0), 2),
+                "annual_sortino_ratio": round(strategy_data.get('annual_sortino_ratio', 0), 2),
+                "cvar_900": round(strategy_data.get('cvar_900', 0) * 100, 2),
+                "cvar_950": round(strategy_data.get('cvar_950', 0) * 100, 2),
+                "cvar_990": round(strategy_data.get('cvar_990', 0) * 100, 2)
+            }
+
+            # Append the structured strategy data to the list
+            structured_strategies.append(structured_strategy)
+            
+
+        end_time = time.perf_counter()
+        processing_time = (end_time - start_time)
+        # dummy model time
+        # time_model_data_processing = 1
+        # time_model_execusion = 2
+        # time_model_output_allocation = 7
+        # time_model_total = time_model_data_processing + time_model_execusion + time_model_output_allocation
+        # total_processing_time = processing_time + time_model_total
+        
+        context = {
+            'frontier_runs': frontier_runs,
+            'frontier_positions': frontier_positions,
+            'strategy_allocation_data': strategy_allocation_data,
+            'covariance_stock_symbols': covariance_stock_symbols,
+            'covariance_heatmap_data': covariance_heatmap_data,
+            'correlation_stock_symbols': correlation_stock_symbols,
+            'correlation_heatmap_data': correlation_heatmap_data,
+            'symbol_portfolios_data': symbol_portfolios_data,
+            'strategy_summaries': structured_strategies,
+            'frontier_runs_x': frontier_runs_x,
+            'frontier_runs_y': frontier_runs_y,
+            'frontier_positions_random_x': frontier_positions_random_x,
+            'frontier_positions_random_y': frontier_positions_random_y,
+            'processing_time': processing_time
+        }
+
+        return render(request, 'data5.html', context)
+
+
+    start_time = time.time()
+    # Return-Risk Chart data
+    frontier_runs = output_data['frontier_runs']
+    strageties = output_data['frontier_positions']
+    strategy_x = strageties['x']
+    strategy_y = strageties['y']
+    strategy_labels = strageties['strategy_names']
+    scatter_do_color = 'orange'
+
+    graph_json_1 = create_return_risk_chart(frontier_runs, strategy_x, strategy_y, scatter_do_color, strategy_labels)
+
+    context = {
+        'graph_json_1': graph_json_1
+    }
+
+    # Pass the results to your template
+    return render(request, 'data6.html', context)

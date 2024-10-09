@@ -1,0 +1,768 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        .chart-container {
+            width: 100%;   /* Set your preferred width */
+            height: 400px; /* Set your preferred height */
+        }
+
+        #heatmap {
+            width: 100%;
+            height: 400px;
+        }
+
+        #strategy-summary-data {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
+    <!-- partial -->
+    <div class="main-panel">
+        <div id="strategy-link-div" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; position: fixed;top: 80px;left: 290px;width: calc(100% - 320px);z-index: 99; background-color: #fff; padding: 3px;">
+            <a href="#home" class="btn btn-secondary top-nav-btn" style="padding: 5px 15px;"><i class="typcn typcn-arrow-up-thick" style="font-size: 30px;"></i></a>
+            <a href="#frontier" class="btn btn-secondary top-nav-btn">Frontier</a>
+            <a href="#strategy-summary" class="btn btn-secondary top-nav-btn">Strategies Summary Table</a>
+            <a href="#strategy-summary-data" class="btn btn-secondary top-nav-btn">Strategies Summary</a>
+            <a href="#covariance-correlation" class="btn btn-secondary top-nav-btn">Covariance Correlation</a>
+        </div>
+        <div class="content-wrapper" style="padding-top: 130px;" id="home">
+        <p>Processing Time: {{ processing_time }}</p>
+        
+        <div>
+           
+            {% for strategy, allocations in strategy_purchase_allocations.items %}
+                <a href="#{{ strategy }}" class="btn btn-secondary btn-sm">{{ strategy }}</a>
+            {% endfor %}
+        </div>
+        <div class="row" id="frontier">
+            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Risk-Return Scatter Plot</h4>
+                    <div id="frontierScatterGraph" style="width: 100%;height:500px;"></div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Monte Carlo Simulation</h4>
+                    <div id="heatmap" style="width: 100%;height:500px;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mb-4" id="strategy-summary">
+            <div class="col-lg-12 strech-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Strategies Summary</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="font-weight-bold">Strategy</th>
+                                    <th class="font-weight-bold">Exp Return(%)</th>
+                                    <th class="font-weight-bold">Std Dev(%)</th>
+                                    <th class="font-weight-bold">Sharpe Ratio</th>
+                                    <th class="font-weight-bold">Sortino Ratio</th>
+                                    <th class="font-weight-bold">90% Cvar</th>
+                                    <th class="font-weight-bold">95% Cvar</th>
+                                    <th class="font-weight-bold">99% Cvar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for strategy in strategy_summaries %}
+                                    <tr>
+                                        <td class="p-2">{{ strategy.strategy_name }}</td>
+                                        <td class="p-2">{{ strategy.annual_expected_return }}</td>
+                                        <td class="p-2">{{ strategy.annual_standard_deviation }}</td>
+                                        <td class="p-2">{{ strategy.annual_sharpe_ratio }}</td>
+                                        <td class="p-2">{{ strategy.annual_sortino_ratio }}</td>
+                                        <td class="p-2">{{ strategy.cvar_900 }}</td>
+                                        <td class="p-2">{{ strategy.cvar_950 }}</td>
+                                        <td class="p-2">{{ strategy.cvar_990 }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="strategy-summary-data"></div>
+
+        <div class="row" id="covariance-correlation">
+            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Covariance</h4>
+                    <div id="covarianceHeatmap" style="width: 100%;height:500px;"></div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">correlation Heatmap</h4>
+                    <div id="correlationHeatmap" style="width: 100%;height:500px;"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-lg-12 strech-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Symbol Portfolios Detail Table</h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="font-weight-bold">Key</th>
+                                    <th class="font-weight-bold">Metrics Name</th>
+                                    <th class="font-weight-bold">AAPL</th>
+                                    <th class="font-weight-bold">CSCO</th>
+                                    <th class="font-weight-bold">NFLX</th>
+                                    <th class="font-weight-bold">AMD</th>
+                                    <th class="font-weight-bold">CVX</th>
+                                    <th class="font-weight-bold">PFE</th>
+                                    <th class="font-weight-bold">MMM</th>
+                                    <th class="font-weight-bold">MSFT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in symbol_portfolios_data %}
+                                    <tr>
+                                        <td class="p-2">{{ row.key }}</td>
+                                        <td class="p-2">{{ row.metric }}</td>
+                                        <td class="p-2">{{ row.AAPL|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.CSCO|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.NFLX|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.AMD|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.CVX|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.PFE|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.MMM|default:"N/A" }}</td>
+                                        <td class="p-2">{{ row.MSFT|default:"N/A" }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        {% for strategy, allocations in strategy_purchase_allocations.items %}
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>{{ strategy }}</div>
+
+                            <div class="row" id="{{ strategy }}">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <div class="chart-container" id="chart-{{ forloop.counter }}"></div>
+                            
+                                    <script>
+                                        var strategyTitle = '{{ strategy|escapejs }}';
+                                        var chartData = {{ allocations|safe }};  // Use the pre-formatted chart data
+                                        var counter = '{{ forloop.counter|escapejs }}';
+        
+                                        console.log("Strategy Title:", strategyTitle);
+                                        console.log("Chart Data:", chartData);
+                                        console.log("Counter:", counter);
+        
+                                        
+        
+                                        var chartDom = document.getElementById('chart-' + counter);
+                                        var myChart = echarts.init(chartDom);
+        
+                                        var option = {
+                                            tooltip: {
+                                                trigger: 'item'
+                                            },
+                                            legend: {
+                                                show: false
+                                            },
+                                            series: [
+                                                {
+                                                    name: 'Access From',
+                                                    type: 'pie',
+                                                    radius: ['40%', '70%'],
+                                                    avoidLabelOverlap: false,
+                                                    itemStyle: {
+                                                        borderRadius: 10,
+                                                        borderColor: '#fff',
+                                                        borderWidth: 2
+                                                    },
+                                                    label: {
+                                                        show: false,
+                                                        position: 'center'
+                                                    },
+                                                    emphasis: {
+                                                        label: {
+                                                            show: true,
+                                                            fontSize: 40,
+                                                            fontWeight: 'bold'
+                                                        }
+                                                    },
+                                                    labelLine: {
+                                                        show: false
+                                                    },
+                                                    data: chartData
+                                                }
+                                            ]
+                                        };
+                                        
+                                        myChart.setOption(option);
+                                    </script>
+                                </div>
+                                <div class="col-lg-4"></div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+            
+        <div id="charts-container"></div>
+
+        </div>
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright © bootstrapdash.com</span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+        
+    <script>
+        const strategyAllocationData = {{ strategy_allocation_data|safe }}; // Pass JSON data to JavaScript
+
+        const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
+        
+        strategyAllocationData.forEach((strategyData, index) => {
+            const {strategy_performances, strategy_stats_descriptives, strategy_stats_moments, strategy_stats_risk_measures, strategy_stats_ratios, strategy_purchase_allocations, strategy_current_allocations, strategy_sector_purchase_allocations, strategy_sector_current_allocations } = strategyData;
+
+            const strategies = Object.keys(strategy_purchase_allocations);
+
+            strategies.forEach((strategy) => {
+                const purchaseAllocations = strategy_purchase_allocations[strategy];
+                const currentAllocations = strategy_current_allocations[strategy];
+                const sectorAllocations = strategy_sector_purchase_allocations[strategy];
+                const sectorCurrentAllocations = strategy_sector_current_allocations[strategy];
+                
+                // Create link list
+                const linkTag = document.createElement('a');
+                linkTag.href = `#${strategy}`;
+                linkTag.innerText = `${strategy.replace('_', ' ')}`;
+                linkTag.classList = 'btn btn-secondary';
+                document.getElementById('strategy-link-div').appendChild(linkTag)
+
+                // Create a parent div for both charts
+                const parentDiv = document.createElement('div');
+                parentDiv.id = `${strategy}`;
+                parentDiv.style.display = 'grid';
+                parentDiv.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                parentDiv.style.gridGap = '20px';
+                parentDiv.style.backgroundColor = '#fff';
+                parentDiv.style.padding = '30px';
+                parentDiv.style.marginBottom = '40px'; 
+                document.getElementById('charts-container').appendChild(parentDiv);
+
+                const titleDiv = document.createElement('h2');
+                titleDiv.style.gridColumnStart = '1';
+                titleDiv.style.gridColumnEnd = '3';
+                titleDiv.innerText = `${strategy.replace('_', ' ').toUpperCase()}`;
+                parentDiv.append(titleDiv);
+
+                const sectionNavDiv = document.createElement('div')
+                sectionNavDiv.style.display = 'flex';
+                sectionNavDiv.style.gap = '10px';
+                sectionNavDiv.style.gridColumnStart = '1';
+                sectionNavDiv.style.gridColumnEnd = '3';
+                parentDiv.append(sectionNavDiv);
+
+
+                // Prepare stock data
+                const stockData = purchaseAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the stock chart
+                createPieChart(parentDiv, strategy, `${index}-stock`, "Stock Allocation", stockData, '');
+                const strategySummaryDataRow = document.createElement('div');
+                strategySummaryDataRow.className = 'strategy-summary-row';
+                strategySummaryDataRow.style.display = 'flex';
+                strategySummaryDataRow.style.flexDirection = 'row-reverse';
+                strategySummaryDataRow.style.justifyContent = 'space-between';
+                strategySummaryDataRow.style.alignItems = 'center';
+                strategySummaryDataRow.style.backgroundColor = '#fff';
+                strategySummaryDataRow.style.padding = '20px';
+                strategySummaryDataRow.style.position = 'relative';
+                strategySummaryDataContainer.append(strategySummaryDataRow);
+                createPieChart(strategySummaryDataRow, strategy, `${index}-stock-summary`, "", stockData, 'fixed');
+
+                const strategyDetailLink = document.createElement('a');
+                strategyDetailLink.href = '#' + strategy;
+                strategyDetailLink.innerText = "View Detail";
+                strategyDetailLink.classList = 'btn btn-outline-success btn-fw p-2';
+                strategyDetailLink.style.position = 'absolute';
+                strategyDetailLink.style.right = '20px';
+                strategyDetailLink.style.top = '20px';
+                strategySummaryDataRow.appendChild(strategyDetailLink);
+                
+              
+                // Prepare current stock data
+                const currentStockData = currentAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the stock chart
+                createPieChart(parentDiv, strategy, `${index}-current-stock`, "Current Stock Allocation", currentStockData, '');
+
+                // Prepare sector data
+                const sectorData = sectorAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the sector chart
+                createPieChart(parentDiv, strategy, `${index}-sector`, "Sector Allocation", sectorData, '');
+
+                // Prepare sector data
+                const sectorCurrentData = sectorCurrentAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the sector chart
+                createPieChart(parentDiv, strategy, `${index}-current-sector`, "Sector Allocation", sectorCurrentData, '');
+
+                // Create and append the tables
+                let tableId = `${strategy}-${index}-performance`;
+                const performanceTable = createPerformanceTable('Strategy Performance', tableId, strategy_performances[strategy]);
+                parentDiv.appendChild(performanceTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Strategy Performance');
+                const performanceTableSummary = createPerformanceTable(strategy.replace('_', ' '), tableId+"-summary", strategy_performances[strategy]);
+                strategySummaryDataRow.append(performanceTableSummary);
+
+                tableId = `${strategy}-${index}-descriptive`;
+                const statsDescriptiveTable = createPerformanceTable('Stat Descriptives', tableId, strategy_stats_descriptives[strategy]);
+                parentDiv.appendChild(statsDescriptiveTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Descriptives');
+
+                tableId = `${strategy}-${index}-stats-moment`;
+                const statsMomentTable = createPerformanceTable('Strategy Stats Moment', tableId, strategy_stats_moments[strategy]);
+                parentDiv.appendChild(statsMomentTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Strategy Stats Moment');
+
+                tableId = `${strategy}-${index}-risk-measures`;
+                const statsMeasureTable = createPerformanceTable('Stat Risk Measures', tableId, strategy_stats_risk_measures[strategy]);
+                parentDiv.appendChild(statsMeasureTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Risk Measures');
+
+                tableId = `${strategy}-${index}-stats-ratio`;
+                const statsRatioTable = createPerformanceTable('Stat Ratio', tableId, strategy_stats_ratios[strategy]);
+                parentDiv.appendChild(statsRatioTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Ratio');
+
+            });
+        });
+
+
+        // Function to create a table for strategy performances
+        function createPerformanceTable(title, tableId, performanceData) {
+            const container = document.createElement('div');
+            container.setAttribute('id', tableId);
+    
+            // Create and append the title
+            const titleElement = document.createElement('h3');
+            titleElement.innerText = title; // Set the title text
+            container.appendChild(titleElement);
+            
+            // Create a table element
+            const table = document.createElement('table');
+            table.classList = 'table table-striped';
+            table.style.width = '100%';
+            table.style.marginBottom = '20px'; // Space between the table and charts
+
+            // Create a table header
+            const headerRow = document.createElement('tr');
+            const headers = ['Metric', 'Value'];
+            headers.forEach(headerText => {
+                const th = document.createElement('th');
+                th.innerText = headerText;
+                th.style.border = '1px solid #ddd';
+                th.style.padding = '8px';
+                th.style.textAlign = 'left';
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            function formatPercentage(value) {
+                return typeof value === 'number' ? (value * 100).toFixed(2) + '%' : value;
+            }
+
+            // Populate the table with performance data
+            for (const [metric, value] of Object.entries(performanceData)) {
+                const row = document.createElement('tr');
+                const tdMetric = document.createElement('td');
+                const tdValue = document.createElement('td');
+
+                tdMetric.innerText = metric.replace(/_/g, ' ').toUpperCase(); // Format metric names
+                tdValue.innerText = Array.isArray(value) 
+                    ? value.map(item => `${item.index}: ${formatPercentage(item.value)}`).join(', ') 
+                    : formatPercentage(value) || '-'; // Convert to percentage and format
+                tdMetric.style.border = '1px solid #ddd';
+                tdValue.style.border = '1px solid #ddd';
+                tdMetric.style.padding = '8px';
+                tdValue.style.padding = '8px';
+
+                row.appendChild(tdMetric);
+                row.appendChild(tdValue);
+                table.appendChild(row);
+            }
+
+            const tableContainer = document.createElement('div');
+            tableContainer.classList = 'table-responsive';
+            tableContainer.appendChild(table);
+
+            // Append the table to the container
+            container.appendChild(tableContainer);
+            
+            return container;
+        }
+
+        function createPieChart(parentDiv, strategy, index, title, data, chartWidth) {
+            let widthValue = chartWidth == 'fixed' ? '400px' : '100%';
+            // Create child div for the sector allocation chart
+            const sectorChartDiv = document.createElement('div');
+            sectorChartDiv.id = `chart-sector-${strategy}-${index}`;
+            sectorChartDiv.style.width = widthValue;
+            sectorChartDiv.style.height = '500px';
+            parentDiv.appendChild(sectorChartDiv);
+            
+
+            // Create the sector allocation chart using the provided pie chart option
+            const sectorChart = echarts.init(document.getElementById(sectorChartDiv.id));
+            const sectorOption = {
+                title: {
+                    text: title,
+                    left: 'center'
+                },
+                tooltip: { trigger: 'item' },
+                legend: { show: false },
+                series: [{
+                    name: 'Sector Allocation',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        formatter: '{b}: ({d}%)',
+                    },
+                    labelLine: {
+                        show: true
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 14,
+                            fontWeight: 'bold'
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                    },
+                    data: data
+                }]
+            };
+            sectorChart.setOption(sectorOption);
+
+        }
+
+        function createSectionLinkAndAppend(tableId, sectionNavDiv, text) {
+            const sectionNavLink = document.createElement('a')
+            sectionNavLink.href = '#' + tableId;
+            sectionNavLink.innerText = text;
+            sectionNavLink.classList = 'btn btn-outline-info btn-fw p-2';
+            sectionNavDiv.appendChild(sectionNavLink);
+        }
+
+        var heatMapDom = document.getElementById('heatmap');
+        var heatMapChart = echarts.init(heatMapDom);
+
+        // Data for the chart
+        var frontier_runs_x = {{ frontier_runs_x|safe }};
+        var frontier_runs_y = {{ frontier_runs_y|safe }};
+        var frontier_positions_random_x = {{ frontier_positions_random_x|safe }};
+        var frontier_positions_random_y = {{ frontier_positions_random_y|safe }};
+
+        var heatMapOption = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                name: 'Expected Return (%)',
+                type: 'value',
+                min: 'dataMin',
+                max: 'dataMax',
+                boundaryGap: [0.1, 0.1],
+                scale: true
+            },
+            yAxis: {
+                name: 'Risk (Volatility) (%)',
+                type: 'value',
+                min: 'dataMin', 
+                max: 'dataMax', 
+                boundaryGap: [0.05, 0.05],
+                scale: true
+            },
+            series: [
+                {
+                    name: 'Efficient Frontier',
+                    type: 'line',
+                    data: frontier_runs_x.map(function (x, i) {
+                        return [x, frontier_runs_y[i]];
+                    }),
+                    lineStyle: {
+                        color: '#392ccd',
+                        width: 3
+                    },
+                    symbol: 'none' // To remove the symbols on line points
+                },
+                {
+                    name: 'Random Positions',
+                    type: 'scatter',
+                    data: frontier_positions_random_x.map(function (x, i) {
+                        return [x, frontier_positions_random_y[i]];
+                    }),
+                    itemStyle: {
+                        color: '#ff0000'
+                    },
+                    symbolSize: 8
+                }
+            ]
+        };
+
+        // Set the option and display the chart
+        heatMapChart.setOption(heatMapOption);
+
+    
+
+        var frontierRuns = {{ frontier_runs|safe }};
+        var frontierPositions = {{ frontier_positions|safe }};
+        
+        var frontierScatterGraph = echarts.init(document.getElementById('frontierScatterGraph'));
+
+        var frontierOption = {
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (params) {
+                    // Formatting tooltip to show percentages
+                    let tooltipText = params.map(p => `${p.seriesName}: ${p.value[0] * 100}% Risk, ${p.value[1] * 100}% Return`);
+                    return tooltipText.join('<br/>');
+                }
+            },
+            xAxis: {
+                name: 'Risk (%)',
+                type: 'value',
+                min: 'dataMin',
+                max: 'dataMax',
+                boundaryGap: [0.1, 0.1],
+                axisLabel: {
+                    formatter: function (value) {
+                        return (value * 100).toFixed(2) + '%';  // Convert to percentage and format to 2 decimals
+                    },
+                    interval: 0.01  // Set interval to 1% (0.01 in decimal form)
+                },
+                scale: true  // Ensure scaling adjusts to the data
+            },
+            yAxis: {
+                name: 'Return (%)',
+                type: 'value',
+                min: 'dataMin', 
+                max: 'dataMax', 
+                boundaryGap: [0.05, 0.05],
+                axisLabel: {
+                    formatter: function (value) {
+                        return (value * 100).toFixed(2) + '%';  // Convert to percentage and format to 2 decimals
+                    },
+                    interval: 0.01  // Set interval to 1% (0.01 in decimal form)
+                },
+                scale: true  // Ensure scaling adjusts to the data
+            },
+            series: [
+                {
+                    name: 'Efficient Frontier',
+                    type: 'line',
+                    data: frontierRuns.x.map(function (val, index) {
+                        return [val, frontierRuns.y[index]];
+                    }),
+                    smooth: true,
+                    lineStyle: {
+                        color: 'blue',
+                        width: 2
+                    },
+                    itemStyle: {
+                        color: 'blue'
+                    }
+                },
+                {
+                    name: 'Strategies',
+                    type: 'scatter',
+                    data: frontierPositions.x.map(function (val, index) {
+                        return [val, frontierPositions.y[index]];
+                    }),
+                    itemStyle: {
+                        color: 'orange'
+                    },
+                    symbolSize: 10,
+                    label: {
+                        show: true,
+                        formatter: function (params) {
+                            return frontierPositions.strategies[params.dataIndex]; // Show strategy name
+                        },
+                        position: 'top',
+                        color: 'black',
+                        fontSize: 12,
+                        backgroundColor: '#fff',
+                        borderColor: '#000',
+                        borderWidth: 1,
+                        padding: [2, 4]
+                    }
+                }
+            ]
+        };
+
+        // Use the specified chart configuration and data
+        frontierScatterGraph.setOption(frontierOption);
+
+        // Covariance heatmap
+        var covarianceStockSymbols = {{ covariance_stock_symbols|safe }};
+        var covarianceHeatmapData = {{ covariance_heatmap_data|safe }};
+
+        var covarianceHeatmapDom = document.getElementById('covarianceHeatmap');
+        var covarianceHeatmap = echarts.init(covarianceHeatmapDom);
+        var covarianceHeatmapOption;
+
+        covarianceHeatmapOption = {
+            tooltip: {
+                position: 'top'
+            },
+            xAxis: {
+                type: 'category',
+                data: covarianceStockSymbols,
+                splitArea: {
+                    show: true
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: covarianceStockSymbols,
+                splitArea: {
+                    show: true
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 5,
+                calculable: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                inRange: {
+                    color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                }
+            },
+            series: [{
+                name: 'Covariance',
+                type: 'heatmap',
+                data: covarianceHeatmapData,
+                label: {
+                    show: false
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        covarianceHeatmap.setOption(covarianceHeatmapOption);
+
+
+        // Correlation heatmap
+        var correlationStockSymbols = {{ correlation_stock_symbols|safe }};
+        var correlationHeatmapData = {{ correlation_heatmap_data|safe }};
+
+        var correlationHeatmapDom = document.getElementById('correlationHeatmap');
+        var correlationHeatmap = echarts.init(correlationHeatmapDom);
+        var correlationHeatmapOption;
+
+        correlationHeatmapOption = {
+            tooltip: {
+                position: 'top'
+            },
+            xAxis: {
+                type: 'category',
+                data: correlationStockSymbols,
+                splitArea: {
+                    show: true
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: correlationStockSymbols,
+                splitArea: {
+                    show: true
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 5,
+                calculable: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                inRange: {
+                    color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                }
+            },
+            series: [{
+                name: 'Covariance',
+                type: 'heatmap',
+                data: correlationHeatmapData,
+                label: {
+                    show: false
+                },
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+
+        correlationHeatmap.setOption(correlationHeatmapOption);
+    </script>
+
+{% endblock content %}

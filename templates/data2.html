@@ -27,7 +27,7 @@
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
-            <form method="POST" action="{% url 'api-data4' %}">  
+            <form method="POST" action="{% url 'api-data5' %}">  
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card">
                         <div class="card">
@@ -124,7 +124,7 @@
                                                     <label class="form-label">Default Win Weight</label>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="number" class="form-control" name="default_min_weight" step="1" value="0">
+                                                    <input type="number" class="form-control" name="default_min_weight" step="0.01" value="0">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -132,7 +132,7 @@
                                                     <label class="form-label">Default Max Weight</label>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="number" class="form-control" name="default_max_weight" step="1" value="0">
+                                                    <input type="number" class="form-control" name="default_max_weight" step="0.01" value="1">
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
@@ -192,11 +192,14 @@
                                     <div class="table-responsive" style="max-height: 500px;">
                                         <table class="table">
                                             <thead class="table-dark">
-                                                <th></th>
-                                                <th>Ticker</th>
-                                                <th>Company</th>
-                                                <th>Sector</th>
-                                                <th>Market</th>
+                                                <th class="p-2"></th>
+                                                <th class="p-2">Ticker</th>
+                                                <th class="p-2">Company</th>
+                                                <th class="p-2">BAW</th>
+                                                <th class="p-2">A Min</th>
+                                                <th class="p-2">A Max</th>
+                                                <th class="p-2">Sector</th>
+                                                <th class="p-2">Market</th>
                                             </thead>
                                             <tbody id="companyTable">
                                                 
@@ -271,10 +274,13 @@
                         <td>
                             <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(${item.id}, event)">x</button>
                         </td>
-                        <td><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control" /></td>
-                        <td><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control" /></td>
-                        <td><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control" /></td>
-                        <td><input type="text" name="marketcaps[]" value="${item.Marketcap || ''}" class="form-control" /></td>
+                        <td><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control p-2" disabled /></td>
+                        <td><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control p-2" disabled/></td>
+                        <td><input type="text" name="baws[]" value="0" class="form-control p-2" /></td>
+                        <td><input type="text" name="amins[]" value="0" class="form-control p-2" /></td>
+                        <td><input type="text" name="amaxs[]" value="1" class="form-control p-2" /></td>
+                        <td><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control p-2" disabled /></td>
+                        <td><input type="text" name="marketcaps[]" value="${item.Marketcap || ''}" class="form-control p-2" disabled /></td>
                     </tr>
                 `;
                 tbody.insertAdjacentHTML('beforeend', newRow);

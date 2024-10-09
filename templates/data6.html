@@ -134,10 +134,10 @@
     <script>
         // Get the graph data from the context passed by Django
         var graphData = JSON.parse('{{ graph_json_1|escapejs }}');
-        var graphData2 = JSON.parse('{{ graph_json_2|escapejs }}');
+        // var graphData2 = JSON.parse('{{ graph_json_2|escapejs }}');
         // Render the graph using Plotly.js
         Plotly.newPlot('portfolioGraph1', graphData.data, graphData.layout);
-        Plotly.newPlot('portfolioGraph2', graphData2.data, graphData2.layout);
+        // Plotly.newPlot('portfolioGraph2', graphData2.data, graphData2.layout);
 
     </script>
 {% endblock content %}

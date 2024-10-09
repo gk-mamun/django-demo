@@ -56,6 +56,11 @@
         .card-body .col-lg-6 .row {
             align-items: center !important;
         }
+
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 120px;
+        }
     </style>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -292,13 +297,27 @@
 
   <script src="{% static 'js/sidebarmenu.js' %}"></script>
   <script src="{% static 'js/app.min.js' %}"></script>
-  <script src="{% static 'js/apexcharts.min.js' %}"></script>
   <script src="{% static 'js/simplebar.js' %}"></script>
   <script src="{% static 'js/dashboard.js' %}"></script>
 
     
 
+  <script>
+    // jQuery(document).ready(function($) {
+    //     $('a.top-nav-btn').on('click', function(e) {
+    //         e.preventDefault(); // Prevent default anchor click behavior
 
+    //         var target = this.hash; // Get the target section
+    //         var $target = $(target); // Select the target section
+
+    //         // Scroll to the target section with an offset
+    //         $('html, body').animate({
+    //             scrollTop: $target.offset().top - 200 // Adjust offset value
+    //         }, 200); // Duration of the scroll
+    //     });
+    // });
+
+  </script>
 
 </body>
 
