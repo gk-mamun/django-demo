@@ -552,7 +552,6 @@ def process_form(rq):
     sectors = rq.POST.getlist('sectors[]') 
     marketcaps = rq.POST.getlist('marketcaps[]') 
 
-    print(rq.POST.getlist('symbols[]'))
 
     # Create the ticker data structure
     ticker_data = []
@@ -842,7 +841,6 @@ def api_data_view_4(request):
 def api_data_view_5(request):
 
     if request.method == 'POST':
-        print(request.POST.getlist('symbols'))
         form_data = process_form(request)
         # Form data
         print("Form Data: ", form_data)
