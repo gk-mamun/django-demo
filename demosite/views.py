@@ -713,6 +713,18 @@ def create_return_risk_chart(frontier_runs, strategy_x, strategy_y, scatter_do_c
 
     return graph_json
 
+def format_strategy_name(strategy_name):
+    # Replace underscores with spaces
+    strategy_name = strategy_name.replace('_', ' ').title()
+    
+    # Replace 'cvar' with 'CVaR' (case insensitive)
+    strategy_name = strategy_name.replace('Cvar', 'CVaR')
+ 
+    if strategy_name.lower() == 'hrp':
+        strategy_name = 'HRP'
+    
+    return strategy_name
+
 
 def api_data_view_4(request):
 
@@ -877,7 +889,7 @@ def api_data_view_5(request):
         for strategy, allocations in strategy_purchase_allocations.items():
             # Prepare the allocations as a JSON serializable format
             formatted_allocations[strategy] = [
-                {"value": round(allocation  * 100, 2), "name": stock}  # Correct format for the chart data
+                {"value": round(allocation  * 100, 2), "name": stock}  
                 for stock, allocation in allocations.items()
             ]
         
@@ -957,14 +969,16 @@ def api_data_view_5(request):
         for strategy_name, strategy_data in strategy_summaries.items():
             # Create the structure for each strategy
             structured_strategy = {
-                "strategy_name": strategy_name.replace('_', ' ').title(),
+                "strategy_id": strategy_name,
+                "strategy_name": format_strategy_name(strategy_name),
                 "annual_expected_return": round(strategy_data.get('annual_expected_return', 0) * 100, 2),
                 "annual_standard_deviation": round(strategy_data.get('annual_standard_deviation', 0) * 100, 2),
                 "annual_sharpe_ratio": round(strategy_data.get('annual_sharpe_ratio', 0), 2),
                 "annual_sortino_ratio": round(strategy_data.get('annual_sortino_ratio', 0), 2),
                 "cvar_900": round(strategy_data.get('cvar_900', 0) * 100, 2),
                 "cvar_950": round(strategy_data.get('cvar_950', 0) * 100, 2),
-                "cvar_990": round(strategy_data.get('cvar_990', 0) * 100, 2)
+                "cvar_990": round(strategy_data.get('cvar_990', 0) * 100, 2),
+                "cvar_999": round(strategy_data.get('cvar_999', 0) * 100, 2)
             }
 
             # Append the structured strategy data to the list
@@ -1017,3 +1031,11 @@ def api_data_view_5(request):
 
     # Pass the results to your template
     return render(request, 'data6.html', context)
+
+
+def tickers_view(request):
+
+
+    context = {}
+
+    return render(request, 'tickers.html',  context)

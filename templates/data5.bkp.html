@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block content %}
     <style>
         .chart-container {
@@ -18,66 +18,11 @@
             grid-gap: 20px;
             margin-bottom: 50px;
         }
-
-        .charts-wrapper-hidden {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 50px 100px;
-            overflow: hidden;
-            display: none;
-        }
-
-        #charts-container {
-            height: 100%;
-            overflow-y: auto;
-            scroll-behavior: smooth;
-        }
-
-        #charts-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        #charts-container::-webkit-scrollbar-track {
-            background : #a1a1a1;
-        }
-        #charts-container::-webkit-scrollbar-thumb {
-            background : #0569ff;
-            border-radius: 10px;
-            box-shadow:  0 0 6px rgba(0, 0, 0, 0.5);
-        } 
-
-        .main-panel {
-            position: relative;
-        }
-
-        .page-loader {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 9999;
-            text-align: center;
-            padding-top: 15%;
-        }
-
-        .page-loader img {
-            width: 200px;
-        }
         
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
     <!-- partial -->
     <div class="main-panel">
-        <div class="page-loader">
-            <img src="{% static 'images/loader.gif' %}" alt="image">
-        </div>
-        
         <div id="strategy-link-div" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; position: fixed;top: 80px;left: 290px;width: calc(100% - 320px);z-index: 99; background-color: #fff; padding: 3px;">
             <a href="#home" class="btn btn-secondary top-nav-btn" style="padding: 5px 15px;"><i class="typcn typcn-arrow-up-thick" style="font-size: 30px;"></i></a>
             <a href="#frontier" class="btn btn-secondary top-nav-btn">Frontier</a>
@@ -98,7 +43,7 @@
             <div class="col-lg-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Strategies Frontier</h4>
+                    <h4 class="card-title">Risk-Return Scatter Plot</h4>
                     <div id="frontierScatterGraph" style="width: 100%;height:500px;"></div>
                 </div>
             </div>
@@ -106,7 +51,7 @@
             <div class="col-lg-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Simulations Frontier</h4>
+                    <h4 class="card-title">Monte Carlo Simulation</h4>
                     <div id="heatmap" style="width: 100%;height:500px;"></div>
                 </div>
             </div>
@@ -121,23 +66,20 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th class="font-weight-bold">#</th>
                                     <th class="font-weight-bold">Strategy</th>
                                     <th class="font-weight-bold">Exp Return(%)</th>
                                     <th class="font-weight-bold">Std Dev(%)</th>
                                     <th class="font-weight-bold">Sharpe Ratio</th>
                                     <th class="font-weight-bold">Sortino Ratio</th>
-                                    <th class="font-weight-bold">90% CVaR</th>
-                                    <th class="font-weight-bold">95% CVaR</th>
-                                    <th class="font-weight-bold">99% CVaR</th>
-                                    <th class="font-weight-bold">99.9% CVaR</th>
+                                    <th class="font-weight-bold">90% Cvar</th>
+                                    <th class="font-weight-bold">95% Cvar</th>
+                                    <th class="font-weight-bold">99% Cvar</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for strategy in strategy_summaries %}
                                     <tr>
-                                        <td class="p-2">{{ forloop.counter }}</td>
-                                        <td class="p-2"><a href="#{{ strategy.strategy_id }}-summary" class="btn btn-link">{{ strategy.strategy_name }}</a></td>
+                                        <td class="p-2">{{ strategy.strategy_name }}</td>
                                         <td class="p-2">{{ strategy.annual_expected_return }}</td>
                                         <td class="p-2">{{ strategy.annual_standard_deviation }}</td>
                                         <td class="p-2">{{ strategy.annual_sharpe_ratio }}</td>
@@ -145,7 +87,6 @@
                                         <td class="p-2">{{ strategy.cvar_900 }}</td>
                                         <td class="p-2">{{ strategy.cvar_950 }}</td>
                                         <td class="p-2">{{ strategy.cvar_990 }}</td>
-                                        <td class="p-2">{{ strategy.cvar_999 }}</td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
@@ -301,10 +242,8 @@
             </div>
         {% endfor %}
 
-         
-        <div id="chart-wrapper">
-            <div id="charts-container"></div>
-        </div>
+            
+        <div id="charts-container"></div>
 
         </div>
 
@@ -337,8 +276,8 @@
                 
                 // Create link list
                 const linkTag = document.createElement('a');
-                linkTag.href = `#${strategy}-summary`;
-                linkTag.innerText = formatSentence(strategy);
+                linkTag.href = `#${strategy}`;
+                linkTag.innerText = `${strategy.replace('_', ' ')}`;
                 linkTag.classList = 'btn btn-secondary';
                 document.getElementById('strategy-link-div').appendChild(linkTag)
 
@@ -350,23 +289,13 @@
                 parentDiv.style.gridGap = '20px';
                 parentDiv.style.backgroundColor = '#fff';
                 parentDiv.style.padding = '30px';
-                parentDiv.classList = 'strategy-summary-row';
+                parentDiv.style.marginBottom = '40px'; 
                 document.getElementById('charts-container').appendChild(parentDiv);
 
-                const titleDiv = document.createElement('div');
-                titleDiv.setAttribute('id', `${strategy}`);
+                const titleDiv = document.createElement('h2');
                 titleDiv.style.gridColumnStart = '1';
                 titleDiv.style.gridColumnEnd = '3';
-                titleDiv.style.display = 'flex';
-                titleDiv.style.justifyContent = 'space-between';
-                titleDiv.style.alignItems = 'center';
-                const strategyTitle = document.createElement('h2');
-                strategyTitle.innerText = `${formatStrategyName(strategy)}`;
-                const strategyPopupCloseBtn = document.createElement('button');
-                strategyPopupCloseBtn.classList = 'btn btn-inverse-danger strategy-popup-close-btn';
-                strategyPopupCloseBtn.innerText = 'X';
-                titleDiv.append(strategyTitle);
-                titleDiv.append(strategyPopupCloseBtn);
+                titleDiv.innerText = `${strategy.replace('_', ' ').toUpperCase()}`;
                 parentDiv.append(titleDiv);
 
                 const sectionNavDiv = document.createElement('div')
@@ -374,49 +303,49 @@
                 sectionNavDiv.style.gap = '10px';
                 sectionNavDiv.style.gridColumnStart = '1';
                 sectionNavDiv.style.gridColumnEnd = '3';
-                sectionNavDiv.style.position = 'sticky';
-                sectionNavDiv.style.top = '30px';
-                sectionNavDiv.style.backgroundColor = '#fff';
-                sectionNavDiv.style.zIndex = '9';
                 parentDiv.append(sectionNavDiv);
 
-                const sectionTopLink = document.createElement('a');
-                sectionTopLink.href = `#${strategy}`;
-                sectionTopLink.innerHTML = `<i class="typcn typcn-arrow-up-thick" style="font-size: 15px;"></i>`;
-                sectionTopLink.classList = 'btn btn-outline-info btn-fw p-2';
-                sectionNavDiv.append(sectionTopLink);
 
                 // Prepare stock data
                 const stockData = purchaseAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the stock chart
-                createPieChart(parentDiv, strategy, `${index}-stock`, "Training Allocation:Stocks", stockData, '');
+                createPieChart(parentDiv, strategy, `${index}-stock`, "Stock Allocation", stockData, '');
                 const strategySummaryDataRow = document.createElement('div');
-                strategySummaryDataRow.setAttribute('id', `${strategy}-summary`);
+                strategySummaryDataRow.className = 'strategy-summary-row';
                 strategySummaryDataRow.style.display = 'flex';
                 strategySummaryDataRow.style.flexDirection = 'row-reverse';
                 strategySummaryDataRow.style.justifyContent = 'space-between';
                 strategySummaryDataRow.style.alignItems = 'center';
                 strategySummaryDataRow.style.backgroundColor = '#fff';
                 strategySummaryDataRow.style.padding = '20px';
-                strategySummaryDataRow.style.cursor = 'pointer';
                 strategySummaryDataRow.style.position = 'relative';
                 strategySummaryDataContainer.append(strategySummaryDataRow);
-                createPieChart(strategySummaryDataRow, formatSentence(strategy), `${index}-stock-summary`, "", stockData, 'fixed');
+                createPieChart(strategySummaryDataRow, strategy, `${index}-stock-summary`, "", stockData, 'fixed');
 
                 const strategyDetailLink = document.createElement('a');
-                strategyDetailLink.setAttribute('data-id', strategy);
+                strategyDetailLink.href = '#' + strategy;
                 strategyDetailLink.innerText = "View Detail";
-                strategyDetailLink.classList = 'btn btn-outline-success btn-fw p-2 strategy-popup-view-btn';
+                strategyDetailLink.classList = 'btn btn-outline-success btn-fw p-2';
                 strategyDetailLink.style.position = 'absolute';
                 strategyDetailLink.style.right = '20px';
                 strategyDetailLink.style.top = '20px';
                 strategySummaryDataRow.appendChild(strategyDetailLink);
                 
+              
+                // Prepare current stock data
+                const currentStockData = currentAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the stock chart
+                createPieChart(parentDiv, strategy, `${index}-current-stock`, "Current Stock Allocation", currentStockData, '');
+
                 // Prepare sector data
                 const sectorData = sectorAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the sector chart
-                createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation:Sectors", sectorData, '');
+                createPieChart(parentDiv, strategy, `${index}-sector`, "Sector Allocation", sectorData, '');
 
+                // Prepare sector data
+                const sectorCurrentData = sectorCurrentAllocations.map(item => ({ value: item.value, name: item.name }));
+                // Use a unique identifier for the sector chart
+                createPieChart(parentDiv, strategy, `${index}-current-sector`, "Sector Allocation", sectorCurrentData, '');
 
                 // Create and append the tables
                 let tableId = `${strategy}-${index}-performance`;
@@ -427,72 +356,24 @@
                 strategySummaryDataRow.append(performanceTableSummary);
 
                 tableId = `${strategy}-${index}-descriptive`;
-                const statsDescriptiveTable = createPerformanceTable('Risk:Descriptive Stats', tableId, strategy_stats_descriptives[strategy]);
+                const statsDescriptiveTable = createPerformanceTable('Stat Descriptives', tableId, strategy_stats_descriptives[strategy]);
                 parentDiv.appendChild(statsDescriptiveTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Descriptive Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Descriptives');
 
                 tableId = `${strategy}-${index}-stats-moment`;
-                const statsMomentTable = createPerformanceTable('Risk:Moment Stats', tableId, strategy_stats_moments[strategy]);
+                const statsMomentTable = createPerformanceTable('Strategy Stats Moment', tableId, strategy_stats_moments[strategy]);
                 parentDiv.appendChild(statsMomentTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Moment Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Strategy Stats Moment');
 
                 tableId = `${strategy}-${index}-risk-measures`;
-                const statsMeasureTable = createPerformanceTable('Risk:Measures', tableId, strategy_stats_risk_measures[strategy]);
+                const statsMeasureTable = createPerformanceTable('Stat Risk Measures', tableId, strategy_stats_risk_measures[strategy]);
                 parentDiv.appendChild(statsMeasureTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Measures');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Risk Measures');
 
                 tableId = `${strategy}-${index}-stats-ratio`;
-                const statsRatioTable = createPerformanceTable('Risk:Ratio Stats', tableId, strategy_stats_ratios[strategy]);
+                const statsRatioTable = createPerformanceTable('Stat Ratio', tableId, strategy_stats_ratios[strategy]);
                 parentDiv.appendChild(statsRatioTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Ratio Stats');
-
-                // TESTING DATA - ACCESS RESTRICTED
-                const testingDataContainer = document.createElement('div');
-                testingDataContainer.style.gridColumnStart = '1';
-                testingDataContainer.style.gridColumnEnd = '3';
-                const testingDataContainerHeader = document.createElement('h3');
-                testingDataContainerHeader.setAttribute('id', `${strategy}-testing-data`)
-                testingDataContainerHeader.innerText = 'Testing Data';
-                testingDataContainer.appendChild(testingDataContainerHeader);
-                const testingDataInnerContainer = document.createElement('div');
-                testingDataInnerContainer.style.display = 'grid';
-                testingDataInnerContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                testingDataInnerContainer.style.gridGap = '20px';
-                testingDataInnerContainer.style.margin = '30px 0';
-                testingDataInnerContainer.style.position = 'relative';
-                // Lock layer
-                const testingDataLockContainer = document.createElement('div');
-                testingDataLockContainer.style.position = 'absolute';
-                testingDataLockContainer.style.left = '0px';
-                testingDataLockContainer.style.top = '0px';
-                testingDataLockContainer.style.width = '100%';
-                testingDataLockContainer.style.height = '100%';
-                testingDataLockContainer.style.zIndex = 9;
-                testingDataLockContainer.style.border = '1px solid rgba(0, 0, 0, 0.3)';
-                testingDataLockContainer.style.borderRadius = '5px';
-                testingDataLockContainer.style.backdropFilter = 'blur(10px)';
-                testingDataLockContainer.style.background = 'rgba(255, 255, 255, 0.2)'; 
-                testingDataLockContainer.style.display = 'flex'; 
-                testingDataLockContainer.style.justifyContent = 'center'; 
-                testingDataLockContainer.style.alignItems = 'center'; 
-                testingDataInnerContainer.appendChild(testingDataLockContainer);
-
-                createAccessUnlockInputForm(testingDataLockContainer, sectionNavDiv, strategy);
-
-                testingDataContainer.appendChild(testingDataInnerContainer);
-                parentDiv.appendChild(testingDataContainer);
-
-                // Prepare current stock data
-                const currentStockData = currentAllocations.map(item => ({ value: item.value, name: item.name }));
-                // Use a unique identifier for the stock chart
-                createPieChart(testingDataInnerContainer, strategy, `${index}-current-stock`, "Testing Allocation:Stocks", currentStockData, '');
-
-                // Prepare sector data
-                const sectorCurrentData = sectorCurrentAllocations.map(item => ({ value: item.value, name: item.name }));
-                // Use a unique identifier for the sector chart
-                createPieChart(testingDataInnerContainer, strategy, `${index}-current-sector`, "Testing Allocation:Sectors", sectorCurrentData, '');
-
-
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Stat Ratio');
 
             });
         });
@@ -505,7 +386,7 @@
     
             // Create and append the title
             const titleElement = document.createElement('h3');
-            titleElement.innerHTML = `<strong>${formatStrategyName(title)}</strong>`; // Set the title text
+            titleElement.innerText = title; // Set the title text
             container.appendChild(titleElement);
             
             // Create a table element
@@ -535,13 +416,12 @@
             for (const [metric, value] of Object.entries(performanceData)) {
                 const row = document.createElement('tr');
                 const tdMetric = document.createElement('td');
-                tdMetric.style.width = '70%';
                 const tdValue = document.createElement('td');
 
-                tdMetric.innerText = formatStrategyName(metric);
+                tdMetric.innerText = metric.replace(/_/g, ' ').toUpperCase(); // Format metric names
                 tdValue.innerText = Array.isArray(value) 
-                                    ? value.map(item => `${formatPercentage(item.value)} (${item.index.replace('^', '')})`).join(', ')
-                                    : formatPercentage(value) || '-';
+                    ? value.map(item => `${item.index}: ${formatPercentage(item.value)}`).join(', ') 
+                    : formatPercentage(value) || '-'; // Convert to percentage and format
                 tdMetric.style.border = '1px solid #ddd';
                 tdValue.style.border = '1px solid #ddd';
                 tdMetric.style.padding = '8px';
@@ -624,37 +504,6 @@
             sectionNavDiv.appendChild(sectionNavLink);
         }
 
-        
-        // Handle popups
-        const strategiesDetailChartsContainer = document.querySelector('#chart-wrapper');
-        const strategiesDetailChartRows = document.querySelectorAll('.strategy-summary-row');
-        const strategyPopupViewBtns = document.querySelectorAll('.strategy-popup-view-btn');
-        const strategyPopupCloseBtns = document.querySelectorAll('.strategy-popup-close-btn');
-
-        strategiesDetailChartRows.forEach((chartRow) => {
-            chartRow.style.display = 'none';
-        })
-
-        strategiesDetailChartsContainer.classList.add('charts-wrapper-hidden')
-
-        strategyPopupViewBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                let summaryId = btn.getAttribute('data-id');
-                document.getElementById(summaryId).style.display = 'grid';
-                strategiesDetailChartsContainer.style.display = 'block';
-                document.documentElement.style.overflow = 'hidden';
-            })
-        })
-
-        strategyPopupCloseBtns.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                btn.parentElement.parentElement.style.display = 'none';
-                strategiesDetailChartsContainer.style.display = 'none';
-                document.documentElement.style.overflow = 'auto';
-            })
-        })
-        
-        
         var heatMapDom = document.getElementById('heatmap');
         var heatMapChart = echarts.init(heatMapDom);
 
@@ -666,12 +515,12 @@
 
         var heatMapOption = {
             tooltip: {
-                trigger: 'axis',
+                trigger: 'axis'
             },
             xAxis: {
                 name: 'Expected Return (%)',
                 type: 'value',
-                min: 0,
+                min: 'dataMin',
                 max: 'dataMax',
                 boundaryGap: [0.1, 0.1],
                 scale: true
@@ -679,7 +528,7 @@
             yAxis: {
                 name: 'Risk (Volatility) (%)',
                 type: 'value',
-                min: 0, 
+                min: 'dataMin', 
                 max: 'dataMax', 
                 boundaryGap: [0.05, 0.05],
                 scale: true
@@ -715,6 +564,7 @@
         heatMapChart.setOption(heatMapOption);
 
     
+
         var frontierRuns = {{ frontier_runs|safe }};
         var frontierPositions = {{ frontier_positions|safe }};
         
@@ -722,12 +572,17 @@
 
         var frontierOption = {
             tooltip: {
-                trigger: 'axis'
+                trigger: 'axis',
+                formatter: function (params) {
+                    // Formatting tooltip to show percentages
+                    let tooltipText = params.map(p => `${p.seriesName}: ${p.value[0] * 100}% Risk, ${p.value[1] * 100}% Return`);
+                    return tooltipText.join('<br/>');
+                }
             },
             xAxis: {
                 name: 'Risk (%)',
                 type: 'value',
-                min: 0,
+                min: 'dataMin',
                 max: 'dataMax',
                 boundaryGap: [0.1, 0.1],
                 axisLabel: {
@@ -741,7 +596,7 @@
             yAxis: {
                 name: 'Return (%)',
                 type: 'value',
-                min: 0, 
+                min: 'dataMin', 
                 max: 'dataMax', 
                 boundaryGap: [0.05, 0.05],
                 axisLabel: {
@@ -766,8 +621,7 @@
                     },
                     itemStyle: {
                         color: 'blue'
-                    },
-                    z: 1
+                    }
                 },
                 {
                     name: 'Strategies',
@@ -776,13 +630,13 @@
                         return [val, frontierPositions.y[index]];
                     }),
                     itemStyle: {
-                        color: 'red'
+                        color: 'orange'
                     },
                     symbolSize: 10,
                     label: {
                         show: true,
                         formatter: function (params) {
-                            return formatSentence(frontierPositions.strategies[params.dataIndex]);
+                            return frontierPositions.strategies[params.dataIndex]; // Show strategy name
                         },
                         position: 'top',
                         color: 'black',
@@ -791,8 +645,7 @@
                         borderColor: '#000',
                         borderWidth: 1,
                         padding: [2, 4]
-                    },
-                    z: 9
+                    }
                 }
             ]
         };
@@ -910,96 +763,6 @@
         };
 
         correlationHeatmap.setOption(correlationHeatmapOption);
-
-
-        function formatSentence(text) {
-            return text
-                .replace(/_/g, ' ')
-                .split(' ')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter of each word
-                .join(' ');
-        }
-
-
-        function formatStrategyName(text) {
-            // Remove 'annual_' prefix if present
-            if (text.startsWith('annual_')) {
-                text = text.substring(7);  // Remove 'annual_' (length of 7 characters)
-            }
-
-            text = text.replace(/_/g, ' ').replace(/\b\w/g, function(match) {
-                return match.toUpperCase();
-            });
-
-            text = text.replace(/Cvar/i, 'CVaR');
-
-            if (text.toLowerCase() === 'hrp') {
-                text = 'HRP';
-            }
-
-            return text;
-        }
-
-
-        function createAccessUnlockInputForm(testingDataLockContainer, sectionNavDiv, strategy) {
-            // Hardcoded password
-            const hardcodedPassword = 'password123';
-
-            // Create the wrapper div
-            var wrapperDiv = document.createElement('div');
-
-            // Create the input field
-            var inputField = document.createElement('input');
-            inputField.type = 'password';  
-            inputField.placeholder = 'Enter password to access...';
-            inputField.style.marginBottom = '10px'; 
-            inputField.style.padding = '10px';
-            inputField.style.border = '1px solid rgba(0, 0, 0, 0.3)';
-            inputField.style.borderRadius = '5px';
-            inputField.style.width = '200px';
-            inputField.style.marginRight = '15px';
-
-            // Create the button
-            var submitButton = document.createElement('button');
-            submitButton.innerText = 'Unlock';
-            submitButton.style.padding = '10px 20px';
-            submitButton.style.border = 'none';
-            submitButton.style.backgroundColor = '#007bff';
-            submitButton.style.color = 'white';
-            submitButton.style.borderRadius = '5px';
-            submitButton.style.cursor = 'pointer';
-
-            const sectionTopTestingLink = document.createElement('a');
-            sectionTopTestingLink.href = `#${strategy}-testing-data`;
-            sectionTopTestingLink.innerText = 'Testing Data';
-            sectionTopTestingLink.classList = 'btn btn-outline-success btn-fw p-2';
-            sectionNavDiv.append(sectionTopTestingLink);
-
-            
-            wrapperDiv.appendChild(inputField);
-            wrapperDiv.appendChild(submitButton);
-
-            // Append the wrapper div to the testingDataLockContainer
-            testingDataLockContainer.appendChild(wrapperDiv);
-
-            // Add event listener for the button click
-            submitButton.addEventListener('click', function() {
-                var userInput = inputField.value;  // Get the input value
-
-                // Check if the input is empty
-                if (userInput.trim() === '') {
-                    alert('Please enter a password.');
-                } else {
-                    if (userInput === hardcodedPassword) {
-                        testingDataLockContainer.remove();
-                    } else {
-                        alert('Incorrect password. Try again.');
-                    }
-                }
-            });
-        }
-
-       
     </script>
 
 {% endblock content %}
