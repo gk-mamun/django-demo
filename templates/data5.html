@@ -80,7 +80,7 @@
         
         <div id="strategy-link-div" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; position: fixed;top: 80px;left: 290px;width: calc(100% - 320px);z-index: 99; background-color: #fff; padding: 3px;">
             <a href="#home" class="btn btn-secondary top-nav-btn" style="padding: 5px 15px;"><i class="typcn typcn-arrow-up-thick" style="font-size: 30px;"></i></a>
-            <a href="#frontier" class="btn btn-secondary top-nav-btn">Frontier</a>
+            <a href="#frontier" class="btn btn-secondary top-nav-btn">Frontiers</a>
             <a href="#strategy-summary" class="btn btn-secondary top-nav-btn">Strategies Summary Table</a>
             <a href="#strategy-summary-data" class="btn btn-secondary top-nav-btn">Strategies Summary</a>
             <a href="#covariance-correlation" class="btn btn-secondary top-nav-btn">Covariance Correlation</a>
@@ -123,14 +123,14 @@
                                 <tr>
                                     <th class="font-weight-bold">#</th>
                                     <th class="font-weight-bold">Strategy</th>
-                                    <th class="font-weight-bold">Exp Return(%)</th>
-                                    <th class="font-weight-bold">Std Dev(%)</th>
+                                    <th class="font-weight-bold">Exp Return (%)</th>
+                                    <th class="font-weight-bold">Std Dev (%)</th>
                                     <th class="font-weight-bold">Sharpe Ratio</th>
                                     <th class="font-weight-bold">Sortino Ratio</th>
-                                    <th class="font-weight-bold">90% CVaR</th>
-                                    <th class="font-weight-bold">95% CVaR</th>
-                                    <th class="font-weight-bold">99% CVaR</th>
-                                    <th class="font-weight-bold">99.9% CVaR</th>
+                                    <th class="font-weight-bold">CVaR 90% (%)</th>
+                                    <th class="font-weight-bold">CVaR 95% (%)</th>
+                                    <th class="font-weight-bold">CVaR 99% (%)</th>
+                                    <th class="font-weight-bold">CVaR 99.9% (%)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -183,39 +183,41 @@
             <div class="col-lg-12 strech-card">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Symbol Portfolios Detail Table</h3>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th class="font-weight-bold">Key</th>
-                                    <th class="font-weight-bold">Metrics Name</th>
-                                    <th class="font-weight-bold">AAPL</th>
-                                    <th class="font-weight-bold">CSCO</th>
-                                    <th class="font-weight-bold">NFLX</th>
-                                    <th class="font-weight-bold">AMD</th>
-                                    <th class="font-weight-bold">CVX</th>
-                                    <th class="font-weight-bold">PFE</th>
-                                    <th class="font-weight-bold">MMM</th>
-                                    <th class="font-weight-bold">MSFT</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for row in symbol_portfolios_data %}
+                        <div class="symbol-portfolio">
+                            <h3>SL Risk: Portfolios Detail</h3>
+                            <table class="table table-striped">
+                                <thead>
                                     <tr>
-                                        <td class="p-2">{{ row.key }}</td>
-                                        <td class="p-2">{{ row.metric }}</td>
-                                        <td class="p-2">{{ row.AAPL|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.CSCO|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.NFLX|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.AMD|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.CVX|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.PFE|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.MMM|default:"N/A" }}</td>
-                                        <td class="p-2">{{ row.MSFT|default:"N/A" }}</td>
+                                        <th class="font-weight-bold">Key</th>
+                                        <th class="font-weight-bold">Metrics Name</th>
+                                        <th class="font-weight-bold">AAPL</th>
+                                        <th class="font-weight-bold">CSCO</th>
+                                        <th class="font-weight-bold">NFLX</th>
+                                        <th class="font-weight-bold">AMD</th>
+                                        <th class="font-weight-bold">CVX</th>
+                                        <th class="font-weight-bold">PFE</th>
+                                        <th class="font-weight-bold">MMM</th>
+                                        <th class="font-weight-bold">MSFT</th>
                                     </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {% for row in symbol_portfolios_data %}
+                                        <tr>
+                                            <td class="p-2">{{ row.key }}</td>
+                                            <td class="p-2">{{ row.metric }}</td>
+                                            <td class="p-2">{{ row.AAPL|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.CSCO|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.NFLX|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.AMD|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.CVX|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.PFE|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.MMM|default:"N/A" }}</td>
+                                            <td class="p-2">{{ row.MSFT|default:"N/A" }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
                         
                         
                     </div>
@@ -241,10 +243,6 @@
                                         var strategyTitle = '{{ strategy|escapejs }}';
                                         var chartData = {{ allocations|safe }};  // Use the pre-formatted chart data
                                         var counter = '{{ forloop.counter|escapejs }}';
-        
-                                        console.log("Strategy Title:", strategyTitle);
-                                        console.log("Chart Data:", chartData);
-                                        console.log("Counter:", counter);
         
                                         
         
@@ -320,6 +318,19 @@
     </div>
         
     <script>
+        // Float metrics
+        const floatMetrics = new Set([
+            'annual_sharpe_ratio', 'annual_sortino_ratio', 'skew', 'kurtosis',
+            'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95',
+            'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio',
+            'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95', 'entropic_risk_measure_ratio_at_95',
+            'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95',
+            'conditional_dar_ratio_at_95', 'calmar_ratio', 'average_drawdown_ratio',
+            'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
+        ]);
+
+        const symboPortfolioData = document.querySelector('.symbol-portfolio');
+
         const strategyAllocationData = {{ strategy_allocation_data|safe }}; // Pass JSON data to JavaScript
 
         const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
@@ -338,7 +349,7 @@
                 // Create link list
                 const linkTag = document.createElement('a');
                 linkTag.href = `#${strategy}-summary`;
-                linkTag.innerText = formatSentence(strategy);
+                linkTag.innerText = formatStrategyName(strategy);
                 linkTag.classList = 'btn btn-secondary';
                 document.getElementById('strategy-link-div').appendChild(linkTag)
 
@@ -352,6 +363,7 @@
                 parentDiv.style.padding = '30px';
                 parentDiv.classList = 'strategy-summary-row';
                 document.getElementById('charts-container').appendChild(parentDiv);
+                
 
                 const titleDiv = document.createElement('div');
                 titleDiv.setAttribute('id', `${strategy}`);
@@ -389,7 +401,7 @@
                 // Prepare stock data
                 const stockData = purchaseAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the stock chart
-                createPieChart(parentDiv, strategy, `${index}-stock`, "Training Allocation:Stocks", stockData, '');
+                createPieChart(parentDiv, strategy, `${index}-stock`, "Training Allocation: Stocks", stockData, '');
                 const strategySummaryDataRow = document.createElement('div');
                 strategySummaryDataRow.setAttribute('id', `${strategy}-summary`);
                 strategySummaryDataRow.style.display = 'flex';
@@ -406,7 +418,7 @@
                 const strategyDetailLink = document.createElement('a');
                 strategyDetailLink.setAttribute('data-id', strategy);
                 strategyDetailLink.innerText = "View Detail";
-                strategyDetailLink.classList = 'btn btn-outline-success btn-fw p-2 strategy-popup-view-btn';
+                strategyDetailLink.classList = 'btn btn-outline-secondary btn-fw p-2 strategy-popup-view-btn';
                 strategyDetailLink.style.position = 'absolute';
                 strategyDetailLink.style.right = '20px';
                 strategyDetailLink.style.top = '20px';
@@ -415,7 +427,7 @@
                 // Prepare sector data
                 const sectorData = sectorAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the sector chart
-                createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation:Sectors", sectorData, '');
+                createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation: Sectors", sectorData, '');
 
 
                 // Create and append the tables
@@ -427,24 +439,38 @@
                 strategySummaryDataRow.append(performanceTableSummary);
 
                 tableId = `${strategy}-${index}-descriptive`;
-                const statsDescriptiveTable = createPerformanceTable('Risk:Descriptive Stats', tableId, strategy_stats_descriptives[strategy]);
+                const statsDescriptiveTable = createPerformanceTable('PL Risk: Descriptive Stats', tableId, strategy_stats_descriptives[strategy]);
                 parentDiv.appendChild(statsDescriptiveTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Descriptive Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Descriptive Stats');
 
                 tableId = `${strategy}-${index}-stats-moment`;
-                const statsMomentTable = createPerformanceTable('Risk:Moment Stats', tableId, strategy_stats_moments[strategy]);
+                const statsMomentTable = createPerformanceTable('PL Risk: Moment Stats', tableId, strategy_stats_moments[strategy]);
                 parentDiv.appendChild(statsMomentTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Moment Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Moment Stats');
 
                 tableId = `${strategy}-${index}-risk-measures`;
-                const statsMeasureTable = createPerformanceTable('Risk:Measures', tableId, strategy_stats_risk_measures[strategy]);
+                const statsMeasureTable = createPerformanceTable('PL Risk: Measures', tableId, strategy_stats_risk_measures[strategy]);
                 parentDiv.appendChild(statsMeasureTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Measures');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Measures');
 
                 tableId = `${strategy}-${index}-stats-ratio`;
-                const statsRatioTable = createPerformanceTable('Risk:Ratio Stats', tableId, strategy_stats_ratios[strategy]);
+                const statsRatioTable = createPerformanceTable('PL Risk: Ratio Stats', tableId, strategy_stats_ratios[strategy]);
                 parentDiv.appendChild(statsRatioTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Risk:Ratio Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Ratio Stats');
+
+                // Symbol Data
+                const clonedPortfolioData = symboPortfolioData.cloneNode(true); 
+                clonedPortfolioData.setAttribute('id', `${strategy}-${index}-symbol-portfolio`);
+                clonedPortfolioData.style.gridColumnStart = 1;
+                clonedPortfolioData.style.gridColumnEnd = 3;
+                console.log(clonedPortfolioData);
+                parentDiv.appendChild(clonedPortfolioData);
+                // Symbol Data Link
+                const sectionTopSymbolLink = document.createElement('a');
+                sectionTopSymbolLink.href = `#${strategy}-${index}-symbol-portfolio`;
+                sectionTopSymbolLink.innerHTML = 'SL Risk: Portfolio';
+                sectionTopSymbolLink.classList = 'btn btn-outline-info btn-fw p-2';
+                sectionNavDiv.append(sectionTopSymbolLink);
 
                 // TESTING DATA - ACCESS RESTRICTED
                 const testingDataContainer = document.createElement('div');
@@ -454,6 +480,10 @@
                 testingDataContainerHeader.setAttribute('id', `${strategy}-testing-data`)
                 testingDataContainerHeader.innerText = 'Testing Data';
                 testingDataContainer.appendChild(testingDataContainerHeader);
+                // Testing Data section Nav
+                const testingDataNav = document.createElement('div');
+                testingDataContainer.appendChild(testingDataNav);
+
                 const testingDataInnerContainer = document.createElement('div');
                 testingDataInnerContainer.style.display = 'grid';
                 testingDataInnerContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
@@ -486,6 +516,12 @@
                 const currentStockData = currentAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the stock chart
                 createPieChart(testingDataInnerContainer, strategy, `${index}-current-stock`, "Testing Allocation:Stocks", currentStockData, '');
+                
+                const testingDataLink = document.createElement('a');
+                testingDataLink.href = `#chart-sector-${strategy}-${index}-current-stock`;
+                testingDataLink.innerHTML = 'Testing Allocation:Stocks';
+                testingDataLink.classList = 'btn btn-outline-success btn-fw p-2';
+                testingDataNav.append(testingDataLink);
 
                 // Prepare sector data
                 const sectorCurrentData = sectorCurrentAllocations.map(item => ({ value: item.value, name: item.name }));
@@ -495,12 +531,18 @@
 
 
             });
+
+
         });
 
 
         // Function to create a table for strategy performances
         function createPerformanceTable(title, tableId, performanceData) {
             const container = document.createElement('div');
+            if(title == 'Strategy Performance') {
+                container.style.gridColumnStart = 1;
+                container.style.gridColumnEnd = 3;
+            }
             container.setAttribute('id', tableId);
     
             // Create and append the title
@@ -539,9 +581,18 @@
                 const tdValue = document.createElement('td');
 
                 tdMetric.innerText = formatStrategyName(metric);
-                tdValue.innerText = Array.isArray(value) 
-                                    ? value.map(item => `${formatPercentage(item.value)} (${item.index.replace('^', '')})`).join(', ')
-                                    : formatPercentage(value) || '-';
+
+                // Check if the value is an array and handle accordingly
+                if (Array.isArray(value)) {
+                    const firstItem = value[0];
+                    tdMetric.innerText += ` (${firstItem.index.replace('^', '')})`;
+                    tdValue.innerText = formatPercentage(firstItem.value);
+                } else if (floatMetrics.has(metric)) {
+                    tdValue.innerText = value.toFixed(2) || '-';
+                }
+                else {
+                    tdValue.innerText = formatPercentage(value) || '-';
+                }
                 tdMetric.style.border = '1px solid #ddd';
                 tdValue.style.border = '1px solid #ddd';
                 tdMetric.style.padding = '8px';
@@ -692,7 +743,7 @@
                         return [x, frontier_runs_y[i]];
                     }),
                     lineStyle: {
-                        color: '#392ccd',
+                        color: '#525252',
                         width: 3
                     },
                     symbol: 'none' // To remove the symbols on line points
@@ -761,11 +812,11 @@
                     }),
                     smooth: true,
                     lineStyle: {
-                        color: 'blue',
+                        color: '#525252',
                         width: 2
                     },
                     itemStyle: {
-                        color: 'blue'
+                        color: '#525252'
                     },
                     z: 1
                 },
@@ -776,7 +827,7 @@
                         return [val, frontierPositions.y[index]];
                     }),
                     itemStyle: {
-                        color: 'red'
+                        color: '#52912a'
                     },
                     symbolSize: 10,
                     label: {
@@ -804,6 +855,12 @@
         var covarianceStockSymbols = {{ covariance_stock_symbols|safe }};
         var covarianceHeatmapData = {{ covariance_heatmap_data|safe }};
 
+        // Adjust the heatmap data for the reversed Y-axis
+        var adjustedCovarianceHeatmapData = covarianceHeatmapData.map(function (item) {
+            return [item[0], covarianceStockSymbols.length - 1 - item[1], item[2]];
+        });
+        
+
         var covarianceHeatmapDom = document.getElementById('covarianceHeatmap');
         var covarianceHeatmap = echarts.init(covarianceHeatmapDom);
         var covarianceHeatmapOption;
@@ -821,14 +878,14 @@
             },
             yAxis: {
                 type: 'category',
-                data: covarianceStockSymbols,
+                data: covarianceStockSymbols.slice().reverse(),
                 splitArea: {
                     show: true
                 }
             },
             visualMap: {
-                min: 0,
-                max: 5,
+                min: -10,
+                max: 10,
                 calculable: true,
                 orient: 'vertical',
                 left: 'right',
@@ -842,7 +899,11 @@
                 type: 'heatmap',
                 data: covarianceHeatmapData,
                 label: {
-                    show: false
+                    show: true,
+                    formatter: function(params) {
+                        let value = Array.isArray(params.value) ? params.value[2] : params.value;
+                        return value !== null && value !== undefined ? value.toFixed(2) : '';
+                    }
                 },
                 emphasis: {
                     itemStyle: {
@@ -859,6 +920,10 @@
         // Correlation heatmap
         var correlationStockSymbols = {{ correlation_stock_symbols|safe }};
         var correlationHeatmapData = {{ correlation_heatmap_data|safe }};
+
+        var adjustedCorrelationHeatmapData = correlationHeatmapData.map(function (item) {
+            return [item[0], correlationStockSymbols.length - 1 - item[1], item[2]];
+        });
 
         var correlationHeatmapDom = document.getElementById('correlationHeatmap');
         var correlationHeatmap = echarts.init(correlationHeatmapDom);
@@ -877,14 +942,14 @@
             },
             yAxis: {
                 type: 'category',
-                data: correlationStockSymbols,
+                data: correlationStockSymbols.slice().reverse(),
                 splitArea: {
                     show: true
                 }
             },
             visualMap: {
-                min: 0,
-                max: 5,
+                min: -100,
+                max: 100,
                 calculable: true,
                 orient: 'vertical',
                 left: 'right',
@@ -896,9 +961,13 @@
             series: [{
                 name: 'Covariance',
                 type: 'heatmap',
-                data: correlationHeatmapData,
+                data: adjustedCorrelationHeatmapData,
                 label: {
-                    show: false
+                    show: true,
+                    formatter: function(params) {
+                        let value = Array.isArray(params.value) ? params.value[2] : params.value;
+                        return value !== null && value !== undefined ? value.toFixed(2) : '';
+                    }
                 },
                 emphasis: {
                     itemStyle: {

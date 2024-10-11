@@ -9,6 +9,7 @@ import json
 import plotly.graph_objects as go
 from plotly.utils import PlotlyJSONEncoder
 import time
+import re
 from .model_result_new import model_output_data
 
 from .output import output_data
@@ -713,18 +714,26 @@ def create_return_risk_chart(frontier_runs, strategy_x, strategy_y, scatter_do_c
 
     return graph_json
 
+
 def format_strategy_name(strategy_name):
     # Replace underscores with spaces
     strategy_name = strategy_name.replace('_', ' ').title()
     
     # Replace 'cvar' with 'CVaR' (case insensitive)
     strategy_name = strategy_name.replace('Cvar', 'CVaR')
+    strategy_name = strategy_name.replace('CVaR 999', 'CVaR 99.9')
  
     if strategy_name.lower() == 'hrp':
         strategy_name = 'HRP'
     
     return strategy_name
 
+def transform_key(key):
+    return key.replace('_', ' ').title()
+
+def transform_metric(metric):
+    transformed_metric = metric.replace('_', ' ').title()
+    return re.sub(r'\bAnnual\s*', '', transformed_metric)
 
 def api_data_view_4(request):
 
@@ -855,7 +864,7 @@ def api_data_view_5(request):
     if request.method == 'POST':
         form_data = process_form(request)
         # Form data
-        print("Form Data: ", form_data)
+        # print("Form Data: ", form_data)
 
         start_time = time.perf_counter()
         model_output = model_output_data
@@ -892,6 +901,7 @@ def api_data_view_5(request):
                 {"value": round(allocation  * 100, 2), "name": stock}  
                 for stock, allocation in allocations.items()
             ]
+        
         
         formatted_strategy_current_allocations = {} 
         for strategy, allocations in strategy_current_allocations.items():
@@ -936,6 +946,7 @@ def api_data_view_5(request):
             for j, stock_y in enumerate(covariance_stock_symbols):
                 covariance_heatmap_data.append([i, j, covariance_data[stock_x][stock_y]])
 
+                
         correlation_data = model_output.get('correlation', {})
         correlation_stock_symbols = list(correlation_data.keys())
         correlation_heatmap_data = []
@@ -948,17 +959,34 @@ def api_data_view_5(request):
 
         symbol_portfolios = model_output.get('symbol_portfolios')
         stock_symbols = ['AAPL', 'CSCO', 'NFLX', 'AMD', 'CVX', 'PFE', 'MMM', 'MSFT']
+        float_metrics = {
+            'annual_sharpe_ratio', 'annual_sortino_ratio', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
+        }
+
 
         for key in symbol_portfolios:
             metrics = symbol_portfolios.get(key)
 
-            # Iterate through each metric to create rows
+            transformed_key = transform_key(key)
+
             for metric in metrics:
+                transformed_metric = transform_metric(metric)
+
                 row = {
-                    "key": key,
-                    "metric": metric,
-                    **{symbol: "{:.2f}%".format(metrics[metric].get(symbol, "N/A") * 100) if isinstance(metrics[metric].get(symbol), (int, float)) else "N/A" 
-                    for symbol in stock_symbols}
+                    "key": transformed_key,
+                    "metric": transformed_metric,
+                    **{symbol: (
+                            # Check if the metric is a float metric and format as decimal
+                            "{:.2f}".format(metrics[metric].get(symbol)) 
+                            if metric in float_metrics and isinstance(metrics[metric].get(symbol), (int, float))
+                            else
+                            # Otherwise, format as percentage
+                            "{:.2f}%".format(metrics[metric].get(symbol) * 100) 
+                            if isinstance(metrics[metric].get(symbol), (int, float))
+                            else "N/A"
+                        )
+                        for symbol in stock_symbols
+                    }
                 }
                 symbol_portfolios_data.append(row)
 

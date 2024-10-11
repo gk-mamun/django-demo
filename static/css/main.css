@@ -4,6 +4,40 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: red;
+:root {
+    --primary-color: #619040;
+    --primary-light-color: #bbceb0;
+    --primary-dark-color: #4c8722;
+  }
+
+
+.btn-secondary {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-dark-color) !important;
+    border-color: var(--primary-dark-color);
+}
+
+.btn-outline-secondary {
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff !important;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-link {
+    color: var(--primary-color);
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
+    background: var(--primary-color);
+    color: #fff;
 }
