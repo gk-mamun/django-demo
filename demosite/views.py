@@ -969,6 +969,9 @@ def api_data_view_5(request):
         }
 
 
+        print("Stock symbols: ", stock_symbols)
+        print("Stock Portfolios: ", symbol_portfolios)
+
         for key in symbol_portfolios:
             metrics = symbol_portfolios.get(key)
 
@@ -994,6 +997,8 @@ def api_data_view_5(request):
                     }
                 }
                 symbol_portfolios_data.append(row)
+
+        print(symbol_portfolios_data)
 
 
         structured_strategies = []
@@ -1035,6 +1040,7 @@ def api_data_view_5(request):
             'covariance_heatmap_data': covariance_heatmap_data,
             'correlation_stock_symbols': correlation_stock_symbols,
             'correlation_heatmap_data': correlation_heatmap_data,
+            'stock_symbols': stock_symbols,
             'symbol_portfolios_data': symbol_portfolios_data,
             'strategy_summaries': structured_strategies,
             'frontier_runs_x': frontier_runs_x,

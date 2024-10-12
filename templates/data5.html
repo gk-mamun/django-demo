@@ -187,18 +187,13 @@
                             <h3>SL Risk: Portfolios Detail</h3>
                             <table class="table table-striped">
                                 <thead>
-                                    <tr>
-                                        <th class="font-weight-bold">Key</th>
-                                        <th class="font-weight-bold">Metrics Name</th>
-                                        <th class="font-weight-bold">AAPL</th>
-                                        <th class="font-weight-bold">CSCO</th>
-                                        <th class="font-weight-bold">NFLX</th>
-                                        <th class="font-weight-bold">AMD</th>
-                                        <th class="font-weight-bold">CVX</th>
-                                        <th class="font-weight-bold">PFE</th>
-                                        <th class="font-weight-bold">MMM</th>
-                                        <th class="font-weight-bold">MSFT</th>
-                                    </tr>
+                                        <tr>
+                                            <th class="font-weight-bold">Key</th>
+                                            <th class="font-weight-bold">Metrics Name</th>
+                                            {% for symbol in stock_symbols %}
+                                                <th class="font-weight-bold">{{ symbol }}</th>
+                                            {% endfor %}
+                                        </tr>
                                 </thead>
                                 <tbody>
                                     {% for row in symbol_portfolios_data %}
