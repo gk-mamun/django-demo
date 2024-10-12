@@ -11,6 +11,7 @@ from plotly.utils import PlotlyJSONEncoder
 import time
 import re
 from .model_result_new import model_output_data
+from .model_result_3 import mode_output_3
 
 from .output import output_data
 
@@ -865,14 +866,10 @@ def api_data_view_5(request):
         form_data = process_form(request)
         # Form data
         # print("Form Data: ", form_data.get(ticker))
-
-        ticker_symbols = []
-        for ticker in form_data.get('ticker_data'):
-            ticker_symbols.append(ticker.get('symbol'))
    
 
         start_time = time.perf_counter()
-        model_output = model_output_data
+        model_output = mode_output_3
 
         frontier_runs_x = model_output.get('frontier_runs').get('x')
         frontier_runs_y = model_output.get('frontier_runs').get('y')
@@ -963,14 +960,20 @@ def api_data_view_5(request):
         symbol_portfolios_data = []
 
         symbol_portfolios = model_output.get('symbol_portfolios')
-        stock_symbols = ticker_symbols
+        
         float_metrics = {
             'annual_sharpe_ratio', 'annual_sortino_ratio', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
         }
 
+        # List all the symbols
+        all_symbols = set()
+        for main_label, inner_dict in symbol_portfolios.items():
+            for inner_label, symbols in inner_dict.items():
+                for symbol in symbols:
+                    all_symbols.add(symbol)
+        
+        all_symbols = list(all_symbols)
 
-        print("Stock symbols: ", stock_symbols)
-        print("Stock Portfolios: ", symbol_portfolios)
 
         for key in symbol_portfolios:
             metrics = symbol_portfolios.get(key)
@@ -993,12 +996,11 @@ def api_data_view_5(request):
                             if isinstance(metrics[metric].get(symbol), (int, float))
                             else "N/A"
                         )
-                        for symbol in stock_symbols
+                        for symbol in all_symbols
                     }
                 }
                 symbol_portfolios_data.append(row)
 
-        print(symbol_portfolios_data)
 
 
         structured_strategies = []
@@ -1040,7 +1042,7 @@ def api_data_view_5(request):
             'covariance_heatmap_data': covariance_heatmap_data,
             'correlation_stock_symbols': correlation_stock_symbols,
             'correlation_heatmap_data': correlation_heatmap_data,
-            'stock_symbols': stock_symbols,
+            'stock_symbols': all_symbols,
             'symbol_portfolios_data': symbol_portfolios_data,
             'strategy_summaries': structured_strategies,
             'frontier_runs_x': frontier_runs_x,
