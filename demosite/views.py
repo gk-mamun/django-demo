@@ -1001,6 +1001,25 @@ def api_data_view_5(request):
                 }
                 symbol_portfolios_data.append(row)
 
+        symbol_portfolios_html_table = '<table class="table table-striped">'
+        symbol_portfolios_html_table += '<thead><tr><th class="font-weight-bold">Key</th>'
+        symbol_portfolios_html_table += '<th class="font-weight-bold">Metrics Name</th>'
+        
+        for symbol in all_symbols:
+            symbol_portfolios_html_table += f'<th class="font-weight-bold">{symbol}</th>'
+        
+        symbol_portfolios_html_table += '</tr></thead><tbody>'
+        
+        for row in symbol_portfolios_data:
+            symbol_portfolios_html_table += f'<tr><td class="p-2">{row["key"]}</td>'
+            symbol_portfolios_html_table += f'<td class="p-2">{row["metric"]}</td>'
+            
+            for symbol in all_symbols:
+                symbol_portfolios_html_table += f'<td class="p-2">{row.get(symbol, "N/A")}</td>'
+            
+            symbol_portfolios_html_table += '</tr>'
+        
+        symbol_portfolios_html_table += '</tbody></table>'
 
 
         structured_strategies = []
@@ -1034,6 +1053,8 @@ def api_data_view_5(request):
         # time_model_total = time_model_data_processing + time_model_execusion + time_model_output_allocation
         # total_processing_time = processing_time + time_model_total
         
+
+
         context = {
             'frontier_runs': frontier_runs,
             'frontier_positions': frontier_positions,
@@ -1042,8 +1063,7 @@ def api_data_view_5(request):
             'covariance_heatmap_data': covariance_heatmap_data,
             'correlation_stock_symbols': correlation_stock_symbols,
             'correlation_heatmap_data': correlation_heatmap_data,
-            'stock_symbols': all_symbols,
-            'symbol_portfolios_data': symbol_portfolios_data,
+            'symbol_portfolios_html_table': symbol_portfolios_html_table,
             'strategy_summaries': structured_strategies,
             'frontier_runs_x': frontier_runs_x,
             'frontier_runs_y': frontier_runs_y,
