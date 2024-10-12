@@ -864,7 +864,12 @@ def api_data_view_5(request):
     if request.method == 'POST':
         form_data = process_form(request)
         # Form data
-        # print("Form Data: ", form_data)
+        # print("Form Data: ", form_data.get(ticker))
+
+        ticker_symbols = []
+        for ticker in form_data.get('ticker_data'):
+            ticker_symbols.append(ticker.get('symbol'))
+   
 
         start_time = time.perf_counter()
         model_output = model_output_data
@@ -946,7 +951,7 @@ def api_data_view_5(request):
             for j, stock_y in enumerate(covariance_stock_symbols):
                 covariance_heatmap_data.append([i, j, covariance_data[stock_x][stock_y]])
 
-                
+
         correlation_data = model_output.get('correlation', {})
         correlation_stock_symbols = list(correlation_data.keys())
         correlation_heatmap_data = []
@@ -958,7 +963,7 @@ def api_data_view_5(request):
         symbol_portfolios_data = []
 
         symbol_portfolios = model_output.get('symbol_portfolios')
-        stock_symbols = ['AAPL', 'CSCO', 'NFLX', 'AMD', 'CVX', 'PFE', 'MMM', 'MSFT']
+        stock_symbols = ticker_symbols
         float_metrics = {
             'annual_sharpe_ratio', 'annual_sortino_ratio', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
         }
