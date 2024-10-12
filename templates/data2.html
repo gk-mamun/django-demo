@@ -5,9 +5,28 @@
     <style>
         .select2-container--default.select2-container--focus .select2-selection--multiple,
         .select2-container--default .select2-selection--multiple {
-            display: flex !important;
-            flex-direction: row-reverse !important;
+            display: grid !important;
+            grid-template-columns: calc(100% - 20px) 20px;
             align-items: center !important;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__clear {
+            width: 20px;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .select2-container .select2-search--inline {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 2;
+            grid-row-end: 3;
         }
         .select2-container--default .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
             color: #000;
@@ -29,7 +48,7 @@
         <div class="content-wrapper">
             <form method="POST" action="{% url 'api-data5' %}">  
                 <div class="row">
-                    <div class="col-md-6 grid-margin stretch-card">
+                    <div class="col-md-5 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
                             
@@ -179,12 +198,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 grid-margin stretch-card">
+                    <div class="col-md-7 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <p class="card-description">
-                                You can start typring...
-                            </p>
                                 <div>
                                     <select id="stockSelect" class="stock-select form-control" multiple="multiple" >
                                     </select>
@@ -278,14 +294,14 @@
                         </td>
                         <td><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control p-2" readonly/></td>
                         <td><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control p-2" readonly/></td>
+                        <td><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control p-2" readonly /></td>
+                        <td><input type="text" name="marketcaps[]" value="${item.Marketcap || ''}" class="form-control p-2" readonly /></td>
                         <td><input type="text" name="baws[]" value="0" class="form-control p-2" /></td>
                         <td><input type="text" name="amins[]" value="0" class="form-control p-2" /></td>
                         <td><input type="text" name="amaxs[]" value="1" class="form-control p-2" /></td>
-                        <td><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control p-2" readonly /></td>
-                        <td><input type="text" name="marketcaps[]" value="${item.Marketcap || ''}" class="form-control p-2" readonly /></td>
                     </tr>
                 `;
-                tbody.insertAdjacentHTML('beforeend', newRow);
+                tbody.insertAdjacentHTML('afterbegin', newRow);
             }
 
   

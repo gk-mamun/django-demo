@@ -298,6 +298,20 @@
             'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
         ]);
 
+        // const symbolHexColors = {
+        //     "AAPL": "#8dd3c7",
+        //     "CSCO": "#8dd3c7",
+        //     "NFLX": "#bc80bd",
+        //     "AMD": "#8dd3c7",
+        //     "CVX": "#ccebc5",
+        //     "PFE": "#fb8072",
+        //     "MMM": "#ffffb3",
+        //     "MSFT": "#8dd3c7"
+        // };
+
+        const symbolHexColors = {{ symbol_hex_colors|safe }}
+        const sectorHexColors = {{ sector_hex_colors|safe }}
+
         const symboPortfolioData = document.querySelector('.symbol-portfolio');
 
         const strategyAllocationData = {{ strategy_allocation_data|safe }}; // Pass JSON data to JavaScript
@@ -305,15 +319,22 @@
         const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
         
         strategyAllocationData.forEach((strategyData, index) => {
-            const {strategy_performances, strategy_stats_descriptives, strategy_stats_moments, strategy_stats_risk_measures, strategy_stats_ratios, strategy_purchase_allocations, strategy_current_allocations, strategy_sector_purchase_allocations, strategy_sector_current_allocations } = strategyData;
+            const {strategy_performances, strategy_stats_descriptives, strategy_stats_moments, strategy_stats_risk_measures, strategy_stats_ratios, sl_main_stats_data, sl_descriptive_stats_data, sl_moments_stats_data, sl_risk_measure_stats_data, sl_ratio_stats_data, strategy_purchase_allocations, strategy_current_allocations, strategy_sector_purchase_allocations, strategy_sector_current_allocations } = strategyData;
 
             const strategies = Object.keys(strategy_purchase_allocations);
+
+            const slMainStatsData = sl_main_stats_data;
+            const slDescriptiveStatsData = sl_descriptive_stats_data;
+            const slMomentStatsData = sl_moments_stats_data;
+            const slRiskMeasureStatsData = sl_risk_measure_stats_data;
+            const slRatioStatsData = sl_ratio_stats_data;
 
             strategies.forEach((strategy) => {
                 const purchaseAllocations = strategy_purchase_allocations[strategy];
                 const currentAllocations = strategy_current_allocations[strategy];
                 const sectorAllocations = strategy_sector_purchase_allocations[strategy];
                 const sectorCurrentAllocations = strategy_sector_current_allocations[strategy];
+                
                 
                 // Create link list
                 const linkTag = document.createElement('a');
@@ -352,6 +373,7 @@
 
                 const sectionNavDiv = document.createElement('div')
                 sectionNavDiv.style.display = 'flex';
+                sectionNavDiv.style.flexWrap = 'wrap';
                 sectionNavDiv.style.gap = '10px';
                 sectionNavDiv.style.gridColumnStart = '1';
                 sectionNavDiv.style.gridColumnEnd = '3';
@@ -370,7 +392,7 @@
                 // Prepare stock data
                 const stockData = purchaseAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the stock chart
-                createPieChart(parentDiv, strategy, `${index}-stock`, "Training Allocation: Stocks", stockData, '');
+                createPieChart(parentDiv, strategy, `${index}-stock`, "Training Allocation: Stocks", stockData, 'stocks', '');
                 const strategySummaryDataRow = document.createElement('div');
                 strategySummaryDataRow.setAttribute('id', `${strategy}-summary`);
                 strategySummaryDataRow.style.display = 'flex';
@@ -382,7 +404,7 @@
                 strategySummaryDataRow.style.cursor = 'pointer';
                 strategySummaryDataRow.style.position = 'relative';
                 strategySummaryDataContainer.append(strategySummaryDataRow);
-                createPieChart(strategySummaryDataRow, formatSentence(strategy), `${index}-stock-summary`, "", stockData, 'fixed');
+                createPieChart(strategySummaryDataRow, formatSentence(strategy), `${index}-stock-summary`, "", stockData, 'stocks', 'fixed');
 
                 const strategyDetailLink = document.createElement('a');
                 strategyDetailLink.setAttribute('data-id', strategy);
@@ -396,8 +418,9 @@
                 // Prepare sector data
                 const sectorData = sectorAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the sector chart
-                createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation: Sectors", sectorData, '');
+                createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation: Sectors", sectorData, 'sectors', '');
 
+                addDividerLine(parentDiv);
 
                 // Create and append the tables
                 let tableId = `${strategy}-${index}-performance`;
@@ -426,6 +449,34 @@
                 const statsRatioTable = createPerformanceTable('PL Risk: Ratio Stats', tableId, strategy_stats_ratios[strategy]);
                 parentDiv.appendChild(statsRatioTable);
                 createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Ratio Stats');
+
+                addDividerLine(parentDiv);
+
+                tableId = `${strategy}-${index}-sl-main-stats`;
+                const slMainStatsable = createSecurityTable('SL Risk: Main Stats', tableId, slMainStatsData[strategy]);
+                parentDiv.appendChild(slMainStatsable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Main Stats');
+
+                tableId = `${strategy}-${index}-sl-descriptive-stats`;
+                const slDescriptiveStatsTable = createSecurityTable('SL Risk: Descriptive Stats', tableId, slDescriptiveStatsData[strategy]);
+                parentDiv.appendChild(slDescriptiveStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Descriptive Stats');
+
+                tableId = `${strategy}-${index}-sl-moment-stats`;
+                const slMomentStatsTable = createSecurityTable('SL Risk: Moment Stats', tableId, slMomentStatsData[strategy]);
+                parentDiv.appendChild(slMomentStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Moment Stats');
+
+                tableId = `${strategy}-${index}-sl-risk-measure-stats`;
+                const slMeasureStatsTable = createSecurityTable('SL Risk: Measure Stats', tableId, slRiskMeasureStatsData[strategy]);
+                parentDiv.appendChild(slMeasureStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Measure Stats');
+
+                tableId = `${strategy}-${index}-sl-ratio-stats`;
+                const slRatioStatsTable = createSecurityTable('SL Risk: Ratio Stats', tableId, slRatioStatsData[strategy]);
+                parentDiv.appendChild(slRatioStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Ratio Stats');
+
 
                 // Symbol Data
                 const clonedPortfolioData = symboPortfolioData.cloneNode(true); 
@@ -484,7 +535,7 @@
                 // Prepare current stock data
                 const currentStockData = currentAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the stock chart
-                createPieChart(testingDataInnerContainer, strategy, `${index}-current-stock`, "Testing Allocation:Stocks", currentStockData, '');
+                createPieChart(testingDataInnerContainer, strategy, `${index}-current-stock`, "Testing Allocation:Stocks", currentStockData, 'stocks', '');
                 
                 const testingDataLink = document.createElement('a');
                 testingDataLink.href = `#chart-sector-${strategy}-${index}-current-stock`;
@@ -495,7 +546,7 @@
                 // Prepare sector data
                 const sectorCurrentData = sectorCurrentAllocations.map(item => ({ value: item.value, name: item.name }));
                 // Use a unique identifier for the sector chart
-                createPieChart(testingDataInnerContainer, strategy, `${index}-current-sector`, "Testing Allocation:Sectors", sectorCurrentData, '');
+                createPieChart(testingDataInnerContainer, strategy, `${index}-current-sector`, "Testing Allocation:Sectors", sectorCurrentData, 'sectors', '');
 
 
 
@@ -581,19 +632,106 @@
             
             return container;
         }
+        
+        function createSecurityTable(title, tableId, securityData) {
+            // Create container div and set its id
+            const container = document.createElement('div');
+            container.setAttribute('id', tableId);
 
-        function createPieChart(parentDiv, strategy, index, title, data, chartWidth) {
-            let widthValue = chartWidth == 'fixed' ? '400px' : '100%';
+            const titleElement = document.createElement('h3');
+            titleElement.innerHTML = `<strong>${formatStrategyName(title)}</strong>`; // Set the title text
+            container.appendChild(titleElement);
+
+            const responsiveContainer = document.createElement('div');
+            responsiveContainer.classList = 'table-responsive';
+
+            // Create the table element
+            const table = document.createElement('table');
+            table.classList.add('table', 'table-striped'); // Add table styling
+            table.style.width = '100%';
+            table.style.marginBottom = '20px'
+
+
+            // Check if securityData is a valid object with data
+            if (securityData && typeof securityData === 'object' && Object.keys(securityData).length > 0) {
+                
+                // Variable to track if the table header is created
+                let headersCreated = false;
+                let headerRow;
+
+                // Loop through each row of securityData
+                for (const [index, obj] of Object.entries(securityData)) {
+                    
+                    // Ensure the obj is valid before processing
+                    if (typeof obj === 'object' && obj !== null) {
+                        
+                        // If headers are not created yet, create the header row
+                        if (!headersCreated) {
+                            headerRow = document.createElement('tr');
+                            for (const key of Object.keys(obj)) {
+                                const th = document.createElement('th');
+                                th.innerText = formatSentence(key);  // Set header text to key name
+                                th.style.border = '1px solid #ddd';
+                                th.style.padding = '8px';
+                                th.style.textAlign = 'left';
+                                headerRow.appendChild(th);
+                            }
+                            table.appendChild(headerRow); // Append the header row to the table
+                            headersCreated = true; // Set flag to true
+                        }
+
+                        // Create the data row
+                        const tblRow = document.createElement('tr');
+                        
+                        // Loop through each key-value pair in the current row object
+                        for (const [key, value] of Object.entries(obj)) {
+                            const td = document.createElement('td'); // Create a new cell
+                            td.style.border = '1px solid #ddd';
+                            td.style.border = '1px solid #ddd';
+                            td.style.padding = '8px';
+                            td.style.padding = '8px';
+                            td.innerText = value !== undefined ? value : '-';  // If value is undefined, show '-'
+                            tblRow.appendChild(td); // Append the cell to the row
+                        }
+
+                        // Append the row to the table
+                        table.appendChild(tblRow);
+                    } else {
+                        console.error(`Invalid data at row ${index}:`, obj);
+                    }
+                }
+
+            } else {
+                console.error("No valid data found to populate the table");
+            }
+
+            // Append the table to the container
+            responsiveContainer.appendChild(table);
+            container.appendChild(responsiveContainer);
+
+            // Append the container to the document body (or another container)
+            return container;
+        }
+
+        function createPieChart(parentDiv, strategy, index, title, data, dataFor, chartWidth) {
+            let widthValue = chartWidth == 'fixed' ? '450px' : '100%';
             // Create child div for the sector allocation chart
             const sectorChartDiv = document.createElement('div');
             sectorChartDiv.id = `chart-sector-${strategy}-${index}`;
             sectorChartDiv.style.width = widthValue;
-            sectorChartDiv.style.height = '500px';
+            sectorChartDiv.style.height = '350px';
             parentDiv.appendChild(sectorChartDiv);
             
 
             // Create the sector allocation chart using the provided pie chart option
             const sectorChart = echarts.init(document.getElementById(sectorChartDiv.id));
+            let ColorArray = [];
+            if(dataFor == "stocks") {
+                ColorArray = data.map(item => symbolHexColors[item.name] || '#ccc');
+            } else {
+                ColorArray = data.map(item => sectorHexColors[item.name] || '#ccc');
+            }
+            
             const sectorOption = {
                 title: {
                     text: title,
@@ -629,7 +767,8 @@
                             show: false
                         },
                     },
-                    data: data
+                    data: data,
+                    color: ColorArray
                 }]
             };
             sectorChart.setOption(sectorOption);
@@ -1037,7 +1176,18 @@
             });
         }
 
-       
+        function addDividerLine(parentDiv) {
+            const dividerLine = document.createElement('div');
+            dividerLine.style.maxWidth = '80%';
+            dividerLine.style.width = '100%';
+            dividerLine.style.height = '2px';
+            dividerLine.style.margin = '40px auto';
+            dividerLine.style.backgroundColor = '#e8eff9';
+            dividerLine.style.gridColumnStart = 1;
+            dividerLine.style.gridColumnEnd = 3;
+
+            parentDiv.append(dividerLine);
+        }
     </script>
 
 {% endblock content %}

@@ -736,6 +736,44 @@ def transform_metric(metric):
     transformed_metric = metric.replace('_', ' ').title()
     return re.sub(r'\bAnnual\s*', '', transformed_metric)
 
+float_metrics = {
+    'annual_sharpe_ratio', 'annual_sortino_ratio', 'beta', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
+}
+# Reusable function to format the value based on the metric type
+def format_table_value(metric_name, value):
+    if metric_name in float_metrics:
+        if 'e-' in str(value):
+            base, exponent = str(value).split('e-')
+            
+            return f"{float(base):.2f}e-{exponent}"
+        else:
+            return f"{value:.2f}"
+    else:
+        return f"{(value * 100):.2f}%"
+
+
+
+# SL data processing function
+def process_stats_data(strategy_symbol_portfolios, stat_type_key, sl_stats_data):
+
+    for strategy, strategy_data in strategy_symbol_portfolios.items():
+        if stat_type_key in strategy_data:
+            if strategy not in sl_stats_data:
+                sl_stats_data[strategy] = []
+            
+            # Loop through each statistic within the strategy
+            for stat_name, metrics in strategy_data[stat_type_key].items():
+                metric_entry = {
+                    'metric': transform_metric(stat_name)  # Transform metric name as needed
+                }
+                
+                # Add symbol-value pairs to the entry and format the value
+                for symbol, value in metrics.items():
+                    metric_entry[symbol] = format_table_value(stat_name, value)
+                
+                sl_stats_data[strategy].append(metric_entry)
+
+
 def api_data_view_4(request):
 
     if request.method == 'POST':
@@ -896,14 +934,35 @@ def api_data_view_5(request):
         strategy_stats_risk_measures = model_output.get('strategy_results', {}).get('strategy_stats_risk_measures', {})
         strategy_stats_ratios = model_output.get('strategy_results', {}).get('strategy_stats_ratios', {})
 
+        strategy_symbol_portfolios = model_output.get('strategy_results', {}).get('strategy_symbol_portfolios', {})
+
+
+        sl_main_stats_data = {}
+        sl_descriptive_stats_data = {}
+        sl_moments_stats_data = {}
+        sl_risk_measure_stats_data = {}
+        sl_ratio_stats_data = {}
+
+        # Process the 'main' stats
+        process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_main', sl_main_stats_data)
+        # Process the 'descriptive' stats
+        process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_descriptive', sl_descriptive_stats_data)
+        # Process the 'moment' stats
+        process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_moments', sl_moments_stats_data)
+        # Process the 'moment' stats
+        process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_risk_measures', sl_risk_measure_stats_data)
+        # Process the 'moment' stats
+        process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_ratios', sl_ratio_stats_data)
+
+
+
         formatted_allocations = {}
         for strategy, allocations in strategy_purchase_allocations.items():
             # Prepare the allocations as a JSON serializable format
             formatted_allocations[strategy] = [
-                {"value": round(allocation  * 100, 2), "name": stock}  
+                {"value": round(allocation  * 100, 2), "name": stock }  
                 for stock, allocation in allocations.items()
-            ]
-        
+            ] 
         
         formatted_strategy_current_allocations = {} 
         for strategy, allocations in strategy_current_allocations.items():
@@ -929,6 +988,10 @@ def api_data_view_5(request):
                 for stock, allocation in allocations.items()
             ]
 
+        
+        symbol_hex_colors = model_output.get('hex_colors', {}).get('symbol_hex_colors', {})
+        sector_hex_colors = model_output.get('hex_colors', {}).get('sector_hex_colors', {})
+
         strategy_allocation_data.append({
             'strategy_performances': strategy_performances,
             'strategy_stats_descriptives': strategy_stats_descriptives,
@@ -938,7 +1001,12 @@ def api_data_view_5(request):
             'strategy_purchase_allocations': formatted_allocations,
             'strategy_current_allocations': formatted_strategy_current_allocations,
             'strategy_sector_purchase_allocations': formatted_sector_allocations,
-            'strategy_sector_current_allocations': formatted_strategy_sector_current_allocations
+            'strategy_sector_current_allocations': formatted_strategy_sector_current_allocations,
+            'sl_main_stats_data': sl_main_stats_data,
+            'sl_descriptive_stats_data': sl_descriptive_stats_data,
+            'sl_moments_stats_data': sl_moments_stats_data,
+            'sl_risk_measure_stats_data': sl_risk_measure_stats_data,
+            'sl_ratio_stats_data': sl_ratio_stats_data,
         })
 
         covariance_data = model_output.get('covariance', {})
@@ -961,9 +1029,7 @@ def api_data_view_5(request):
 
         symbol_portfolios = model_output.get('symbol_portfolios')
         
-        float_metrics = {
-            'annual_sharpe_ratio', 'annual_sortino_ratio', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
-        }
+        
 
         # List all the symbols
         all_symbols = set()
@@ -986,16 +1052,8 @@ def api_data_view_5(request):
                 row = {
                     "key": transformed_key,
                     "metric": transformed_metric,
-                    **{symbol: (
-                            # Check if the metric is a float metric and format as decimal
-                            "{:.2f}".format(metrics[metric].get(symbol)) 
-                            if metric in float_metrics and isinstance(metrics[metric].get(symbol), (int, float))
-                            else
-                            # Otherwise, format as percentage
-                            "{:.2f}%".format(metrics[metric].get(symbol) * 100) 
-                            if isinstance(metrics[metric].get(symbol), (int, float))
-                            else "N/A"
-                        )
+                    **{
+                        symbol: format_table_value(metric, metrics[metric].get(symbol))
                         for symbol in all_symbols
                     }
                 }
@@ -1065,6 +1123,8 @@ def api_data_view_5(request):
             'correlation_heatmap_data': correlation_heatmap_data,
             'symbol_portfolios_html_table': symbol_portfolios_html_table,
             'strategy_summaries': structured_strategies,
+            'symbol_hex_colors': symbol_hex_colors,
+            'sector_hex_colors': sector_hex_colors,
             'frontier_runs_x': frontier_runs_x,
             'frontier_runs_y': frontier_runs_y,
             'frontier_positions_random_x': frontier_positions_random_x,

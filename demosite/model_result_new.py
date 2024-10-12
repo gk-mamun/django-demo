@@ -56,6 +56,31 @@ model_output_data = {
     "error": False,
     "messages": None,
     "stacktraces": None,
+    "hex_colors": { #Colors: Hex
+        "symbol_hex_colors": {
+            "AAPL": "#8dd3c7",
+            "CSCO": "#8dd3c7",
+            "NFLX": "#bc80bd",
+            "AMD": "#8dd3c7",
+            "CVX": "#ccebc5",
+            "PFE": "#fb8072",
+            "MMM": "#ffffb3",
+            "MSFT": "#8dd3c7"
+        },
+        "sector_hex_colors": {
+            "Technology": "#8dd3c7",
+            "Industrials": "#ffffb3",
+            "Financial Services": "#bebada",
+            "Healthcare": "#fb8072",
+            "Consumer Cyclical": "#80b1d3",
+            "Consumer Defensive": "#b3de69",
+            "Utilities": "#fccde5",
+            "Real Estate": "#d9d9d9",
+            "Communication Services": "#bc80bd",
+            "Energy": "#ccebc5",
+            "Basic Materials": "#ffed6f"
+        }
+    },
     "covariance": {
         "AAPL": {
             "AAPL": 1.8090892811444241,
