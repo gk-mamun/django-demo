@@ -200,14 +200,10 @@
                                         <tr>
                                             <td class="p-2">{{ row.key }}</td>
                                             <td class="p-2">{{ row.metric }}</td>
-                                            <td class="p-2">{{ row.AAPL|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.CSCO|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.NFLX|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.AMD|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.CVX|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.PFE|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.MMM|default:"N/A" }}</td>
-                                            <td class="p-2">{{ row.MSFT|default:"N/A" }}</td>
+                                            
+                                            {% for symbol in stock_symbols %}
+                                                <td class="p-2">{{ row.symbol|default:"N/A" }}</td>
+                                            {% endfor %}
                                         </tr>
                                     {% endfor %}
                                 </tbody>
