@@ -935,14 +935,23 @@ def api_data_view_5(request):
         strategy_stats_ratios = model_output.get('strategy_results', {}).get('strategy_stats_ratios', {})
 
         strategy_symbol_portfolios = model_output.get('strategy_results', {}).get('strategy_symbol_portfolios', {})
+        strategy_symbol_contributions = model_output.get('strategy_results', {}).get('strategy_symbol_contributions', {})
 
 
+        # Security Level Risk
         sl_main_stats_data = {}
         sl_descriptive_stats_data = {}
         sl_moments_stats_data = {}
         sl_risk_measure_stats_data = {}
         sl_ratio_stats_data = {}
 
+        # Security-contribution Level
+        cl_descriptive_stats_data = {}
+        cl_moment_stats_data = {}
+        cl_risk_measure_stats_data = {}
+        cl_ratio_stats_data = {}
+
+        # Security Level Risk 
         # Process the 'main' stats
         process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_main', sl_main_stats_data)
         # Process the 'descriptive' stats
@@ -953,6 +962,15 @@ def api_data_view_5(request):
         process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_risk_measures', sl_risk_measure_stats_data)
         # Process the 'moment' stats
         process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_ratios', sl_ratio_stats_data)
+
+        # Process the 'descriptive' stats
+        process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_descriptive', cl_descriptive_stats_data)
+        # Process the 'descriptive' stats
+        process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_moments', cl_moment_stats_data)
+        # Process the 'descriptive' stats
+        process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_risk_measures', cl_risk_measure_stats_data)
+        # Process the 'descriptive' stats
+        process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_ratios', cl_ratio_stats_data)
 
 
 
@@ -1007,6 +1025,10 @@ def api_data_view_5(request):
             'sl_moments_stats_data': sl_moments_stats_data,
             'sl_risk_measure_stats_data': sl_risk_measure_stats_data,
             'sl_ratio_stats_data': sl_ratio_stats_data,
+            'cl_descriptive_stats_data': cl_descriptive_stats_data,
+            'cl_moment_stats_data': cl_moment_stats_data,
+            'cl_risk_measure_stats_data': cl_risk_measure_stats_data,
+            'cl_ratio_stats_data': cl_ratio_stats_data,
         })
 
         covariance_data = model_output.get('covariance', {})

@@ -319,15 +319,21 @@
         const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
         
         strategyAllocationData.forEach((strategyData, index) => {
-            const {strategy_performances, strategy_stats_descriptives, strategy_stats_moments, strategy_stats_risk_measures, strategy_stats_ratios, sl_main_stats_data, sl_descriptive_stats_data, sl_moments_stats_data, sl_risk_measure_stats_data, sl_ratio_stats_data, strategy_purchase_allocations, strategy_current_allocations, strategy_sector_purchase_allocations, strategy_sector_current_allocations } = strategyData;
+            const {strategy_performances, strategy_stats_descriptives, strategy_stats_moments, strategy_stats_risk_measures, strategy_stats_ratios, sl_main_stats_data, sl_descriptive_stats_data, sl_moments_stats_data, sl_risk_measure_stats_data, sl_ratio_stats_data, cl_descriptive_stats_data, cl_moment_stats_data,  cl_risk_measure_stats_data, cl_ratio_stats_data, strategy_purchase_allocations, strategy_current_allocations, strategy_sector_purchase_allocations, strategy_sector_current_allocations } = strategyData;
 
             const strategies = Object.keys(strategy_purchase_allocations);
 
+            // Security Level risk data
             const slMainStatsData = sl_main_stats_data;
             const slDescriptiveStatsData = sl_descriptive_stats_data;
             const slMomentStatsData = sl_moments_stats_data;
             const slRiskMeasureStatsData = sl_risk_measure_stats_data;
             const slRatioStatsData = sl_ratio_stats_data;
+            // Security Contribution
+            const clDescriptiveStatsData = cl_descriptive_stats_data;
+            const clMomentStatsData = cl_moment_stats_data;
+            const clRiskMeasureStatsData = cl_risk_measure_stats_data;
+            const clRatioStatsData = cl_ratio_stats_data;
 
             strategies.forEach((strategy) => {
                 const purchaseAllocations = strategy_purchase_allocations[strategy];
@@ -449,6 +455,28 @@
                 const statsRatioTable = createPerformanceTable('PL Risk: Ratio Stats', tableId, strategy_stats_ratios[strategy]);
                 parentDiv.appendChild(statsRatioTable);
                 createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Ratio Stats');
+
+                addDividerLine(parentDiv);
+                // Security contribution level tables
+                tableId = `${strategy}-${index}-cl-descriptive-stats`;
+                const clDescriptiveStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clDescriptiveStatsData[strategy]);
+                parentDiv.appendChild(clDescriptiveStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Descriptive Stats');
+
+                tableId = `${strategy}-${index}-cl-moment-stats`;
+                const clMomentStatsTable = createSecurityTable('CL Risk: Moment Stats', tableId, clMomentStatsData[strategy]);
+                parentDiv.appendChild(clMomentStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Moment Stats');
+
+                tableId = `${strategy}-${index}-cl-measure-stats`;
+                const clRiskMeasureStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRiskMeasureStatsData[strategy]);
+                parentDiv.appendChild(clRiskMeasureStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Measure Stats');
+
+                tableId = `${strategy}-${index}-cl-ratio-stats`;
+                const clRatioStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRatioStatsData[strategy]);
+                parentDiv.appendChild(clRatioStatsTable);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Ratio Stats');
 
                 addDividerLine(parentDiv);
 
