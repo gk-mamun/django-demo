@@ -565,7 +565,7 @@ def process_form(rq):
             "amin": amins[i],
             "amax": amaxs[i],
             "sector": sectors[i],
-            "marketcap": marketcaps[i] 
+            "marketcap": marketcaps[i].replace(',', '')
         })
     
     
@@ -740,16 +740,42 @@ float_metrics = {
     'annual_sharpe_ratio', 'annual_sortino_ratio', 'beta', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
 }
 # Reusable function to format the value based on the metric type
+# def format_table_value(metric_name, value):
+#     if metric_name in float_metrics:
+#         if 'e-' in str(value):
+#             base, exponent = str(value).split('e-')
+            
+#             return f"{float(base):.2f}e-{exponent}"
+#         else:
+#             return f"{value:.2f}"
+#     else:
+#         return f"{(value * 100):.2f}%"
+
 def format_table_value(metric_name, value):
+    # Format the value based on the metric name
     if metric_name in float_metrics:
         if 'e-' in str(value):
             base, exponent = str(value).split('e-')
-            
-            return f"{float(base):.2f}e-{exponent}"
+            formatted_value = f"{float(base):.2f}e-{exponent}"
         else:
-            return f"{value:.2f}"
+            formatted_value = f"{value:.2f}"
+        
+        # Create the HTML structure
+        html_output = (
+            f'<span class="formatted-value">{formatted_value}</span>'
+            f'<span class="original-value">{value}</span>'
+        )
     else:
-        return f"{(value * 100):.2f}%"
+        formatted_value = f"{(value * 100):.2f}%"
+        
+        # Create the HTML structure for percentage
+        html_output = (
+            f'<span class="formatted-value">{formatted_value}</span>'
+            f'<span class="original-value">{value}</span>'
+        )
+
+    return html_output
+
 
 
 
@@ -903,7 +929,7 @@ def api_data_view_5(request):
     if request.method == 'POST':
         form_data = process_form(request)
         # Form data
-        # print("Form Data: ", form_data.get(ticker))
+        print("Form Data: ", form_data)
    
 
         start_time = time.perf_counter()
@@ -933,7 +959,6 @@ def api_data_view_5(request):
         strategy_stats_moments = model_output.get('strategy_results', {}).get('strategy_stats_moments', {})
         strategy_stats_risk_measures = model_output.get('strategy_results', {}).get('strategy_stats_risk_measures', {})
         strategy_stats_ratios = model_output.get('strategy_results', {}).get('strategy_stats_ratios', {})
-
         strategy_symbol_portfolios = model_output.get('strategy_results', {}).get('strategy_symbol_portfolios', {})
         strategy_symbol_contributions = model_output.get('strategy_results', {}).get('strategy_symbol_contributions', {})
 
@@ -951,7 +976,10 @@ def api_data_view_5(request):
         cl_risk_measure_stats_data = {}
         cl_ratio_stats_data = {}
 
-        # Security Level Risk 
+        # Testing Assets
+        testing_descriptive_stats_data = {}
+
+        # Security Level Risk  Assets
         # Process the 'main' stats
         process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_main', sl_main_stats_data)
         # Process the 'descriptive' stats
@@ -963,6 +991,7 @@ def api_data_view_5(request):
         # Process the 'moment' stats
         process_stats_data(strategy_symbol_portfolios, 'strategy_symbol_stats_ratios', sl_ratio_stats_data)
 
+        # Security-Contribution Assets
         # Process the 'descriptive' stats
         process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_descriptive', cl_descriptive_stats_data)
         # Process the 'descriptive' stats
@@ -971,6 +1000,8 @@ def api_data_view_5(request):
         process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_risk_measures', cl_risk_measure_stats_data)
         # Process the 'descriptive' stats
         process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_ratios', cl_ratio_stats_data)
+
+        # Testing Assets
 
 
 

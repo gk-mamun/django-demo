@@ -37,7 +37,16 @@
     color: var(--primary-color);
 }
 
-.sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
+.sidebar-light .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link {
     background: var(--primary-color);
+    color: #fff;
+}
+
+.sidebar-light .sidebar .nav .nav-item:hover .nav-link i.menu-icon {
+    color: #fff;
+}
+
+.bg-branding {
+    background-color: var(--primary-color);
     color: #fff;
 }

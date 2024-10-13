@@ -55,10 +55,10 @@
         }
 
         .page-loader {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed;
+            left: 230px;
+            top: 60px;
+            width: calc(100% - 230px);
             height: 100%;
             background-color: #fff;
             z-index: 9999;
@@ -68,6 +68,46 @@
 
         .page-loader img {
             width: 200px;
+        }
+
+        .table-responsive {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .modal-tbls {
+            display: none;
+        }
+
+        .modal-tbl-show {
+            display: block;
+        }
+
+        .table-value-cell {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .original-value {
+            display: none;
+            position: absolute;
+            left: 50px;
+            top: 2px;
+            background-color: #fff;
+            z-index: 9;
+            padding: 5px;
+            border: 1px solid #000;
+            border-radius: 3px;
+        }
+
+        .table-value-cell:hover .original-value {
+            display: block;
+            
+        }
+
+        #strategy-summary-data .original-value {
+            right: 0;
+            left: auto;
         }
         
     </style>
@@ -341,7 +381,7 @@
                 const sectorAllocations = strategy_sector_purchase_allocations[strategy];
                 const sectorCurrentAllocations = strategy_sector_current_allocations[strategy];
                 
-                
+
                 // Create link list
                 const linkTag = document.createElement('a');
                 linkTag.href = `#${strategy}-summary`;
@@ -378,6 +418,7 @@
                 parentDiv.append(titleDiv);
 
                 const sectionNavDiv = document.createElement('div')
+                sectionNavDiv.classList.add('modal-section-nav');
                 sectionNavDiv.style.display = 'flex';
                 sectionNavDiv.style.flexWrap = 'wrap';
                 sectionNavDiv.style.gap = '10px';
@@ -430,95 +471,80 @@
 
                 // Create and append the tables
                 let tableId = `${strategy}-${index}-performance`;
-                const performanceTable = createPerformanceTable('Strategy Performance', tableId, strategy_performances[strategy]);
+                const performanceTable = createPerformanceTable('Strategy Performance', tableId, strategy_performances[strategy], 'modal-tbls');
                 parentDiv.appendChild(performanceTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Strategy Performance');
-                const performanceTableSummary = createPerformanceTable(strategy.replace('_', ' '), tableId+"-summary", strategy_performances[strategy]);
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'Strategy Performance', 'tbl-toggle-btn');
+                const performanceTableSummary = createPerformanceTable(strategy.replace('_', ' '), tableId+"-summary", strategy_performances[strategy], 'tbl');
                 strategySummaryDataRow.append(performanceTableSummary);
 
                 tableId = `${strategy}-${index}-descriptive`;
-                const statsDescriptiveTable = createPerformanceTable('PL Risk: Descriptive Stats', tableId, strategy_stats_descriptives[strategy]);
+                const statsDescriptiveTable = createPerformanceTable('PL Risk: Descriptive Stats', tableId, strategy_stats_descriptives[strategy], 'modal-tbls');
                 parentDiv.appendChild(statsDescriptiveTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Descriptive Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Descriptive Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-stats-moment`;
-                const statsMomentTable = createPerformanceTable('PL Risk: Moment Stats', tableId, strategy_stats_moments[strategy]);
+                const statsMomentTable = createPerformanceTable('PL Risk: Moment Stats', tableId, strategy_stats_moments[strategy], 'modal-tbls');
                 parentDiv.appendChild(statsMomentTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Moment Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Moment Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-risk-measures`;
-                const statsMeasureTable = createPerformanceTable('PL Risk: Measures', tableId, strategy_stats_risk_measures[strategy]);
+                const statsMeasureTable = createPerformanceTable('PL Risk: Measures', tableId, strategy_stats_risk_measures[strategy], 'modal-tbls');
                 parentDiv.appendChild(statsMeasureTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Measures');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Measures', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-stats-ratio`;
-                const statsRatioTable = createPerformanceTable('PL Risk: Ratio Stats', tableId, strategy_stats_ratios[strategy]);
+                const statsRatioTable = createPerformanceTable('PL Risk: Ratio Stats', tableId, strategy_stats_ratios[strategy], 'modal-tbls');
                 parentDiv.appendChild(statsRatioTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Ratio Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'PL Risk: Ratio Stats', 'tbl-toggle-btn');
 
-                addDividerLine(parentDiv);
+
                 // Security contribution level tables
                 tableId = `${strategy}-${index}-cl-descriptive-stats`;
-                const clDescriptiveStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clDescriptiveStatsData[strategy]);
+                const clDescriptiveStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clDescriptiveStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(clDescriptiveStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Descriptive Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Descriptive Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-cl-moment-stats`;
-                const clMomentStatsTable = createSecurityTable('CL Risk: Moment Stats', tableId, clMomentStatsData[strategy]);
+                const clMomentStatsTable = createSecurityTable('CL Risk: Moment Stats', tableId, clMomentStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(clMomentStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Moment Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Moment Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-cl-measure-stats`;
-                const clRiskMeasureStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRiskMeasureStatsData[strategy]);
+                const clRiskMeasureStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRiskMeasureStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(clRiskMeasureStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Measure Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Measure Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-cl-ratio-stats`;
-                const clRatioStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRatioStatsData[strategy]);
+                const clRatioStatsTable = createSecurityTable('CL Risk: Descriptive Stats', tableId, clRatioStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(clRatioStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Ratio Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'CL Risk: Ratio Stats', 'tbl-toggle-btn');
 
-                addDividerLine(parentDiv);
 
                 tableId = `${strategy}-${index}-sl-main-stats`;
-                const slMainStatsable = createSecurityTable('SL Risk: Main Stats', tableId, slMainStatsData[strategy]);
+                const slMainStatsable = createSecurityTable('SL Risk: Main Stats', tableId, slMainStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(slMainStatsable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Main Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Main Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-sl-descriptive-stats`;
-                const slDescriptiveStatsTable = createSecurityTable('SL Risk: Descriptive Stats', tableId, slDescriptiveStatsData[strategy]);
+                const slDescriptiveStatsTable = createSecurityTable('SL Risk: Descriptive Stats', tableId, slDescriptiveStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(slDescriptiveStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Descriptive Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Descriptive Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-sl-moment-stats`;
-                const slMomentStatsTable = createSecurityTable('SL Risk: Moment Stats', tableId, slMomentStatsData[strategy]);
+                const slMomentStatsTable = createSecurityTable('SL Risk: Moment Stats', tableId, slMomentStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(slMomentStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Moment Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Moment Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-sl-risk-measure-stats`;
-                const slMeasureStatsTable = createSecurityTable('SL Risk: Measure Stats', tableId, slRiskMeasureStatsData[strategy]);
+                const slMeasureStatsTable = createSecurityTable('SL Risk: Measure Stats', tableId, slRiskMeasureStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(slMeasureStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Measure Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Measure Stats', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-sl-ratio-stats`;
-                const slRatioStatsTable = createSecurityTable('SL Risk: Ratio Stats', tableId, slRatioStatsData[strategy]);
+                const slRatioStatsTable = createSecurityTable('SL Risk: Ratio Stats', tableId, slRatioStatsData[strategy], 'modal-tbls');
                 parentDiv.appendChild(slRatioStatsTable);
-                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Ratio Stats');
+                createSectionLinkAndAppend(tableId, sectionNavDiv, 'SL Risk: Ratio Stats', 'tbl-toggle-btn');
 
-
-                // Symbol Data
-                const clonedPortfolioData = symboPortfolioData.cloneNode(true); 
-                clonedPortfolioData.setAttribute('id', `${strategy}-${index}-symbol-portfolio`);
-                clonedPortfolioData.style.gridColumnStart = 1;
-                clonedPortfolioData.style.gridColumnEnd = 3;
-                console.log(clonedPortfolioData);
-                parentDiv.appendChild(clonedPortfolioData);
-                // Symbol Data Link
-                const sectionTopSymbolLink = document.createElement('a');
-                sectionTopSymbolLink.href = `#${strategy}-${index}-symbol-portfolio`;
-                sectionTopSymbolLink.innerHTML = 'SL Risk: Portfolio';
-                sectionTopSymbolLink.classList = 'btn btn-outline-info btn-fw p-2';
-                sectionNavDiv.append(sectionTopSymbolLink);
 
                 // TESTING DATA - ACCESS RESTRICTED
                 const testingDataContainer = document.createElement('div');
@@ -585,12 +611,11 @@
 
 
         // Function to create a table for strategy performances
-        function createPerformanceTable(title, tableId, performanceData) {
+        function createPerformanceTable(title, tableId, performanceData, tblClass) {
             const container = document.createElement('div');
-            if(title == 'Strategy Performance') {
-                container.style.gridColumnStart = 1;
-                container.style.gridColumnEnd = 3;
-            }
+            container.classList.add(tblClass)
+            container.style.gridColumnStart = 1;
+            container.style.gridColumnEnd = 3;
             container.setAttribute('id', tableId);
     
             // Create and append the title
@@ -617,9 +642,6 @@
             });
             table.appendChild(headerRow);
 
-            function formatPercentage(value) {
-                return typeof value === 'number' ? (value * 100).toFixed(2) + '%' : value;
-            }
 
             // Populate the table with performance data
             for (const [metric, value] of Object.entries(performanceData)) {
@@ -627,6 +649,7 @@
                 const tdMetric = document.createElement('td');
                 tdMetric.style.width = '70%';
                 const tdValue = document.createElement('td');
+                tdValue.classList.add('table-value-cell');
 
                 tdMetric.innerText = formatStrategyName(metric);
 
@@ -634,12 +657,12 @@
                 if (Array.isArray(value)) {
                     const firstItem = value[0];
                     tdMetric.innerText += ` (${firstItem.index.replace('^', '')})`;
-                    tdValue.innerText = formatPercentage(firstItem.value);
+                    tdValue.innerHTML = formatTableValue(firstItem.value);
                 } else if (floatMetrics.has(metric)) {
-                    tdValue.innerText = value.toFixed(2) || '-';
+                    tdValue.innerHTML = formatTableValue(value) || '-';
                 }
                 else {
-                    tdValue.innerText = formatPercentage(value) || '-';
+                    tdValue.innerHTML = formatTableValue(value) || '-';
                 }
                 tdMetric.style.border = '1px solid #ddd';
                 tdValue.style.border = '1px solid #ddd';
@@ -661,9 +684,12 @@
             return container;
         }
         
-        function createSecurityTable(title, tableId, securityData) {
+        function createSecurityTable(title, tableId, securityData, tblClass) {
             // Create container div and set its id
             const container = document.createElement('div');
+            container.style.gridColumnStart = 1;
+            container.style.gridColumnEnd = 3;
+            container.classList.add(tblClass);
             container.setAttribute('id', tableId);
 
             const titleElement = document.createElement('h3');
@@ -714,11 +740,12 @@
                         // Loop through each key-value pair in the current row object
                         for (const [key, value] of Object.entries(obj)) {
                             const td = document.createElement('td'); // Create a new cell
+                            td.classList.add('table-value-cell');
                             td.style.border = '1px solid #ddd';
                             td.style.border = '1px solid #ddd';
                             td.style.padding = '8px';
                             td.style.padding = '8px';
-                            td.innerText = value !== undefined ? value : '-';  // If value is undefined, show '-'
+                            td.innerHTML = value !== undefined ? value : '-';  // If value is undefined, show '-'
                             tblRow.appendChild(td); // Append the cell to the row
                         }
 
@@ -742,12 +769,18 @@
         }
 
         function createPieChart(parentDiv, strategy, index, title, data, dataFor, chartWidth) {
-            let widthValue = chartWidth == 'fixed' ? '450px' : '100%';
+            let widthValue = chartWidth == 'fixed' ? '500px' : '100%';
             // Create child div for the sector allocation chart
             const sectorChartDiv = document.createElement('div');
             sectorChartDiv.id = `chart-sector-${strategy}-${index}`;
             sectorChartDiv.style.width = widthValue;
-            sectorChartDiv.style.height = '350px';
+            sectorChartDiv.style.height = '550px';
+            if(strategy == 'hrp') {
+             sectorChartDiv.style.gridColumnStart = 1;   
+             sectorChartDiv.style.gridColumnEnd = 3;   
+             sectorChartDiv.style.width = '100%';
+             sectorChartDiv.style.height = '800px'
+            }
             parentDiv.appendChild(sectorChartDiv);
             
 
@@ -800,14 +833,15 @@
                 }]
             };
             sectorChart.setOption(sectorOption);
+            
 
         }
 
-        function createSectionLinkAndAppend(tableId, sectionNavDiv, text) {
+        function createSectionLinkAndAppend(tableId, sectionNavDiv, text, navClass) {
             const sectionNavLink = document.createElement('a')
             sectionNavLink.href = '#' + tableId;
-            sectionNavLink.innerText = text;
-            sectionNavLink.classList = 'btn btn-outline-info btn-fw p-2';
+            sectionNavLink.innerText = formatStrategyName(text);
+            sectionNavLink.classList = `btn btn-outline-info btn-fw p-2 ${navClass}`;
             sectionNavDiv.appendChild(sectionNavLink);
         }
 
@@ -856,20 +890,24 @@
                 trigger: 'axis',
             },
             xAxis: {
-                name: 'Expected Return (%)',
+                name: 'Risk (%)',
                 type: 'value',
                 min: 0,
                 max: 'dataMax',
                 boundaryGap: [0.1, 0.1],
-                scale: true
+                scale: true,
+                nameLocation: 'middle',
+                nameGap: 20,
             },
             yAxis: {
-                name: 'Risk (Volatility) (%)',
+                name: 'Return (%)',
                 type: 'value',
                 min: 0, 
                 max: 'dataMax', 
                 boundaryGap: [0.05, 0.05],
-                scale: true
+                scale: true,
+                nameLocation: 'middle', 
+                nameGap: 40,
             },
             series: [
                 {
@@ -923,7 +961,9 @@
                     },
                     interval: 0.01  // Set interval to 1% (0.01 in decimal form)
                 },
-                scale: true  // Ensure scaling adjusts to the data
+                scale: true,
+                nameLocation: 'middle',
+                nameGap: 20,
             },
             yAxis: {
                 name: 'Return (%)',
@@ -937,7 +977,9 @@
                     },
                     interval: 0.01  // Set interval to 1% (0.01 in decimal form)
                 },
-                scale: true  // Ensure scaling adjusts to the data
+                scale: true,
+                nameLocation: 'middle', 
+                nameGap: 50,
             },
             series: [
                 {
@@ -1051,7 +1093,9 @@
         };
 
         covarianceHeatmap.setOption(covarianceHeatmapOption);
-
+        window.addEventListener('resize', function() {
+            covarianceHeatmap.resize();
+        });
 
         // Correlation heatmap
         var correlationStockSymbols = {{ correlation_stock_symbols|safe }};
@@ -1115,7 +1159,9 @@
         };
 
         correlationHeatmap.setOption(correlationHeatmapOption);
-
+        window.addEventListener('resize', function() {
+            correlationHeatmap.resize();
+        });
 
         function formatSentence(text) {
             return text
@@ -1137,6 +1183,10 @@
             });
 
             text = text.replace(/Cvar/i, 'CVaR');
+            text = text.replace(/900/i, '90');
+            text = text.replace(/950/i, '95');
+            text = text.replace(/990/i, '99');
+            text = text.replace(/999/i, '99.9');
 
             if (text.toLowerCase() === 'hrp') {
                 text = 'HRP';
@@ -1216,6 +1266,67 @@
 
             parentDiv.append(dividerLine);
         }
+    
+        function formatTableValue(value) {
+            let formattedValue;
+
+            // Check if the value is a number and if it's in scientific notation
+            if (typeof value === 'number') {
+                if (value.toString().includes('e-')) {
+                    const [base, exponent] = value.toString().split('e-');
+                    formattedValue = `${parseFloat(base).toFixed(2)}e-${exponent}`;
+                } else {
+                    formattedValue = value.toFixed(2);
+                }
+            } else {
+                // Handle the case where value is a percentage
+                formattedValue = (value * 100).toFixed(2) + '%';
+            }
+
+            // Create the HTML structure for the formatted and original values
+            const htmlOutput = `
+                <span class="formatted-value">${formattedValue}</span>
+                <span class="original-value">${value}</span>
+            `;
+
+            return htmlOutput;
+        }
+
+        // Array to track the currently visible tables
+        let visibleTables = [];
+
+        document.querySelectorAll('.modal-section-nav a.tbl-toggle-btn').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+
+                // Get the href value (the table ID)
+                const tableId = this.getAttribute('href');
+                const table = document.querySelector(tableId);
+
+                if (table) {
+                    // If the table is already visible, hide it and remove it from the visibleTables array
+                    if (table.classList.contains('modal-tbl-show')) {
+                        table.classList.remove('modal-tbl-show');
+                        visibleTables = visibleTables.filter(id => id !== tableId); // Remove from visible list
+                    } else {
+                        // Show the table (remove 'modal-tbls' and add 'modal-tbl-show')
+                        table.classList.add('modal-tbl-show');
+                        visibleTables.push(tableId); // Add to the visible list
+
+                        // If more than 2 tables are visible, hide the oldest one
+                        if (visibleTables.length > 2) {
+                            const firstTableId = visibleTables.shift(); // Get the first one and remove from array
+                            const firstTable = document.querySelector(firstTableId); // Find the first table
+                            if (firstTable) {
+                                firstTable.classList.remove('modal-tbl-show'); // Hide the first table
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+
     </script>
 
 {% endblock content %}
