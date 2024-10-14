@@ -33,6 +33,9 @@
             height: 0;
             padding: 0;
         }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #619040;
+        }
         #ticker-search-container {
             display: grid;
             grid-gap: 10px;
@@ -47,6 +50,48 @@
             font-size: 12px;
         }
 
+        .custom-input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .custom-input-group > div {
+            width: 50%;
+        }
+        .custom-input-group .form-label,
+        .custom-input-group .form-control {
+            font-size: 12px;
+        }
+
+        .select2-container .select2-search--inline {
+            height: 40px;
+        }
+
+        .form-ticker-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-responsive {
+            margin-bottom: 15px;
+            max-height: 750px;
+        }
+
+        .submit-btn-container {
+            text-align: right;
+            margin-top: auto;
+        }
+
+        .btn.btn-danger {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        #tickerSectorPiechart {
+            margin-top: 25px;
+        }
         
     </style>
 
@@ -63,135 +108,135 @@
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="p-2 rounded-2 bg-branding mt-2 mb-3">Dates</div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Start Date</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="date" class="form-control p-2" name="start_date">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">End Date</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="date" class="form-control p-2" name="end_date">
                                                 </div>
                                             </div>
                                             <div class="p-2 rounded-2 bg-branding mt-2 mb-3">Calculation Inputs</div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Return Calculation</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <select class="form-control p-2" name="return_calculation">
                                                         <option value="Arithmetic">Arithmetic</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Price Frequency</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <select class="form-control p-2" name="price_frequency">
                                                         <option value="Daily">Daily</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Risk Free Rate</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input class="form-control p-2" name="risk_free_rate" value="0">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Investment Amount</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input class="form-control p-2" name="invested_amount" value="10000">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="p-2 rounded-2 bg-branding mt-2 mb-3">Portfolio Optimization Inputs</div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Benchmark Portfolio</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <select class="form-control p-2" name="benchmark_portfolio">
                                                         <option value="market_cap_weight">Market Cap Weight</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">TRV (Min)</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="target_return_for_min_volatility" step="0.25" value="0.25">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">TRV (Max)</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="target_volatility_for_max_return" step="0.25" value="0.25">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Default Win Weight</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="default_min_weight" step="0.01" value="0">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Default Max Weight</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="default_max_weight" step="0.01" value="1">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Frontier Runs</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="frontier_runs" step="1" value="100">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">MC Simulations</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <input type="number" class="form-control p-2" name="monte_carlo_simulations" step="1" value="10000">
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Solver</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <select class="form-control p-2" name="solver">
                                                         <option value="CLARABEL">CLARABEL</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
+                                            <div class="custom-input-group">
+                                                <div>
                                                     <label class="form-label">Dendogram Segment</label>
                                                 </div>
-                                                <div class="col">
+                                                <div>
                                                     <select class="form-control p-2" name="dendogram_segment">
                                                         <option value="Sector">Sector</option>
                                                     </select>
@@ -201,14 +246,14 @@
                                         
                                     </div>
                                     
-                                
+                                    <div id="tickerSectorPiechart"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-8 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <div>
+                                <div class="form-ticker-container">
                                     <div id="ticker-search-container">
                                         <select id="stockSelect" class="stock-select form-control" multiple="multiple" >
                                         </select>
@@ -218,7 +263,7 @@
                                     </div>
                                     
                   
-                                    <div class="table-responsive" style="max-height: 700px;">
+                                    <div class="table-responsive">
                                         <table class="table">
                                             <thead class="bg-branding">
                                                 <th class="p-1">#</th>
@@ -236,6 +281,11 @@
                                             </tbody>
                                         </table>
                                     </div>
+
+                                    <div class="submit-btn-container">
+                                        <button type="submit" class="btn bg-branding">Run Model</button>
+                                    </div>
+
                                 </div>
 
 
@@ -245,22 +295,7 @@
                     </div>
                     
                 </div>
-                <div class="row">
-                    <div class="col-8 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="tickerSectorPiechart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body" style="text-align: right;">
-                                <button type="submit" class="btn bg-branding">Run Model</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
             </form>
         </div>
@@ -281,11 +316,13 @@
       <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
       <script>
           const jsonUrl = "{% static 'tricker.json' %}";
-  
+          let rowCount = 0;
+          let sectorCount = {};
+
           fetch(jsonUrl)
               .then(response => response.json())
               .then(data => {
-                  let options = data.map(item => `<option value="${item.id}">${item.Symbol}</option>`);
+                  let options = data.map(item => `<option value="${item.id}">${item.Symbol} - ${item.Shortname}</option>`);
                   document.getElementById('stockSelect').innerHTML = options.join('');
   
                   $('#stockSelect').select2({
@@ -309,10 +346,9 @@
               })
               .catch(error => console.error('Error fetching JSON:', error));
   
-              let rowCount = 0;
-              let sectorCount = {};
+              
 
-              function addRow(item) {
+            function addRow(item) {
                 rowCount++;
                 document.querySelector('#ticker-asset-number').innerText = rowCount;
                 updateSectorCount(item.Sector, 1);
@@ -321,7 +357,7 @@
                 const tbody = document.getElementById('companyTable');
                 const newRow = `
                     <tr id="row-${item.id}">
-                        <td class="p-1">${rowCount}</td>
+                        <td class="p-1 row-index"></td> <!-- Row number -->
                         <td class="p-1"><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control p-1" readonly/></td>
                         <td class="p-1"><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control p-1" readonly/></td>
                         <td class="p-1"><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control p-1" readonly /></td>
@@ -330,42 +366,68 @@
                         <td class="p-1"><input type="text" name="amins[]" value="0" class="form-control p-1" /></td>
                         <td class="p-1"><input type="text" name="amaxs[]" value="1" class="form-control p-1" /></td>
                         <td class="p-1">
-                            <button type="button" class="btn btn-danger btn-sm p-2" onclick="removeRow(${item.id}, event)">x</button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(${item.id}, event)">x</button>
                         </td>
                     </tr>
                 `;
-                tbody.insertAdjacentHTML('afterbegin', newRow);
+                tbody.insertAdjacentHTML('beforeend', newRow);
                 hideOption(item.id);
+                reIndexRows(); // Re-index after adding
+                // Scroll the .table-responsive div to the bottom
+                const tableContainer = document.querySelector('.table-responsive');
+                tableContainer.scrollTop = tableContainer.scrollHeight;
             }
 
   
-          function removeRow(id, event) {
-              if (event) {
-                  event.preventDefault();
-              }
-  
-              const row = document.getElementById(`row-${id}`);
-              if (row) {
-                  row.remove();
-              }
-  
-              const selectElement = $('#stockSelect');
-              const selectedValues = selectElement.val();
-              const newSelectedValues = selectedValues.filter(val => val != id);
-              selectElement.val(newSelectedValues).trigger('change');
+            function removeRow(id, event) {
+                if (event) {
+                    event.preventDefault();
+                }
 
-              showOption(id);
-          }
+                const row = document.getElementById(`row-${id}`);
+                if (row) {
+                    const sector = row.querySelector('input[name="sectors[]"]').value; // Get the sector of the removed row
+                    updateSectorCount(sector, -1); // Decrement the sector count
+                    row.remove(); // Remove the row from the table
+                }
 
-          // Function to update sector count
-        function updateSectorCount(sector, increment) {
-            if (!sector) return; // Skip if no sector information
-            if (!sectorCount[sector]) {
-                sectorCount[sector] = 0;
+                const selectElement = $('#stockSelect');
+                const selectedValues = selectElement.val();
+                const newSelectedValues = selectedValues.filter(val => val != id);
+                selectElement.val(newSelectedValues).trigger('change');
+                
+                rowCount--;
+                document.querySelector('#ticker-asset-number').innerText = rowCount;
+
+                showOption(id);
+                createPieChart(formatSectorDataForChart(sectorCount)); // Update the chart after removing the row
+                reIndexRows(); // Re-index after removing
             }
-            sectorCount[sector] += increment;
 
-        }
+            // Function to re-index rows
+            function reIndexRows() {
+                const rows = document.querySelectorAll('#companyTable tr');
+                rows.forEach((row, index) => {
+                    const rowIndexCell = row.querySelector('.row-index');
+                    if (rowIndexCell) {
+                        rowIndexCell.textContent = index + 1; // Set the row number
+                    }
+                });
+            }
+
+            // Updated function to update sector count with decrement
+            function updateSectorCount(sector, increment) {
+                if (!sector) return; // Skip if no sector information
+                if (!sectorCount[sector]) {
+                    sectorCount[sector] = 0;
+                }
+                sectorCount[sector] += increment;
+
+                // If sector count is zero, remove it from the sectorCount object
+                if (sectorCount[sector] <= 0) {
+                    delete sectorCount[sector];
+                }
+            }
 
         // Hide the selected option
         function hideOption(id) {
@@ -403,7 +465,7 @@
             const cartDiv = document.createElement('div');
             cartDiv.id = 'ticker-sector-chart';
             cartDiv.style.width = '100%';
-            cartDiv.style.height = '500px';
+            cartDiv.style.height = '300px';
             chatParentDiv.appendChild(cartDiv);
             
 
@@ -413,7 +475,8 @@
             const sectorOption = {
                 title: {
                     text: 'Sector Allocation',
-                    left: 'center'
+                    left: 'center',
+                    top: 0,
                 },
                 tooltip: { trigger: 'item' },
                 legend: { show: false },

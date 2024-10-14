@@ -777,8 +777,6 @@ def format_table_value(metric_name, value):
     return html_output
 
 
-
-
 # SL data processing function
 def process_stats_data(strategy_symbol_portfolios, stat_type_key, sl_stats_data):
 
@@ -929,7 +927,7 @@ def api_data_view_5(request):
     if request.method == 'POST':
         form_data = process_form(request)
         # Form data
-        print("Form Data: ", form_data)
+        # print("Form Data: ", form_data)
    
 
         start_time = time.perf_counter()
@@ -961,7 +959,16 @@ def api_data_view_5(request):
         strategy_stats_ratios = model_output.get('strategy_results', {}).get('strategy_stats_ratios', {})
         strategy_symbol_portfolios = model_output.get('strategy_results', {}).get('strategy_symbol_portfolios', {})
         strategy_symbol_contributions = model_output.get('strategy_results', {}).get('strategy_symbol_contributions', {})
+        
+        # Testing Data
+        strategy_performance_testing = model_output.get('strategy_results', {}).get('strategy_performance_testing', {})
+        strategy_stats_descriptive_testing = model_output.get('strategy_results', {}).get('strategy_stats_descriptive_testing', {})
+        strategy_stats_moments_testing = model_output.get('strategy_results', {}).get('strategy_stats_moments_testing', {})
+        strategy_stats_risk_measures_testing = model_output.get('strategy_results', {}).get('strategy_stats_risk_measures_testing', {})
+        strategy_stats_ratios_testing = model_output.get('strategy_results', {}).get('strategy_stats_ratios_testing', {})
 
+        strategy_symbol_contributions_testing = model_output.get('strategy_results', {}).get('strategy_symbol_contributions_testing', {})
+        strategy_symbol_portfolios_testing = model_output.get('strategy_results', {}).get('strategy_symbol_portfolios_testing', {})
 
         # Security Level Risk
         sl_main_stats_data = {}
@@ -977,7 +984,16 @@ def api_data_view_5(request):
         cl_ratio_stats_data = {}
 
         # Testing Assets
-        testing_descriptive_stats_data = {}
+        cl_testing_descriptive_stats_data = {}
+        cl_testing_stats_moments_data = {}
+        cl_testing_risk_measures_stats_data = {}
+        cl_testing_ratio_stats_data = {}
+
+        pl_testing_main_stats_data = {}
+        pl_testing_descriptive_stats_data = {}
+        pl_testing_stats_moments_data = {}
+        pl_testing_risk_measures_stats_data = {}
+        pl_testing_ratio_stats_data = {}
 
         # Security Level Risk  Assets
         # Process the 'main' stats
@@ -1002,6 +1018,16 @@ def api_data_view_5(request):
         process_stats_data(strategy_symbol_contributions, 'symbol_contribution_stats_ratios', cl_ratio_stats_data)
 
         # Testing Assets
+        process_stats_data(strategy_symbol_contributions_testing, 'symbol_contribution_stats_descriptive', cl_testing_descriptive_stats_data)
+        process_stats_data(strategy_symbol_contributions_testing, 'symbol_contribution_stats_moments', cl_testing_stats_moments_data)
+        process_stats_data(strategy_symbol_contributions_testing, 'symbol_contribution_stats_risk_measures', cl_testing_risk_measures_stats_data)
+        process_stats_data(strategy_symbol_contributions_testing, 'symbol_contribution_stats_ratios', cl_testing_ratio_stats_data)
+
+        process_stats_data(strategy_symbol_portfolios_testing, 'strategy_symbol_stats_main', pl_testing_main_stats_data)
+        process_stats_data(strategy_symbol_portfolios_testing, 'strategy_symbol_stats_descriptive', pl_testing_descriptive_stats_data)
+        process_stats_data(strategy_symbol_portfolios_testing, 'strategy_symbol_stats_moments', pl_testing_stats_moments_data)
+        process_stats_data(strategy_symbol_portfolios_testing, 'strategy_symbol_stats_risk_measures', pl_testing_risk_measures_stats_data)
+        process_stats_data(strategy_symbol_portfolios_testing, 'strategy_symbol_stats_ratios', pl_testing_ratio_stats_data)
 
 
 
@@ -1060,6 +1086,21 @@ def api_data_view_5(request):
             'cl_moment_stats_data': cl_moment_stats_data,
             'cl_risk_measure_stats_data': cl_risk_measure_stats_data,
             'cl_ratio_stats_data': cl_ratio_stats_data,
+            'cl_testing_descriptive_stats_data': cl_testing_descriptive_stats_data,
+            'cl_testing_stats_moments_data': cl_testing_stats_moments_data,
+            'cl_testing_risk_measures_stats_data': cl_testing_risk_measures_stats_data,
+            'cl_testing_ratio_stats_data': cl_testing_ratio_stats_data,
+            'pl_testing_main_stats_data': pl_testing_main_stats_data,
+            'pl_testing_descriptive_stats_data': pl_testing_descriptive_stats_data,
+            'pl_testing_stats_moments_data': pl_testing_stats_moments_data,
+            'pl_testing_risk_measures_stats_data': pl_testing_risk_measures_stats_data,
+            'pl_testing_ratio_stats_data': pl_testing_ratio_stats_data,
+            'strategy_performance_testing': strategy_performance_testing,
+            'strategy_stats_descriptive_testing': strategy_stats_descriptive_testing,
+            'strategy_stats_moments_testing': strategy_stats_moments_testing,
+            'strategy_stats_risk_measures_testing': strategy_stats_risk_measures_testing,
+            'strategy_stats_ratios_testing': strategy_stats_ratios_testing,
+
         })
 
         covariance_data = model_output.get('covariance', {})
@@ -1138,17 +1179,18 @@ def api_data_view_5(request):
         
         for strategy_name, strategy_data in strategy_summaries.items():
             # Create the structure for each strategy
+
             structured_strategy = {
                 "strategy_id": strategy_name,
                 "strategy_name": format_strategy_name(strategy_name),
-                "annual_expected_return": round(strategy_data.get('annual_expected_return', 0) * 100, 2),
-                "annual_standard_deviation": round(strategy_data.get('annual_standard_deviation', 0) * 100, 2),
-                "annual_sharpe_ratio": round(strategy_data.get('annual_sharpe_ratio', 0), 2),
-                "annual_sortino_ratio": round(strategy_data.get('annual_sortino_ratio', 0), 2),
-                "cvar_900": round(strategy_data.get('cvar_900', 0) * 100, 2),
-                "cvar_950": round(strategy_data.get('cvar_950', 0) * 100, 2),
-                "cvar_990": round(strategy_data.get('cvar_990', 0) * 100, 2),
-                "cvar_999": round(strategy_data.get('cvar_999', 0) * 100, 2)
+                "annual_expected_return": format_table_value('annual_expected_return', strategy_data.get('annual_expected_return')),
+                "annual_standard_deviation": format_table_value('annual_standard_deviation', strategy_data.get('annual_standard_deviation')),
+                "annual_sharpe_ratio": format_table_value('annual_sharpe_ratio', strategy_data.get('annual_sharpe_ratio')),
+                "annual_sortino_ratio": format_table_value('annual_sortino_ratio', strategy_data.get('annual_sortino_ratio')),
+                "cvar_900": format_table_value('cvar_900', strategy_data.get('cvar_900')),
+                "cvar_950": format_table_value('cvar_950', strategy_data.get('cvar_950')),
+                "cvar_990": format_table_value('cvar_990', strategy_data.get('cvar_990')),
+                "cvar_999": format_table_value('cvar_999', strategy_data.get('cvar_999'))
             }
 
             # Append the structured strategy data to the list

@@ -31013,6 +31013,8909 @@ mode_output_3 = {
                 }
             }
         },
+        
+        "strategy_performance_testing": { #Testing data: Portfolio Level (PL)
+            "min_variance": {
+                "annual_expected_return": 0.0920010679541546,
+                "annual_standard_deviation": 0.2139985613679842,
+                "annual_sharpe_ratio": 0.42991442262993945,
+                "annual_sortino_ratio": 0.6010423341565162,
+                "cvar_900": -0.023553992091903186,
+                "cvar_950": -0.030652122961333465,
+                "cvar_990": -0.05523836705686569,
+                "cvar_999": -0.09611300991906878,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.12102835329789867
+                    }
+                ]
+            },
+            "max_sharpe": {
+                "annual_expected_return": 0.3898886623272675,
+                "annual_standard_deviation": 0.3370988570661161,
+                "annual_sharpe_ratio": 1.1566003685702133,
+                "annual_sortino_ratio": 1.6112400526125035,
+                "cvar_900": -0.036969998903627586,
+                "cvar_950": -0.04742727710450728,
+                "cvar_990": -0.07655212667347769,
+                "cvar_999": -0.12765588377073991,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.18803650607726938
+                    }
+                ]
+            },
+            "max_sortino": {
+                "annual_expected_return": 0.40719047921530793,
+                "annual_standard_deviation": 0.35247094995876915,
+                "annual_sharpe_ratio": 1.1552455011198504,
+                "annual_sortino_ratio": 1.615272551245047,
+                "cvar_900": -0.038572170242918695,
+                "cvar_950": -0.0490452345328536,
+                "cvar_990": -0.07787281914515638,
+                "cvar_999": -0.12480771219697422,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.20979660010420434
+                    }
+                ]
+            },
+            "target_return": {
+                "annual_expected_return": 0.2500000121455563,
+                "annual_standard_deviation": 0.2503281888905832,
+                "annual_sharpe_ratio": 0.9986890140240243,
+                "annual_sortino_ratio": 1.3767306543311382,
+                "cvar_900": -0.02770321919637298,
+                "cvar_950": -0.03683520249362152,
+                "cvar_990": -0.06337360303617559,
+                "cvar_999": -0.12132425114111613,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.09614296953743517
+                    }
+                ]
+            },
+            "target_volatility": {
+                "annual_expected_return": 0.25343734980604493,
+                "annual_standard_deviation": 0.25180437253098414,
+                "annual_sharpe_ratio": 1.0064851029338653,
+                "annual_sortino_ratio": 1.3873808037631674,
+                "cvar_900": -0.02788498056035138,
+                "cvar_950": -0.037045859788503874,
+                "cvar_990": -0.06365220304186674,
+                "cvar_999": -0.12168736733419026,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.09652745115622495
+                    }
+                ]
+            },
+            "cvar_90": {
+                "annual_expected_return": 0.10240062802038086,
+                "annual_standard_deviation": 0.21498845927513316,
+                "annual_sharpe_ratio": 0.47630755792957635,
+                "annual_sortino_ratio": 0.6691206414598881,
+                "cvar_900": -0.02334212067399927,
+                "cvar_950": -0.03058343445948254,
+                "cvar_990": -0.055474152722109434,
+                "cvar_999": -0.09937772301352307,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.11922610746305262
+                    }
+                ]
+            },
+            "cvar_95": {
+                "annual_expected_return": 0.07630297536038266,
+                "annual_standard_deviation": 0.21516224924954724,
+                "annual_sharpe_ratio": 0.3546299391576156,
+                "annual_sortino_ratio": 0.4997054601930718,
+                "cvar_900": -0.023519638483143677,
+                "cvar_950": -0.030293776893359266,
+                "cvar_990": -0.05467984451697015,
+                "cvar_999": -0.09462058243047436,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.13565663752541013
+                    }
+                ]
+            },
+            "cvar_99": {
+                "annual_expected_return": 0.0726523538315665,
+                "annual_standard_deviation": 0.22270529911590378,
+                "annual_sharpe_ratio": 0.32622642622327375,
+                "annual_sortino_ratio": 0.46176283622882214,
+                "cvar_900": -0.024263005513429543,
+                "cvar_950": -0.03155671420337653,
+                "cvar_990": -0.053358730668064756,
+                "cvar_999": -0.09299836551972782,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.16202479932046573
+                    }
+                ]
+            },
+            "cvar_999": {
+                "annual_expected_return": 0.030717106506621353,
+                "annual_standard_deviation": 0.24657432436869706,
+                "annual_sharpe_ratio": 0.12457544630920596,
+                "annual_sortino_ratio": 0.18022896826461834,
+                "cvar_900": -0.026709436539021206,
+                "cvar_950": -0.03438336786274656,
+                "cvar_990": -0.05799337964912405,
+                "cvar_999": -0.07675971602735358,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.22195244230590117
+                    }
+                ]
+            },
+            "hrp": {
+                "annual_expected_return": 0.15516224541310653,
+                "annual_standard_deviation": 0.2249374288019032,
+                "annual_sharpe_ratio": 0.6898018095056739,
+                "annual_sortino_ratio": 0.9612224271925398,
+                "cvar_900": -0.024525780437835782,
+                "cvar_950": -0.03281746471704501,
+                "cvar_990": -0.05809106085798298,
+                "cvar_999": -0.10808520172835756,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.08376991308036136
+                    }
+                ]
+            },
+            "max_information": {
+                "annual_expected_return": 0.09205085095312804,
+                "annual_standard_deviation": 0.21399927317696488,
+                "annual_sharpe_ratio": 0.4301456242657767,
+                "annual_sortino_ratio": 0.6013634259191867,
+                "cvar_900": -0.02355372177490503,
+                "cvar_950": -0.030652637198260033,
+                "cvar_990": -0.05523922781341805,
+                "cvar_999": -0.09612508884499948,
+                "annual_tracking_error": [
+                    {
+                        "index": "^GSPC",
+                        "value": 0.12099461189391177
+                    }
+                ]
+            }
+        },
+        "strategy_stats_descriptive_testing": { # Testing data: Portfolio Level (PL)
+            "min_variance": {
+                "daily_mean_return": 0.00036508360299267694,
+                "annual_mean_return": 0.0920010679541546,
+                "daily_variance": 0.00018172771534748764,
+                "annual_variance": 0.04579538426756689,
+                "daily_standard_deviation": 0.013480642245363819,
+                "annual_standard_deviation": 0.2139985613679842,
+                "daily_semi_variance": 9.297690208658783e-05,
+                "annual_semi_variance": 0.023430179325820134,
+                "daily_semi_deviation": 0.009642453115602264,
+                "annual_semi_deviation": 0.15306919783490122,
+                "mean_absolute_deviation": 0.009204116740006672
+            },
+            "max_sharpe": {
+                "daily_mean_return": 0.0015471772314574106,
+                "annual_mean_return": 0.3898886623272675,
+                "daily_variance": 0.0004509350771241339,
+                "annual_variance": 0.11363563943528175,
+                "daily_standard_deviation": 0.021235231977167895,
+                "annual_standard_deviation": 0.3370988570661161,
+                "daily_semi_variance": 0.00023235936114669622,
+                "annual_semi_variance": 0.05855455900896745,
+                "daily_semi_deviation": 0.01524333825468346,
+                "annual_semi_deviation": 0.24198049303397878,
+                "mean_absolute_deviation": 0.015207172070965396
+            },
+            "max_sortino": {
+                "daily_mean_return": 0.0016158352349813806,
+                "annual_mean_return": 0.40719047921530793,
+                "daily_variance": 0.0004929990895430046,
+                "annual_variance": 0.12423577056483714,
+                "daily_standard_deviation": 0.022203582808704648,
+                "annual_standard_deviation": 0.35247094995876915,
+                "daily_semi_variance": 0.00025217560008553746,
+                "annual_semi_variance": 0.06354825122155544,
+                "daily_semi_deviation": 0.015880037786023603,
+                "annual_semi_deviation": 0.2520877847527631,
+                "mean_absolute_deviation": 0.016019801979525877
+            },
+            "target_return": {
+                "daily_mean_return": 0.000992063540260144,
+                "annual_mean_return": 0.2500000121455563,
+                "daily_variance": 0.00024866746886206153,
+                "annual_variance": 0.0626642021532395,
+                "daily_standard_deviation": 0.015769193665563928,
+                "annual_standard_deviation": 0.2503281888905832,
+                "daily_semi_variance": 0.00013085235815607073,
+                "annual_semi_variance": 0.03297479425532982,
+                "daily_semi_deviation": 0.011439071560055507,
+                "annual_semi_deviation": 0.18158963146427118,
+                "mean_absolute_deviation": 0.010725343474331277
+            },
+            "target_volatility": {
+                "daily_mean_return": 0.001005703769071607,
+                "annual_mean_return": 0.25343734980604493,
+                "daily_variance": 0.00025160889692747083,
+                "annual_variance": 0.06340544202572265,
+                "daily_standard_deviation": 0.015862184494182092,
+                "annual_standard_deviation": 0.25180437253098414,
+                "daily_semi_variance": 0.00013241870425751752,
+                "annual_semi_variance": 0.033369513472894415,
+                "daily_semi_deviation": 0.01150733263000238,
+                "annual_semi_deviation": 0.18267324235611085,
+                "mean_absolute_deviation": 0.010797280027871378
+            },
+            "cvar_90": {
+                "daily_mean_return": 0.00040635169849357483,
+                "annual_mean_return": 0.10240062802038086,
+                "daily_variance": 0.00018341284770434757,
+                "annual_variance": 0.04622003762149559,
+                "daily_standard_deviation": 0.013542999952165236,
+                "annual_standard_deviation": 0.21498845927513316,
+                "daily_semi_variance": 9.293853975573422e-05,
+                "annual_semi_variance": 0.023420512018445024,
+                "daily_semi_deviation": 0.009640463669125786,
+                "annual_semi_deviation": 0.15303761635116062,
+                "mean_absolute_deviation": 0.009192985748107084
+            },
+            "cvar_95": {
+                "daily_mean_return": 0.00030278958476342326,
+                "annual_mean_return": 0.07630297536038266,
+                "daily_variance": 0.00018370949802430273,
+                "annual_variance": 0.04629479350212429,
+                "daily_standard_deviation": 0.013553947691514186,
+                "annual_standard_deviation": 0.21516224924954724,
+                "daily_semi_variance": 9.252396075329899e-05,
+                "annual_semi_variance": 0.023316038109831346,
+                "daily_semi_deviation": 0.00961893761042762,
+                "annual_semi_deviation": 0.15269590076302425,
+                "mean_absolute_deviation": 0.009303285743290776
+            },
+            "cvar_99": {
+                "daily_mean_return": 0.00028830299139510516,
+                "annual_mean_return": 0.0726523538315665,
+                "daily_variance": 0.00019681607243771495,
+                "annual_variance": 0.04959765025430417,
+                "daily_standard_deviation": 0.014029115169450814,
+                "annual_standard_deviation": 0.22270529911590378,
+                "daily_semi_variance": 9.8233786388061e-05,
+                "annual_semi_variance": 0.02475491416979137,
+                "daily_semi_deviation": 0.0099112958985221,
+                "annual_semi_deviation": 0.15733694470718368,
+                "mean_absolute_deviation": 0.009781093874013913
+            },
+            "cvar_999": {
+                "daily_mean_return": 0.00012189327978817998,
+                "annual_mean_return": 0.030717106506621353,
+                "daily_variance": 0.00024126546602333106,
+                "annual_variance": 0.06079889743787943,
+                "daily_standard_deviation": 0.015532722427936806,
+                "annual_standard_deviation": 0.24657432436869706,
+                "daily_semi_variance": 0.00011526856145919528,
+                "annual_semi_variance": 0.02904767748771721,
+                "daily_semi_deviation": 0.010736319735328083,
+                "annual_semi_deviation": 0.17043379209451748,
+                "mean_absolute_deviation": 0.011055286255382348
+            },
+            "hrp": {
+                "daily_mean_return": 0.0006157231960837561,
+                "annual_mean_return": 0.15516224541310653,
+                "daily_variance": 0.00020078113839687008,
+                "annual_variance": 0.05059684687601126,
+                "daily_standard_deviation": 0.014169726122860318,
+                "annual_standard_deviation": 0.2249374288019032,
+                "daily_semi_variance": 0.00010340077181577467,
+                "annual_semi_variance": 0.026056994497575217,
+                "daily_semi_deviation": 0.010168617006052233,
+                "annual_semi_deviation": 0.16142179065285833,
+                "mean_absolute_deviation": 0.00946719859724396
+            },
+            "max_information": {
+                "daily_mean_return": 0.00036528115457590493,
+                "annual_mean_return": 0.09205085095312804,
+                "daily_variance": 0.00018172892428678264,
+                "annual_variance": 0.04579568892026922,
+                "daily_standard_deviation": 0.013480687085114863,
+                "annual_standard_deviation": 0.21399927317696488,
+                "daily_semi_variance": 9.297818233179603e-05,
+                "annual_semi_variance": 0.0234305019476126,
+                "daily_semi_deviation": 0.009642519501240121,
+                "annual_semi_deviation": 0.1530702516742316,
+                "mean_absolute_deviation": 0.009203930448728631
+            }
+        },
+        "strategy_stats_moments_testing": { # Testing data: Portfolio Level (PL)
+            "min_variance": {
+                "skew": -0.1004079214013227,
+                "kurtosis": 12.35945515847483,
+                "first_lower_partial_moment": 0.004602058370003336,
+                "fourth_central_moment": 4.081705434432093e-07,
+                "fourth_lower_partial_moment": 2.1407079450064717e-07
+            },
+            "max_sharpe": {
+                "skew": -0.10938846802709844,
+                "kurtosis": 7.551980803037201,
+                "first_lower_partial_moment": 0.0076035860354826965,
+                "fourth_central_moment": 1.5356382318763952e-06,
+                "fourth_lower_partial_moment": 8.167619278217362e-07
+            },
+            "max_sortino": {
+                "skew": -0.07413433402606863,
+                "kurtosis": 6.785340100579368,
+                "first_lower_partial_moment": 0.008009900989762939,
+                "fourth_central_moment": 1.6491640348396235e-06,
+                "fourth_lower_partial_moment": 8.621824452709534e-07
+            },
+            "target_return": {
+                "skew": -0.25003802985526663,
+                "kurtosis": 12.712667819254152,
+                "first_lower_partial_moment": 0.005362671737165639,
+                "fourth_central_moment": 7.860942989574154e-07,
+                "fourth_lower_partial_moment": 4.421949056788073e-07
+            },
+            "target_volatility": {
+                "skew": -0.24898683964702845,
+                "kurtosis": 12.634453326016652,
+                "first_lower_partial_moment": 0.005398640013935689,
+                "fourth_central_moment": 7.998498043498979e-07,
+                "fourth_lower_partial_moment": 4.496234065767969e-07
+            },
+            "cvar_90": {
+                "skew": -0.03743821686935336,
+                "kurtosis": 13.158946770159911,
+                "first_lower_partial_moment": 0.004596492874053541,
+                "fourth_central_moment": 4.4267055783267996e-07,
+                "fourth_lower_partial_moment": 2.2515453568541788e-07
+            },
+            "cvar_95": {
+                "skew": -0.017830140800119826,
+                "kurtosis": 11.972976148168401,
+                "first_lower_partial_moment": 0.004651642871645388,
+                "fourth_central_moment": 4.0407812314140836e-07,
+                "fourth_lower_partial_moment": 2.0447709149626575e-07
+            },
+            "cvar_99": {
+                "skew": -0.007705021519493714,
+                "kurtosis": 9.74227220539771,
+                "first_lower_partial_moment": 0.004890546937006956,
+                "fourth_central_moment": 3.7738217387712274e-07,
+                "fourth_lower_partial_moment": 1.9495068291510575e-07
+            },
+            "cvar_999": {
+                "skew": 0.1929616441793503,
+                "kurtosis": 7.258938190249196,
+                "first_lower_partial_moment": 0.005527643127691175,
+                "fourth_central_moment": 4.22535715282573e-07,
+                "fourth_lower_partial_moment": 1.8603056487321726e-07
+            },
+            "hrp": {
+                "skew": -0.09693725864341528,
+                "kurtosis": 14.615844677234373,
+                "first_lower_partial_moment": 0.004733599298621981,
+                "fourth_central_moment": 5.892095043365145e-07,
+                "fourth_lower_partial_moment": 3.0182216811276646e-07
+            },
+            "max_information": {
+                "skew": -0.10043132543647265,
+                "kurtosis": 12.362089774222769,
+                "first_lower_partial_moment": 0.004601965224364316,
+                "fourth_central_moment": 4.0826298339488353e-07,
+                "fourth_lower_partial_moment": 2.1411988123995001e-07
+            }
+        },
+        "strategy_stats_risk_measures_testing": { # Testing data: Portfolio Level (PL)
+            "min_variance": {
+                "value_at_risk_at_95": 0.019109526910382417,
+                "conditional_var_at_95": 0.030652122961333465,
+                "entropic_var_at_95": 0.05714919134924293,
+                "drawdown_at_risk_at_95": 0.27645737201568865,
+                "conditional_dar_at_95": 0.2961028505147439,
+                "entropic_dar_at_95": 0.3087036378971431,
+                "entropic_risk_measure_at_95": 2.995458022708021,
+                "worst_realization": 0.09684907541698477,
+                "average_drawdown": 0.11372832219415212,
+                "max_drawdown": 0.3394218269018467,
+                "ulcer_index": 0.1531502918112296,
+                "gini_mean_difference": 0.013634522808677114
+            },
+            "max_sharpe": {
+                "value_at_risk_at_95": 0.03234862512568698,
+                "conditional_var_at_95": 0.04742727710450728,
+                "entropic_var_at_95": 0.07692214923280685,
+                "drawdown_at_risk_at_95": 0.3029457382081828,
+                "conditional_dar_at_95": 0.33989956176735603,
+                "entropic_dar_at_95": 0.3523600249270594,
+                "entropic_risk_measure_at_95": 2.9944105662130682,
+                "worst_realization": 0.12874929383802897,
+                "average_drawdown": 0.09427576961932357,
+                "max_drawdown": 0.3865969773333682,
+                "ulcer_index": 0.13566142500543965,
+                "gini_mean_difference": 0.02245461645554734
+            },
+            "max_sortino": {
+                "value_at_risk_at_95": 0.03374365707348234,
+                "conditional_var_at_95": 0.0490452345328536,
+                "entropic_var_at_95": 0.07675978270421815,
+                "drawdown_at_risk_at_95": 0.3338771668905085,
+                "conditional_dar_at_95": 0.37648405594218937,
+                "entropic_dar_at_95": 0.3902322292741909,
+                "entropic_risk_measure_at_95": 2.994362880971664,
+                "worst_realization": 0.12551967232852096,
+                "average_drawdown": 0.10653362024496656,
+                "max_drawdown": 0.42960600638317104,
+                "ulcer_index": 0.1513488110305012,
+                "gini_mean_difference": 0.023639090966148506
+            },
+            "target_return": {
+                "value_at_risk_at_95": 0.022558228569502757,
+                "conditional_var_at_95": 0.03683520249362152,
+                "entropic_var_at_95": 0.06975280498355875,
+                "drawdown_at_risk_at_95": 0.18202470812609772,
+                "conditional_dar_at_95": 0.21609345048955877,
+                "entropic_dar_at_95": 0.2454512774399221,
+                "entropic_risk_measure_at_95": 2.9948646159821877,
+                "worst_realization": 0.12338920072030113,
+                "average_drawdown": 0.059768593206040846,
+                "max_drawdown": 0.32313998395394344,
+                "ulcer_index": 0.08544802499799112,
+                "gini_mean_difference": 0.015908476049317832
+            },
+            "target_volatility": {
+                "value_at_risk_at_95": 0.022771528822897236,
+                "conditional_var_at_95": 0.037045859788503874,
+                "entropic_var_at_95": 0.06999026808603945,
+                "drawdown_at_risk_at_95": 0.1828076391017932,
+                "conditional_dar_at_95": 0.2172685905042177,
+                "entropic_dar_at_95": 0.2462321050188397,
+                "entropic_risk_measure_at_95": 2.994852447690781,
+                "worst_realization": 0.12374540926972061,
+                "average_drawdown": 0.05989439989761637,
+                "max_drawdown": 0.3234395216195051,
+                "ulcer_index": 0.08586437839667226,
+                "gini_mean_difference": 0.016013058657013163
+            },
+            "cvar_90": {
+                "value_at_risk_at_95": 0.01839056110822394,
+                "conditional_var_at_95": 0.03058343445948254,
+                "entropic_var_at_95": 0.0583267361118664,
+                "drawdown_at_risk_at_95": 0.25061368240107684,
+                "conditional_dar_at_95": 0.26862537440418405,
+                "entropic_dar_at_95": 0.28288509025791647,
+                "entropic_risk_measure_at_95": 2.995417572248082,
+                "worst_realization": 0.10042975716681579,
+                "average_drawdown": 0.10074573047425481,
+                "max_drawdown": 0.3290649446076609,
+                "ulcer_index": 0.13473400947776315,
+                "gini_mean_difference": 0.013616966360232918
+            },
+            "cvar_95": {
+                "value_at_risk_at_95": 0.019406520137066747,
+                "conditional_var_at_95": 0.030293776893359266,
+                "entropic_var_at_95": 0.05641411905075781,
+                "drawdown_at_risk_at_95": 0.29091896195346145,
+                "conditional_dar_at_95": 0.30753248417257933,
+                "entropic_dar_at_95": 0.3150162676597252,
+                "entropic_risk_measure_at_95": 2.995521272824288,
+                "worst_realization": 0.09541441967804817,
+                "average_drawdown": 0.11238584528917842,
+                "max_drawdown": 0.3431487807242688,
+                "ulcer_index": 0.15048410089708802,
+                "gini_mean_difference": 0.013754773802270207
+            },
+            "cvar_99": {
+                "value_at_risk_at_95": 0.019312564643803418,
+                "conditional_var_at_95": 0.03155671420337653,
+                "entropic_var_at_95": 0.05548386321604571,
+                "drawdown_at_risk_at_95": 0.31902981941471914,
+                "conditional_dar_at_95": 0.3450998893661391,
+                "entropic_dar_at_95": 0.3527382416172249,
+                "entropic_risk_measure_at_95": 2.9955423009979016,
+                "worst_realization": 0.09403367673807028,
+                "average_drawdown": 0.11434291741410738,
+                "max_drawdown": 0.38181049255180655,
+                "ulcer_index": 0.15386623796370272,
+                "gini_mean_difference": 0.014472322374658817
+            },
+            "cvar_999": {
+                "value_at_risk_at_95": 0.022131586875601798,
+                "conditional_var_at_95": 0.03438336786274656,
+                "entropic_var_at_95": 0.05125217456212467,
+                "drawdown_at_risk_at_95": 0.5225522260922468,
+                "conditional_dar_at_95": 0.5630652647199367,
+                "entropic_dar_at_95": 0.5741436763642582,
+                "entropic_risk_measure_at_95": 2.9957307899649797,
+                "worst_realization": 0.07706239218564373,
+                "average_drawdown": 0.17172053591985736,
+                "max_drawdown": 0.6321599661083118,
+                "ulcer_index": 0.23510738087570032,
+                "gini_mean_difference": 0.01629469102510501
+            },
+            "hrp": {
+                "value_at_risk_at_95": 0.019457103727190152,
+                "conditional_var_at_95": 0.03281746471704501,
+                "entropic_var_at_95": 0.06301026880253022,
+                "drawdown_at_risk_at_95": 0.23533244521436514,
+                "conditional_dar_at_95": 0.2667825964090239,
+                "entropic_dar_at_95": 0.28326284588387807,
+                "entropic_risk_measure_at_95": 2.9952169125124057,
+                "worst_realization": 0.1091773662470944,
+                "average_drawdown": 0.08654155506098565,
+                "max_drawdown": 0.32243112113760525,
+                "ulcer_index": 0.11847804183242874,
+                "gini_mean_difference": 0.014113948054202453
+            },
+            "max_information": {
+                "value_at_risk_at_95": 0.01910816551184622,
+                "conditional_var_at_95": 0.030652637198260033,
+                "entropic_var_at_95": 0.05715386940119763,
+                "drawdown_at_risk_at_95": 0.27633734965794576,
+                "conditional_dar_at_95": 0.2960169384605213,
+                "entropic_dar_at_95": 0.30863217246106867,
+                "entropic_risk_measure_at_95": 2.9954578257741127,
+                "worst_realization": 0.09686186781960025,
+                "average_drawdown": 0.11369515302104384,
+                "max_drawdown": 0.3393712071781721,
+                "ulcer_index": 0.15310469161019646,
+                "gini_mean_difference": 0.013634314532075673
+            }
+        },
+        "strategy_stats_ratios_testing": { # Testing data: Portfolio Level (PL)
+            "min_variance": {
+                "daily_sharpe_ratio": 0.027082063031398543,
+                "annual_sharpe_ratio": 0.42991442262993945,
+                "daily_sortino_ratio": 0.037862108180950586,
+                "annual_sortino_ratio": 0.6010423341565162,
+                "mean_absolute_deviation_ratio": 0.039665251246303976,
+                "calmar_ratio": 0.0010756043779655074,
+                "value_at_risk_ratio_at_95": 0.019104795461698375,
+                "conditional_var_ratio_at_95": 0.011910548690321274,
+                "entropic_var_ratio_at_95": 0.006388254923182099,
+                "drawdown_at_risk_ratio_at_95": 0.0013205782878235523,
+                "conditional_dar_ratio_at_95": 0.001232962135818744,
+                "entropic_dar_ratio_at_95": 0.0011826345989298611,
+                "entropic_risk_measure_ratio_at_95": 0.0001218790583026184,
+                "worst_realization_ratio": 0.003769613715162539,
+                "average_drawdown_ratio": 0.0032101379493616536,
+                "ulcer_index_ratio": 0.002383825709210353,
+                "gini_mean_difference_ratio": 0.026776412208598523
+            },
+            "max_sharpe": {
+                "daily_sharpe_ratio": 0.0728589747981531,
+                "annual_sharpe_ratio": 1.1566003685702133,
+                "daily_sortino_ratio": 0.10149858289617407,
+                "annual_sortino_ratio": 1.6112400526125035,
+                "mean_absolute_deviation_ratio": 0.10173997007710528,
+                "calmar_ratio": 0.004002041718301531,
+                "value_at_risk_ratio_at_95": 0.04782822223343421,
+                "conditional_var_ratio_at_95": 0.03262209694324563,
+                "entropic_var_ratio_at_95": 0.020113546577785277,
+                "drawdown_at_risk_ratio_at_95": 0.005107110073930791,
+                "conditional_dar_ratio_at_95": 0.004551865920075456,
+                "entropic_dar_ratio_at_95": 0.00439089885913615,
+                "entropic_risk_measure_ratio_at_95": 0.0005166884090360643,
+                "worst_realization_ratio": 0.01201697644574123,
+                "average_drawdown_ratio": 0.01641118643427428,
+                "ulcer_index_ratio": 0.011404695412829204,
+                "gini_mean_difference_ratio": 0.06890241187242303
+            },
+            "max_sortino": {
+                "daily_sharpe_ratio": 0.07277362617117414,
+                "annual_sharpe_ratio": 1.1552455011198504,
+                "daily_sortino_ratio": 0.10175260643293402,
+                "annual_sortino_ratio": 1.615272551245047,
+                "mean_absolute_deviation_ratio": 0.10086486943137626,
+                "calmar_ratio": 0.0037612026158223605,
+                "value_at_risk_ratio_at_95": 0.047885599105711475,
+                "conditional_var_ratio_at_95": 0.0329458152330578,
+                "entropic_var_ratio_at_95": 0.02105054467399614,
+                "drawdown_at_risk_ratio_at_95": 0.004839609878177973,
+                "conditional_dar_ratio_at_95": 0.004291908805905711,
+                "entropic_dar_ratio_at_95": 0.00414070164831526,
+                "entropic_risk_measure_ratio_at_95": 0.0005396257231378202,
+                "worst_realization_ratio": 0.012873163266012013,
+                "average_drawdown_ratio": 0.015167373747985671,
+                "ulcer_index_ratio": 0.01067623342383405,
+                "gini_mean_difference_ratio": 0.06835437273350647
+            },
+            "target_return": {
+                "daily_sharpe_ratio": 0.0629114944809492,
+                "annual_sharpe_ratio": 0.9986890140240243,
+                "daily_sortino_ratio": 0.08672587937331953,
+                "annual_sortino_ratio": 1.3767306543311382,
+                "mean_absolute_deviation_ratio": 0.09249713471968775,
+                "calmar_ratio": 0.0030700736198635854,
+                "value_at_risk_ratio_at_95": 0.04397790088896203,
+                "conditional_var_ratio_at_95": 0.02693248504421639,
+                "entropic_var_ratio_at_95": 0.014222561235981559,
+                "drawdown_at_risk_ratio_at_95": 0.00545015866512414,
+                "conditional_dar_ratio_at_95": 0.004590900547946401,
+                "entropic_dar_ratio_at_95": 0.004041794162195658,
+                "entropic_risk_measure_ratio_at_95": 0.0003312548871044007,
+                "worst_realization_ratio": 0.008040116432141866,
+                "average_drawdown_ratio": 0.016598408746884737,
+                "ulcer_index_ratio": 0.0116101400855487,
+                "gini_mean_difference_ratio": 0.062360689809925846
+            },
+            "target_volatility": {
+                "daily_sharpe_ratio": 0.06340260192033936,
+                "annual_sharpe_ratio": 1.0064851029338653,
+                "daily_sortino_ratio": 0.08739677572624394,
+                "annual_sortino_ratio": 1.3873808037631674,
+                "mean_absolute_deviation_ratio": 0.09314417765173731,
+                "calmar_ratio": 0.0031094028461207,
+                "value_at_risk_ratio_at_95": 0.04416496480729705,
+                "conditional_var_ratio_at_95": 0.02714753483420834,
+                "entropic_var_ratio_at_95": 0.014369194411932946,
+                "drawdown_at_risk_ratio_at_95": 0.005501431854888725,
+                "conditional_dar_ratio_at_95": 0.00462885024815441,
+                "entropic_dar_ratio_at_95": 0.00408437303086313,
+                "entropic_risk_measure_ratio_at_95": 0.00033581079089457897,
+                "worst_realization_ratio": 0.008127200637233607,
+                "average_drawdown_ratio": 0.016791282169798166,
+                "ulcer_index_ratio": 0.011712700747980769,
+                "gini_mean_difference_ratio": 0.06280522607285546
+            },
+            "cvar_90": {
+                "daily_sharpe_ratio": 0.030004555853860717,
+                "annual_sharpe_ratio": 0.47630755792957635,
+                "daily_sortino_ratio": 0.04215063843816379,
+                "annual_sortino_ratio": 0.6691206414598881,
+                "mean_absolute_deviation_ratio": 0.04420236358761311,
+                "calmar_ratio": 0.0012348677826441274,
+                "value_at_risk_ratio_at_95": 0.02209566614647018,
+                "conditional_var_ratio_at_95": 0.013286660104571205,
+                "entropic_var_ratio_at_95": 0.0069668170307733675,
+                "drawdown_at_risk_ratio_at_95": 0.0016214266300243663,
+                "conditional_dar_ratio_at_95": 0.0015127077975968216,
+                "entropic_dar_ratio_at_95": 0.0014364549864508216,
+                "entropic_risk_measure_ratio_at_95": 0.00013565778015670952,
+                "worst_realization_ratio": 0.00404612845790931,
+                "average_drawdown_ratio": 0.004033438405585003,
+                "ulcer_index_ratio": 0.003015954917905417,
+                "gini_mean_difference_ratio": 0.02984157320681111
+            },
+            "cvar_95": {
+                "daily_sharpe_ratio": 0.022339586344500416,
+                "annual_sharpe_ratio": 0.3546299391576156,
+                "daily_sortino_ratio": 0.031478485153617966,
+                "annual_sortino_ratio": 0.4997054601930718,
+                "mean_absolute_deviation_ratio": 0.032546520994669564,
+                "calmar_ratio": 0.0008823857223806502,
+                "value_at_risk_ratio_at_95": 0.015602466728957274,
+                "conditional_var_ratio_at_95": 0.009995108428681869,
+                "entropic_var_ratio_at_95": 0.005367266029466712,
+                "drawdown_at_risk_ratio_at_95": 0.0010408038813635695,
+                "conditional_dar_ratio_at_95": 0.0009845775661003198,
+                "entropic_dar_ratio_at_95": 0.0009611871380892971,
+                "entropic_risk_measure_ratio_at_95": 0.00010108076597898503,
+                "worst_realization_ratio": 0.003173415357816042,
+                "average_drawdown_ratio": 0.002694196800178169,
+                "ulcer_index_ratio": 0.002012103491055795,
+                "gini_mean_difference_ratio": 0.022013417967909312
+            },
+            "cvar_99": {
+                "daily_sharpe_ratio": 0.020550333211527202,
+                "annual_sharpe_ratio": 0.32622642622327375,
+                "daily_sortino_ratio": 0.029088324508412144,
+                "annual_sortino_ratio": 0.46176283622882214,
+                "mean_absolute_deviation_ratio": 0.029475536694424233,
+                "calmar_ratio": 0.0007550944696890076,
+                "value_at_risk_ratio_at_95": 0.014928260265402366,
+                "conditional_var_ratio_at_95": 0.009136026949353842,
+                "entropic_var_ratio_at_95": 0.005196159291801604,
+                "drawdown_at_risk_ratio_at_95": 0.0009036866582691727,
+                "conditional_dar_ratio_at_95": 0.0008354189621000591,
+                "entropic_dar_ratio_at_95": 0.0008173284248209133,
+                "entropic_risk_measure_ratio_at_95": 9.62440060683046e-05,
+                "worst_realization_ratio": 0.003065954681301783,
+                "average_drawdown_ratio": 0.002521389150418292,
+                "ulcer_index_ratio": 0.001873724835354175,
+                "gini_mean_difference_ratio": 0.019920990144603648
+            },
+            "cvar_999": {
+                "daily_sharpe_ratio": 0.007847515485691386,
+                "annual_sharpe_ratio": 0.12457544630920596,
+                "daily_sortino_ratio": 0.01135335783518887,
+                "annual_sortino_ratio": 0.18022896826461834,
+                "mean_absolute_deviation_ratio": 0.01102579137006383,
+                "calmar_ratio": 0.0001928203086610759,
+                "value_at_risk_ratio_at_95": 0.005507661085186666,
+                "conditional_var_ratio_at_95": 0.0035451233362235007,
+                "entropic_var_ratio_at_95": 0.002378304546676914,
+                "drawdown_at_risk_ratio_at_95": 0.00023326525790488546,
+                "conditional_dar_ratio_at_95": 0.00021648161842980767,
+                "entropic_dar_ratio_at_95": 0.00021230448893918728,
+                "entropic_risk_measure_ratio_at_95": 4.0688996553527065e-05,
+                "worst_realization_ratio": 0.0015817479360689763,
+                "average_drawdown_ratio": 0.0007098351931831149,
+                "ulcer_index_ratio": 0.0005184579035084573,
+                "gini_mean_difference_ratio": 0.007480551769921913
+            },
+            "hrp": {
+                "daily_sharpe_ratio": 0.043453429568437237,
+                "annual_sharpe_ratio": 0.6898018095056739,
+                "daily_sortino_ratio": 0.060551321356413106,
+                "annual_sortino_ratio": 0.9612224271925398,
+                "mean_absolute_deviation_ratio": 0.06503752823596645,
+                "calmar_ratio": 0.0019096270667401903,
+                "value_at_risk_ratio_at_95": 0.031645161824538116,
+                "conditional_var_ratio_at_95": 0.018762058598754478,
+                "entropic_var_ratio_at_95": 0.009771791293469794,
+                "drawdown_at_risk_ratio_at_95": 0.0026163973927304913,
+                "conditional_dar_ratio_at_95": 0.0023079586313784345,
+                "entropic_dar_ratio_at_95": 0.0021736814588672465,
+                "entropic_risk_measure_ratio_at_95": 0.00020556881657271488,
+                "worst_realization_ratio": 0.0056396597321300805,
+                "average_drawdown_ratio": 0.007114769264890806,
+                "ulcer_index_ratio": 0.005196939336274765,
+                "gini_mean_difference_ratio": 0.043625156739926035
+            },
+            "max_information": {
+                "daily_sharpe_ratio": 0.02709662736547323,
+                "annual_sharpe_ratio": 0.4301456242657767,
+                "daily_sortino_ratio": 0.03788233506076148,
+                "annual_sortino_ratio": 0.6013634259191867,
+                "mean_absolute_deviation_ratio": 0.03968751791538824,
+                "calmar_ratio": 0.0010763469229259923,
+                "value_at_risk_ratio_at_95": 0.019116495215066392,
+                "conditional_var_ratio_at_95": 0.011916793723596473,
+                "entropic_var_ratio_at_95": 0.006391188530242375,
+                "drawdown_at_risk_ratio_at_95": 0.0013218667510130463,
+                "conditional_dar_ratio_at_95": 0.001233987340304248,
+                "entropic_dar_ratio_at_95": 0.0011835485317784945,
+                "entropic_risk_measure_ratio_at_95": 0.0001219450166959055,
+                "worst_realization_ratio": 0.0037711553865161923,
+                "average_drawdown_ratio": 0.003212812022939052,
+                "ulcer_index_ratio": 0.002385826003986268,
+                "gini_mean_difference_ratio": 0.026791310536115005
+            }
+        },
+        
+        "strategy_symbol_contributions_testing": { #Testing data: Security-Contribution Level (SCL)
+            "min_variance": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 1.2396924917860428e-05,
+                        "CSCO": 5.088179113665627e-05,
+                        "NFLX": 2.7469567070235022e-05,
+                        "CVX": 2.596137689765877e-05,
+                        "PFE": 0.00012558633061765615,
+                        "MMM": 9.373705405495816e-05,
+                        "MSFT": 2.9050558297652142e-05
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.0031240250793008284,
+                        "CSCO": 0.012822211366437382,
+                        "NFLX": 0.0069223309016992265,
+                        "CVX": 0.006542266978210011,
+                        "PFE": 0.031647755315649354,
+                        "MMM": 0.023621737621849458,
+                        "MSFT": 0.00732074069100834
+                    },
+                    "daily_variance": {
+                        "AAPL": 6.170819023888909e-06,
+                        "CSCO": 2.5327436182440833e-05,
+                        "NFLX": 1.3673530184149417e-05,
+                        "CVX": 1.2922798154211295e-05,
+                        "PFE": 6.251312508953922e-05,
+                        "MMM": 4.6659506308074833e-05,
+                        "MSFT": 1.4460500405183135e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.001555046394020005,
+                        "CSCO": 0.00638251391797509,
+                        "NFLX": 0.003445729606405653,
+                        "CVX": 0.0032565451348612463,
+                        "PFE": 0.015753307522563882,
+                        "MMM": 0.011758195589634857,
+                        "MSFT": 0.00364404610210615
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.00045775408260026636,
+                        "CSCO": 0.001878800410355174,
+                        "NFLX": 0.001014308512552652,
+                        "CVX": 0.0009586188787596991,
+                        "PFE": 0.004637251248992856,
+                        "MMM": 0.0034612228007253657,
+                        "MSFT": 0.0010726863113778057
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.007266620785108942,
+                        "CSCO": 0.02982503189355536,
+                        "NFLX": 0.016101648461460925,
+                        "CVX": 0.015217602931738452,
+                        "PFE": 0.07361408143055256,
+                        "MMM": 0.05494520857743475,
+                        "MSFT": 0.017028367288133218
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 3.1571608935989657e-06,
+                        "CSCO": 1.2958213608399161e-05,
+                        "NFLX": 6.995754470795637e-06,
+                        "CVX": 6.611659296829719e-06,
+                        "PFE": 3.198343576522082e-05,
+                        "MMM": 2.387228795078987e-05,
+                        "MSFT": 7.3983901009536535e-06
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.0007956045451869393,
+                        "CSCO": 0.0032654698293165885,
+                        "NFLX": 0.0017629301266405006,
+                        "CVX": 0.0016661381428010893,
+                        "PFE": 0.008059825812835647,
+                        "MMM": 0.006015816563599048,
+                        "MSFT": 0.0018643943054403207
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.0003274229965910257,
+                        "CSCO": 0.001343871051592849,
+                        "NFLX": 0.0007255160473091586,
+                        "CVX": 0.0006856822861945289,
+                        "PFE": 0.0033169397228874306,
+                        "MMM": 0.002475748408064602,
+                        "MSFT": 0.0007672726029626696
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.005197678935020419,
+                        "CSCO": 0.02133329157992118,
+                        "NFLX": 0.011517210200199635,
+                        "CVX": 0.010884868846037643,
+                        "PFE": 0.05265478572330983,
+                        "MMM": 0.03930128757901796,
+                        "MSFT": 0.012180074971394545
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.0003125386712132721,
+                        "CSCO": 0.0012827800036032159,
+                        "NFLX": 0.0006925348058344808,
+                        "CVX": 0.0006545118480770461,
+                        "PFE": 0.003166154925827133,
+                        "MMM": 0.0023632033356574948,
+                        "MSFT": 0.00073239314979403
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.0034094915591035093,
+                        "CSCO": -0.013993876589714654,
+                        "NFLX": -0.007554878139437681,
+                        "CVX": -0.007140084817949284,
+                        "PFE": -0.034539656972737504,
+                        "MMM": -0.025780239591123365,
+                        "MSFT": -0.007989693731256695
+                    },
+                    "kurtosis": {
+                        "AAPL": 0.41968260521508166,
+                        "CSCO": 1.7225402915424814,
+                        "NFLX": 0.9299483177120301,
+                        "CVX": 0.8788903993185203,
+                        "PFE": 4.251570350086225,
+                        "MMM": 3.1733523685615244,
+                        "MSFT": 0.9834708260389677
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.00015626933560663605,
+                        "CSCO": 0.0006413900018016079,
+                        "NFLX": 0.0003462674029172404,
+                        "CVX": 0.00032725592403852304,
+                        "PFE": 0.0015830774629135664,
+                        "MMM": 0.0011816016678287474,
+                        "MSFT": 0.000366196574897015
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.3860002309797659e-08,
+                        "CSCO": 5.6886828576712186e-08,
+                        "NFLX": 3.071150834301484e-08,
+                        "CVX": 2.9025322501443356e-08,
+                        "PFE": 1.4040795148577374e-07,
+                        "MMM": 1.047998430516892e-07,
+                        "MSFT": 3.247908717477831e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.269073562267007e-09,
+                        "CSCO": 2.983509904294025e-08,
+                        "NFLX": 1.6107083416266106e-08,
+                        "CVX": 1.522273948557486e-08,
+                        "PFE": 7.363892914763927e-08,
+                        "MMM": 5.496375479809622e-08,
+                        "MSFT": 1.7034115047863445e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.0006488907427830881,
+                        "CSCO": 0.0026632994443026086,
+                        "NFLX": 0.001437836229406721,
+                        "CVX": 0.001358893213471277,
+                        "PFE": 0.006573550126167737,
+                        "MMM": 0.004906467292093435,
+                        "MSFT": 0.0015205898621575514
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.001040835753262517,
+                        "CSCO": 0.004271993882028603,
+                        "NFLX": 0.0023063225535996748,
+                        "CVX": 0.0021796961309394126,
+                        "PFE": 0.010544126377629425,
+                        "MMM": 0.007870086970143582,
+                        "MSFT": 0.00243906129373025
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.001940580810711497,
+                        "CSCO": 0.00796489679082988,
+                        "NFLX": 0.00430001109857901,
+                        "CVX": 0.00406392312295624,
+                        "PFE": 0.01965894162456176,
+                        "MMM": 0.014673342748862334,
+                        "MSFT": 0.004547495152742208
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.009387497153456784,
+                        "CSCO": 0.03852993162602625,
+                        "NFLX": 0.02080116515886966,
+                        "CVX": 0.019659097182678786,
+                        "PFE": 0.09509949677018788,
+                        "MMM": 0.07098182282660907,
+                        "MSFT": 0.021998361297860217
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.010054586882855324,
+                        "CSCO": 0.0412679267744653,
+                        "NFLX": 0.022279327379339152,
+                        "CVX": 0.02105610232744026,
+                        "PFE": 0.10185741067730437,
+                        "MMM": 0.0760258983887712,
+                        "MSFT": 0.023561598084568283
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.010482464261639327,
+                        "CSCO": 0.04302410159714424,
+                        "NFLX": 0.023227433980953713,
+                        "CVX": 0.02195215404753981,
+                        "PFE": 0.10619199770689638,
+                        "MMM": 0.07926121402145571,
+                        "MSFT": 0.02456427228151394
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.1017149713044189,
+                        "CSCO": 0.41747771803684136,
+                        "NFLX": 0.2253838145190598,
+                        "CVX": 0.21300933285190166,
+                        "PFE": 1.0304176317627332,
+                        "MMM": 0.769098935948575,
+                        "MSFT": 0.23835561828449103
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.0032886459607243588,
+                        "CSCO": 0.013497879353524778,
+                        "NFLX": 0.007287103970293832,
+                        "CVX": 0.006887012532141999,
+                        "PFE": 0.03331543763025625,
+                        "MMM": 0.02486648795814782,
+                        "MSFT": 0.007706508011895731
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.003861804418818075,
+                        "CSCO": 0.015850344109596376,
+                        "NFLX": 0.008557129788050833,
+                        "CVX": 0.008087308803293414,
+                        "PFE": 0.03912178622810568,
+                        "MMM": 0.029200319591747785,
+                        "MSFT": 0.00904962925453996
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.011525543379908012,
+                        "CSCO": 0.047305303119813034,
+                        "NFLX": 0.02553872746612781,
+                        "CVX": 0.024136548185834272,
+                        "PFE": 0.11675885036392392,
+                        "MMM": 0.08714826378102017,
+                        "MSFT": 0.027008590605219478
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.00520043259453181,
+                        "CSCO": 0.021344593667257227,
+                        "NFLX": 0.01152331186130817,
+                        "CVX": 0.010890635501308745,
+                        "PFE": 0.05268268151166843,
+                        "MMM": 0.03932210886592407,
+                        "MSFT": 0.012186527809231152
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.00046297931258615333,
+                        "CSCO": 0.001900246782140475,
+                        "NFLX": 0.0010258867713955312,
+                        "CVX": 0.0009695614444313781,
+                        "PFE": 0.004690185139042917,
+                        "MMM": 0.0035007324104779436,
+                        "MSFT": 0.001084930948602716
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.0009196093696592166,
+                        "CSCO": 0.0037744337554952347,
+                        "NFLX": 0.00203770462640103,
+                        "CVX": 0.0019258264128021979,
+                        "PFE": 0.009316049512466444,
+                        "MMM": 0.006953456100149504,
+                        "MSFT": 0.002154983254424917
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.014598346172658925,
+                        "CSCO": 0.059917278342767784,
+                        "NFLX": 0.03234755812117744,
+                        "CVX": 0.030571546539325395,
+                        "PFE": 0.1478877012693044,
+                        "MMM": 0.11038269356040376,
+                        "MSFT": 0.03420929862430177
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.001285660896582552,
+                        "CSCO": 0.005276851287389249,
+                        "NFLX": 0.0028488152071786646,
+                        "CVX": 0.0026924037468900085,
+                        "PFE": 0.01302431332691132,
+                        "MMM": 0.009721286993170241,
+                        "MSFT": 0.0030127767228285513
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.020409234016306583,
+                        "CSCO": 0.08376741727141786,
+                        "NFLX": 0.045223539416242166,
+                        "CVX": 0.04274058445949673,
+                        "PFE": 0.20675456436234985,
+                        "MMM": 0.1543206468444919,
+                        "MSFT": 0.047826347786211115
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.0013468891440691832,
+                        "CSCO": 0.005528155777891556,
+                        "NFLX": 0.0029844870340285483,
+                        "CVX": 0.002820626642512571,
+                        "PFE": 0.013644582545523549,
+                        "MMM": 0.010184253057930054,
+                        "MSFT": 0.0031562570443485144
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 3.652365268025425e-05,
+                        "CSCO": 0.00014990724550949447,
+                        "NFLX": 8.093046732135648e-05,
+                        "CVX": 7.648705781424666e-05,
+                        "PFE": 0.0003700007502875557,
+                        "MMM": 0.00027616684204008143,
+                        "MSFT": 8.558836231251835e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.0006487300798182001,
+                        "CSCO": 0.0026626400211410594,
+                        "NFLX": 0.0014374802264367156,
+                        "CVX": 0.001358556756502102,
+                        "PFE": 0.006571922539297596,
+                        "MMM": 0.004905252468810716,
+                        "MSFT": 0.0015202133696919863
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.0004044393575446209,
+                        "CSCO": 0.001659976087165049,
+                        "NFLX": 0.0008961717628787697,
+                        "CVX": 0.0008469683137578464,
+                        "PFE": 0.004097149511506225,
+                        "MMM": 0.003058093371646852,
+                        "MSFT": 0.0009477502858219107
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.00021692214054442005,
+                        "CSCO": 0.0008903326527529303,
+                        "NFLX": 0.0004806641427761676,
+                        "CVX": 0.0004542737400955839,
+                        "PFE": 0.0021975171940787196,
+                        "MMM": 0.001640216630225336,
+                        "MSFT": 0.0005083284227089415
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 4.484208479402357e-05,
+                        "CSCO": 0.00018404931930615615,
+                        "NFLX": 9.936275842438435e-05,
+                        "CVX": 9.390734169384166e-05,
+                        "PFE": 0.00045427014552727957,
+                        "MMM": 0.000339065127370301,
+                        "MSFT": 0.000105081510707566
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 4.186695567540018e-05,
+                        "CSCO": 0.00017183823474918795,
+                        "NFLX": 9.277035672734e-05,
+                        "CVX": 8.767688947447695e-05,
+                        "PFE": 0.00042413077212643315,
+                        "MMM": 0.00031656923900599425,
+                        "MSFT": 9.810968805991154e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 4.0158013693349986e-05,
+                        "CSCO": 0.00016482407361072162,
+                        "NFLX": 8.898361955613752e-05,
+                        "CVX": 8.409805946734205e-05,
+                        "PFE": 0.0004068184342534383,
+                        "MMM": 0.00030364739040163294,
+                        "MSFT": 9.410500794723867e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 4.138574075777928e-06,
+                        "CSCO": 1.6986314196670658e-05,
+                        "NFLX": 9.1704062824427e-06,
+                        "CVX": 8.666913941323934e-06,
+                        "PFE": 4.1925585224566354e-05,
+                        "MMM": 3.129306214420454e-05,
+                        "MSFT": 9.698202437632295e-06
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.0001280025117894552,
+                        "CSCO": 0.0005253719864395623,
+                        "NFLX": 0.0002836327239260106,
+                        "CVX": 0.00026806014188449166,
+                        "PFE": 0.0012967220396988075,
+                        "MMM": 0.0009678673095367428,
+                        "MSFT": 0.00029995700188746913
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.00010900472880182765,
+                        "CSCO": 0.00044739771197708394,
+                        "NFLX": 0.0002415367301677075,
+                        "CVX": 0.00022827538819519924,
+                        "PFE": 0.0011042660983185924,
+                        "MMM": 0.0008242190884952498,
+                        "MSFT": 0.00025543820340599303
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 8.094613971183721e-05,
+                        "CSCO": 0.00033223437275178223,
+                        "NFLX": 0.00017936346542580237,
+                        "CVX": 0.00016951568678470633,
+                        "PFE": 0.000820020184959567,
+                        "MMM": 0.0006120592585647621,
+                        "MSFT": 0.00018968660101189593
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.000909230568008653,
+                        "CSCO": 0.003731835125485632,
+                        "NFLX": 0.002014706891887201,
+                        "CVX": 0.0019040913467933583,
+                        "PFE": 0.009210907662843326,
+                        "MMM": 0.00687497871178177,
+                        "MSFT": 0.002130661901798583
+                    }
+                }
+            },
+            "max_sharpe": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0008927215091486677,
+                        "AMD": 0.00046231031896432594,
+                        "CVX": 8.05641824338618e-05,
+                        "MSFT": 0.00011158122091055518
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.22496582030546428,
+                        "AMD": 0.11650220037901014,
+                        "CVX": 0.02030217397333317,
+                        "MSFT": 0.028118467669459905
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0002601896113731745,
+                        "AMD": 0.00013474341213067412,
+                        "CVX": 2.3480965903973943e-05,
+                        "MSFT": 3.252108771631136e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.06556778206603997,
+                        "AMD": 0.03395533985692988,
+                        "CVX": 0.005917203407801434,
+                        "MSFT": 0.008195314104510465
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.01225273223541566,
+                        "AMD": 0.0063452762030360745,
+                        "CVX": 0.0011057550927261195,
+                        "MSFT": 0.001531468445990042
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.19450609425584614,
+                        "AMD": 0.10072813699949786,
+                        "CVX": 0.017553317917778873,
+                        "MSFT": 0.024311307892993232
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.0001340713884163755,
+                        "AMD": 6.943104395666848e-05,
+                        "CVX": 1.2099352020585442e-05,
+                        "MSFT": 1.6757576753066817e-05
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.03378598988092662,
+                        "AMD": 0.01749662307708046,
+                        "CVX": 0.003049036709187532,
+                        "MSFT": 0.004222909341772838
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.00879540860252068,
+                        "AMD": 0.004554845060617614,
+                        "CVX": 0.0007937468695131763,
+                        "MSFT": 0.0010993377220319908
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.1396227830488072,
+                        "AMD": 0.07230592374495078,
+                        "CVX": 0.012600340924007405,
+                        "MSFT": 0.0174514453162134
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.008774540708750988,
+                        "AMD": 0.004544038283222971,
+                        "CVX": 0.0007918636340545896,
+                        "MSFT": 0.0010967294449368476
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.06311716348658032,
+                        "AMD": -0.032686247261401055,
+                        "CVX": -0.00569604587962708,
+                        "MSFT": -0.007889011399489988
+                    },
+                    "kurtosis": {
+                        "AAPL": 4.357494127029312,
+                        "AMD": 2.2565990391261144,
+                        "CVX": 0.39324464371789664,
+                        "MSFT": 0.5446429931638778
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.004387270354375493,
+                        "AMD": 0.0022720191416114852,
+                        "CVX": 0.0003959318170272947,
+                        "MSFT": 0.0005483647224684237
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 8.860635045512716e-07,
+                        "AMD": 4.588623632496446e-07,
+                        "CVX": 7.996332685736556e-08,
+                        "MSFT": 1.1074903721811339e-07
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 4.7127176253321613e-07,
+                        "AMD": 2.440557291639402e-07,
+                        "CVX": 4.253019991515713e-08,
+                        "MSFT": 5.890423620942276e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.018665161853425795,
+                        "AMD": 0.009666056929900876,
+                        "CVX": 0.0016844486094560207,
+                        "MSFT": 0.0023329577329042886
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.027365546448524816,
+                        "AMD": 0.014171692266399409,
+                        "CVX": 0.0024696199810215606,
+                        "MSFT": 0.003420418408561499
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.044384092367611,
+                        "AMD": 0.022985022416431116,
+                        "CVX": 0.004005468758197133,
+                        "MSFT": 0.00554756569056761
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.17479973923130396,
+                        "AMD": 0.09052288129135612,
+                        "CVX": 0.015774906212635033,
+                        "MSFT": 0.021848211472887725
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.19612210131485353,
+                        "AMD": 0.10156501247661139,
+                        "CVX": 0.017699155433938237,
+                        "MSFT": 0.024513292541952877
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.20331179054402054,
+                        "AMD": 0.10528830970506099,
+                        "CVX": 0.018347993205589733,
+                        "MSFT": 0.025411931472388155
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 1.727775373970808,
+                        "AMD": 0.8947565125891129,
+                        "CVX": 0.15592411407904933,
+                        "MSFT": 0.21595456557409812
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.0742883630653237,
+                        "AMD": 0.03847143422904577,
+                        "CVX": 0.006704197415849427,
+                        "MSFT": 0.009285299127810068
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.05439713409654801,
+                        "AMD": 0.028170438549086515,
+                        "CVX": 0.0049091016518833675,
+                        "MSFT": 0.0067990953218056835
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.22306651753933726,
+                        "AMD": 0.11551861562316017,
+                        "CVX": 0.020130770267945457,
+                        "MSFT": 0.02788107390292531
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.07827666385061371,
+                        "AMD": 0.04053684050555796,
+                        "CVX": 0.007064123987321459,
+                        "MSFT": 0.009783796661946523
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.012956317273792903,
+                        "AMD": 0.006709639131650737,
+                        "CVX": 0.0011692505421004888,
+                        "MSFT": 0.0016194095080032107
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.042039640071204365,
+                        "AMD": 0.021770909753253537,
+                        "CVX": 0.0037938922692478394,
+                        "MSFT": 0.005254532704447364
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.6673585970104348,
+                        "AMD": 0.3456024781364366,
+                        "CVX": 0.06022617267240172,
+                        "MSFT": 0.0834131207509403
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.05856469850850304,
+                        "AMD": 0.030328679403429412,
+                        "CVX": 0.00528520597573886,
+                        "MSFT": 0.007319999008502763
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.9296857671658463,
+                        "AMD": 0.4814528597668861,
+                        "CVX": 0.08390004383734499,
+                        "MSFT": 0.11620138184242614
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.05870397895037398,
+                        "AMD": 0.03040080804024052,
+                        "CVX": 0.0052977754218800875,
+                        "MSFT": 0.0073374076646106935
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.0023091787093277275,
+                        "AMD": 0.0011958456637535194,
+                        "CVX": 0.0002083932031480684,
+                        "MSFT": 0.0002886241420722156
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.027596891851820526,
+                        "AMD": 0.014291498237346122,
+                        "CVX": 0.0024904978842482063,
+                        "MSFT": 0.00344933426001936
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.018822955135744602,
+                        "AMD": 0.00974777274153042,
+                        "CVX": 0.0016986887578710546,
+                        "MSFT": 0.002352680308099555
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.011605519581191411,
+                        "AMD": 0.006010106628262972,
+                        "CVX": 0.0010473470026173117,
+                        "MSFT": 0.0014505733657135835
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.0029468033266577725,
+                        "AMD": 0.0015260499180438333,
+                        "CVX": 0.00026593601517674586,
+                        "MSFT": 0.00036832081405243966
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.0026264273613853324,
+                        "AMD": 0.001360138025952366,
+                        "CVX": 0.00023702349604382212,
+                        "MSFT": 0.00032827703669393617
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.002533549341567524,
+                        "AMD": 0.0013120396363351004,
+                        "CVX": 0.00022864166402116428,
+                        "MSFT": 0.0003166682172123615
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.0002981292943664913,
+                        "AMD": 0.00015439109258453976,
+                        "CVX": 2.690485511335496e-05,
+                        "MSFT": 3.7263166971678256e-05
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.006933797324525461,
+                        "AMD": 0.0035907794534852226,
+                        "CVX": 0.0006257446548422573,
+                        "MSFT": 0.0008666550128882896
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.009469257188282744,
+                        "AMD": 0.004903808484736748,
+                        "CVX": 0.0008545587350723536,
+                        "MSFT": 0.0011835620261824362
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.006580511070946454,
+                        "AMD": 0.00340782443458624,
+                        "CVX": 0.0005938621272084632,
+                        "MSFT": 0.0008224977800880469
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.03975670263243903,
+                        "AMD": 0.020588653557256094,
+                        "CVX": 0.0035878672251361777,
+                        "MSFT": 0.00496918845759173
+                    }
+                }
+            },
+            "max_sortino": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0010604083639701503,
+                        "AMD": 0.0005395008639292895,
+                        "CVX": 1.5926007081940926e-05
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.2672229077204779,
+                        "AMD": 0.13595421771018096,
+                        "CVX": 0.004013353784649113
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0003235356840000429,
+                        "AMD": 0.00016460430430449732,
+                        "CVX": 4.859101238464324e-06
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.08153099236801083,
+                        "AMD": 0.041480284684733325,
+                        "CVX": 0.0012244935120930096
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.014571327825219482,
+                        "AMD": 0.007413411867924585,
+                        "CVX": 0.00021884311556058295
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.23131265818515834,
+                        "AMD": 0.11768426501413959,
+                        "CVX": 0.0034740267594712323
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.00016549281122897226,
+                        "AMD": 8.419729385935947e-05,
+                        "CVX": 2.4854949972057334e-06
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.041704188429701014,
+                        "AMD": 0.021217718052558586,
+                        "CVX": 0.0006263447392958448
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.010421436866770328,
+                        "AMD": 0.005302083974476653,
+                        "CVX": 0.00015651694477662238
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.16543518152060674,
+                        "AMD": 0.08416797376107696,
+                        "CVX": 0.0024846294710794367
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.010513158545172187,
+                        "AMD": 0.005348748944709046,
+                        "CVX": 0.00015789448964464515
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.04865141331040843,
+                        "AMD": -0.024752237349464294,
+                        "CVX": -0.000730683366195903
+                    },
+                    "kurtosis": {
+                        "AAPL": 4.452948691343108,
+                        "AMD": 2.265513690422033,
+                        "CVX": 0.06687771881422673
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.005256579272586093,
+                        "AMD": 0.002674374472354523,
+                        "CVX": 7.894724482232257e-05
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.0822807290267121e-06,
+                        "AMD": 5.506288031696141e-07,
+                        "CVX": 1.6254502643297514e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 5.65816029035962e-07,
+                        "AMD": 2.878685673008651e-07,
+                        "CVX": 8.497848934126363e-09
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.02214461933804378,
+                        "AMD": 0.011266453255357547,
+                        "CVX": 0.00033258448008101414
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.0321864357117543,
+                        "AMD": 0.01637539882115149,
+                        "CVX": 0.00048339999994781685
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.050374390800447026,
+                        "AMD": 0.025628831571077492,
+                        "CVX": 0.0007565603326936434
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.21911029828077283,
+                        "AMD": 0.11147610603117497,
+                        "CVX": 0.0032907625785607293
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.2470715040615536,
+                        "AMD": 0.1257018469700313,
+                        "CVX": 0.003710704910604479
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.2560938831228282,
+                        "AMD": 0.1302921363940331,
+                        "CVX": 0.0038462097573296033
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 1.9650812007331282,
+                        "AMD": 0.9997686188719754,
+                        "CVX": 0.029513061366560223
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.08237356600377019,
+                        "AMD": 0.041908958410687654,
+                        "CVX": 0.001237147914063134
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.06991377555464931,
+                        "AMD": 0.03556982724190724,
+                        "CVX": 0.0010500174484100126
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.2819333261944729,
+                        "AMD": 0.14343839432094285,
+                        "CVX": 0.004234285867755309
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.0993242018859247,
+                        "AMD": 0.05053288388439374,
+                        "CVX": 0.0014917252601827785
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.015513394704159888,
+                        "AMD": 0.007892704480408944,
+                        "CVX": 0.00023299178157967635
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.04775843489341865,
+                        "AMD": 0.024297919330288655,
+                        "CVX": 0.0007172719474668442
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.7581416504019317,
+                        "AMD": 0.3857175115455172,
+                        "CVX": 0.011386339172401533
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.0667761864460701,
+                        "AMD": 0.03397352520181765,
+                        "CVX": 0.0010028947850462787
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.0600390970255011,
+                        "AMD": 0.5393129930651698,
+                        "CVX": 0.015920461154376196
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.0661935999786643,
+                        "AMD": 0.03367712438760473,
+                        "CVX": 0.000994145065107245
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.002468327602999942,
+                        "AMD": 0.0012558038200427342,
+                        "CVX": 3.707119277968455e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.03142541312759721,
+                        "AMD": 0.01598821558535988,
+                        "CVX": 0.0004719703927543904
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.021621027487590493,
+                        "AMD": 0.011000066959979519,
+                        "CVX": 0.0003247207854877863
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.013814634781553101,
+                        "AMD": 0.007028431359793863,
+                        "CVX": 0.00020747853264917787
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.0031760433750113257,
+                        "AMD": 0.0016158663048264487,
+                        "CVX": 4.770019834019884e-05
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.002816608956563569,
+                        "AMD": 0.0014329979063233743,
+                        "CVX": 4.2301943018767384e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.002717377716193375,
+                        "AMD": 0.001382512318197627,
+                        "CVX": 4.08116139242583e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.0003541348881622692,
+                        "AMD": 0.000180172171969425,
+                        "CVX": 5.318663006126022e-06
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.008448144775225016,
+                        "AMD": 0.0042981379246853114,
+                        "CVX": 0.00012688056610168642
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.009953743818447321,
+                        "AMD": 0.0050641371492749915,
+                        "CVX": 0.00014949278026335903
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.007006387144702755,
+                        "AMD": 0.00356461910903657,
+                        "CVX": 0.00010522717009472487
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.04485825472259781,
+                        "AMD": 0.022822403141553198,
+                        "CVX": 0.0006737148693554748
+                    }
+                }
+            },
+            "target_return": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.00031753216052090173,
+                        "NFLX": 5.235861444074582e-05,
+                        "AMD": 7.131112837785385e-05,
+                        "CVX": 0.00014903467563956362,
+                        "PFE": 0.00023469984600271466,
+                        "MSFT": 0.00016712711527836432
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.08001810445126722,
+                        "NFLX": 0.013194370839067946,
+                        "AMD": 0.01797040435121917,
+                        "CVX": 0.037556738261170036,
+                        "PFE": 0.0591443611926841,
+                        "MSFT": 0.04211603305014781
+                    },
+                    "daily_variance": {
+                        "AAPL": 7.959159412140998e-05,
+                        "NFLX": 1.3124042561518493e-05,
+                        "AMD": 1.787461898939303e-05,
+                        "CVX": 3.735655435361585e-05,
+                        "PFE": 5.882911152294403e-05,
+                        "MSFT": 4.189154731318015e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.020057081718595316,
+                        "NFLX": 0.0033072587255026605,
+                        "AMD": 0.004504403985327044,
+                        "CVX": 0.009413851697111193,
+                        "PFE": 0.014824936103781897,
+                        "MSFT": 0.010556669922921398
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.005047283698165151,
+                        "NFLX": 0.0008322583157931657,
+                        "AMD": 0.0011335150907827859,
+                        "CVX": 0.0023689578012598984,
+                        "PFE": 0.003730635362251429,
+                        "MSFT": 0.002656543397311498
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.08012314477041231,
+                        "NFLX": 0.01321169118092506,
+                        "AMD": 0.017993994225300326,
+                        "CVX": 0.037606039251240404,
+                        "PFE": 0.05922200040468386,
+                        "MSFT": 0.04217131905802127
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 4.188222861577653e-05,
+                        "NFLX": 6.906057819199282e-06,
+                        "AMD": 9.405878688542055e-06,
+                        "CVX": 1.9657550109490182e-05,
+                        "PFE": 3.095671503084234e-05,
+                        "MSFT": 2.2043927892220344e-05
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.010554321611175685,
+                        "NFLX": 0.0017403265704382187,
+                        "AMD": 0.002370281429512598,
+                        "CVX": 0.0049537026275915256,
+                        "PFE": 0.007801092187772269,
+                        "MSFT": 0.005555069828839527
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.0036613311137965554,
+                        "NFLX": 0.0006037253795417091,
+                        "AMD": 0.0008222589253997476,
+                        "CVX": 0.0017184567826407403,
+                        "PFE": 0.002706226188753043,
+                        "MSFT": 0.0019270731699237119
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.05812182956741289,
+                        "NFLX": 0.009583843286672666,
+                        "AMD": 0.013052955779465662,
+                        "CVX": 0.02727965571407746,
+                        "PFE": 0.042960008921584164,
+                        "MSFT": 0.03059133819505834
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.0034328864508417676,
+                        "NFLX": 0.0005660566092065276,
+                        "AMD": 0.0007709549987030624,
+                        "CVX": 0.001611235592229021,
+                        "PFE": 0.0025373742301744995,
+                        "MSFT": 0.0018068355931763992
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.08003027287094247,
+                        "NFLX": -0.013196377318011949,
+                        "AMD": -0.017973137125550414,
+                        "CVX": -0.03756244954558409,
+                        "PFE": -0.05915335532486645,
+                        "MSFT": -0.042122437670311264
+                    },
+                    "kurtosis": {
+                        "AAPL": 4.068974127981552,
+                        "NFLX": 0.6709425816486144,
+                        "AMD": 0.9138070799841337,
+                        "CVX": 1.9097852587740924,
+                        "PFE": 3.0075303227858017,
+                        "MSFT": 2.141628448079958
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.0017164432254208838,
+                        "NFLX": 0.0002830283046032638,
+                        "AMD": 0.0003854774993515312,
+                        "CVX": 0.0008056177961145105,
+                        "PFE": 0.0012686871150872497,
+                        "MSFT": 0.0009034177965881996
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 2.5160709066644827e-07,
+                        "NFLX": 4.148807676410204e-08,
+                        "AMD": 5.650572689663774e-08,
+                        "CVX": 1.1809254560096775e-07,
+                        "PFE": 1.8597217156124676e-07,
+                        "MSFT": 1.324286874680128e-07
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 1.4153438572564486e-07,
+                        "NFLX": 2.33379331408827e-08,
+                        "AMD": 3.1785683484170325e-08,
+                        "CVX": 6.642959010470965e-08,
+                        "PFE": 1.0461333579378039e-07,
+                        "MSFT": 7.449397742961939e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.007220266408863521,
+                        "NFLX": 0.0011905664750335378,
+                        "AMD": 0.001621521876587615,
+                        "CVX": 0.0033888537794437954,
+                        "PFE": 0.00533676781425513,
+                        "MSFT": 0.003800252215319158
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.011789931749691627,
+                        "NFLX": 0.0019440691920848037,
+                        "AMD": 0.002647773804042919,
+                        "CVX": 0.005533639966564022,
+                        "PFE": 0.00871437766018978,
+                        "MSFT": 0.0062054101210483725
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.022325947855128887,
+                        "NFLX": 0.0036813773252235412,
+                        "AMD": 0.00501394419715658,
+                        "CVX": 0.010478750849918778,
+                        "PFE": 0.016501939566900874,
+                        "MSFT": 0.011750845189230094
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.058261085599728896,
+                        "NFLX": 0.009606805536835362,
+                        "AMD": 0.013084229792093506,
+                        "CVX": 0.02734501595214917,
+                        "PFE": 0.04306293824151793,
+                        "MSFT": 0.030664633003772857
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.06916554980981672,
+                        "NFLX": 0.011404867932538167,
+                        "AMD": 0.01553314597715533,
+                        "CVX": 0.032463059062830216,
+                        "PFE": 0.05112283386485043,
+                        "MSFT": 0.03640399384236792
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.07856218000681311,
+                        "NFLX": 0.012954300080512413,
+                        "AMD": 0.017643433959317438,
+                        "CVX": 0.03687339573933232,
+                        "PFE": 0.05806823321136589,
+                        "MSFT": 0.04134973444258092
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.9585735120666339,
+                        "NFLX": 0.15806140974531221,
+                        "AMD": 0.21527570204686192,
+                        "CVX": 0.4499093641827321,
+                        "PFE": 0.7085173838620076,
+                        "MSFT": 0.50452724407864
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.0394934778869007,
+                        "NFLX": 0.0065121711709836055,
+                        "AMD": 0.008869414887174309,
+                        "CVX": 0.01853638276229057,
+                        "PFE": 0.029191100400543735,
+                        "MSFT": 0.02078665361240821
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.019130277206873676,
+                        "NFLX": 0.00315443577991009,
+                        "AMD": 0.004296262940942327,
+                        "CVX": 0.008978853208897818,
+                        "PFE": 0.014139900371278914,
+                        "MSFT": 0.01006886369813802
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.1034281909288582,
+                        "NFLX": 0.017054514296328926,
+                        "AMD": 0.023227823566336,
+                        "CVX": 0.04854433283791605,
+                        "PFE": 0.07644762799308483,
+                        "MSFT": 0.05443749433141945
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.027349554629072768,
+                        "NFLX": 0.00450973149806498,
+                        "AMD": 0.006142141942509014,
+                        "CVX": 0.012836595815503478,
+                        "PFE": 0.02021507443263745,
+                        "MSFT": 0.01439492668020343
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.005091864145325099,
+                        "NFLX": 0.0008396092891264327,
+                        "AMD": 0.0011435269333166256,
+                        "CVX": 0.0023898817683675145,
+                        "PFE": 0.003763586431100669,
+                        "MSFT": 0.002680007482081492
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.020136233167984647,
+                        "NFLX": 0.003320310191578423,
+                        "AMD": 0.004522179756951046,
+                        "CVX": 0.009451001668209518,
+                        "PFE": 0.014883439887940617,
+                        "MSFT": 0.010598329808284946
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.31965279182458595,
+                        "NFLX": 0.052708290255058396,
+                        "AMD": 0.07178737812493788,
+                        "CVX": 0.15003000032723376,
+                        "PFE": 0.23626728358001942,
+                        "MSFT": 0.16824326991218894
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.0277585605487165,
+                        "NFLX": 0.004577173432814136,
+                        "AMD": 0.006233996177353035,
+                        "CVX": 0.013028563975417639,
+                        "PFE": 0.020517385940854786,
+                        "MSFT": 0.01461019929816344
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.44065348779019503,
+                        "NFLX": 0.07266037566502807,
+                        "AMD": 0.09896162135642064,
+                        "CVX": 0.2068220413155007,
+                        "PFE": 0.3257034045158085,
+                        "MSFT": 0.2319297236881853
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.02960578011145697,
+                        "NFLX": 0.004881765751004107,
+                        "AMD": 0.0066488433259523265,
+                        "CVX": 0.01389556203922466,
+                        "PFE": 0.021882734717486346,
+                        "MSFT": 0.01558244877456334
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.0009826458386101764,
+                        "NFLX": 0.00016203075150306498,
+                        "AMD": 0.00022068184662662392,
+                        "CVX": 0.0004612077831284577,
+                        "PFE": 0.0007263101369596095,
+                        "MSFT": 0.0005171972630356529
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.014076112383672906,
+                        "NFLX": 0.0023210428194495388,
+                        "AMD": 0.0031612024923917035,
+                        "CVX": 0.006606665730883174,
+                        "PFE": 0.010404178913233171,
+                        "MSFT": 0.007408698549331537
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.008620345186805649,
+                        "NFLX": 0.0014214287121079995,
+                        "AMD": 0.0019359504916581433,
+                        "CVX": 0.004045984969551093,
+                        "PFE": 0.006371618183539398,
+                        "MSFT": 0.004537157500554109
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.004552249341022865,
+                        "NFLX": 0.0007506309524482511,
+                        "AMD": 0.0010223406556146726,
+                        "CVX": 0.0021366119351715275,
+                        "PFE": 0.0033647370318374316,
+                        "MSFT": 0.002395991319886812
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.0017444453766184923,
+                        "NFLX": 0.0002876456442631643,
+                        "AMD": 0.0003917662009294531,
+                        "CVX": 0.0008187606900944446,
+                        "PFE": 0.001289384547948986,
+                        "MSFT": 0.0009181562052695994
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.0014694205668960997,
+                        "NFLX": 0.00024229616548825334,
+                        "AMD": 0.0003300013406991225,
+                        "CVX": 0.0006896769675430987,
+                        "PFE": 0.0010861034680644099,
+                        "MSFT": 0.0007734020392554172
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.0012936667669151672,
+                        "NFLX": 0.0002133157137614058,
+                        "AMD": 0.00029053068748158517,
+                        "CVX": 0.0006071863923219634,
+                        "PFE": 0.0009561972887273362,
+                        "MSFT": 0.0006808973129882008
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00010602554747429366,
+                        "NFLX": 1.7482798441482946e-05,
+                        "AMD": 2.3811135901536186e-05,
+                        "CVX": 4.9763409953236435e-05,
+                        "PFE": 7.836743095171369e-05,
+                        "MSFT": 5.5804564382137775e-05
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.0025734193808474716,
+                        "NFLX": 0.0004243370905646145,
+                        "AMD": 0.0005779365451884404,
+                        "CVX": 0.0012078421350454787,
+                        "PFE": 0.0019021101087665908,
+                        "MSFT": 0.0013544711717292698
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.005312692561229776,
+                        "NFLX": 0.0008760221988201975,
+                        "AMD": 0.001193120409108883,
+                        "CVX": 0.002493528250293511,
+                        "PFE": 0.003926808937825116,
+                        "MSFT": 0.002796236389607254
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.0037160854277014234,
+                        "NFLX": 0.0006127539453600802,
+                        "AMD": 0.0008345556071018655,
+                        "CVX": 0.0017441558847389094,
+                        "PFE": 0.0027466971414287513,
+                        "MSFT": 0.0019558920792176705
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.019959935793756794,
+                        "NFLX": 0.003291240108633221,
+                        "AMD": 0.00448258702824723,
+                        "CVX": 0.009368255964778872,
+                        "PFE": 0.014753131932632777,
+                        "MSFT": 0.01050553898187695
+                    }
+                }
+            },
+            "target_volatility": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.00032791614680830795,
+                        "NFLX": 5.154167492756291e-05,
+                        "AMD": 7.652581119306802e-05,
+                        "CVX": 0.00015033881628212915,
+                        "PFE": 0.00023004840109397973,
+                        "MSFT": 0.0001693329187665593
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.08263486899569361,
+                        "NFLX": 0.012988502081745852,
+                        "AMD": 0.01928450442065314,
+                        "CVX": 0.03788538170309655,
+                        "PFE": 0.05797219707568289,
+                        "MSFT": 0.042671895529172936
+                    },
+                    "daily_variance": {
+                        "AAPL": 8.203869023908413e-05,
+                        "NFLX": 1.2894795041177804e-05,
+                        "AMD": 1.914537414783896e-05,
+                        "CVX": 3.761205326400137e-05,
+                        "PFE": 5.755394999923019e-05,
+                        "MSFT": 4.236403423613842e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.0206737499402492,
+                        "NFLX": 0.0032494883503768066,
+                        "AMD": 0.004824634285255418,
+                        "CVX": 0.009478237422528346,
+                        "PFE": 0.014503595399806009,
+                        "MSFT": 0.010675736627506883
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.005171966715503413,
+                        "NFLX": 0.0008129268100435558,
+                        "AMD": 0.0012069821880372825,
+                        "CVX": 0.002371177392230979,
+                        "PFE": 0.0036283747689569326,
+                        "MSFT": 0.002670756619409933
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.08210242630995347,
+                        "NFLX": 0.01290481304083376,
+                        "AMD": 0.01916024823858749,
+                        "CVX": 0.037641274165570976,
+                        "PFE": 0.05759866381200891,
+                        "MSFT": 0.04239694696402958
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 4.317596552865492e-05,
+                        "NFLX": 6.786373899613085e-06,
+                        "AMD": 1.0075977710410656e-05,
+                        "CVX": 1.9794766474889367e-05,
+                        "PFE": 3.0289944341661805e-05,
+                        "MSFT": 2.2295676302287704e-05
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.01088034331322104,
+                        "NFLX": 0.0017101662227024974,
+                        "AMD": 0.0025391463830234857,
+                        "CVX": 0.00498828115167212,
+                        "PFE": 0.007633065974098775,
+                        "MSFT": 0.005618510428176501
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.003752039409731218,
+                        "NFLX": 0.0005897434373209459,
+                        "AMD": 0.000875613666032401,
+                        "CVX": 0.0017201872155220102,
+                        "PFE": 0.0026322298412308548,
+                        "MSFT": 0.0019375190601649524
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.0595617791247743,
+                        "NFLX": 0.009361886834901785,
+                        "AMD": 0.013899936029347786,
+                        "CVX": 0.027307125484463433,
+                        "PFE": 0.04178535332075924,
+                        "MSFT": 0.030757161561864338
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.003520522217012581,
+                        "NFLX": 0.0005533536956037698,
+                        "AMD": 0.0008215844846383768,
+                        "CVX": 0.001614044163278144,
+                        "PFE": 0.0024698097819288536,
+                        "MSFT": 0.0018179656854096548
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.08118375169101937,
+                        "NFLX": -0.012760416282594878,
+                        "AMD": -0.01894585708670099,
+                        "CVX": -0.037220091933151886,
+                        "PFE": -0.056954170915674174,
+                        "MSFT": -0.04192255173788719
+                    },
+                    "kurtosis": {
+                        "AAPL": 4.119544322202698,
+                        "NFLX": 0.6475076520973546,
+                        "AMD": 0.9613783098843486,
+                        "CVX": 1.8886761845971676,
+                        "PFE": 2.8900515994185336,
+                        "MSFT": 2.1272952578165527
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.0017602611085062905,
+                        "NFLX": 0.0002766768478018849,
+                        "AMD": 0.0004107922423191884,
+                        "CVX": 0.000807022081639072,
+                        "PFE": 0.0012349048909644268,
+                        "MSFT": 0.0009089828427048274
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 2.607961448826217e-07,
+                        "NFLX": 4.0991790897565914e-08,
+                        "AMD": 6.08620122474002e-08,
+                        "CVX": 1.1956649312397522e-07,
+                        "PFE": 1.8296060357403837e-07,
+                        "MSFT": 1.3467275962429658e-07
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 1.46602587693982e-07,
+                        "NFLX": 2.3042912012746656e-08,
+                        "AMD": 3.421265483716225e-08,
+                        "CVX": 6.721248621738163e-08,
+                        "PFE": 1.0284852156107991e-07,
+                        "MSFT": 7.570424425444454e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.007424802628941046,
+                        "NFLX": 0.0011670262877475916,
+                        "AMD": 0.0017327266426446744,
+                        "CVX": 0.003404028893447455,
+                        "PFE": 0.005208843754268553,
+                        "MSFT": 0.0038341006158479187
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.012079039544876246,
+                        "NFLX": 0.0018985766200257622,
+                        "AMD": 0.0028188861957601616,
+                        "CVX": 0.005537844124715468,
+                        "PFE": 0.00847400703227381,
+                        "MSFT": 0.006237506270852429
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.022820774596520797,
+                        "NFLX": 0.0035869564743838353,
+                        "AMD": 0.00532568556032041,
+                        "CVX": 0.010462577926935123,
+                        "PFE": 0.016009832875734164,
+                        "MSFT": 0.011784440652145131
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.0596056000433619,
+                        "NFLX": 0.009368774582159288,
+                        "AMD": 0.013910162519792924,
+                        "CVX": 0.027327215940798014,
+                        "PFE": 0.04181609572961489,
+                        "MSFT": 0.030779790286066224
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.07084181367480033,
+                        "NFLX": 0.011134876300678194,
+                        "AMD": 0.016532358380697235,
+                        "CVX": 0.032478651981033835,
+                        "PFE": 0.04969882125387474,
+                        "MSFT": 0.03658206891313341
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.08028555284506202,
+                        "NFLX": 0.012619237894798963,
+                        "AMD": 0.018736244367203697,
+                        "CVX": 0.036808297172199966,
+                        "PFE": 0.056324042724707916,
+                        "MSFT": 0.041458730014867176
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.976490796900123,
+                        "NFLX": 0.1534842724686098,
+                        "AMD": 0.22788371686689413,
+                        "CVX": 0.4476890569288615,
+                        "PFE": 0.6850536293998926,
+                        "MSFT": 0.5042509751264007
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.04034798221985649,
+                        "NFLX": 0.0063418730788350535,
+                        "AMD": 0.009416011073047214,
+                        "CVX": 0.018498228725075814,
+                        "PFE": 0.028305982756232924,
+                        "MSFT": 0.020835331416673132
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.01952895219628422,
+                        "NFLX": 0.0030695496869362925,
+                        "AMD": 0.004557472765880383,
+                        "CVX": 0.0089533851412811,
+                        "PFE": 0.013700466633081715,
+                        "MSFT": 0.01008457347415267
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.10545952487868115,
+                        "NFLX": 0.016576068614546503,
+                        "AMD": 0.02461109575703317,
+                        "CVX": 0.04834973907279088,
+                        "PFE": 0.07398475285406932,
+                        "MSFT": 0.054458340442384144
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.02799662980076048,
+                        "NFLX": 0.004400494474892866,
+                        "AMD": 0.006533575205211387,
+                        "CVX": 0.012835538063930053,
+                        "PFE": 0.019640935600069805,
+                        "MSFT": 0.014457205251807678
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.005221160201348817,
+                        "NFLX": 0.0008206590143911499,
+                        "AMD": 0.0012184624748312566,
+                        "CVX": 0.002393730994738126,
+                        "PFE": 0.0036628862831752005,
+                        "MSFT": 0.002696159688528616
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.020672823905722476,
+                        "NFLX": 0.0032493427967924143,
+                        "AMD": 0.004824418176521401,
+                        "CVX": 0.00947781286601919,
+                        "PFE": 0.014502945743592663,
+                        "MSFT": 0.01067525843169123
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.32817090571183594,
+                        "NFLX": 0.051581717788270885,
+                        "AMD": 0.07658526429393203,
+                        "CVX": 0.15045561489777073,
+                        "PFE": 0.23022712629245348,
+                        "MSFT": 0.1694644739496024
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.028496277751922438,
+                        "NFLX": 0.0044790288579284986,
+                        "AMD": 0.006650178078067096,
+                        "CVX": 0.013064610289456633,
+                        "PFE": 0.019991461834881548,
+                        "MSFT": 0.014715218913987737
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.45236438533565715,
+                        "NFLX": 0.07110237883896277,
+                        "AMD": 0.10556830421315412,
+                        "CVX": 0.20739425881126697,
+                        "PFE": 0.31735461815841354,
+                        "MSFT": 0.23359685840571312
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.030370254912519365,
+                        "NFLX": 0.004773579530633332,
+                        "AMD": 0.00708750824240266,
+                        "CVX": 0.013923767457549916,
+                        "PFE": 0.021306143815863637,
+                        "MSFT": 0.015682923692768417
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.0010138406870205216,
+                        "NFLX": 0.00015935490712293545,
+                        "AMD": 0.00023660006300372014,
+                        "CVX": 0.00046481275859351547,
+                        "PFE": 0.0007112563113564368,
+                        "MSFT": 0.0005235381190235708
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.014400269273031048,
+                        "NFLX": 0.002263426198935607,
+                        "AMD": 0.003360591719082109,
+                        "CVX": 0.0066020519505462635,
+                        "PFE": 0.01010245745391769,
+                        "MSFT": 0.007436168211784339
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.008851627379696216,
+                        "NFLX": 0.0013912937969807195,
+                        "AMD": 0.002065704821806177,
+                        "CVX": 0.004058181322836581,
+                        "PFE": 0.0062098275598767095,
+                        "MSFT": 0.00457089995301194
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.004685167749396226,
+                        "NFLX": 0.0007364120232287499,
+                        "AMD": 0.0010933778836079665,
+                        "CVX": 0.002147996005634909,
+                        "PFE": 0.003286862693698785,
+                        "MSFT": 0.0024193780563663125
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.0017937770457486933,
+                        "NFLX": 0.0002819448639061677,
+                        "AMD": 0.000418613858638894,
+                        "CVX": 0.0008223880414451151,
+                        "PFE": 0.0012584178769787695,
+                        "MSFT": 0.0009262901681710863
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.001509266231475563,
+                        "NFLX": 0.00023722561465488204,
+                        "AMD": 0.0003522175525485469,
+                        "CVX": 0.0006919491489001524,
+                        "PFE": 0.0010588203318303109,
+                        "MSFT": 0.000779371368744955
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.0013317359520734246,
+                        "NFLX": 0.00020932150551049934,
+                        "AMD": 0.00031078730040996435,
+                        "CVX": 0.0006105573287066951,
+                        "PFE": 0.0009342745986612033,
+                        "MSFT": 0.0006876963455013443
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00010949325635763854,
+                        "NFLX": 1.721008825236274e-05,
+                        "AMD": 2.555244791845228e-05,
+                        "CVX": 5.019907287854859e-05,
+                        "PFE": 7.681460275993279e-05,
+                        "MSFT": 5.654132272764409e-05
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.002649925752749085,
+                        "NFLX": 0.0004165138345877587,
+                        "AMD": 0.0006184133346415235,
+                        "CVX": 0.0012149041905420868,
+                        "PFE": 0.0018590459432119757,
+                        "MSFT": 0.0013683975815011792
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.005474904955535887,
+                        "NFLX": 0.0008605424716779593,
+                        "AMD": 0.001277678903601696,
+                        "CVX": 0.0025100646561134043,
+                        "PFE": 0.003840900008802576,
+                        "MSFT": 0.0028271911740666467
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.0038190009982185654,
+                        "NFLX": 0.0006002684220160901,
+                        "AMD": 0.0008912404960242959,
+                        "CVX": 0.0017508869113056513,
+                        "PFE": 0.0026792065043691675,
+                        "MSFT": 0.001972097416047001
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.02047804568958424,
+                        "NFLX": 0.0032187276666840567,
+                        "AMD": 0.00477896277233409,
+                        "CVX": 0.009388513431585165,
+                        "PFE": 0.014366299782036115,
+                        "MSFT": 0.010574676730631807
+                    }
+                }
+            },
+            "cvar_90": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 1.9138602382289153e-05,
+                        "CSCO": 4.573647287141741e-05,
+                        "NFLX": 1.704297636046515e-05,
+                        "CVX": 3.8700842781759716e-05,
+                        "PFE": 0.0001505936520298435,
+                        "MMM": 8.766833728606446e-05,
+                        "MSFT": 4.747081478173547e-05
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.0048229278003368665,
+                        "CSCO": 0.011525591163597188,
+                        "NFLX": 0.0042948300428372185,
+                        "CVX": 0.009752612381003448,
+                        "PFE": 0.037949600311520566,
+                        "MMM": 0.022092420996088245,
+                        "MSFT": 0.011962645324997339
+                    },
+                    "daily_variance": {
+                        "AAPL": 8.638491181481717e-06,
+                        "CSCO": 2.064383332073594e-05,
+                        "NFLX": 7.692599389196886e-06,
+                        "CVX": 1.746819764621466e-05,
+                        "PFE": 6.797267162260412e-05,
+                        "MMM": 3.957040035701134e-05,
+                        "MSFT": 2.1426654187102924e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.0021768997777333932,
+                        "CSCO": 0.0052022459968254576,
+                        "NFLX": 0.0019385350460776152,
+                        "CVX": 0.004401985806846095,
+                        "PFE": 0.01712911324889624,
+                        "MMM": 0.009971740889966857,
+                        "MSFT": 0.005399516855149937
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.0006378565467026092,
+                        "CSCO": 0.0015243176101049484,
+                        "NFLX": 0.0005680129525487449,
+                        "CVX": 0.0012898322164892181,
+                        "PFE": 0.005019026202664702,
+                        "MMM": 0.002921834194548962,
+                        "MSFT": 0.0015821202291060527
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.010125658768257363,
+                        "CSCO": 0.024197791892484066,
+                        "NFLX": 0.009016926083445065,
+                        "CVX": 0.020475451666978176,
+                        "PFE": 0.07967457093580602,
+                        "MMM": 0.04638267990564761,
+                        "MSFT": 0.0251153800225149
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 4.3772765438648585e-06,
+                        "CSCO": 1.0460596124011273e-05,
+                        "NFLX": 3.897976412809738e-06,
+                        "CVX": 8.851445259825503e-06,
+                        "PFE": 3.44429570936274e-05,
+                        "MMM": 2.005102299408464e-05,
+                        "MSFT": 1.0857265327510813e-05
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.0011030736890539443,
+                        "CSCO": 0.002636070223250841,
+                        "NFLX": 0.000982290056028054,
+                        "CVX": 0.002230564205476027,
+                        "PFE": 0.008679625187594105,
+                        "MMM": 0.00505285779450933,
+                        "MSFT": 0.0027360308625327253
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.00045405249105220653,
+                        "CSCO": 0.0010850718889706533,
+                        "NFLX": 0.00040433495178175525,
+                        "CVX": 0.0009181555538840766,
+                        "PFE": 0.0035727490166197313,
+                        "MMM": 0.0020798815992947883,
+                        "MSFT": 0.0011262181675225761
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.007207859840961112,
+                        "CSCO": 0.017224982237060628,
+                        "NFLX": 0.0064186183727149015,
+                        "CVX": 0.014575267562700184,
+                        "PFE": 0.05671563236895829,
+                        "MMM": 0.03301709680915982,
+                        "MSFT": 0.017878159159605698
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.0004329769005305497,
+                        "CSCO": 0.0010347064989129724,
+                        "NFLX": 0.0003855670823277226,
+                        "CVX": 0.0008755378590796648,
+                        "PFE": 0.003406914015612608,
+                        "MMM": 0.0019833404861325536,
+                        "MSFT": 0.001073942905511014
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.0017632881792317492,
+                        "CSCO": -0.004213817726238682,
+                        "NFLX": -0.0015702128167490504,
+                        "CVX": -0.00356560720789796,
+                        "PFE": -0.013874576689951658,
+                        "MMM": -0.008077107185865979,
+                        "MSFT": -0.0043736070634182896
+                    },
+                    "kurtosis": {
+                        "AAPL": 0.6197681735733677,
+                        "CSCO": 1.481090922471832,
+                        "NFLX": 0.5519052081333942,
+                        "CVX": 1.2532550793153776,
+                        "PFE": 4.876696365072603,
+                        "MMM": 2.838976650159095,
+                        "MSFT": 1.537254371434243
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.00021648845026527483,
+                        "CSCO": 0.0005173532494564861,
+                        "NFLX": 0.00019278354116386128,
+                        "CVX": 0.0004377689295398323,
+                        "PFE": 0.0017034570078063038,
+                        "MMM": 0.0009916702430662766,
+                        "MSFT": 0.0005369714527555069
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 2.0849170371659606e-08,
+                        "CSCO": 4.982430252991722e-08,
+                        "NFLX": 1.8566241707823396e-08,
+                        "CVX": 4.2159842634612004e-08,
+                        "PFE": 1.6405339561085996e-07,
+                        "MMM": 9.550394870885305e-08,
+                        "MSFT": 5.1713656268954764e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 1.0604466891677782e-08,
+                        "CSCO": 2.5342023551097635e-08,
+                        "NFLX": 9.443305991739959e-09,
+                        "CVX": 2.1443666458057745e-08,
+                        "PFE": 8.344211166250837e-08,
+                        "MMM": 4.857595981297113e-08,
+                        "MSFT": 2.6303001317365293e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.000866169965432184,
+                        "CSCO": 0.002069929576607216,
+                        "NFLX": 0.0007713266596032361,
+                        "CVX": 0.0017515128317569298,
+                        "PFE": 0.006815528938189587,
+                        "MMM": 0.0039676711579962765,
+                        "MSFT": 0.0021484219786385133
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.001440437418558229,
+                        "CSCO": 0.0034422851575530273,
+                        "NFLX": 0.0012827133550742077,
+                        "CVX": 0.0029127592997163295,
+                        "PFE": 0.011334199177567023,
+                        "MMM": 0.006598222321943996,
+                        "MSFT": 0.00357281772906973
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.00274710851422556,
+                        "CSCO": 0.006564902260156003,
+                        "NFLX": 0.002446307443583495,
+                        "CVX": 0.005555025000773365,
+                        "PFE": 0.02161584714578424,
+                        "MMM": 0.012583700260652983,
+                        "MSFT": 0.0068138454866907665
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.01180355745236622,
+                        "CSCO": 0.028207550082441968,
+                        "NFLX": 0.010511099327515693,
+                        "CVX": 0.02386838976560915,
+                        "PFE": 0.09287725342686672,
+                        "MMM": 0.0540686428005361,
+                        "MSFT": 0.029277189545741027
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.01265188320751297,
+                        "CSCO": 0.030234836459544348,
+                        "NFLX": 0.011266535670365849,
+                        "CVX": 0.02558381919048887,
+                        "PFE": 0.09955237374269217,
+                        "MMM": 0.05795457485268447,
+                        "MSFT": 0.0313813512808954
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.013323496080845957,
+                        "CSCO": 0.031839823247383915,
+                        "NFLX": 0.011864608721624313,
+                        "CVX": 0.026941911265441994,
+                        "PFE": 0.10483701435151044,
+                        "MMM": 0.06103103690194602,
+                        "MSFT": 0.033047199689163864
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.14108002032895256,
+                        "CSCO": 0.337145962572758,
+                        "NFLX": 0.12563213359954292,
+                        "CVX": 0.2852828841593396,
+                        "PFE": 1.1100996334738806,
+                        "MMM": 0.6462462911068685,
+                        "MSFT": 0.34993064700674015
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.004730102511915386,
+                        "CSCO": 0.011303761941124844,
+                        "NFLX": 0.0042121688764354,
+                        "CVX": 0.009564907091891239,
+                        "PFE": 0.03721919696728001,
+                        "MMM": 0.02166721551182878,
+                        "MSFT": 0.01173240426634015
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.004744984417212966,
+                        "CSCO": 0.011339325972621085,
+                        "NFLX": 0.004225421252712365,
+                        "CVX": 0.00959500031738965,
+                        "PFE": 0.03733629645151396,
+                        "MMM": 0.02173538516533989,
+                        "MSFT": 0.011769316897464901
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.01549850328211587,
+                        "CSCO": 0.03703754645982051,
+                        "NFLX": 0.013801458423323943,
+                        "CVX": 0.03134007002668138,
+                        "PFE": 0.12195123570831924,
+                        "MMM": 0.07099410845292846,
+                        "MSFT": 0.03844202225447154
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.006345785299596231,
+                        "CSCO": 0.015164839699653543,
+                        "NFLX": 0.005650938699143923,
+                        "CVX": 0.012832036232370966,
+                        "PFE": 0.04993232860868853,
+                        "MMM": 0.029068185590436543,
+                        "MSFT": 0.015739895347873435
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.0006413402621119491,
+                        "CSCO": 0.001532642818609121,
+                        "NFLX": 0.0005711152103929703,
+                        "CVX": 0.0012968767602683409,
+                        "PFE": 0.005046438101174628,
+                        "MMM": 0.002937792075454482,
+                        "MSFT": 0.0015907611322214282
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.001413173037723396,
+                        "CSCO": 0.003377130106546676,
+                        "NFLX": 0.001258434351374294,
+                        "CVX": 0.0028576270337778652,
+                        "PFE": 0.011119667175791935,
+                        "MMM": 0.00647333217128515,
+                        "MSFT": 0.003505191977361405
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.022433426503906832,
+                        "CSCO": 0.05361027844218941,
+                        "NFLX": 0.019977026010223536,
+                        "CVX": 0.045363422826908424,
+                        "PFE": 0.1765192440537204,
+                        "MMM": 0.10276096247480566,
+                        "MSFT": 0.05564319761782213
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.0019852367105102817,
+                        "CSCO": 0.004744219203677044,
+                        "NFLX": 0.001767858574587693,
+                        "CVX": 0.004014417159799242,
+                        "PFE": 0.015620996790032985,
+                        "MMM": 0.009093788462356645,
+                        "MSFT": 0.004924121537199903
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.03151465577763679,
+                        "CSCO": 0.07531214506863808,
+                        "NFLX": 0.028063884848953,
+                        "CVX": 0.0637268967821942,
+                        "PFE": 0.24797563642419318,
+                        "MMM": 0.1443594164809448,
+                        "MSFT": 0.07816800607732817
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.0020818701243205955,
+                        "CSCO": 0.004975148893365243,
+                        "NFLX": 0.001853910886783921,
+                        "CVX": 0.004209822993550116,
+                        "PFE": 0.016381364679136163,
+                        "MMM": 0.009536437854710712,
+                        "MSFT": 0.005163808155746367
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 5.8160562818709896e-05,
+                        "CSCO": 0.00013898919839653022,
+                        "NFLX": 5.179213598940243e-05,
+                        "CVX": 0.00011760852505240915,
+                        "PFE": 0.00045764112676722227,
+                        "MMM": 0.0002664165196648038,
+                        "MSFT": 0.00014425971395504983
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.001040675282807478,
+                        "CSCO": 0.002486953639003698,
+                        "NFLX": 0.0009267241091868495,
+                        "CVX": 0.0021043861877848504,
+                        "PFE": 0.0081886382445667,
+                        "MMM": 0.004767028954155221,
+                        "MSFT": 0.002581259728965385
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.0006257832947978522,
+                        "CSCO": 0.001495465557735508,
+                        "NFLX": 0.0005572616895935603,
+                        "CVX": 0.0012654184680609124,
+                        "PFE": 0.004924026836467715,
+                        "MMM": 0.0028665301603784557,
+                        "MSFT": 0.0015521740975372022
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.0003281274361998024,
+                        "CSCO": 0.0007841425034258425,
+                        "NFLX": 0.000292198355275323,
+                        "CVX": 0.0006635180598402479,
+                        "PFE": 0.0025818974636437043,
+                        "MMM": 0.0015030557704775907,
+                        "MSFT": 0.0008138774419108577
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 7.636694931787539e-05,
+                        "CSCO": 0.00018249790846703144,
+                        "NFLX": 6.80049716247732e-05,
+                        "CVX": 0.0001544243012232018,
+                        "PFE": 0.000600899562174888,
+                        "MMM": 0.000349814648769902,
+                        "MSFT": 0.00018941828844669457
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 7.124644283787011e-05,
+                        "CSCO": 0.00017026117868746294,
+                        "NFLX": 6.344514697566e-05,
+                        "CVX": 0.00014406994450021294,
+                        "PFE": 0.0005606084397792389,
+                        "MMM": 0.0003263591069180059,
+                        "MSFT": 0.00017671753789837095
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 6.765504100919496e-05,
+                        "CSCO": 0.00016167862657490303,
+                        "NFLX": 6.024699408839985e-05,
+                        "CVX": 0.00013680764421509375,
+                        "PFE": 0.0005323492019057699,
+                        "MMM": 0.0003099079460360887,
+                        "MSFT": 0.0001678095326213716
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 6.389293619562197e-06,
+                        "CSCO": 1.5268813702355316e-05,
+                        "NFLX": 5.68968297387475e-06,
+                        "CVX": 1.2920015940453491e-05,
+                        "PFE": 5.0274677368879134e-05,
+                        "MMM": 2.9267484473047532e-05,
+                        "MSFT": 1.5847812078537116e-05
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.00019056704827533896,
+                        "CSCO": 0.00045540758199233953,
+                        "NFLX": 0.00016970046369978208,
+                        "CVX": 0.00038535234848250066,
+                        "PFE": 0.001499492344482169,
+                        "MMM": 0.0008729318855211971,
+                        "MSFT": 0.0004726767854559832
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.0001899693643809546,
+                        "CSCO": 0.0004539792669735537,
+                        "NFLX": 0.0001691682246010457,
+                        "CVX": 0.00038414375080291434,
+                        "PFE": 0.0014947894200670582,
+                        "MMM": 0.0008701940704918287,
+                        "MSFT": 0.00047119430826764874
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.00014204730087430403,
+                        "CSCO": 0.0003394575211462543,
+                        "NFLX": 0.0001264934994996788,
+                        "CVX": 0.00028723885626031937,
+                        "PFE": 0.0011177107592474482,
+                        "MMM": 0.0006506771202450817,
+                        "MSFT": 0.00035232986063233116
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.0014054967807059918,
+                        "CSCO": 0.0033587857722103594,
+                        "NFLX": 0.0012515986240692772,
+                        "CVX": 0.002842104603767101,
+                        "PFE": 0.011059265922080725,
+                        "MMM": 0.006438169484070379,
+                        "MSFT": 0.0034861520199072804
+                    }
+                }
+            },
+            "cvar_95": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "CSCO": 3.819297944013977e-05,
+                        "NFLX": 1.7523557479427873e-05,
+                        "CVX": 3.059176167548639e-05,
+                        "PFE": 0.00012158977234223585,
+                        "MMM": 7.665521767886822e-05,
+                        "MSFT": 1.8236296147265154e-05
+                    },
+                    "annual_mean_return": {
+                        "CSCO": 0.009624630818915222,
+                        "NFLX": 0.004415936484815824,
+                        "CVX": 0.00770912394222257,
+                        "PFE": 0.030640622630243433,
+                        "MMM": 0.019317114855074792,
+                        "MSFT": 0.004595546629110819
+                    },
+                    "daily_variance": {
+                        "CSCO": 2.317257076884822e-05,
+                        "NFLX": 1.0631950734570288e-05,
+                        "CVX": 1.8560734793681045e-05,
+                        "PFE": 7.37713487051874e-05,
+                        "MMM": 4.650850712626515e-05,
+                        "MSFT": 1.106438589575062e-05
+                    },
+                    "annual_variance": {
+                        "CSCO": 0.005839487833749751,
+                        "NFLX": 0.0026792515851117127,
+                        "CVX": 0.004677305168007623,
+                        "PFE": 0.018590379873707225,
+                        "MMM": 0.01172014379581882,
+                        "MSFT": 0.0027882252457291567
+                    },
+                    "daily_standard_deviation": {
+                        "CSCO": 0.0017096547291056783,
+                        "NFLX": 0.0007844172765420002,
+                        "CVX": 0.0013693969621338803,
+                        "PFE": 0.005442794260698966,
+                        "MMM": 0.0034313624476640897,
+                        "MSFT": 0.0008163220153695722
+                    },
+                    "annual_standard_deviation": {
+                        "CSCO": 0.027139927445994756,
+                        "NFLX": 0.012452238226996275,
+                        "CVX": 0.02173850284760149,
+                        "PFE": 0.0864016803065947,
+                        "MMM": 0.05447119016787041,
+                        "MSFT": 0.012958710254489608
+                    },
+                    "daily_semi_variance": {
+                        "CSCO": 1.1670697767005634e-05,
+                        "NFLX": 5.354705135421227e-06,
+                        "CVX": 9.347979914330584e-06,
+                        "PFE": 3.715440652618701e-05,
+                        "MMM": 2.342367343182128e-05,
+                        "MSFT": 5.572497978533252e-06
+                    },
+                    "annual_semi_variance": {
+                        "CSCO": 0.0029410158372854198,
+                        "NFLX": 0.0013493856941261494,
+                        "CVX": 0.002355690938411307,
+                        "PFE": 0.009362910444599127,
+                        "MMM": 0.005902765704818963,
+                        "MSFT": 0.0014042694905903794
+                    },
+                    "daily_semi_deviation": {
+                        "CSCO": 0.0012133042379185162,
+                        "NFLX": 0.0005566836330881638,
+                        "CVX": 0.000971830808445696,
+                        "PFE": 0.0038626309922115483,
+                        "MMM": 0.0024351622165038615,
+                        "MSFT": 0.000579325722259833
+                    },
+                    "annual_semi_deviation": {
+                        "CSCO": 0.019260607669158828,
+                        "NFLX": 0.008837078712547254,
+                        "CVX": 0.01542733581346897,
+                        "PFE": 0.061317366070814554,
+                        "MMM": 0.038657001761820284,
+                        "MSFT": 0.009196510735214363
+                    },
+                    "mean_absolute_deviation": {
+                        "CSCO": 0.0011734888483593984,
+                        "NFLX": 0.0005384156875721945,
+                        "CVX": 0.0009399395308794041,
+                        "PFE": 0.003735876174358227,
+                        "MMM": 0.0023552507406681884,
+                        "MSFT": 0.0005603147614533633
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "CSCO": -0.0022490410346374516,
+                        "NFLX": -0.0010318964485562295,
+                        "CVX": -0.0018014338849330278,
+                        "PFE": -0.007159964773591739,
+                        "MMM": -0.004513937708081827,
+                        "MSFT": -0.0010738669503195506
+                    },
+                    "kurtosis": {
+                        "CSCO": 1.5102356714864094,
+                        "NFLX": 0.6929205834347864,
+                        "CVX": 1.209666551632645,
+                        "PFE": 4.807931043111211,
+                        "MMM": 3.0311184369793898,
+                        "MSFT": 0.7211038615239603
+                    },
+                    "first_lower_partial_moment": {
+                        "CSCO": 0.0005867444241796992,
+                        "NFLX": 0.00026920784378609724,
+                        "CVX": 0.00046996976543970206,
+                        "PFE": 0.0018679380871791135,
+                        "MMM": 0.0011776253703340942,
+                        "MSFT": 0.00028015738072668163
+                    },
+                    "fourth_central_moment": {
+                        "CSCO": 5.0969215012491946e-08,
+                        "NFLX": 2.3385501263460795e-08,
+                        "CVX": 4.082525378499432e-08,
+                        "PFE": 1.6226372858772408e-07,
+                        "MMM": 1.022977607135148e-07,
+                        "MSFT": 2.433666377922242e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "CSCO": 2.5792133364158727e-08,
+                        "NFLX": 1.1833848475536762e-08,
+                        "CVX": 2.0658948543549847e-08,
+                        "PFE": 8.211089236658853e-08,
+                        "MMM": 5.1766100116140917e-08,
+                        "MSFT": 1.231516863029096e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "CSCO": 0.0024478808449727896,
+                        "NFLX": 0.0011231273736290151,
+                        "CVX": 0.0019607003307182094,
+                        "PFE": 0.0077929839207137854,
+                        "MMM": 0.0049130191405311946,
+                        "MSFT": 0.0011688085265017516
+                    },
+                    "conditional_var_at_95": {
+                        "CSCO": 0.003821167095150419,
+                        "NFLX": 0.0017532133447539637,
+                        "CVX": 0.0030606733177301563,
+                        "PFE": 0.012164927795412702,
+                        "MMM": 0.007669273247591705,
+                        "MSFT": 0.0018245220927203202
+                    },
+                    "entropic_var_at_95": {
+                        "CSCO": 0.007115909520872883,
+                        "NFLX": 0.0032648945260440173,
+                        "CVX": 0.005699691706640814,
+                        "PFE": 0.022653949268528605,
+                        "MMM": 0.014281985885928715,
+                        "MSFT": 0.003397688142742778
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "CSCO": 0.03669565431491541,
+                        "NFLX": 0.016836560463696634,
+                        "CVX": 0.029392436195960145,
+                        "PFE": 0.11682294284196909,
+                        "MMM": 0.07365001135318723,
+                        "MSFT": 0.017521356783732945
+                    },
+                    "conditional_dar_at_95": {
+                        "CSCO": 0.03879123469308079,
+                        "NFLX": 0.017798046677860602,
+                        "CVX": 0.03107095136917771,
+                        "PFE": 0.12349435588282227,
+                        "MMM": 0.07785594585755343,
+                        "MSFT": 0.01852194969208453
+                    },
+                    "entropic_dar_at_95": {
+                        "CSCO": 0.039735216927748285,
+                        "NFLX": 0.018231161014349614,
+                        "CVX": 0.03182706099906668,
+                        "PFE": 0.12649958319660723,
+                        "MMM": 0.07975056535946565,
+                        "MSFT": 0.018972680162487723
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "CSCO": 0.37784616163356133,
+                        "NFLX": 0.17336193794842303,
+                        "CVX": 0.30264671403307825,
+                        "PFE": 1.202897219511719,
+                        "MMM": 0.7583561218244532,
+                        "MSFT": 0.18041311787305342
+                    },
+                    "worst_realization": {
+                        "CSCO": 0.012035291675913593,
+                        "NFLX": 0.005521986725206895,
+                        "CVX": 0.009640011856670338,
+                        "PFE": 0.038315114358655665,
+                        "MMM": 0.02415543162040492,
+                        "MSFT": 0.005746583441196758
+                    },
+                    "average_drawdown": {
+                        "CSCO": 0.014176016925569074,
+                        "NFLX": 0.006504186137504517,
+                        "CVX": 0.011354687108775175,
+                        "PFE": 0.045130248961098546,
+                        "MMM": 0.02845197413707824,
+                        "MSFT": 0.00676873201915286
+                    },
+                    "max_drawdown": {
+                        "CSCO": 0.043283768618894075,
+                        "NFLX": 0.01985929399690403,
+                        "CVX": 0.03466937519450194,
+                        "PFE": 0.1377966225634185,
+                        "MMM": 0.08687268587263033,
+                        "MSFT": 0.0206670344779199
+                    },
+                    "ulcer_index": {
+                        "CSCO": 0.018981617799439868,
+                        "NFLX": 0.008709073642247338,
+                        "CVX": 0.015203870880137593,
+                        "PFE": 0.06042918412632694,
+                        "MMM": 0.03809705515626612,
+                        "MSFT": 0.009063299292670166
+                    },
+                    "gini_mean_difference": {
+                        "CSCO": 0.0017349863385966082,
+                        "NFLX": 0.0007960398292065929,
+                        "CVX": 0.0013896870408803576,
+                        "PFE": 0.005523439046107552,
+                        "MMM": 0.003482204253361043,
+                        "MSFT": 0.0008284172941180527
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "CSCO": 0.00281784911004574,
+                        "NFLX": 0.0012928748050576415,
+                        "CVX": 0.002257037017682987,
+                        "PFE": 0.008970801356888842,
+                        "MMM": 0.005655563930415659,
+                        "MSFT": 0.001345460124409546
+                    },
+                    "annual_sharpe_ratio": {
+                        "CSCO": 0.04473196786371424,
+                        "NFLX": 0.020523751263141793,
+                        "CVX": 0.03582935189193646,
+                        "PFE": 0.14240705670773196,
+                        "MMM": 0.08977929410224103,
+                        "MSFT": 0.0213585173288501
+                    },
+                    "daily_sortino_ratio": {
+                        "CSCO": 0.0039706026784845595,
+                        "NFLX": 0.0018217768104069082,
+                        "CVX": 0.0031803680317380083,
+                        "PFE": 0.012640665452536443,
+                        "MMM": 0.007969197928445701,
+                        "MSFT": 0.0018958742520063445
+                    },
+                    "annual_sortino_ratio": {
+                        "CSCO": 0.06303136345390258,
+                        "NFLX": 0.028919810307606868,
+                        "CVX": 0.050486777337832474,
+                        "PFE": 0.200664343162663,
+                        "MMM": 0.1265070952039106,
+                        "MSFT": 0.03009607072715631
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "CSCO": 0.0041053215491831255,
+                        "NFLX": 0.0018835880099743567,
+                        "CVX": 0.003288274972909239,
+                        "PFE": 0.013069551521614008,
+                        "MMM": 0.008239585431862012,
+                        "MSFT": 0.0019601995091268237
+                    },
+                    "calmar_ratio": {
+                        "CSCO": 0.00011130151580176841,
+                        "NFLX": 5.106693791084347e-05,
+                        "CVX": 8.91501395135886e-05,
+                        "PFE": 0.0003543354345762259,
+                        "MMM": 0.0002233877023169818,
+                        "MSFT": 5.314399226124196e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "CSCO": 0.0019680488397912513,
+                        "NFLX": 0.000902972679061488,
+                        "CVX": 0.0015763651318948038,
+                        "PFE": 0.006265408300069086,
+                        "MMM": 0.003949972335970507,
+                        "MSFT": 0.0009396994421701372
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "CSCO": 0.0012607533083308635,
+                        "NFLX": 0.0005784540350024573,
+                        "CVX": 0.0010098365015090752,
+                        "PFE": 0.004013688117208313,
+                        "MMM": 0.0025303948711549364,
+                        "MSFT": 0.0006019815954762231
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "CSCO": 0.00067701100509566,
+                        "NFLX": 0.0003106236129232347,
+                        "CVX": 0.0005422713708949684,
+                        "PFE": 0.0021553074724580414,
+                        "MMM": 0.0013587949075283578,
+                        "MSFT": 0.00032325766056644976
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "CSCO": 0.0001312839121371866,
+                        "NFLX": 6.023518495240311e-05,
+                        "CVX": 0.0001051556126492029,
+                        "PFE": 0.0004179506606437248,
+                        "MMM": 0.00026349336998916843,
+                        "MSFT": 6.268514099188361e-05
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "CSCO": 0.00012419169162860484,
+                        "NFLX": 5.698115932882753e-05,
+                        "CVX": 9.947489533599668e-05,
+                        "PFE": 0.0003953721268482415,
+                        "MMM": 0.00024925892913430013,
+                        "MSFT": 5.929876382434909e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "CSCO": 0.00012124129246999753,
+                        "NFLX": 5.562746841492167e-05,
+                        "CVX": 9.711168855740189e-05,
+                        "PFE": 0.0003859793440051004,
+                        "MMM": 0.00024333733063484133,
+                        "MSFT": 5.789001400703429e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "CSCO": 1.2750027778681075e-05,
+                        "NFLX": 5.84991922387719e-06,
+                        "CVX": 1.0212500225926736e-05,
+                        "PFE": 4.059052207217227e-05,
+                        "MMM": 2.5589942683529952e-05,
+                        "MSFT": 6.087853994797807e-06
+                    },
+                    "worst_realization_ratio": {
+                        "CSCO": 0.00040028519346459705,
+                        "NFLX": 0.0001836573291391038,
+                        "CVX": 0.00032061989978779463,
+                        "PFE": 0.001274333300485501,
+                        "MMM": 0.0008033923796583563,
+                        "MSFT": 0.0001911272552806895
+                    },
+                    "average_drawdown_ratio": {
+                        "CSCO": 0.00033983798708694994,
+                        "NFLX": 0.0001559231719469499,
+                        "CVX": 0.0002722029771344528,
+                        "PFE": 0.0010818957852688205,
+                        "MMM": 0.000682071816798884,
+                        "MSFT": 0.00016226506194211204
+                    },
+                    "ulcer_index_ratio": {
+                        "CSCO": 0.00025380076175794084,
+                        "NFLX": 0.00011644789964497152,
+                        "CVX": 0.00020328899527005356,
+                        "PFE": 0.000807990821737293,
+                        "MMM": 0.0005093908075464441,
+                        "MSFT": 0.00012118420509909191
+                    },
+                    "gini_mean_difference_ratio": {
+                        "CSCO": 0.0027767071992006198,
+                        "NFLX": 0.001273998230093441,
+                        "CVX": 0.002224083224868246,
+                        "PFE": 0.008839823474390223,
+                        "MMM": 0.005572990060092183,
+                        "MSFT": 0.0013258157792645983
+                    }
+                }
+            },
+            "cvar_99": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "CSCO": 2.791634201216483e-06,
+                        "NFLX": 2.718191168934657e-05,
+                        "CVX": 4.466301994675638e-05,
+                        "PFE": 0.00015271803111529422,
+                        "MMM": 6.09483944424915e-05
+                    },
+                    "annual_mean_return": {
+                        "CSCO": 0.0007034918187065537,
+                        "NFLX": 0.006849841745715336,
+                        "CVX": 0.011255081026582608,
+                        "PFE": 0.038484943841054144,
+                        "MMM": 0.015358995399507858
+                    },
+                    "daily_variance": {
+                        "CSCO": 1.9057675277924788e-06,
+                        "NFLX": 1.855630104341968e-05,
+                        "CVX": 3.049014554649937e-05,
+                        "PFE": 0.00010425616095443424,
+                        "MMM": 4.160769736556918e-05
+                    },
+                    "annual_variance": {
+                        "CSCO": 0.00048025341700370466,
+                        "NFLX": 0.00467618786294176,
+                        "CVX": 0.0076835166777178415,
+                        "PFE": 0.02627255256051743,
+                        "MMM": 0.010485139736123432
+                    },
+                    "daily_standard_deviation": {
+                        "CSCO": 0.00013584374386934928,
+                        "NFLX": 0.0013226993163351504,
+                        "CVX": 0.0021733477256565244,
+                        "PFE": 0.007431413862896919,
+                        "MMM": 0.0029658105206928713
+                    },
+                    "annual_standard_deviation": {
+                        "CSCO": 0.0021564525806535197,
+                        "NFLX": 0.020997200702027773,
+                        "CVX": 0.034500825567329974,
+                        "PFE": 0.11797003782493859,
+                        "MMM": 0.04708078244095392
+                    },
+                    "daily_semi_variance": {
+                        "CSCO": 9.511965049994319e-07,
+                        "NFLX": 9.26172182116229e-06,
+                        "CVX": 1.5218078521018996e-05,
+                        "PFE": 5.203577796258611e-05,
+                        "MMM": 2.0767011578294174e-05
+                    },
+                    "annual_semi_variance": {
+                        "CSCO": 0.0002397015192598568,
+                        "NFLX": 0.002333953898932897,
+                        "CVX": 0.003834955787296787,
+                        "PFE": 0.0131130160465717,
+                        "MMM": 0.005233286917730132
+                    },
+                    "daily_semi_deviation": {
+                        "CSCO": 9.597095220830479e-05,
+                        "NFLX": 0.0009344612365516531,
+                        "CVX": 0.0015354277257818732,
+                        "PFE": 0.005250148769178136,
+                        "MMM": 0.0020952872148021326
+                    },
+                    "annual_semi_deviation": {
+                        "CSCO": 0.0015234916357754376,
+                        "NFLX": 0.01483411225047345,
+                        "CVX": 0.024374159511193885,
+                        "PFE": 0.0833435279360232,
+                        "MMM": 0.033261653373717705
+                    },
+                    "mean_absolute_deviation": {
+                        "CSCO": 9.471020765991905e-05,
+                        "NFLX": 0.0009221854709939332,
+                        "CVX": 0.001515257225331714,
+                        "PFE": 0.005181178978979652,
+                        "MMM": 0.002067761991048694
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "CSCO": -7.460762543892508e-05,
+                        "NFLX": -0.0007264482879415204,
+                        "CVX": -0.0011936384293138402,
+                        "PFE": -0.004081455105491599,
+                        "MMM": -0.0016288720713078287
+                    },
+                    "kurtosis": {
+                        "CSCO": 0.09433429793614945,
+                        "NFLX": 0.9185252690555059,
+                        "CVX": 1.509243090856794,
+                        "PFE": 5.16061461103124,
+                        "MMM": 2.0595549365180204
+                    },
+                    "first_lower_partial_moment": {
+                        "CSCO": 4.7355103829959526e-05,
+                        "NFLX": 0.0004610927354969666,
+                        "CVX": 0.000757628612665857,
+                        "PFE": 0.002590589489489826,
+                        "MMM": 0.001033880995524347
+                    },
+                    "fourth_central_moment": {
+                        "CSCO": 3.6541867929528815e-09,
+                        "NFLX": 3.558051504711422e-08,
+                        "CVX": 5.846289515714815e-08,
+                        "PFE": 1.999044903892118e-07,
+                        "MMM": 7.97800864906957e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "CSCO": 1.887704984755004e-09,
+                        "NFLX": 1.8380427553434602e-08,
+                        "CVX": 3.020116509210447e-08,
+                        "PFE": 1.032680386537344e-07,
+                        "MMM": 4.121334663107726e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "CSCO": 0.0001870033179744565,
+                        "NFLX": 0.0018208358647352353,
+                        "CVX": 0.0029918436008425637,
+                        "PFE": 0.010230129191224813,
+                        "MMM": 0.0040827526690263485
+                    },
+                    "conditional_var_at_95": {
+                        "CSCO": 0.0003055632625310858,
+                        "NFLX": 0.0029752442544260494,
+                        "CVX": 0.004888669899328092,
+                        "PFE": 0.016716022398127382,
+                        "MMM": 0.00667121438896392
+                    },
+                    "entropic_var_at_95": {
+                        "CSCO": 0.0005372495422958006,
+                        "NFLX": 0.00523115442827814,
+                        "CVX": 0.008595390833615282,
+                        "PFE": 0.02939055993842407,
+                        "MMM": 0.011729508473432416
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "CSCO": 0.0030891616863784276,
+                        "NFLX": 0.03007891224310866,
+                        "CVX": 0.04942312641009803,
+                        "PFE": 0.1689944514703741,
+                        "MMM": 0.06744416760475994
+                    },
+                    "conditional_dar_at_95": {
+                        "CSCO": 0.003341597842355565,
+                        "NFLX": 0.032536862248155385,
+                        "CVX": 0.05346182211914773,
+                        "PFE": 0.18280412349199587,
+                        "MMM": 0.07295548366448455
+                    },
+                    "entropic_dar_at_95": {
+                        "CSCO": 0.003415559910115893,
+                        "NFLX": 0.033257024794289346,
+                        "CVX": 0.05464513234877717,
+                        "PFE": 0.1868502629756901,
+                        "MMM": 0.07457026158835237
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "CSCO": 0.0290057980258558,
+                        "NFLX": 0.28242706013354746,
+                        "CVX": 0.46406027524518184,
+                        "PFE": 1.5867796588486756,
+                        "MMM": 0.633269508744641
+                    },
+                    "worst_realization": {
+                        "CSCO": 0.0009105268966438782,
+                        "NFLX": 0.00886572520302398,
+                        "CVX": 0.014567410346650256,
+                        "PFE": 0.0498109225314613,
+                        "MMM": 0.01987909176029087
+                    },
+                    "average_drawdown": {
+                        "CSCO": 0.001107181015970247,
+                        "NFLX": 0.010780530123577773,
+                        "CVX": 0.017713655958005094,
+                        "PFE": 0.06056900462586613,
+                        "MMM": 0.024172545690688132
+                    },
+                    "max_drawdown": {
+                        "CSCO": 0.0036970661463938976,
+                        "NFLX": 0.0359980277706731,
+                        "CVX": 0.0591489167774613,
+                        "PFE": 0.20225023125674924,
+                        "MMM": 0.08071625060052902
+                    },
+                    "ulcer_index": {
+                        "CSCO": 0.0014898848264925748,
+                        "NFLX": 0.014506885523673275,
+                        "CVX": 0.023836488210027967,
+                        "PFE": 0.08150504718395708,
+                        "MMM": 0.032527932219551824
+                    },
+                    "gini_mean_difference": {
+                        "CSCO": 0.00014013531360401293,
+                        "NFLX": 0.0013644859764518188,
+                        "CVX": 0.002242008033865478,
+                        "PFE": 0.007666186771176315,
+                        "MMM": 0.0030595062795611932
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "CSCO": 0.0001989886152831237,
+                        "NFLX": 0.001937535714906433,
+                        "CVX": 0.003183594931490235,
+                        "PFE": 0.010885792102401889,
+                        "MMM": 0.004344421847445521
+                    },
+                    "annual_sharpe_ratio": {
+                        "CSCO": 0.0031588463386335117,
+                        "NFLX": 0.030757425947688984,
+                        "CVX": 0.050538002783333244,
+                        "PFE": 0.17280659236143817,
+                        "MMM": 0.06896555879217983
+                    },
+                    "daily_sortino_ratio": {
+                        "CSCO": 0.0002816618764891028,
+                        "NFLX": 0.002742518432266737,
+                        "CVX": 0.004506274497708842,
+                        "PFE": 0.015408482672590415,
+                        "MMM": 0.006149387029357047
+                    },
+                    "annual_sortino_ratio": {
+                        "CSCO": 0.0044712436739877395,
+                        "NFLX": 0.04353613042673115,
+                        "CVX": 0.07153488996198058,
+                        "PFE": 0.2446020793951327,
+                        "MMM": 0.09761849277098997
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "CSCO": 0.0002854112471646147,
+                        "NFLX": 0.002779025744918222,
+                        "CVX": 0.004566260228359082,
+                        "PFE": 0.015613594254629378,
+                        "MMM": 0.0062312452193529376
+                    },
+                    "calmar_ratio": {
+                        "CSCO": 7.311570152404064e-06,
+                        "NFLX": 7.119215479825597e-05,
+                        "CVX": 0.00011697693179737907,
+                        "PFE": 0.00039998385087484847,
+                        "MMM": 0.00015962996206612007
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "CSCO": 0.0001445501544049045,
+                        "NFLX": 0.0014074729167608555,
+                        "CVX": 0.0023126405410421164,
+                        "PFE": 0.00790770329741239,
+                        "MMM": 0.0031558933557821
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "CSCO": 8.846403282752999e-05,
+                        "NFLX": 0.0008613669824483227,
+                        "CVX": 0.001415325425166651,
+                        "PFE": 0.00483947822105489,
+                        "MMM": 0.001931392287856449
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "CSCO": 5.031434437696389e-05,
+                        "NFLX": 0.0004899066163346331,
+                        "CVX": 0.0008049731463875431,
+                        "PFE": 0.002752476526744965,
+                        "MMM": 0.0010984886579574991
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "CSCO": 8.750386425751414e-06,
+                        "NFLX": 8.520179003709919e-05,
+                        "CVX": 0.0001399963803656147,
+                        "PFE": 0.0004786951620869339,
+                        "MMM": 0.0001910429393537735
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "CSCO": 8.089351191459396e-06,
+                        "NFLX": 7.876534454784335e-05,
+                        "CVX": 0.00012942055712852012,
+                        "PFE": 0.0004425328312790783,
+                        "MMM": 0.00017661087795315793
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "CSCO": 7.914180748924395e-06,
+                        "NFLX": 7.705972441412551e-05,
+                        "CVX": 0.00012661802627916542,
+                        "PFE": 0.00043295002666883146,
+                        "MMM": 0.00017278646670986658
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "CSCO": 9.319294874542447e-07,
+                        "NFLX": 9.07412046235885e-06,
+                        "CVX": 1.4909827823789316e-05,
+                        "PFE": 5.098176415816911e-05,
+                        "MMM": 2.0346364136533085e-05
+                    },
+                    "worst_realization_ratio": {
+                        "CSCO": 2.968760020936486e-05,
+                        "NFLX": 0.00028906571169243407,
+                        "CVX": 0.00047496834640598716,
+                        "PFE": 0.0016240780581268616,
+                        "MMM": 0.0006481549648671353
+                    },
+                    "average_drawdown_ratio": {
+                        "CSCO": 2.4414579095495925e-05,
+                        "NFLX": 0.0002377227405428517,
+                        "CVX": 0.00039060591558114256,
+                        "PFE": 0.0013356142607609573,
+                        "MMM": 0.0005330316544378447
+                    },
+                    "ulcer_index_ratio": {
+                        "CSCO": 1.8143253764838484e-05,
+                        "NFLX": 0.00017665936367248301,
+                        "CVX": 0.0002902717356181313,
+                        "PFE": 0.0009925376296736432,
+                        "MMM": 0.00039611285262507894
+                    },
+                    "gini_mean_difference_ratio": {
+                        "CSCO": 0.00019289469436533992,
+                        "NFLX": 0.0018781997101544926,
+                        "CVX": 0.003086099023399436,
+                        "PFE": 0.010552420486618308,
+                        "MMM": 0.004211376230066071
+                    }
+                }
+            },
+            "cvar_999": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 9.585865995780477e-05,
+                        "MMM": 2.6034619830375216e-05
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.0241563823093668,
+                        "MMM": 0.006560724197254554
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00018973469503225608,
+                        "MMM": 5.1530770991074995e-05
+                    },
+                    "annual_variance": {
+                        "PFE": 0.04781314314812853,
+                        "MMM": 0.0129857542897509
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.012215160343752973,
+                        "MMM": 0.003317562084183833
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.19390965896609175,
+                        "MMM": 0.05266466540260532
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 9.064888446634277e-05,
+                        "MMM": 2.461967699285252e-05
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.022843518885518378,
+                        "MMM": 0.0062041586021988355
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.008443199038499265,
+                        "MMM": 0.002293120696828818
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.13403162955413234,
+                        "MMM": 0.03640216254038515
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.00869403898010178,
+                        "MMM": 0.002361247275280568
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "PFE": 0.15174786228109124,
+                        "MMM": 0.04121378189825907
+                    },
+                    "kurtosis": {
+                        "PFE": 5.7085352764566055,
+                        "MMM": 1.5504029137925903
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.004347019490050891,
+                        "MMM": 0.0011806236376402841
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 3.322882731655534e-07,
+                        "MMM": 9.024744211701963e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 1.462971600315353e-07,
+                        "MMM": 3.9733404841681974e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.017404603964398784,
+                        "MMM": 0.0047269829112030134
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.027039583920349507,
+                        "MMM": 0.007343783942397054
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.040305460497791705,
+                        "MMM": 0.010946714064332968
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.41094272168421836,
+                        "MMM": 0.1116095044080285
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.44280276844329913,
+                        "MMM": 0.12026249627663756
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.4515149935678592,
+                        "MMM": 0.1226286827963991
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.3558865560054074,
+                        "MMM": 0.6398442339595726
+                    },
+                    "worst_realization": {
+                        "PFE": 0.06060299354398816,
+                        "MMM": 0.016459398641655576
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.13504354373857635,
+                        "MMM": 0.03667699218128103
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.49713985328328375,
+                        "MMM": 0.13502011282502813
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.18489188670694276,
+                        "MMM": 0.05021549416875757
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.012814383605128824,
+                        "MMM": 0.003480307419976185
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.006171401079400964,
+                        "MMM": 0.001676114406290422
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.09796795498158319,
+                        "MMM": 0.026607491327622787
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.00892844683475473,
+                        "MMM": 0.0024249110004341393
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.14173469951293693,
+                        "MMM": 0.03849426875168143
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.00867084377043021,
+                        "MMM": 0.0023549475996336206
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00015163671396011924,
+                        "MMM": 4.118359470095667e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.004331305319253037,
+                        "MMM": 0.0011763557659336297
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.0027879368984579608,
+                        "MMM": 0.00075718643776554
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0018703335180756267,
+                        "MMM": 0.0005079710286012876
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.000183443214230768,
+                        "MMM": 4.982204367411745e-05
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.0001702443144055138,
+                        "MMM": 4.623730402429386e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.0001669593586135545,
+                        "MMM": 4.534513032563278e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 3.199842264829322e-05,
+                        "MMM": 8.690573905233842e-06
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.001243909736501311,
+                        "MMM": 0.0003378381995676656
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0005582247891570894,
+                        "MMM": 0.0001516104040260256
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0004077228864562299,
+                        "MMM": 0.00011073501705222747
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.005882815440324498,
+                        "MMM": 0.001597736329597415
+                    }
+                }
+            },
+            "hrp": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 7.33713542739434e-05,
+                        "CSCO": 0.00011100502345880006,
+                        "NFLX": 3.534423687035552e-05,
+                        "AMD": 2.6893232925898914e-05,
+                        "CVX": 6.460289861227342e-05,
+                        "PFE": 0.00011878459246536943,
+                        "MMM": 0.00011360845640892109,
+                        "MSFT": 7.211340106819426e-05
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.018489581277033738,
+                        "CSCO": 0.027973265911617615,
+                        "NFLX": 0.00890674769132959,
+                        "AMD": 0.0067770946973265255,
+                        "CVX": 0.0162799304502929,
+                        "PFE": 0.029933717301273092,
+                        "MMM": 0.02862933101504811,
+                        "MSFT": 0.01817257706918495
+                    },
+                    "daily_variance": {
+                        "AAPL": 2.3925660313824685e-05,
+                        "CSCO": 3.619762113818005e-05,
+                        "NFLX": 1.1525399984497721e-05,
+                        "AMD": 8.769612638240877e-06,
+                        "CVX": 2.1066355157010197e-05,
+                        "PFE": 3.873446030764919e-05,
+                        "MMM": 3.7046574425614934e-05,
+                        "MSFT": 2.351545443185244e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.00602926639908382,
+                        "CSCO": 0.00912180052682137,
+                        "NFLX": 0.0029044007960934257,
+                        "AMD": 0.0022099423848367006,
+                        "CVX": 0.005308721499566569,
+                        "PFE": 0.009761083997527596,
+                        "MMM": 0.009335736755254962,
+                        "MSFT": 0.005925894516826814
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.0016885054874296345,
+                        "CSCO": 0.0025545745079562027,
+                        "NFLX": 0.0008133819866781724,
+                        "AMD": 0.0006188978221740416,
+                        "CVX": 0.0014867157610776545,
+                        "PFE": 0.0027336068440418247,
+                        "MMM": 0.0026144876834173184,
+                        "MSFT": 0.0016595560300854695
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.026804193642640268,
+                        "CSCO": 0.04055261312182383,
+                        "NFLX": 0.012912038745900576,
+                        "AMD": 0.009824698346591944,
+                        "CVX": 0.02360088104430957,
+                        "PFE": 0.043394663349352776,
+                        "MMM": 0.04150370529698157,
+                        "MSFT": 0.02634463525430267
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 1.232153459435753e-05,
+                        "CSCO": 1.8641501853548423e-05,
+                        "NFLX": 5.935494057848013e-06,
+                        "AMD": 4.5162843609697065e-06,
+                        "CVX": 1.0849014005859605e-05,
+                        "PFE": 1.994795489087062e-05,
+                        "MMM": 1.9078706393064447e-05,
+                        "MSFT": 1.2110281659256322e-05
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.0031050267177780977,
+                        "CSCO": 0.004697658467094203,
+                        "NFLX": 0.0014957445025776993,
+                        "AMD": 0.001138103658964366,
+                        "CVX": 0.0027339515294766206,
+                        "PFE": 0.005026884632499395,
+                        "MMM": 0.004807834011052241,
+                        "MSFT": 0.003051790978132593
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.0012117217697376064,
+                        "CSCO": 0.001833238663866801,
+                        "NFLX": 0.0005837071112340333,
+                        "AMD": 0.0004441394890063881,
+                        "CVX": 0.001066911458992153,
+                        "PFE": 0.0019617175943393134,
+                        "MMM": 0.0018762341409563408,
+                        "MSFT": 0.0011909467779195968
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.01923548676557267,
+                        "CSCO": 0.029101761590519325,
+                        "NFLX": 0.009266063128951011,
+                        "AMD": 0.0070504958120052525,
+                        "CVX": 0.016936694348509945,
+                        "PFE": 0.031141301382970284,
+                        "MMM": 0.02978429362979631,
+                        "MSFT": 0.018905693994533537
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.0011281387264248498,
+                        "CSCO": 0.0017067841670743737,
+                        "NFLX": 0.0005434437290132096,
+                        "AMD": 0.0004135033057887133,
+                        "CVX": 0.0009933172487411248,
+                        "PFE": 0.0018264007825512696,
+                        "MMM": 0.0017468138702432172,
+                        "MSFT": 0.0011087967674072025
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.011551323697903062,
+                        "CSCO": -0.017476234025590197,
+                        "NFLX": -0.005564470289324181,
+                        "AMD": -0.004233974442536437,
+                        "CVX": -0.010170849387718069,
+                        "PFE": -0.018701021556286907,
+                        "MMM": -0.017886109201402708,
+                        "MSFT": -0.01135327604265372
+                    },
+                    "kurtosis": {
+                        "AAPL": 1.741666262773732,
+                        "CSCO": 2.6350025329334548,
+                        "NFLX": 0.8389904418384557,
+                        "AMD": 0.6383831530364422,
+                        "CVX": 1.5335234043832684,
+                        "PFE": 2.8196715091536997,
+                        "MMM": 2.696802010147542,
+                        "MSFT": 1.711805362967778
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.000564069363212425,
+                        "CSCO": 0.000853392083537187,
+                        "NFLX": 0.00027172186450660486,
+                        "AMD": 0.0002067516528943567,
+                        "CVX": 0.0004966586243705625,
+                        "PFE": 0.0009132003912756349,
+                        "MMM": 0.0008734069351216088,
+                        "MSFT": 0.0005543983837036013
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 7.021190619293856e-08,
+                        "CSCO": 1.0622502979752245e-07,
+                        "NFLX": 3.382227666586353e-08,
+                        "AMD": 2.5735181885400095e-08,
+                        "CVX": 6.182102950180527e-08,
+                        "PFE": 1.136696023383447e-07,
+                        "MMM": 1.0871635617254097e-07,
+                        "MSFT": 6.900812178209892e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 3.5966001224548834e-08,
+                        "CSCO": 5.4413699313004376e-08,
+                        "NFLX": 1.7325438233206943e-08,
+                        "AMD": 1.3182829428684226e-08,
+                        "CVX": 3.166778034276498e-08,
+                        "PFE": 5.822717653699099e-08,
+                        "MMM": 5.5689879555261896e-08,
+                        "MSFT": 3.5349363478304227e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.0023185646728799535,
+                        "CSCO": 0.0035078039440684786,
+                        "NFLX": 0.0011168922777620017,
+                        "AMD": 0.0008498371117522778,
+                        "CVX": 0.0020414779033355868,
+                        "PFE": 0.003753641492623436,
+                        "MMM": 0.003590073485445963,
+                        "MSFT": 0.0022788128393224547
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.003910623873587846,
+                        "CSCO": 0.005916462891026742,
+                        "NFLX": 0.0018838144377558788,
+                        "AMD": 0.001433383910637835,
+                        "CVX": 0.00344327346981861,
+                        "PFE": 0.006331106570216924,
+                        "MMM": 0.006055223407972033,
+                        "MSFT": 0.0038435761560291423
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.007508485606213814,
+                        "CSCO": 0.011359741538174432,
+                        "NFLX": 0.0036169660002844163,
+                        "AMD": 0.002752129278883687,
+                        "CVX": 0.006611162341897916,
+                        "PFE": 0.012155866708363876,
+                        "MMM": 0.011626164845010797,
+                        "MSFT": 0.007379752483701281
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.0280428938194945,
+                        "CSCO": 0.0424266679699426,
+                        "NFLX": 0.013508741817492037,
+                        "AMD": 0.010278726389431591,
+                        "CVX": 0.024691546777935506,
+                        "PFE": 0.04540005765003648,
+                        "MMM": 0.04342171289597506,
+                        "MSFT": 0.027562097894057367
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.03179058466490891,
+                        "CSCO": 0.048096626148148074,
+                        "NFLX": 0.01531406862749792,
+                        "AMD": 0.011652389501382377,
+                        "CVX": 0.027991359001824555,
+                        "PFE": 0.0514673837088774,
+                        "MMM": 0.04922465024473516,
+                        "MSFT": 0.031245534511649513
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.033754418787828665,
+                        "CSCO": 0.05106775098346159,
+                        "NFLX": 0.016260081129262697,
+                        "AMD": 0.01237220514357866,
+                        "CVX": 0.02972049945438621,
+                        "PFE": 0.054646733991681885,
+                        "MMM": 0.05226545773092483,
+                        "MSFT": 0.03317569866275353
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.35691869757877465,
+                        "CSCO": 0.5399896020685355,
+                        "NFLX": 0.17193384414826057,
+                        "AMD": 0.1308235041397249,
+                        "CVX": 0.3142640974898143,
+                        "PFE": 0.5778337125531504,
+                        "MMM": 0.5526541345279132,
+                        "MSFT": 0.3507993200062322
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.013009890269786063,
+                        "CSCO": 0.019682929242412616,
+                        "NFLX": 0.0062670867657127465,
+                        "AMD": 0.004768591405024613,
+                        "CVX": 0.011455105747642885,
+                        "PFE": 0.02106236867246331,
+                        "MMM": 0.0201445586799634,
+                        "MSFT": 0.012786835464088764
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.010312541635890913,
+                        "CSCO": 0.015602055291740191,
+                        "NFLX": 0.004967727772250949,
+                        "AMD": 0.0037799163858494656,
+                        "CVX": 0.009080111554856574,
+                        "PFE": 0.016695494687583867,
+                        "MMM": 0.01596797481115007,
+                        "MSFT": 0.010135732921663625
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.03842182358631481,
+                        "CSCO": 0.05812916322362883,
+                        "NFLX": 0.01850844988843269,
+                        "AMD": 0.014082976406386371,
+                        "CVX": 0.03383011255834007,
+                        "PFE": 0.06220303143699124,
+                        "MMM": 0.05949248331657513,
+                        "MSFT": 0.03776308072093611
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.014118185633187893,
+                        "CSCO": 0.021359691979466116,
+                        "NFLX": 0.00680097160720193,
+                        "AMD": 0.005174821406550483,
+                        "CVX": 0.012430951071786347,
+                        "PFE": 0.022856644032045945,
+                        "MMM": 0.021860647018896534,
+                        "MSFT": 0.013876129083293495
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.001681858811679488,
+                        "CSCO": 0.0025445186161865987,
+                        "NFLX": 0.0008101801692326812,
+                        "AMD": 0.0006164615771176369,
+                        "CVX": 0.0014808634155152138,
+                        "PFE": 0.0027228462048517286,
+                        "MMM": 0.002604195947906953,
+                        "MSFT": 0.0016530233117121522
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.005178036162291934,
+                        "CSCO": 0.00783395688076944,
+                        "NFLX": 0.002494348624941587,
+                        "AMD": 0.0018979359722776498,
+                        "CVX": 0.004559219991418761,
+                        "PFE": 0.008382984359431741,
+                        "MMM": 0.008017688939353186,
+                        "MSFT": 0.005089258637952937
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.08219877579074247,
+                        "CSCO": 0.12436021012871527,
+                        "NFLX": 0.03959655686814817,
+                        "AMD": 0.03012879952182144,
+                        "CVX": 0.07237537361836847,
+                        "PFE": 0.13307575115760292,
+                        "MMM": 0.12727686613801054,
+                        "MSFT": 0.08078947628226464
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.007215470327014352,
+                        "CSCO": 0.010916432725584145,
+                        "NFLX": 0.0034758155262725574,
+                        "AMD": 0.00264472866958136,
+                        "CVX": 0.006353164700157611,
+                        "PFE": 0.011681489468496092,
+                        "MMM": 0.011172458982504971,
+                        "MSFT": 0.007091760956802018
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.11454204046587523,
+                        "CSCO": 0.1732929971751759,
+                        "NFLX": 0.055176860913925665,
+                        "AMD": 0.04198376606972995,
+                        "CVX": 0.10085336300910765,
+                        "PFE": 0.18543789645876443,
+                        "MMM": 0.17735728800466732,
+                        "MSFT": 0.11257821509529367
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.007750059695093211,
+                        "CSCO": 0.011725223921162407,
+                        "NFLX": 0.003733336372667279,
+                        "AMD": 0.0028406748469106714,
+                        "CVX": 0.006823866421380477,
+                        "PFE": 0.012546963206195902,
+                        "MMM": 0.012000218992130803,
+                        "MSFT": 0.007617184780425702
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.0002275566763377981,
+                        "CSCO": 0.0003442751526811396,
+                        "NFLX": 0.00010961794489828889,
+                        "AMD": 8.340768357289425e-05,
+                        "CVX": 0.00020036185832292093,
+                        "PFE": 0.0003684030004494363,
+                        "MMM": 0.0003523495375014868,
+                        "MSFT": 0.00022365521297622548
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.0037709288752678684,
+                        "CSCO": 0.005705115469147502,
+                        "NFLX": 0.0018165209666310223,
+                        "AMD": 0.0013821806833623038,
+                        "CVX": 0.003320273125850416,
+                        "PFE": 0.006104947279454289,
+                        "MMM": 0.00583891919382431,
+                        "MSFT": 0.0037062762310004055
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.002235741088062637,
+                        "CSCO": 0.003382498447576462,
+                        "NFLX": 0.00107699473969414,
+                        "AMD": 0.0008194792973124117,
+                        "CVX": 0.001968552390298432,
+                        "PFE": 0.003619554206564716,
+                        "MMM": 0.0034618291628699203,
+                        "MSFT": 0.0021974092663757596
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.001164434871780727,
+                        "CSCO": 0.0017616973482002126,
+                        "NFLX": 0.0005609282033238407,
+                        "AMD": 0.0004268071448826925,
+                        "CVX": 0.0010252757183870204,
+                        "PFE": 0.0018851624461027464,
+                        "MMM": 0.0018030149461028657,
+                        "MSFT": 0.0011444706146896886
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.0003117774695584759,
+                        "CSCO": 0.0004716945143610997,
+                        "NFLX": 0.00015018854216281285,
+                        "AMD": 0.00011427762500577332,
+                        "CVX": 0.00027451760233667067,
+                        "PFE": 0.000504752297785238,
+                        "MMM": 0.00048275730235767004,
+                        "MSFT": 0.0003064320391627509
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.00027502301597459686,
+                        "CSCO": 0.00041608794933763275,
+                        "NFLX": 0.00013248329293627043,
+                        "AMD": 0.00010080579950825177,
+                        "CVX": 0.00024215559591160882,
+                        "PFE": 0.00044524865588777793,
+                        "MMM": 0.0004258465804671143,
+                        "MSFT": 0.0002703077413551817
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.0002590221603013251,
+                        "CSCO": 0.00039187992732483496,
+                        "NFLX": 0.00012477540695487004,
+                        "AMD": 9.49409120069479e-05,
+                        "CVX": 0.00022806696872189512,
+                        "PFE": 0.0004193440622073834,
+                        "MMM": 0.00040107080070604884,
+                        "MSFT": 0.00025458122064394114
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 2.4496173872228536e-05,
+                        "CSCO": 3.706076277650569e-05,
+                        "NFLX": 1.1800226128099873e-05,
+                        "AMD": 8.978726319804567e-06,
+                        "CVX": 2.1568687844408612e-05,
+                        "PFE": 3.965809353210823e-05,
+                        "MMM": 3.792995957465586e-05,
+                        "MSFT": 2.4076186524903502e-05
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.0006720381412012317,
+                        "CSCO": 0.001016740257386034,
+                        "NFLX": 0.00032373227240491484,
+                        "AMD": 0.00024632608250535297,
+                        "CVX": 0.000591724281625018,
+                        "PFE": 0.0010879965010012385,
+                        "MMM": 0.0010405861609795392,
+                        "MSFT": 0.0006605160350267512
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.0008478164532892756,
+                        "CSCO": 0.001282678863126218,
+                        "NFLX": 0.0004084076932226202,
+                        "AMD": 0.0003107551384643748,
+                        "CVX": 0.0007464956987050659,
+                        "PFE": 0.0013725728915046902,
+                        "MMM": 0.0013127619018269484,
+                        "MSFT": 0.0008332806247516132
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.0006192823002402194,
+                        "CSCO": 0.0009369248659241156,
+                        "NFLX": 0.00029831888106612354,
+                        "AMD": 0.00022698917461799186,
+                        "CVX": 0.0005452731798491871,
+                        "PFE": 0.0010025874046211386,
+                        "MMM": 0.0009588988360358366,
+                        "MSFT": 0.0006086646939201524
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.005198499668000192,
+                        "CSCO": 0.007864916537350308,
+                        "NFLX": 0.002504206245808855,
+                        "AMD": 0.0019054365810770718,
+                        "CVX": 0.004577237946758476,
+                        "PFE": 0.008416113762725738,
+                        "MMM": 0.008049374701722383,
+                        "MSFT": 0.005109371296483011
+                    }
+                }
+            },
+            "max_information": {
+                "symbol_contribution_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 1.242790608367122e-05,
+                        "CSCO": 5.089481283201975e-05,
+                        "NFLX": 2.7486185490425714e-05,
+                        "CVX": 2.5997353541946636e-05,
+                        "PFE": 0.00012562225514318887,
+                        "MMM": 9.376048070082903e-05,
+                        "MSFT": 2.9092160783823686e-05
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.0031318323330851473,
+                        "CSCO": 0.012825492833668975,
+                        "NFLX": 0.006926518743587279,
+                        "CVX": 0.006551333092570552,
+                        "PFE": 0.0316568082960836,
+                        "MMM": 0.023627641136608916,
+                        "MSFT": 0.007331224517523568
+                    },
+                    "daily_variance": {
+                        "AAPL": 6.182936008141141e-06,
+                        "CSCO": 2.5320385330248806e-05,
+                        "NFLX": 1.3674493905171e-05,
+                        "CVX": 1.2933793693699581e-05,
+                        "PFE": 6.249760494804718e-05,
+                        "MMM": 4.6646236973697e-05,
+                        "MSFT": 1.4473473427777926e-05
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.0015580998740515673,
+                        "CSCO": 0.006380737103222699,
+                        "NFLX": 0.0034459724641030917,
+                        "CVX": 0.003259316010812294,
+                        "PFE": 0.015749396446907888,
+                        "MMM": 0.011754851717371643,
+                        "MSFT": 0.003647315303800037
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.0004586514002664026,
+                        "CSCO": 0.0018782711274566363,
+                        "NFLX": 0.001014376627751425,
+                        "CVX": 0.000959431341447043,
+                        "PFE": 0.004636084537342012,
+                        "MMM": 0.0034602269661168053,
+                        "MSFT": 0.0010736450847345371
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.007280865261458671,
+                        "CSCO": 0.029816629788018977,
+                        "NFLX": 0.016102729756719666,
+                        "CVX": 0.01523050037705984,
+                        "PFE": 0.07359556045727345,
+                        "MMM": 0.05492940019310754,
+                        "MSFT": 0.017043587343326734
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 3.163382789872078e-06,
+                        "CSCO": 1.2954698395903253e-05,
+                        "NFLX": 6.9962973291120466e-06,
+                        "CVX": 6.617332012579886e-06,
+                        "PFE": 3.197572280233171e-05,
+                        "MMM": 2.3865668844153313e-05,
+                        "MSFT": 7.405080157843737e-06
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.0007971724630477636,
+                        "CSCO": 0.00326458399576762,
+                        "NFLX": 0.0017630669269362359,
+                        "CVX": 0.0016675676671701314,
+                        "PFE": 0.00805788214618759,
+                        "MMM": 0.006014148548726635,
+                        "MSFT": 0.0018660801997766217
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.0003280659986702891,
+                        "CSCO": 0.0013434972461540944,
+                        "NFLX": 0.00072556735075436,
+                        "CVX": 0.0006862658677256327,
+                        "PFE": 0.0033161169960008196,
+                        "MMM": 0.0024750449134257864,
+                        "MSFT": 0.0007679611285091384
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.00520788627658579,
+                        "CSCO": 0.021327357602543173,
+                        "NFLX": 0.011518024617144058,
+                        "CVX": 0.01089413291564383,
+                        "PFE": 0.05264172533887644,
+                        "MMM": 0.03929011994784013,
+                        "MSFT": 0.012191004975598174
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.0003131439489404926,
+                        "CSCO": 0.0012823884058591137,
+                        "NFLX": 0.0006925649910640633,
+                        "CVX": 0.000655051132131056,
+                        "PFE": 0.0031652837401172098,
+                        "MMM": 0.0023624677386154904,
+                        "MSFT": 0.000733030492001205
+                    }
+                },
+                "symbol_contribution_stats_moments": {
+                    "skew": {
+                        "AAPL": -0.0034169599628872684,
+                        "CSCO": -0.013993148692533467,
+                        "NFLX": -0.007557121426647743,
+                        "CVX": -0.007147778201395621,
+                        "PFE": -0.034538900872115835,
+                        "MMM": -0.025778743941164205,
+                        "MSFT": -0.007998672339728506
+                    },
+                    "kurtosis": {
+                        "AAPL": 0.42059353127681764,
+                        "CSCO": 1.7224163836269115,
+                        "NFLX": 0.9302059203631178,
+                        "CVX": 0.8798198712191432,
+                        "PFE": 4.251392595173472,
+                        "MMM": 3.1731050594264247,
+                        "MSFT": 0.9845564131368807
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.0001565719744702463,
+                        "CSCO": 0.0006411942029295568,
+                        "NFLX": 0.00034628249553203164,
+                        "CVX": 0.000327525566065528,
+                        "PFE": 0.0015826418700586049,
+                        "MMM": 0.0011812338693077452,
+                        "MSFT": 0.0003665152460006025
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.3890270416391534e-08,
+                        "CSCO": 5.688349334705917e-08,
+                        "NFLX": 3.072042439061698e-08,
+                        "CVX": 2.9056404866353847e-08,
+                        "PFE": 1.4040394918565172e-07,
+                        "MMM": 1.0479306992965757e-07,
+                        "MSFT": 3.251537125915269e-08
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.284968691545156e-09,
+                        "CSCO": 2.983343417202501e-08,
+                        "NFLX": 1.611180511018185e-08,
+                        "CVX": 1.523908414989935e-08,
+                        "PFE": 7.363703825231118e-08,
+                        "MMM": 5.496035790833654e-08,
+                        "MSFT": 1.7053192955650926e-08
+                    }
+                },
+                "symbol_contribution_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.000650114257025333,
+                        "CSCO": 0.0026623506170685373,
+                        "NFLX": 0.001437825562750795,
+                        "CVX": 0.0013599435068755278,
+                        "PFE": 0.006571406198149832,
+                        "MMM": 0.004904689884102451,
+                        "MSFT": 0.0015218354858737451
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.0010428900903992904,
+                        "CSCO": 0.004270847848212964,
+                        "NFLX": 0.0023065084558777124,
+                        "CVX": 0.002181572841230709,
+                        "PFE": 0.010541615308356303,
+                        "MMM": 0.007867928477705684,
+                        "MSFT": 0.002441274176477371
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.0019445375496065852,
+                        "CSCO": 0.007963278284029847,
+                        "NFLX": 0.004300637566919552,
+                        "CVX": 0.004067686850251737,
+                        "PFE": 0.019655538957857165,
+                        "MMM": 0.014670273026239977,
+                        "MSFT": 0.004551917166292763
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.009401784313091147,
+                        "CSCO": 0.03850222633485199,
+                        "NFLX": 0.020793461571948134,
+                        "CVX": 0.01966715141448478,
+                        "PFE": 0.09503397755251432,
+                        "MMM": 0.0709303571097263,
+                        "MSFT": 0.022008391361329094
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.010071340019263922,
+                        "CSCO": 0.041244193655561555,
+                        "NFLX": 0.022274284826656977,
+                        "CVX": 0.02106776357651839,
+                        "PFE": 0.10180189945240108,
+                        "MMM": 0.07598172010234056,
+                        "MSFT": 0.02357573682777881
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.01050054623868787,
+                        "CSCO": 0.04300188075561307,
+                        "NFLX": 0.02322353900361211,
+                        "CVX": 0.02196559992591173,
+                        "PFE": 0.10614034977882897,
+                        "MMM": 0.07921980230074474,
+                        "MSFT": 0.024580454457670174
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 0.1019140135481117,
+                        "CSCO": 0.41735869337683745,
+                        "NFLX": 0.22539818547049006,
+                        "CVX": 0.21318914250326673,
+                        "PFE": 1.0301548890386667,
+                        "MMM": 0.7688750491103685,
+                        "MSFT": 0.2385678527263714
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.003295516840305052,
+                        "CSCO": 0.013495814310382093,
+                        "NFLX": 0.007288531676181488,
+                        "CVX": 0.006893737032130911,
+                        "PFE": 0.03331134420829029,
+                        "MMM": 0.02486253444662362,
+                        "MSFT": 0.0077143893056868
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.0038682331848043454,
+                        "CSCO": 0.015841204673238747,
+                        "NFLX": 0.008555180102096853,
+                        "CVX": 0.00809177547778363,
+                        "PFE": 0.039100406200631294,
+                        "MMM": 0.029183307343035206,
+                        "MSFT": 0.00905504603945376
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.011546375818947496,
+                        "CSCO": 0.04728476641496302,
+                        "NFLX": 0.02553654858389521,
+                        "CVX": 0.02415332174804217,
+                        "PFE": 0.11671167768259273,
+                        "MMM": 0.08710990732053762,
+                        "MSFT": 0.02702860960919383
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.005209058021375623,
+                        "CSCO": 0.02133215613669398,
+                        "NFLX": 0.011520616107168523,
+                        "CVX": 0.010896584033584147,
+                        "PFE": 0.05265356942765216,
+                        "MMM": 0.03929896000134664,
+                        "MSFT": 0.012193747882375386
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.00046387824391487883,
+                        "CSCO": 0.0018996761193676185,
+                        "NFLX": 0.0010259365794507889,
+                        "CVX": 0.000970365130399347,
+                        "PFE": 0.004688917885291523,
+                        "MMM": 0.003499660107124614,
+                        "MSFT": 0.0010858804665269026
+                    }
+                },
+                "symbol_contribution_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.0009219044997635095,
+                        "CSCO": 0.0037753871527970487,
+                        "NFLX": 0.0020389306061985133,
+                        "CVX": 0.0019284887615745089,
+                        "PFE": 0.009318683413540453,
+                        "MMM": 0.006955170764579033,
+                        "MSFT": 0.0021580621670201612
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 0.014634780233553902,
+                        "CSCO": 0.059932413055735205,
+                        "NFLX": 0.03236701994711661,
+                        "CVX": 0.030613810015854507,
+                        "PFE": 0.14792951315262304,
+                        "MMM": 0.11040991301437851,
+                        "MSFT": 0.034258174846514895
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.0012888650193627167,
+                        "CSCO": 0.0052781654032925925,
+                        "NFLX": 0.0028505190460740813,
+                        "CVX": 0.002696116252459031,
+                        "PFE": 0.013027949295516867,
+                        "MMM": 0.00972364958025447,
+                        "MSFT": 0.0030170704638017225
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 0.020460097888585174,
+                        "CSCO": 0.08378827821466282,
+                        "NFLX": 0.04525058702019051,
+                        "CVX": 0.042799518658356184,
+                        "PFE": 0.20681228357458054,
+                        "MMM": 0.1543581517517455,
+                        "MSFT": 0.04789450881106595
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.0013502824856078662,
+                        "CSCO": 0.005529682467238766,
+                        "NFLX": 0.0029863530198908084,
+                        "CVX": 0.002824592568008566,
+                        "PFE": 0.013648761889605704,
+                        "MMM": 0.010187004478481306,
+                        "MSFT": 0.003160841006555224
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 3.6620390359593735e-05,
+                        "CSCO": 0.00014996797534830243,
+                        "NFLX": 8.099150696657447e-05,
+                        "CVX": 7.660447613724007e-05,
+                        "PFE": 0.00037016179477251997,
+                        "MMM": 0.00027627706392783103,
+                        "MSFT": 8.572371541393055e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.0006503976572720425,
+                        "CSCO": 0.0026635111989409556,
+                        "NFLX": 0.0014384523450660656,
+                        "CVX": 0.001360536338552721,
+                        "PFE": 0.006574270830201289,
+                        "MMM": 0.004906827954923337,
+                        "MSFT": 0.001522498890109981
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.00040544329035338854,
+                        "CSCO": 0.001660373053803956,
+                        "NFLX": 0.0008966988814908865,
+                        "CVX": 0.0008481277931747534,
+                        "PFE": 0.004098252764702402,
+                        "MMM": 0.003058806330247867,
+                        "MSFT": 0.0009490916098232185
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.00021744645137553538,
+                        "CSCO": 0.0008904876146662656,
+                        "NFLX": 0.00048091556666939777,
+                        "CVX": 0.0004548660276954385,
+                        "PFE": 0.002197965885063182,
+                        "MMM": 0.0016404922655834102,
+                        "MSFT": 0.0005090147191891451
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 4.4973674745938814e-05,
+                        "CSCO": 0.0001841763804097349,
+                        "NFLX": 9.946605308492861e-05,
+                        "CVX": 9.407831975708866e-05,
+                        "PFE": 0.0004545974523483194,
+                        "MMM": 0.0003392971699876512,
+                        "MSFT": 0.0001052777006793847
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 4.198376670032579e-05,
+                        "CSCO": 0.0001719320965101036,
+                        "NFLX": 9.28534212716731e-05,
+                        "CVX": 8.782387142151263e-05,
+                        "PFE": 0.0004243752259465472,
+                        "MMM": 0.0003167402554341786,
+                        "MSFT": 9.82787030199071e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 4.026769466245096e-05,
+                        "CSCO": 0.00016490443114267257,
+                        "NFLX": 8.905806958246669e-05,
+                        "CVX": 8.423410085423282e-05,
+                        "PFE": 0.00040702903440513824,
+                        "MMM": 0.00030379360632811576,
+                        "MSFT": 9.426159480341737e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 4.148917062606112e-06,
+                        "CSCO": 1.6990662460376006e-05,
+                        "NFLX": 9.175954758542625e-06,
+                        "CVX": 8.678924910327579e-06,
+                        "PFE": 4.193758098087209e-05,
+                        "MMM": 3.1300884924526894e-05,
+                        "MSFT": 9.712091598654183e-06
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.00012830545562901482,
+                        "CSCO": 0.0005254370370681728,
+                        "NFLX": 0.0002837668332146679,
+                        "CVX": 0.0002683961617420514,
+                        "PFE": 0.0012969216676386338,
+                        "MMM": 0.0009679813409695199,
+                        "MSFT": 0.00030034689025413164
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.00010930902288658636,
+                        "CSCO": 0.0004476427664651599,
+                        "NFLX": 0.00024175336203943797,
+                        "CVX": 0.0002286584155186878,
+                        "PFE": 0.0011049042268313535,
+                        "MMM": 0.0008246655922392303,
+                        "MSFT": 0.0002558786369585959
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 8.117260126366726e-05,
+                        "CSCO": 0.00033241837527485835,
+                        "NFLX": 0.00017952542930823676,
+                        "CVX": 0.00016980115546122993,
+                        "PFE": 0.000820499057357578,
+                        "MMM": 0.0006123945629278469,
+                        "MSFT": 0.00019001482239285085
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.0009115167509473033,
+                        "CSCO": 0.003732847200516473,
+                        "NFLX": 0.00201595653567787,
+                        "CVX": 0.0019067591172835315,
+                        "PFE": 0.009213683229006767,
+                        "MMM": 0.006876801945580101,
+                        "MSFT": 0.002133745757102959
+                    }
+                }
+            }
+        },
+        "strategy_symbol_portfolios_testing": { #Testing data: Security Level (SL) per Strategy
+            "min_variance": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "CSCO": 0.9187992972757996,
+                        "MSFT": 1.1748594751422572,
+                        "NFLX": 1.0183795798012412,
+                        "CVX": 1.0326591790830206,
+                        "AAPL": 1.193607938093318
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "CSCO": 0.0003417025163589139,
+                        "MSFT": 0.0011830729758554343,
+                        "NFLX": 0.0010236059917771263,
+                        "CVX": 0.0006972721719071251,
+                        "AAPL": 0.0013947805653754825
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "CSCO": 0.0003292466405039129,
+                        "MSFT": 0.00040156123026697854,
+                        "NFLX": 0.0009054610216239406,
+                        "CVX": 0.0005638028094952334,
+                        "AAPL": 0.0004288797831593334
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "CSCO": 0.08297015340698606,
+                        "MSFT": 0.1011934300272786,
+                        "NFLX": 0.22817617744923302,
+                        "CVX": 0.1420783079927988,
+                        "AAPL": 0.10807770535615202
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "CSCO": 0.018145154739045707,
+                        "MSFT": 0.0200389927458188,
+                        "NFLX": 0.030090879376049158,
+                        "CVX": 0.023744532202071983,
+                        "AAPL": 0.02070941291199085
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "CSCO": 0.00017652701073608886,
+                        "MSFT": 0.00020049324063910236,
+                        "NFLX": 0.0004805797327035534,
+                        "CVX": 0.0002876157127362656,
+                        "AAPL": 0.00021434642118864917
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "CSCO": 0.044484806705494394,
+                        "MSFT": 0.0505242966410538,
+                        "NFLX": 0.12110609264129546,
+                        "CVX": 0.07247915960953893,
+                        "AAPL": 0.05401529813953959
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "CSCO": 0.013286346779159757,
+                        "MSFT": 0.014159563575163691,
+                        "NFLX": 0.021922128836031264,
+                        "CVX": 0.01695923679698664,
+                        "AAPL": 0.014640574482876319
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "CSCO": 0.21091421646132438,
+                        "MSFT": 0.22477610335855056,
+                        "NFLX": 0.3480030066555395,
+                        "CVX": 0.2692195379416935,
+                        "AAPL": 0.2324119147968529
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "CSCO": 0.011815818576861859,
+                        "MSFT": 0.014032928007672522,
+                        "NFLX": 0.019837529542499645,
+                        "CVX": 0.015294003833907307,
+                        "AAPL": 0.014612161438530889
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "CSCO": -0.5347792711997288,
+                        "MSFT": 0.013095214699203616,
+                        "NFLX": -1.336054349808762,
+                        "CVX": -0.24903271809296199,
+                        "AAPL": 0.053801357649714145
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "CSCO": 15.092072329100148,
+                        "MSFT": 9.819952325125028,
+                        "NFLX": 25.024138577279906,
+                        "CVX": 22.876494156880938,
+                        "AAPL": 8.023306497851163
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "CSCO": 0.0059079092884309296,
+                        "MSFT": 0.0070164640038362595,
+                        "NFLX": 0.009918764771249823,
+                        "CVX": 0.007647001916953655,
+                        "AAPL": 0.007306080719265444
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "CSCO": 1.636031203189518e-06,
+                        "MSFT": 1.583481272996292e-06,
+                        "NFLX": 2.0516281787808902e-05,
+                        "CVX": 7.271833735917838e-06,
+                        "AAPL": 1.4757898947570519e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "CSCO": 9.959738606302346e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "NFLX": 1.7538737452612462e-05,
+                        "CVX": 3.954709740226081e-06,
+                        "AAPL": 7.056429690743487e-07
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "CSCO": 0.02452614825687638,
+                        "MSFT": 0.029281962550674945,
+                        "NFLX": 0.03902514828050141,
+                        "CVX": 0.030848226131336087,
+                        "AAPL": 0.03175959087008973
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "CSCO": 0.043774330655809136,
+                        "MSFT": 0.04446211417933759,
+                        "NFLX": 0.0659602773779179,
+                        "CVX": 0.052375458267515856,
+                        "AAPL": 0.04618160664549658
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "CSCO": 0.08182101668610997,
+                        "MSFT": 0.0825778410542349,
+                        "NFLX": 0.18998266312705944,
+                        "CVX": 0.12383542754779836,
+                        "AAPL": 0.07500035286007681
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "CSCO": 0.3344708437276934,
+                        "MSFT": 0.2859137657119857,
+                        "NFLX": 1.0681812535763673,
+                        "CVX": 0.2794289319339853,
+                        "AAPL": 0.22557233809399957
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "CSCO": 0.36660693734047173,
+                        "MSFT": 0.32315881238105165,
+                        "NFLX": 1.1440790777775307,
+                        "CVX": 0.3733834369735534,
+                        "AAPL": 0.25733277077294753
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "CSCO": 0.37962200731129075,
+                        "MSFT": 0.3439794918332313,
+                        "NFLX": 1.1633667469332631,
+                        "CVX": 0.5054121448870307,
+                        "AAPL": 0.27621433694479863
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "CSCO": 2.9955556277388573,
+                        "MSFT": 2.9947498217806525,
+                        "NFLX": 2.9951678376118562,
+                        "CVX": 2.995317459033969,
+                        "AAPL": 2.9945516911702166
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "CSCO": 0.13730352441340776,
+                        "MSFT": 0.1473903695709361,
+                        "NFLX": 0.3511660252265294,
+                        "CVX": 0.22124769498890295,
+                        "AAPL": 0.12864686298087769
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "CSCO": 0.12116282811647297,
+                        "MSFT": 0.08936084976937288,
+                        "NFLX": 0.2805968476203713,
+                        "CVX": 0.10177430672428762,
+                        "AAPL": 0.07827562270928971
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "CSCO": 0.42027063049592006,
+                        "MSFT": 0.41012547607891636,
+                        "NFLX": 1.2592917613131953,
+                        "CVX": 0.7154188565487378,
+                        "AAPL": 0.3353459405453888
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "CSCO": 0.1598423688930162,
+                        "MSFT": 0.13191539527171708,
+                        "NFLX": 0.4288909391252483,
+                        "CVX": 0.13855007002016428,
+                        "AAPL": 0.1068381961300305
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "CSCO": 0.01775041697117577,
+                        "MSFT": 0.020833175166065004,
+                        "NFLX": 0.029674394545660912,
+                        "CVX": 0.02290577577474366,
+                        "AAPL": 0.021669348977982093
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "CSCO": 0.018831612145121048,
+                        "MSFT": 0.05903854504375157,
+                        "NFLX": 0.03401715114354104,
+                        "CVX": 0.029365588926880612,
+                        "AAPL": 0.06735007753734525
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "CSCO": 0.02571831986915244,
+                        "MSFT": 0.08355292658388007,
+                        "NFLX": 0.046692818906105736,
+                        "CVX": 0.04111459614922166,
+                        "AAPL": 0.09526815815915039
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "CSCO": 0.028919072693621706,
+                        "MSFT": 0.08430692263286661,
+                        "NFLX": 0.051599469056072086,
+                        "CVX": 0.04559121205143482,
+                        "AAPL": 0.09545340511346788
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "CSCO": 0.0008130535220976644,
+                        "MSFT": 0.002884661024149076,
+                        "NFLX": 0.0008128426018682956,
+                        "CVX": 0.0009746348807058925,
+                        "AAPL": 0.004159229013200773
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "CSCO": 0.013932172014132346,
+                        "MSFT": 0.040402789731324364,
+                        "NFLX": 0.026229394041497146,
+                        "CVX": 0.022603314982796552,
+                        "AAPL": 0.04391683038615737
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "CSCO": 0.0078060020847758585,
+                        "MSFT": 0.026608563215944223,
+                        "NFLX": 0.015518521638597713,
+                        "CVX": 0.013312956009772713,
+                        "AAPL": 0.030202079717196136
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "CSCO": 0.004176219389570622,
+                        "MSFT": 0.014326760796257968,
+                        "NFLX": 0.0053878915840470335,
+                        "CVX": 0.005630635640499484,
+                        "AAPL": 0.018596986709884317
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "CSCO": 0.0010216212347558403,
+                        "MSFT": 0.004137866439936295,
+                        "NFLX": 0.0009582699456201848,
+                        "CVX": 0.0024953470890832974,
+                        "AAPL": 0.006183296130903495
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "CSCO": 0.0009320677858356269,
+                        "MSFT": 0.0036609646109864325,
+                        "NFLX": 0.0008946986372354317,
+                        "CVX": 0.001867442695259438,
+                        "AAPL": 0.005420143579793572
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "CSCO": 0.0009001125060663757,
+                        "MSFT": 0.0034393706716358942,
+                        "NFLX": 0.0008798652655969767,
+                        "CVX": 0.0013796110342045279,
+                        "AAPL": 0.005049631314591136
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "CSCO": 0.00011406982837999976,
+                        "MSFT": 0.0003950490178682069,
+                        "NFLX": 0.0003417524650616175,
+                        "CVX": 0.00023278740281906712,
+                        "AAPL": 0.00046577274638075374
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "CSCO": 0.0024886652969670344,
+                        "MSFT": 0.008026799710859294,
+                        "NFLX": 0.002914877631219651,
+                        "CVX": 0.0031515454745962347,
+                        "AAPL": 0.010841932193735694
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "CSCO": 0.0028201926421727104,
+                        "MSFT": 0.013239276248029987,
+                        "NFLX": 0.003647959698969949,
+                        "CVX": 0.006851161106860448,
+                        "AAPL": 0.017818837041458
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "CSCO": 0.0021377468234821907,
+                        "MSFT": 0.008968422324161337,
+                        "NFLX": 0.0023866346858827073,
+                        "CVX": 0.005032636734183141,
+                        "AAPL": 0.01305507408303604
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "CSCO": 0.019250393774624657,
+                        "MSFT": 0.05678793397669562,
+                        "NFLX": 0.03449458725104136,
+                        "CVX": 0.030440888741954355,
+                        "AAPL": 0.06436651912305712
+                    }
+                }
+            },
+            "max_sharpe": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "AAPL": 0.3514847024746216,
+                        "AMD": 0.523515390545931,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "AMD": 0.5266045534304432,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484
+                    },
+                    "beta": {
+                        "AAPL": 1.193607938093318,
+                        "AMD": 1.520446550585429,
+                        "MSFT": 1.1748594751422572,
+                        "CVX": 1.0326591790830206
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "AMD": 0.9941338090140152,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "AMD": 1.4411179147231348,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0013947805653754825,
+                        "AMD": 0.002077442025975917,
+                        "MSFT": 0.0011830729758554343,
+                        "CVX": 0.0006972721719071251
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.3514847024746216,
+                        "AMD": 0.523515390545931,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0004288797831593334,
+                        "AMD": 0.0011004458559272878,
+                        "MSFT": 0.00040156123026697854,
+                        "CVX": 0.0005638028094952334
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.10807770535615202,
+                        "AMD": 0.2773123556936765,
+                        "MSFT": 0.1011934300272786,
+                        "CVX": 0.1420783079927988
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.02070941291199085,
+                        "AMD": 0.033172968753599485,
+                        "MSFT": 0.0200389927458188,
+                        "CVX": 0.023744532202071983
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "AMD": 0.5266045534304432,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.00021434642118864917,
+                        "AMD": 0.00052367197519042,
+                        "MSFT": 0.00020049324063910236,
+                        "CVX": 0.0002876157127362656
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.05401529813953959,
+                        "AMD": 0.13196533774798586,
+                        "MSFT": 0.0505242966410538,
+                        "CVX": 0.07247915960953893
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.014640574482876319,
+                        "AMD": 0.022883880247685708,
+                        "MSFT": 0.014159563575163691,
+                        "CVX": 0.01695923679698664
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.2324119147968529,
+                        "AMD": 0.3632703370053573,
+                        "MSFT": 0.22477610335855056,
+                        "CVX": 0.2692195379416935
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.014612161438530889,
+                        "AMD": 0.02435421766341545,
+                        "MSFT": 0.014032928007672522,
+                        "CVX": 0.015294003833907307
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "AAPL": 0.053801357649714145,
+                        "AMD": 0.20265001277415304,
+                        "MSFT": 0.013095214699203616,
+                        "CVX": -0.24903271809296199
+                    },
+                    "kurtosis": {
+                        "AAPL": 8.023306497851163,
+                        "AMD": 5.23302810825666,
+                        "MSFT": 9.819952325125028,
+                        "CVX": 22.876494156880938
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.007306080719265444,
+                        "AMD": 0.012177108831707726,
+                        "MSFT": 0.0070164640038362595,
+                        "CVX": 0.007647001916953655
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.4757898947570519e-06,
+                        "AMD": 6.33709803977058e-06,
+                        "MSFT": 1.583481272996292e-06,
+                        "CVX": 7.271833735917838e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.056429690743487e-07, #0.000071 %
+                        "AMD": 2.6787662947512513e-06,
+                        "MSFT": 8.052267845528324e-07,
+                        "CVX": 3.954709740226081e-06
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.03175959087008973,
+                        "AMD": 0.050899220731250416,
+                        "MSFT": 0.029281962550674945,
+                        "CVX": 0.030848226131336087
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.04618160664549658,
+                        "AMD": 0.07053464350257696,
+                        "MSFT": 0.04446211417933759,
+                        "CVX": 0.052375458267515856
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.07500035286007681,
+                        "AMD": 0.09581840397048567,
+                        "MSFT": 0.0825778410542349,
+                        "CVX": 0.12383542754779836
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.22557233809399957,
+                        "AMD": 0.6618618607377431,
+                        "MSFT": 0.2859137657119857,
+                        "CVX": 0.2794289319339853
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.25733277077294753,
+                        "AMD": 0.7675846250889717,
+                        "MSFT": 0.32315881238105165,
+                        "CVX": 0.3733834369735534
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.27621433694479863,
+                        "AMD": 0.8034985012953423,
+                        "MSFT": 0.3439794918332313,
+                        "CVX": 0.5054121448870307
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 2.9945516911702166,
+                        "AMD": 2.9942034193405647,
+                        "MSFT": 2.9947498217806525,
+                        "CVX": 2.995317459033969
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.12864686298087769,
+                        "AMD": 0.14638954769626722,
+                        "MSFT": 0.1473903695709361,
+                        "CVX": 0.22124769498890295
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.07827562270928971,
+                        "AMD": 0.21312410137889407,
+                        "MSFT": 0.08936084976937288,
+                        "CVX": 0.10177430672428762
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.3353459405453888,
+                        "AMD": 0.8919219488269297,
+                        "MSFT": 0.41012547607891636,
+                        "CVX": 0.7154188565487378
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.1068381961300305,
+                        "AMD": 0.3018244152775702,
+                        "MSFT": 0.13191539527171708,
+                        "CVX": 0.13855007002016428
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.021669348977982093,
+                        "AMD": 0.03578807347364054,
+                        "MSFT": 0.020833175166065004,
+                        "CVX": 0.02290577577474366
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.06735007753734525,
+                        "AMD": 0.06262454353743967,
+                        "MSFT": 0.05903854504375157,
+                        "CVX": 0.029365588926880612
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "AMD": 0.9941338090140152,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.09526815815915039,
+                        "AMD": 0.09078189553041437,
+                        "MSFT": 0.08355292658388007,
+                        "CVX": 0.04111459614922166
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "AMD": 1.4411179147231348,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.09545340511346788,
+                        "AMD": 0.08530111928401708,
+                        "MSFT": 0.08430692263286661,
+                        "CVX": 0.04559121205143482
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.004159229013200773,
+                        "AMD": 0.0023291746869871324,
+                        "MSFT": 0.002884661024149076,
+                        "CVX": 0.0009746348807058925
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.04391683038615737,
+                        "AMD": 0.040814810052689804,
+                        "MSFT": 0.040402789731324364,
+                        "CVX": 0.022603314982796552
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.030202079717196136,
+                        "AMD": 0.029452789761388928,
+                        "MSFT": 0.026608563215944223,
+                        "CVX": 0.013312956009772713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.018596986709884317,
+                        "AMD": 0.02168103349556749,
+                        "MSFT": 0.014326760796257968,
+                        "CVX": 0.005630635640499484
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.006183296130903495,
+                        "AMD": 0.0031387849175359642,
+                        "MSFT": 0.004137866439936295,
+                        "CVX": 0.0024953470890832974
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.005420143579793572,
+                        "AMD": 0.0027064664378017183,
+                        "MSFT": 0.0036609646109864325,
+                        "CVX": 0.001867442695259438
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.005049631314591136,
+                        "AMD": 0.002585495831823973,
+                        "MSFT": 0.0034393706716358942,
+                        "CVX": 0.0013796110342045279
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00046577274638075374,
+                        "AMD": 0.000693821272314707,
+                        "MSFT": 0.0003950490178682069,
+                        "CVX": 0.00023278740281906712
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.010841932193735694,
+                        "AMD": 0.014191190960479274,
+                        "MSFT": 0.008026799710859294,
+                        "CVX": 0.0031515454745962347
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.017818837041458,
+                        "AMD": 0.009747569667320828,
+                        "MSFT": 0.013239276248029987,
+                        "CVX": 0.006851161106860448
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.01305507408303604,
+                        "AMD": 0.006882948896183284,
+                        "MSFT": 0.008968422324161337,
+                        "CVX": 0.005032636734183141
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.06436651912305712,
+                        "AMD": 0.05804844531533787,
+                        "MSFT": 0.05678793397669562,
+                        "CVX": 0.030440888741954355
+                    }
+                }
+            },
+            "max_sortino": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "AAPL": 0.3514847024746216,
+                        "AMD": 0.523515390545931,
+                        "CVX": 0.17571258732059553
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "AMD": 0.5266045534304432,
+                        "CVX": 0.376932763225484
+                    },
+                    "beta": {
+                        "AAPL": 1.193607938093318,
+                        "AMD": 1.520446550585429,
+                        "CVX": 1.0326591790830206
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "AMD": 0.9941338090140152,
+                        "CVX": 0.4661642724208692
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "AMD": 1.4411179147231348,
+                        "CVX": 0.6526739799941662
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0013947805653754825,
+                        "AMD": 0.002077442025975917,
+                        "CVX": 0.0006972721719071251
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.3514847024746216,
+                        "AMD": 0.523515390545931,
+                        "CVX": 0.17571258732059553
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0004288797831593334,
+                        "AMD": 0.0011004458559272878,
+                        "CVX": 0.0005638028094952334
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.10807770535615202,
+                        "AMD": 0.2773123556936765,
+                        "CVX": 0.1420783079927988
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.02070941291199085,
+                        "AMD": 0.033172968753599485,
+                        "CVX": 0.023744532202071983
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "AMD": 0.5266045534304432,
+                        "CVX": 0.376932763225484
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.00021434642118864917,
+                        "AMD": 0.00052367197519042,
+                        "CVX": 0.0002876157127362656
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.05401529813953959,
+                        "AMD": 0.13196533774798586,
+                        "CVX": 0.07247915960953893
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.014640574482876319,
+                        "AMD": 0.022883880247685708,
+                        "CVX": 0.01695923679698664
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.2324119147968529,
+                        "AMD": 0.3632703370053573,
+                        "CVX": 0.2692195379416935
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.014612161438530889,
+                        "AMD": 0.02435421766341545,
+                        "CVX": 0.015294003833907307
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "AAPL": 0.053801357649714145,
+                        "AMD": 0.20265001277415304,
+                        "CVX": -0.24903271809296199
+                    },
+                    "kurtosis": {
+                        "AAPL": 8.023306497851163,
+                        "AMD": 5.23302810825666,
+                        "CVX": 22.876494156880938
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.007306080719265444,
+                        "AMD": 0.012177108831707726,
+                        "CVX": 0.007647001916953655
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.4757898947570519e-06,
+                        "AMD": 6.33709803977058e-06,
+                        "CVX": 7.271833735917838e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.056429690743487e-07,
+                        "AMD": 2.6787662947512513e-06,
+                        "CVX": 3.954709740226081e-06
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.03175959087008973,
+                        "AMD": 0.050899220731250416,
+                        "CVX": 0.030848226131336087
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.04618160664549658,
+                        "AMD": 0.07053464350257696,
+                        "CVX": 0.052375458267515856
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.07500035286007681,
+                        "AMD": 0.09581840397048567,
+                        "CVX": 0.12383542754779836
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.22557233809399957,
+                        "AMD": 0.6618618607377431,
+                        "CVX": 0.2794289319339853
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.25733277077294753,
+                        "AMD": 0.7675846250889717,
+                        "CVX": 0.3733834369735534
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.27621433694479863,
+                        "AMD": 0.8034985012953423,
+                        "CVX": 0.5054121448870307
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 2.9945516911702166,
+                        "AMD": 2.9942034193405647,
+                        "CVX": 2.995317459033969
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.12864686298087769,
+                        "AMD": 0.14638954769626722,
+                        "CVX": 0.22124769498890295
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.07827562270928971,
+                        "AMD": 0.21312410137889407,
+                        "CVX": 0.10177430672428762
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.3353459405453888,
+                        "AMD": 0.8919219488269297,
+                        "CVX": 0.7154188565487378
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.1068381961300305,
+                        "AMD": 0.3018244152775702,
+                        "CVX": 0.13855007002016428
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.021669348977982093,
+                        "AMD": 0.03578807347364054,
+                        "CVX": 0.02290577577474366
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.06735007753734525,
+                        "AMD": 0.06262454353743967,
+                        "CVX": 0.029365588926880612
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "AMD": 0.9941338090140152,
+                        "CVX": 0.4661642724208692
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.09526815815915039,
+                        "AMD": 0.09078189553041437,
+                        "CVX": 0.04111459614922166
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "AMD": 1.4411179147231348,
+                        "CVX": 0.6526739799941662
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.09545340511346788,
+                        "AMD": 0.08530111928401708,
+                        "CVX": 0.04559121205143482
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.004159229013200773,
+                        "AMD": 0.0023291746869871324,
+                        "CVX": 0.0009746348807058925
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.04391683038615737,
+                        "AMD": 0.040814810052689804,
+                        "CVX": 0.022603314982796552
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.030202079717196136,
+                        "AMD": 0.029452789761388928,
+                        "CVX": 0.013312956009772713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.018596986709884317,
+                        "AMD": 0.02168103349556749,
+                        "CVX": 0.005630635640499484
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.006183296130903495,
+                        "AMD": 0.0031387849175359642,
+                        "CVX": 0.0024953470890832974
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.005420143579793572,
+                        "AMD": 0.0027064664378017183,
+                        "CVX": 0.001867442695259438
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.005049631314591136,
+                        "AMD": 0.002585495831823973,
+                        "CVX": 0.0013796110342045279
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00046577274638075374,
+                        "AMD": 0.000693821272314707,
+                        "CVX": 0.00023278740281906712
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.010841932193735694,
+                        "AMD": 0.014191190960479274,
+                        "CVX": 0.0031515454745962347
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.017818837041458,
+                        "AMD": 0.009747569667320828,
+                        "CVX": 0.006851161106860448
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.01305507408303604,
+                        "AMD": 0.006882948896183284,
+                        "CVX": 0.005032636734183141
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.06436651912305712,
+                        "AMD": 0.05804844531533787,
+                        "CVX": 0.030440888741954355
+                    }
+                }
+            },
+            "target_return": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "AAPL": 0.3514847024746216,
+                        "PFE": 0.040719641227824926,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "AMD": 0.523515390545931,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "PFE": 0.27803567880255214,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "AMD": 0.5266045534304432,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "beta": {
+                        "AAPL": 1.193607938093318,
+                        "PFE": 0.5676913844886845,
+                        "MSFT": 1.1748594751422572,
+                        "CVX": 1.0326591790830206,
+                        "AMD": 1.520446550585429,
+                        "NFLX": 1.0183795798012412
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "PFE": 0.14645473344714907,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "AMD": 0.9941338090140152,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "PFE": 0.2151209611409098,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "AMD": 1.4411179147231348,
+                        "NFLX": 0.7412255210287844
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0013947805653754825,
+                        "PFE": 0.00016158587788819417,
+                        "MSFT": 0.0011830729758554343,
+                        "CVX": 0.0006972721719071251,
+                        "AMD": 0.002077442025975917,
+                        "NFLX": 0.0010236059917771263
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.3514847024746216,
+                        "PFE": 0.040719641227824926,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "AMD": 0.523515390545931,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0004288797831593334,
+                        "PFE": 0.00030676126463173,
+                        "MSFT": 0.00040156123026697854,
+                        "CVX": 0.0005638028094952334,
+                        "AMD": 0.0011004458559272878,
+                        "NFLX": 0.0009054610216239406
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.10807770535615202,
+                        "PFE": 0.07730383868719597,
+                        "MSFT": 0.1011934300272786,
+                        "CVX": 0.1420783079927988,
+                        "AMD": 0.2773123556936765,
+                        "NFLX": 0.22817617744923302
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.02070941291199085,
+                        "PFE": 0.0175146014693949,
+                        "MSFT": 0.0200389927458188,
+                        "CVX": 0.023744532202071983,
+                        "AMD": 0.033172968753599485,
+                        "NFLX": 0.030090879376049158
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "PFE": 0.27803567880255214,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "AMD": 0.5266045534304432,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.00021434642118864917,
+                        "PFE": 0.00014218110519443198,
+                        "MSFT": 0.00020049324063910236,
+                        "CVX": 0.0002876157127362656,
+                        "AMD": 0.00052367197519042,
+                        "NFLX": 0.0004805797327035534
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.05401529813953959,
+                        "PFE": 0.03582963850899686,
+                        "MSFT": 0.0505242966410538,
+                        "CVX": 0.07247915960953893,
+                        "AMD": 0.13196533774798586,
+                        "NFLX": 0.12110609264129546
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.014640574482876319,
+                        "PFE": 0.011923971871588425,
+                        "MSFT": 0.014159563575163691,
+                        "CVX": 0.01695923679698664,
+                        "AMD": 0.022883880247685708,
+                        "NFLX": 0.021922128836031264
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.2324119147968529,
+                        "PFE": 0.18928718527411426,
+                        "MSFT": 0.22477610335855056,
+                        "CVX": 0.2692195379416935,
+                        "AMD": 0.3632703370053573,
+                        "NFLX": 0.3480030066555395
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.014612161438530889,
+                        "PFE": 0.012342601801818833,
+                        "MSFT": 0.014032928007672522,
+                        "CVX": 0.015294003833907307,
+                        "AMD": 0.02435421766341545,
+                        "NFLX": 0.019837529542499645
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "AAPL": 0.053801357649714145,
+                        "PFE": 0.3374936619309926,
+                        "MSFT": 0.013095214699203616,
+                        "CVX": -0.24903271809296199,
+                        "AMD": 0.20265001277415304,
+                        "NFLX": -1.336054349808762
+                    },
+                    "kurtosis": {
+                        "AAPL": 8.023306497851163,
+                        "PFE": 7.187748875574465,
+                        "MSFT": 9.819952325125028,
+                        "CVX": 22.876494156880938,
+                        "AMD": 5.23302810825666,
+                        "NFLX": 25.024138577279906
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.007306080719265444,
+                        "PFE": 0.006171300900909418,
+                        "MSFT": 0.0070164640038362595,
+                        "CVX": 0.007647001916953655,
+                        "AMD": 0.012177108831707726,
+                        "NFLX": 0.009918764771249823
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.4757898947570519e-06,
+                        "PFE": 6.763849479335643e-07,
+                        "MSFT": 1.583481272996292e-06,
+                        "CVX": 7.271833735917838e-06,
+                        "AMD": 6.33709803977058e-06,
+                        "NFLX": 2.0516281787808902e-05
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.056429690743487e-07,
+                        "PFE": 2.5733576693512e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "AMD": 2.6787662947512513e-06,
+                        "NFLX": 1.7538737452612462e-05
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.03175959087008973,
+                        "PFE": 0.024005262893665447,
+                        "MSFT": 0.029281962550674945,
+                        "CVX": 0.030848226131336087,
+                        "AMD": 0.050899220731250416,
+                        "NFLX": 0.03902514828050141
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.04618160664549658,
+                        "PFE": 0.038633457398378465,
+                        "MSFT": 0.04446211417933759,
+                        "CVX": 0.052375458267515856,
+                        "AMD": 0.07053464350257696,
+                        "NFLX": 0.0659602773779179
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.07500035286007681,
+                        "PFE": 0.05396690595410052,
+                        "MSFT": 0.0825778410542349,
+                        "CVX": 0.12383542754779836,
+                        "AMD": 0.09581840397048567,
+                        "NFLX": 0.18998266312705944
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.22557233809399957,
+                        "PFE": 0.5285909519749405,
+                        "MSFT": 0.2859137657119857,
+                        "CVX": 0.2794289319339853,
+                        "AMD": 0.6618618607377431,
+                        "NFLX": 1.0681812535763673
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.25733277077294753,
+                        "PFE": 0.5956086231147812,
+                        "MSFT": 0.32315881238105165,
+                        "CVX": 0.3733834369735534,
+                        "AMD": 0.7675846250889717,
+                        "NFLX": 1.1440790777775307
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.27621433694479863,
+                        "PFE": 0.6187954767259742,
+                        "MSFT": 0.3439794918332313,
+                        "CVX": 0.5054121448870307,
+                        "AMD": 0.8034985012953423,
+                        "NFLX": 1.1633667469332631
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 2.9945516911702166,
+                        "PFE": 2.9957236389681228,
+                        "MSFT": 2.9947498217806525,
+                        "CVX": 2.995317459033969,
+                        "AMD": 2.9942034193405647,
+                        "NFLX": 2.9951678376118562
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.12864686298087769,
+                        "PFE": 0.07734650339391747,
+                        "MSFT": 0.1473903695709361,
+                        "CVX": 0.22124769498890295,
+                        "AMD": 0.14638954769626722,
+                        "NFLX": 0.3511660252265294
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.07827562270928971,
+                        "PFE": 0.17557206071401055,
+                        "MSFT": 0.08936084976937288,
+                        "CVX": 0.10177430672428762,
+                        "AMD": 0.21312410137889407,
+                        "NFLX": 0.2805968476203713
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.3353459405453888,
+                        "PFE": 0.7124762125061408,
+                        "MSFT": 0.41012547607891636,
+                        "CVX": 0.7154188565487378,
+                        "AMD": 0.8919219488269297,
+                        "NFLX": 1.2592917613131953
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.1068381961300305,
+                        "PFE": 0.23741725803242666,
+                        "MSFT": 0.13191539527171708,
+                        "CVX": 0.13855007002016428,
+                        "AMD": 0.3018244152775702,
+                        "NFLX": 0.4288909391252483
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.021669348977982093,
+                        "PFE": 0.01833647148458742,
+                        "MSFT": 0.020833175166065004,
+                        "CVX": 0.02290577577474366,
+                        "AMD": 0.03578807347364054,
+                        "NFLX": 0.029674394545660912
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.06735007753734525,
+                        "PFE": 0.009225781024509758,
+                        "MSFT": 0.05903854504375157,
+                        "CVX": 0.029365588926880612,
+                        "AMD": 0.06262454353743967,
+                        "NFLX": 0.03401715114354104
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "PFE": 0.14645473344714907,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "AMD": 0.9941338090140152,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.09526815815915039,
+                        "PFE": 0.013551346785143739,
+                        "MSFT": 0.08355292658388007,
+                        "CVX": 0.04111459614922166,
+                        "AMD": 0.09078189553041437,
+                        "NFLX": 0.046692818906105736
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "PFE": 0.2151209611409098,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "AMD": 1.4411179147231348,
+                        "NFLX": 0.7412255210287844
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.09545340511346788,
+                        "PFE": 0.013091719273029007,
+                        "MSFT": 0.08430692263286661,
+                        "CVX": 0.04559121205143482,
+                        "AMD": 0.08530111928401708,
+                        "NFLX": 0.051599469056072086
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.004159229013200773,
+                        "PFE": 0.00022679476879630065,
+                        "MSFT": 0.002884661024149076,
+                        "CVX": 0.0009746348807058925,
+                        "AMD": 0.0023291746869871324,
+                        "NFLX": 0.0008128426018682956
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.04391683038615737,
+                        "PFE": 0.006731268830671034,
+                        "MSFT": 0.040402789731324364,
+                        "CVX": 0.022603314982796552,
+                        "AMD": 0.040814810052689804,
+                        "NFLX": 0.026229394041497146
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.030202079717196136,
+                        "PFE": 0.004182537333429969,
+                        "MSFT": 0.026608563215944223,
+                        "CVX": 0.013312956009772713,
+                        "AMD": 0.029452789761388928,
+                        "NFLX": 0.015518521638597713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.018596986709884317,
+                        "PFE": 0.0029941660547600194,
+                        "MSFT": 0.014326760796257968,
+                        "CVX": 0.005630635640499484,
+                        "AMD": 0.02168103349556749,
+                        "NFLX": 0.0053878915840470335
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.006183296130903495,
+                        "PFE": 0.0003056917211398931,
+                        "MSFT": 0.004137866439936295,
+                        "CVX": 0.0024953470890832974,
+                        "AMD": 0.0031387849175359642,
+                        "NFLX": 0.0009582699456201848
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.005420143579793572,
+                        "PFE": 0.00027129539703970093,
+                        "MSFT": 0.0036609646109864325,
+                        "CVX": 0.001867442695259438,
+                        "AMD": 0.0027064664378017183,
+                        "NFLX": 0.0008946986372354317
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.005049631314591136,
+                        "PFE": 0.00026112970111407335,
+                        "MSFT": 0.0034393706716358942,
+                        "CVX": 0.0013796110342045279,
+                        "AMD": 0.002585495831823973,
+                        "NFLX": 0.0008798652655969767
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00046577274638075374,
+                        "PFE": 5.3938846623332866e-05,
+                        "MSFT": 0.0003950490178682069,
+                        "CVX": 0.00023278740281906712,
+                        "AMD": 0.000693821272314707,
+                        "NFLX": 0.0003417524650616175
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.010841932193735694,
+                        "PFE": 0.002089116777073355,
+                        "MSFT": 0.008026799710859294,
+                        "CVX": 0.0031515454745962347,
+                        "AMD": 0.014191190960479274,
+                        "NFLX": 0.002914877631219651
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.017818837041458,
+                        "PFE": 0.0009203393594120964,
+                        "MSFT": 0.013239276248029987,
+                        "CVX": 0.006851161106860448,
+                        "AMD": 0.009747569667320828,
+                        "NFLX": 0.003647959698969949
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.01305507408303604,
+                        "PFE": 0.0006805987030063527,
+                        "MSFT": 0.008968422324161337,
+                        "CVX": 0.005032636734183141,
+                        "AMD": 0.006882948896183284,
+                        "NFLX": 0.0023866346858827073
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.06436651912305712,
+                        "PFE": 0.008812266745213982,
+                        "MSFT": 0.05678793397669562,
+                        "CVX": 0.030440888741954355,
+                        "AMD": 0.05804844531533787,
+                        "NFLX": 0.03449458725104136
+                    }
+                }
+            },
+            "target_volatility": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "AAPL": 0.3514847024746216,
+                        "PFE": 0.040719641227824926,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "AMD": 0.523515390545931,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "PFE": 0.27803567880255214,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "AMD": 0.5266045534304432,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "beta": {
+                        "AAPL": 1.193607938093318,
+                        "PFE": 0.5676913844886845,
+                        "MSFT": 1.1748594751422572,
+                        "CVX": 1.0326591790830206,
+                        "AMD": 1.520446550585429,
+                        "NFLX": 1.0183795798012412
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "PFE": 0.14645473344714907,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "AMD": 0.9941338090140152,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "PFE": 0.2151209611409098,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "AMD": 1.4411179147231348,
+                        "NFLX": 0.7412255210287844
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "AAPL": 0.0013947805653754825,
+                        "PFE": 0.00016158587788819417,
+                        "MSFT": 0.0011830729758554343,
+                        "CVX": 0.0006972721719071251,
+                        "AMD": 0.002077442025975917,
+                        "NFLX": 0.0010236059917771263
+                    },
+                    "annual_mean_return": {
+                        "AAPL": 0.3514847024746216,
+                        "PFE": 0.040719641227824926,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "AMD": 0.523515390545931,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "daily_variance": {
+                        "AAPL": 0.0004288797831593334,
+                        "PFE": 0.00030676126463173,
+                        "MSFT": 0.00040156123026697854,
+                        "CVX": 0.0005638028094952334,
+                        "AMD": 0.0011004458559272878,
+                        "NFLX": 0.0009054610216239406
+                    },
+                    "annual_variance": {
+                        "AAPL": 0.10807770535615202,
+                        "PFE": 0.07730383868719597,
+                        "MSFT": 0.1011934300272786,
+                        "CVX": 0.1420783079927988,
+                        "AMD": 0.2773123556936765,
+                        "NFLX": 0.22817617744923302
+                    },
+                    "daily_standard_deviation": {
+                        "AAPL": 0.02070941291199085,
+                        "PFE": 0.0175146014693949,
+                        "MSFT": 0.0200389927458188,
+                        "CVX": 0.023744532202071983,
+                        "AMD": 0.033172968753599485,
+                        "NFLX": 0.030090879376049158
+                    },
+                    "annual_standard_deviation": {
+                        "AAPL": 0.3287517381796665,
+                        "PFE": 0.27803567880255214,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "AMD": 0.5266045534304432,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "daily_semi_variance": {
+                        "AAPL": 0.00021434642118864917,
+                        "PFE": 0.00014218110519443198,
+                        "MSFT": 0.00020049324063910236,
+                        "CVX": 0.0002876157127362656,
+                        "AMD": 0.00052367197519042,
+                        "NFLX": 0.0004805797327035534
+                    },
+                    "annual_semi_variance": {
+                        "AAPL": 0.05401529813953959,
+                        "PFE": 0.03582963850899686,
+                        "MSFT": 0.0505242966410538,
+                        "CVX": 0.07247915960953893,
+                        "AMD": 0.13196533774798586,
+                        "NFLX": 0.12110609264129546
+                    },
+                    "daily_semi_deviation": {
+                        "AAPL": 0.014640574482876319,
+                        "PFE": 0.011923971871588425,
+                        "MSFT": 0.014159563575163691,
+                        "CVX": 0.01695923679698664,
+                        "AMD": 0.022883880247685708,
+                        "NFLX": 0.021922128836031264
+                    },
+                    "annual_semi_deviation": {
+                        "AAPL": 0.2324119147968529,
+                        "PFE": 0.18928718527411426,
+                        "MSFT": 0.22477610335855056,
+                        "CVX": 0.2692195379416935,
+                        "AMD": 0.3632703370053573,
+                        "NFLX": 0.3480030066555395
+                    },
+                    "mean_absolute_deviation": {
+                        "AAPL": 0.014612161438530889,
+                        "PFE": 0.012342601801818833,
+                        "MSFT": 0.014032928007672522,
+                        "CVX": 0.015294003833907307,
+                        "AMD": 0.02435421766341545,
+                        "NFLX": 0.019837529542499645
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "AAPL": 0.053801357649714145,
+                        "PFE": 0.3374936619309926,
+                        "MSFT": 0.013095214699203616,
+                        "CVX": -0.24903271809296199,
+                        "AMD": 0.20265001277415304,
+                        "NFLX": -1.336054349808762
+                    },
+                    "kurtosis": {
+                        "AAPL": 8.023306497851163,
+                        "PFE": 7.187748875574465,
+                        "MSFT": 9.819952325125028,
+                        "CVX": 22.876494156880938,
+                        "AMD": 5.23302810825666,
+                        "NFLX": 25.024138577279906
+                    },
+                    "first_lower_partial_moment": {
+                        "AAPL": 0.007306080719265444,
+                        "PFE": 0.006171300900909418,
+                        "MSFT": 0.0070164640038362595,
+                        "CVX": 0.007647001916953655,
+                        "AMD": 0.012177108831707726,
+                        "NFLX": 0.009918764771249823
+                    },
+                    "fourth_central_moment": {
+                        "AAPL": 1.4757898947570519e-06,
+                        "PFE": 6.763849479335643e-07,
+                        "MSFT": 1.583481272996292e-06,
+                        "CVX": 7.271833735917838e-06,
+                        "AMD": 6.33709803977058e-06,
+                        "NFLX": 2.0516281787808902e-05
+                    },
+                    "fourth_lower_partial_moment": {
+                        "AAPL": 7.056429690743487e-07,
+                        "PFE": 2.5733576693512e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "AMD": 2.6787662947512513e-06,
+                        "NFLX": 1.7538737452612462e-05
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "AAPL": 0.03175959087008973,
+                        "PFE": 0.024005262893665447,
+                        "MSFT": 0.029281962550674945,
+                        "CVX": 0.030848226131336087,
+                        "AMD": 0.050899220731250416,
+                        "NFLX": 0.03902514828050141
+                    },
+                    "conditional_var_at_95": {
+                        "AAPL": 0.04618160664549658,
+                        "PFE": 0.038633457398378465,
+                        "MSFT": 0.04446211417933759,
+                        "CVX": 0.052375458267515856,
+                        "AMD": 0.07053464350257696,
+                        "NFLX": 0.0659602773779179
+                    },
+                    "entropic_var_at_95": {
+                        "AAPL": 0.07500035286007681,
+                        "PFE": 0.05396690595410052,
+                        "MSFT": 0.0825778410542349,
+                        "CVX": 0.12383542754779836,
+                        "AMD": 0.09581840397048567,
+                        "NFLX": 0.18998266312705944
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "AAPL": 0.22557233809399957,
+                        "PFE": 0.5285909519749405,
+                        "MSFT": 0.2859137657119857,
+                        "CVX": 0.2794289319339853,
+                        "AMD": 0.6618618607377431,
+                        "NFLX": 1.0681812535763673
+                    },
+                    "conditional_dar_at_95": {
+                        "AAPL": 0.25733277077294753,
+                        "PFE": 0.5956086231147812,
+                        "MSFT": 0.32315881238105165,
+                        "CVX": 0.3733834369735534,
+                        "AMD": 0.7675846250889717,
+                        "NFLX": 1.1440790777775307
+                    },
+                    "entropic_dar_at_95": {
+                        "AAPL": 0.27621433694479863,
+                        "PFE": 0.6187954767259742,
+                        "MSFT": 0.3439794918332313,
+                        "CVX": 0.5054121448870307,
+                        "AMD": 0.8034985012953423,
+                        "NFLX": 1.1633667469332631
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "AAPL": 2.9945516911702166,
+                        "PFE": 2.9957236389681228,
+                        "MSFT": 2.9947498217806525,
+                        "CVX": 2.995317459033969,
+                        "AMD": 2.9942034193405647,
+                        "NFLX": 2.9951678376118562
+                    },
+                    "worst_realization": {
+                        "AAPL": 0.12864686298087769,
+                        "PFE": 0.07734650339391747,
+                        "MSFT": 0.1473903695709361,
+                        "CVX": 0.22124769498890295,
+                        "AMD": 0.14638954769626722,
+                        "NFLX": 0.3511660252265294
+                    },
+                    "average_drawdown": {
+                        "AAPL": 0.07827562270928971,
+                        "PFE": 0.17557206071401055,
+                        "MSFT": 0.08936084976937288,
+                        "CVX": 0.10177430672428762,
+                        "AMD": 0.21312410137889407,
+                        "NFLX": 0.2805968476203713
+                    },
+                    "max_drawdown": {
+                        "AAPL": 0.3353459405453888,
+                        "PFE": 0.7124762125061408,
+                        "MSFT": 0.41012547607891636,
+                        "CVX": 0.7154188565487378,
+                        "AMD": 0.8919219488269297,
+                        "NFLX": 1.2592917613131953
+                    },
+                    "ulcer_index": {
+                        "AAPL": 0.1068381961300305,
+                        "PFE": 0.23741725803242666,
+                        "MSFT": 0.13191539527171708,
+                        "CVX": 0.13855007002016428,
+                        "AMD": 0.3018244152775702,
+                        "NFLX": 0.4288909391252483
+                    },
+                    "gini_mean_difference": {
+                        "AAPL": 0.021669348977982093,
+                        "PFE": 0.01833647148458742,
+                        "MSFT": 0.020833175166065004,
+                        "CVX": 0.02290577577474366,
+                        "AMD": 0.03578807347364054,
+                        "NFLX": 0.029674394545660912
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "AAPL": 0.06735007753734525,
+                        "PFE": 0.009225781024509758,
+                        "MSFT": 0.05903854504375157,
+                        "CVX": 0.029365588926880612,
+                        "AMD": 0.06262454353743967,
+                        "NFLX": 0.03401715114354104
+                    },
+                    "annual_sharpe_ratio": {
+                        "AAPL": 1.069149335668398,
+                        "PFE": 0.14645473344714907,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "AMD": 0.9941338090140152,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "daily_sortino_ratio": {
+                        "AAPL": 0.09526815815915039,
+                        "PFE": 0.013551346785143739,
+                        "MSFT": 0.08355292658388007,
+                        "CVX": 0.04111459614922166,
+                        "AMD": 0.09078189553041437,
+                        "NFLX": 0.046692818906105736
+                    },
+                    "annual_sortino_ratio": {
+                        "AAPL": 1.5123351261136853,
+                        "PFE": 0.2151209611409098,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "AMD": 1.4411179147231348,
+                        "NFLX": 0.7412255210287844
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "AAPL": 0.09545340511346788,
+                        "PFE": 0.013091719273029007,
+                        "MSFT": 0.08430692263286661,
+                        "CVX": 0.04559121205143482,
+                        "AMD": 0.08530111928401708,
+                        "NFLX": 0.051599469056072086
+                    },
+                    "calmar_ratio": {
+                        "AAPL": 0.004159229013200773,
+                        "PFE": 0.00022679476879630065,
+                        "MSFT": 0.002884661024149076,
+                        "CVX": 0.0009746348807058925,
+                        "AMD": 0.0023291746869871324,
+                        "NFLX": 0.0008128426018682956
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "AAPL": 0.04391683038615737,
+                        "PFE": 0.006731268830671034,
+                        "MSFT": 0.040402789731324364,
+                        "CVX": 0.022603314982796552,
+                        "AMD": 0.040814810052689804,
+                        "NFLX": 0.026229394041497146
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "AAPL": 0.030202079717196136,
+                        "PFE": 0.004182537333429969,
+                        "MSFT": 0.026608563215944223,
+                        "CVX": 0.013312956009772713,
+                        "AMD": 0.029452789761388928,
+                        "NFLX": 0.015518521638597713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "AAPL": 0.018596986709884317,
+                        "PFE": 0.0029941660547600194,
+                        "MSFT": 0.014326760796257968,
+                        "CVX": 0.005630635640499484,
+                        "AMD": 0.02168103349556749,
+                        "NFLX": 0.0053878915840470335
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "AAPL": 0.006183296130903495,
+                        "PFE": 0.0003056917211398931,
+                        "MSFT": 0.004137866439936295,
+                        "CVX": 0.0024953470890832974,
+                        "AMD": 0.0031387849175359642,
+                        "NFLX": 0.0009582699456201848
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "AAPL": 0.005420143579793572,
+                        "PFE": 0.00027129539703970093,
+                        "MSFT": 0.0036609646109864325,
+                        "CVX": 0.001867442695259438,
+                        "AMD": 0.0027064664378017183,
+                        "NFLX": 0.0008946986372354317
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "AAPL": 0.005049631314591136,
+                        "PFE": 0.00026112970111407335,
+                        "MSFT": 0.0034393706716358942,
+                        "CVX": 0.0013796110342045279,
+                        "AMD": 0.002585495831823973,
+                        "NFLX": 0.0008798652655969767
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "AAPL": 0.00046577274638075374,
+                        "PFE": 5.3938846623332866e-05,
+                        "MSFT": 0.0003950490178682069,
+                        "CVX": 0.00023278740281906712,
+                        "AMD": 0.000693821272314707,
+                        "NFLX": 0.0003417524650616175
+                    },
+                    "worst_realization_ratio": {
+                        "AAPL": 0.010841932193735694,
+                        "PFE": 0.002089116777073355,
+                        "MSFT": 0.008026799710859294,
+                        "CVX": 0.0031515454745962347,
+                        "AMD": 0.014191190960479274,
+                        "NFLX": 0.002914877631219651
+                    },
+                    "average_drawdown_ratio": {
+                        "AAPL": 0.017818837041458,
+                        "PFE": 0.0009203393594120964,
+                        "MSFT": 0.013239276248029987,
+                        "CVX": 0.006851161106860448,
+                        "AMD": 0.009747569667320828,
+                        "NFLX": 0.003647959698969949
+                    },
+                    "ulcer_index_ratio": {
+                        "AAPL": 0.01305507408303604,
+                        "PFE": 0.0006805987030063527,
+                        "MSFT": 0.008968422324161337,
+                        "CVX": 0.005032636734183141,
+                        "AMD": 0.006882948896183284,
+                        "NFLX": 0.0023866346858827073
+                    },
+                    "gini_mean_difference_ratio": {
+                        "AAPL": 0.06436651912305712,
+                        "PFE": 0.008812266745213982,
+                        "MSFT": 0.05678793397669562,
+                        "CVX": 0.030440888741954355,
+                        "AMD": 0.05804844531533787,
+                        "NFLX": 0.03449458725104136
+                    }
+                }
+            },
+            "cvar_90": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "MSFT": 0.29813438991556945,
+                        "CSCO": 0.0861090341224463,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "MSFT": 0.3181091479779835,
+                        "CSCO": 0.2880454016418003,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "MSFT": 1.1748594751422572,
+                        "CSCO": 0.9187992972757996,
+                        "CVX": 1.0326591790830206,
+                        "AAPL": 1.193607938093318,
+                        "NFLX": 1.0183795798012412
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "MSFT": 0.9372078477171096,
+                        "CSCO": 0.2989425751344833,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "MSFT": 1.326361590315505,
+                        "CSCO": 0.40826567107313144,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853,
+                        "NFLX": 0.7412255210287844
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "MSFT": 0.0011830729758554343,
+                        "CSCO": 0.0003417025163589139,
+                        "CVX": 0.0006972721719071251,
+                        "AAPL": 0.0013947805653754825,
+                        "NFLX": 0.0010236059917771263
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "MSFT": 0.29813438991556945,
+                        "CSCO": 0.0861090341224463,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "MSFT": 0.00040156123026697854,
+                        "CSCO": 0.0003292466405039129,
+                        "CVX": 0.0005638028094952334,
+                        "AAPL": 0.0004288797831593334,
+                        "NFLX": 0.0009054610216239406
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "MSFT": 0.1011934300272786,
+                        "CSCO": 0.08297015340698606,
+                        "CVX": 0.1420783079927988,
+                        "AAPL": 0.10807770535615202,
+                        "NFLX": 0.22817617744923302
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "MSFT": 0.0200389927458188,
+                        "CSCO": 0.018145154739045707,
+                        "CVX": 0.023744532202071983,
+                        "AAPL": 0.02070941291199085,
+                        "NFLX": 0.030090879376049158
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "MSFT": 0.3181091479779835,
+                        "CSCO": 0.2880454016418003,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "MSFT": 0.00020049324063910236,
+                        "CSCO": 0.00017652701073608886,
+                        "CVX": 0.0002876157127362656,
+                        "AAPL": 0.00021434642118864917,
+                        "NFLX": 0.0004805797327035534
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "MSFT": 0.0505242966410538,
+                        "CSCO": 0.044484806705494394,
+                        "CVX": 0.07247915960953893,
+                        "AAPL": 0.05401529813953959,
+                        "NFLX": 0.12110609264129546
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "MSFT": 0.014159563575163691,
+                        "CSCO": 0.013286346779159757,
+                        "CVX": 0.01695923679698664,
+                        "AAPL": 0.014640574482876319,
+                        "NFLX": 0.021922128836031264
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "MSFT": 0.22477610335855056,
+                        "CSCO": 0.21091421646132438,
+                        "CVX": 0.2692195379416935,
+                        "AAPL": 0.2324119147968529,
+                        "NFLX": 0.3480030066555395
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "MSFT": 0.014032928007672522,
+                        "CSCO": 0.011815818576861859,
+                        "CVX": 0.015294003833907307,
+                        "AAPL": 0.014612161438530889,
+                        "NFLX": 0.019837529542499645
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "MSFT": 0.013095214699203616,
+                        "CSCO": -0.5347792711997288,
+                        "CVX": -0.24903271809296199,
+                        "AAPL": 0.053801357649714145,
+                        "NFLX": -1.336054349808762
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "MSFT": 9.819952325125028,
+                        "CSCO": 15.092072329100148,
+                        "CVX": 22.876494156880938,
+                        "AAPL": 8.023306497851163,
+                        "NFLX": 25.024138577279906
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "MSFT": 0.0070164640038362595,
+                        "CSCO": 0.0059079092884309296,
+                        "CVX": 0.007647001916953655,
+                        "AAPL": 0.007306080719265444,
+                        "NFLX": 0.009918764771249823
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "MSFT": 1.583481272996292e-06,
+                        "CSCO": 1.636031203189518e-06,
+                        "CVX": 7.271833735917838e-06,
+                        "AAPL": 1.4757898947570519e-06,
+                        "NFLX": 2.0516281787808902e-05
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "CSCO": 9.959738606302346e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "AAPL": 7.056429690743487e-07,
+                        "NFLX": 1.7538737452612462e-05
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "MSFT": 0.029281962550674945,
+                        "CSCO": 0.02452614825687638,
+                        "CVX": 0.030848226131336087,
+                        "AAPL": 0.03175959087008973,
+                        "NFLX": 0.03902514828050141
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "MSFT": 0.04446211417933759,
+                        "CSCO": 0.043774330655809136,
+                        "CVX": 0.052375458267515856,
+                        "AAPL": 0.04618160664549658,
+                        "NFLX": 0.0659602773779179
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "MSFT": 0.0825778410542349,
+                        "CSCO": 0.08182101668610997,
+                        "CVX": 0.12383542754779836,
+                        "AAPL": 0.07500035286007681,
+                        "NFLX": 0.18998266312705944
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "MSFT": 0.2859137657119857,
+                        "CSCO": 0.3344708437276934,
+                        "CVX": 0.2794289319339853,
+                        "AAPL": 0.22557233809399957,
+                        "NFLX": 1.0681812535763673
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "MSFT": 0.32315881238105165,
+                        "CSCO": 0.36660693734047173,
+                        "CVX": 0.3733834369735534,
+                        "AAPL": 0.25733277077294753,
+                        "NFLX": 1.1440790777775307
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "MSFT": 0.3439794918332313,
+                        "CSCO": 0.37962200731129075,
+                        "CVX": 0.5054121448870307,
+                        "AAPL": 0.27621433694479863,
+                        "NFLX": 1.1633667469332631
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "MSFT": 2.9947498217806525,
+                        "CSCO": 2.9955556277388573,
+                        "CVX": 2.995317459033969,
+                        "AAPL": 2.9945516911702166,
+                        "NFLX": 2.9951678376118562
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "MSFT": 0.1473903695709361,
+                        "CSCO": 0.13730352441340776,
+                        "CVX": 0.22124769498890295,
+                        "AAPL": 0.12864686298087769,
+                        "NFLX": 0.3511660252265294
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "MSFT": 0.08936084976937288,
+                        "CSCO": 0.12116282811647297,
+                        "CVX": 0.10177430672428762,
+                        "AAPL": 0.07827562270928971,
+                        "NFLX": 0.2805968476203713
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "MSFT": 0.41012547607891636,
+                        "CSCO": 0.42027063049592006,
+                        "CVX": 0.7154188565487378,
+                        "AAPL": 0.3353459405453888,
+                        "NFLX": 1.2592917613131953
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "MSFT": 0.13191539527171708,
+                        "CSCO": 0.1598423688930162,
+                        "CVX": 0.13855007002016428,
+                        "AAPL": 0.1068381961300305,
+                        "NFLX": 0.4288909391252483
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "MSFT": 0.020833175166065004,
+                        "CSCO": 0.01775041697117577,
+                        "CVX": 0.02290577577474366,
+                        "AAPL": 0.021669348977982093,
+                        "NFLX": 0.029674394545660912
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "MSFT": 0.05903854504375157,
+                        "CSCO": 0.018831612145121048,
+                        "CVX": 0.029365588926880612,
+                        "AAPL": 0.06735007753734525,
+                        "NFLX": 0.03401715114354104
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "MSFT": 0.9372078477171096,
+                        "CSCO": 0.2989425751344833,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "MSFT": 0.08355292658388007,
+                        "CSCO": 0.02571831986915244,
+                        "CVX": 0.04111459614922166,
+                        "AAPL": 0.09526815815915039,
+                        "NFLX": 0.046692818906105736
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "MSFT": 1.326361590315505,
+                        "CSCO": 0.40826567107313144,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853,
+                        "NFLX": 0.7412255210287844
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "MSFT": 0.08430692263286661,
+                        "CSCO": 0.028919072693621706,
+                        "CVX": 0.04559121205143482,
+                        "AAPL": 0.09545340511346788,
+                        "NFLX": 0.051599469056072086
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "MSFT": 0.002884661024149076,
+                        "CSCO": 0.0008130535220976644,
+                        "CVX": 0.0009746348807058925,
+                        "AAPL": 0.004159229013200773,
+                        "NFLX": 0.0008128426018682956
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "MSFT": 0.040402789731324364,
+                        "CSCO": 0.013932172014132346,
+                        "CVX": 0.022603314982796552,
+                        "AAPL": 0.04391683038615737,
+                        "NFLX": 0.026229394041497146
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "MSFT": 0.026608563215944223,
+                        "CSCO": 0.0078060020847758585,
+                        "CVX": 0.013312956009772713,
+                        "AAPL": 0.030202079717196136,
+                        "NFLX": 0.015518521638597713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "MSFT": 0.014326760796257968,
+                        "CSCO": 0.004176219389570622,
+                        "CVX": 0.005630635640499484,
+                        "AAPL": 0.018596986709884317,
+                        "NFLX": 0.0053878915840470335
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "MSFT": 0.004137866439936295,
+                        "CSCO": 0.0010216212347558403,
+                        "CVX": 0.0024953470890832974,
+                        "AAPL": 0.006183296130903495,
+                        "NFLX": 0.0009582699456201848
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "MSFT": 0.0036609646109864325,
+                        "CSCO": 0.0009320677858356269,
+                        "CVX": 0.001867442695259438,
+                        "AAPL": 0.005420143579793572,
+                        "NFLX": 0.0008946986372354317
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "MSFT": 0.0034393706716358942,
+                        "CSCO": 0.0009001125060663757,
+                        "CVX": 0.0013796110342045279,
+                        "AAPL": 0.005049631314591136,
+                        "NFLX": 0.0008798652655969767
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "MSFT": 0.0003950490178682069,
+                        "CSCO": 0.00011406982837999976,
+                        "CVX": 0.00023278740281906712,
+                        "AAPL": 0.00046577274638075374,
+                        "NFLX": 0.0003417524650616175
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "MSFT": 0.008026799710859294,
+                        "CSCO": 0.0024886652969670344,
+                        "CVX": 0.0031515454745962347,
+                        "AAPL": 0.010841932193735694,
+                        "NFLX": 0.002914877631219651
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "MSFT": 0.013239276248029987,
+                        "CSCO": 0.0028201926421727104,
+                        "CVX": 0.006851161106860448,
+                        "AAPL": 0.017818837041458,
+                        "NFLX": 0.003647959698969949
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "MSFT": 0.008968422324161337,
+                        "CSCO": 0.0021377468234821907,
+                        "CVX": 0.005032636734183141,
+                        "AAPL": 0.01305507408303604,
+                        "NFLX": 0.0023866346858827073
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "MSFT": 0.05678793397669562,
+                        "CSCO": 0.019250393774624657,
+                        "CVX": 0.030440888741954355,
+                        "AAPL": 0.06436651912305712,
+                        "NFLX": 0.03449458725104136
+                    }
+                }
+            },
+            "cvar_95": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "CVX": 0.17571258732059553,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "CVX": 0.376932763225484,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "CSCO": 0.9187992972757996,
+                        "CVX": 1.0326591790830206,
+                        "MSFT": 1.1748594751422572,
+                        "NFLX": 1.0183795798012412
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "CVX": 0.4661642724208692,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "CVX": 0.6526739799941662,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "CSCO": 0.0003417025163589139,
+                        "CVX": 0.0006972721719071251,
+                        "MSFT": 0.0011830729758554343,
+                        "NFLX": 0.0010236059917771263
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "CVX": 0.17571258732059553,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "CSCO": 0.0003292466405039129,
+                        "CVX": 0.0005638028094952334,
+                        "MSFT": 0.00040156123026697854,
+                        "NFLX": 0.0009054610216239406
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "CSCO": 0.08297015340698606,
+                        "CVX": 0.1420783079927988,
+                        "MSFT": 0.1011934300272786,
+                        "NFLX": 0.22817617744923302
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "CSCO": 0.018145154739045707,
+                        "CVX": 0.023744532202071983,
+                        "MSFT": 0.0200389927458188,
+                        "NFLX": 0.030090879376049158
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "CVX": 0.376932763225484,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "CSCO": 0.00017652701073608886,
+                        "CVX": 0.0002876157127362656,
+                        "MSFT": 0.00020049324063910236,
+                        "NFLX": 0.0004805797327035534
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "CSCO": 0.044484806705494394,
+                        "CVX": 0.07247915960953893,
+                        "MSFT": 0.0505242966410538,
+                        "NFLX": 0.12110609264129546
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "CSCO": 0.013286346779159757,
+                        "CVX": 0.01695923679698664,
+                        "MSFT": 0.014159563575163691,
+                        "NFLX": 0.021922128836031264
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "CSCO": 0.21091421646132438,
+                        "CVX": 0.2692195379416935,
+                        "MSFT": 0.22477610335855056,
+                        "NFLX": 0.3480030066555395
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "CSCO": 0.011815818576861859,
+                        "CVX": 0.015294003833907307,
+                        "MSFT": 0.014032928007672522,
+                        "NFLX": 0.019837529542499645
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "CSCO": -0.5347792711997288,
+                        "CVX": -0.24903271809296199,
+                        "MSFT": 0.013095214699203616,
+                        "NFLX": -1.336054349808762
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "CSCO": 15.092072329100148,
+                        "CVX": 22.876494156880938,
+                        "MSFT": 9.819952325125028,
+                        "NFLX": 25.024138577279906
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "CSCO": 0.0059079092884309296,
+                        "CVX": 0.007647001916953655,
+                        "MSFT": 0.0070164640038362595,
+                        "NFLX": 0.009918764771249823
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "CSCO": 1.636031203189518e-06,
+                        "CVX": 7.271833735917838e-06,
+                        "MSFT": 1.583481272996292e-06,
+                        "NFLX": 2.0516281787808902e-05
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "CSCO": 9.959738606302346e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "MSFT": 8.052267845528324e-07,
+                        "NFLX": 1.7538737452612462e-05
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "CSCO": 0.02452614825687638,
+                        "CVX": 0.030848226131336087,
+                        "MSFT": 0.029281962550674945,
+                        "NFLX": 0.03902514828050141
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "CSCO": 0.043774330655809136,
+                        "CVX": 0.052375458267515856,
+                        "MSFT": 0.04446211417933759,
+                        "NFLX": 0.0659602773779179
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "CSCO": 0.08182101668610997,
+                        "CVX": 0.12383542754779836,
+                        "MSFT": 0.0825778410542349,
+                        "NFLX": 0.18998266312705944
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "CSCO": 0.3344708437276934,
+                        "CVX": 0.2794289319339853,
+                        "MSFT": 0.2859137657119857,
+                        "NFLX": 1.0681812535763673
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "CSCO": 0.36660693734047173,
+                        "CVX": 0.3733834369735534,
+                        "MSFT": 0.32315881238105165,
+                        "NFLX": 1.1440790777775307
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "CSCO": 0.37962200731129075,
+                        "CVX": 0.5054121448870307,
+                        "MSFT": 0.3439794918332313,
+                        "NFLX": 1.1633667469332631
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "CSCO": 2.9955556277388573,
+                        "CVX": 2.995317459033969,
+                        "MSFT": 2.9947498217806525,
+                        "NFLX": 2.9951678376118562
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "CSCO": 0.13730352441340776,
+                        "CVX": 0.22124769498890295,
+                        "MSFT": 0.1473903695709361,
+                        "NFLX": 0.3511660252265294
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "CSCO": 0.12116282811647297,
+                        "CVX": 0.10177430672428762,
+                        "MSFT": 0.08936084976937288,
+                        "NFLX": 0.2805968476203713
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "CSCO": 0.42027063049592006,
+                        "CVX": 0.7154188565487378,
+                        "MSFT": 0.41012547607891636,
+                        "NFLX": 1.2592917613131953
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "CSCO": 0.1598423688930162,
+                        "CVX": 0.13855007002016428,
+                        "MSFT": 0.13191539527171708,
+                        "NFLX": 0.4288909391252483
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "CSCO": 0.01775041697117577,
+                        "CVX": 0.02290577577474366,
+                        "MSFT": 0.020833175166065004,
+                        "NFLX": 0.029674394545660912
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "CSCO": 0.018831612145121048,
+                        "CVX": 0.029365588926880612,
+                        "MSFT": 0.05903854504375157,
+                        "NFLX": 0.03401715114354104
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "CVX": 0.4661642724208692,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "CSCO": 0.02571831986915244,
+                        "CVX": 0.04111459614922166,
+                        "MSFT": 0.08355292658388007,
+                        "NFLX": 0.046692818906105736
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "CVX": 0.6526739799941662,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "CSCO": 0.028919072693621706,
+                        "CVX": 0.04559121205143482,
+                        "MSFT": 0.08430692263286661,
+                        "NFLX": 0.051599469056072086
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "CSCO": 0.0008130535220976644,
+                        "CVX": 0.0009746348807058925,
+                        "MSFT": 0.002884661024149076,
+                        "NFLX": 0.0008128426018682956
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "CSCO": 0.013932172014132346,
+                        "CVX": 0.022603314982796552,
+                        "MSFT": 0.040402789731324364,
+                        "NFLX": 0.026229394041497146
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "CSCO": 0.0078060020847758585,
+                        "CVX": 0.013312956009772713,
+                        "MSFT": 0.026608563215944223,
+                        "NFLX": 0.015518521638597713
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "CSCO": 0.004176219389570622,
+                        "CVX": 0.005630635640499484,
+                        "MSFT": 0.014326760796257968,
+                        "NFLX": 0.0053878915840470335
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "CSCO": 0.0010216212347558403,
+                        "CVX": 0.0024953470890832974,
+                        "MSFT": 0.004137866439936295,
+                        "NFLX": 0.0009582699456201848
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "CSCO": 0.0009320677858356269,
+                        "CVX": 0.001867442695259438,
+                        "MSFT": 0.0036609646109864325,
+                        "NFLX": 0.0008946986372354317
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "CSCO": 0.0009001125060663757,
+                        "CVX": 0.0013796110342045279,
+                        "MSFT": 0.0034393706716358942,
+                        "NFLX": 0.0008798652655969767
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "CSCO": 0.00011406982837999976,
+                        "CVX": 0.00023278740281906712,
+                        "MSFT": 0.0003950490178682069,
+                        "NFLX": 0.0003417524650616175
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "CSCO": 0.0024886652969670344,
+                        "CVX": 0.0031515454745962347,
+                        "MSFT": 0.008026799710859294,
+                        "NFLX": 0.002914877631219651
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "CSCO": 0.0028201926421727104,
+                        "CVX": 0.006851161106860448,
+                        "MSFT": 0.013239276248029987,
+                        "NFLX": 0.003647959698969949
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "CSCO": 0.0021377468234821907,
+                        "CVX": 0.005032636734183141,
+                        "MSFT": 0.008968422324161337,
+                        "NFLX": 0.0023866346858827073
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "CSCO": 0.019250393774624657,
+                        "CVX": 0.030440888741954355,
+                        "MSFT": 0.05678793397669562,
+                        "NFLX": 0.03449458725104136
+                    }
+                }
+            },
+            "cvar_99": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CVX": 0.17571258732059553,
+                        "NFLX": 0.2579487099278358,
+                        "CSCO": 0.0861090341224463
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CVX": 0.376932763225484,
+                        "NFLX": 0.4776779013616111,
+                        "CSCO": 0.2880454016418003
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "CVX": 1.0326591790830206,
+                        "NFLX": 1.0183795798012412,
+                        "CSCO": 0.9187992972757996
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CVX": 0.4661642724208692,
+                        "NFLX": 0.5400055334202363,
+                        "CSCO": 0.2989425751344833
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CVX": 0.6526739799941662,
+                        "NFLX": 0.7412255210287844,
+                        "CSCO": 0.40826567107313144
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "CVX": 0.0006972721719071251,
+                        "NFLX": 0.0010236059917771263,
+                        "CSCO": 0.0003417025163589139
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CVX": 0.17571258732059553,
+                        "NFLX": 0.2579487099278358,
+                        "CSCO": 0.0861090341224463
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "CVX": 0.0005638028094952334,
+                        "NFLX": 0.0009054610216239406,
+                        "CSCO": 0.0003292466405039129
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "CVX": 0.1420783079927988,
+                        "NFLX": 0.22817617744923302,
+                        "CSCO": 0.08297015340698606
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "CVX": 0.023744532202071983,
+                        "NFLX": 0.030090879376049158,
+                        "CSCO": 0.018145154739045707
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CVX": 0.376932763225484,
+                        "NFLX": 0.4776779013616111,
+                        "CSCO": 0.2880454016418003
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "CVX": 0.0002876157127362656,
+                        "NFLX": 0.0004805797327035534,
+                        "CSCO": 0.00017652701073608886
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "CVX": 0.07247915960953893,
+                        "NFLX": 0.12110609264129546,
+                        "CSCO": 0.044484806705494394
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "CVX": 0.01695923679698664,
+                        "NFLX": 0.021922128836031264,
+                        "CSCO": 0.013286346779159757
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "CVX": 0.2692195379416935,
+                        "NFLX": 0.3480030066555395,
+                        "CSCO": 0.21091421646132438
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "CVX": 0.015294003833907307,
+                        "NFLX": 0.019837529542499645,
+                        "CSCO": 0.011815818576861859
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "CVX": -0.24903271809296199,
+                        "NFLX": -1.336054349808762,
+                        "CSCO": -0.5347792711997288
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "CVX": 22.876494156880938,
+                        "NFLX": 25.024138577279906,
+                        "CSCO": 15.092072329100148
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "CVX": 0.007647001916953655,
+                        "NFLX": 0.009918764771249823,
+                        "CSCO": 0.0059079092884309296
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "CVX": 7.271833735917838e-06,
+                        "NFLX": 2.0516281787808902e-05,
+                        "CSCO": 1.636031203189518e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "NFLX": 1.7538737452612462e-05,
+                        "CSCO": 9.959738606302346e-07
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "CVX": 0.030848226131336087,
+                        "NFLX": 0.03902514828050141,
+                        "CSCO": 0.02452614825687638
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "CVX": 0.052375458267515856,
+                        "NFLX": 0.0659602773779179,
+                        "CSCO": 0.043774330655809136
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "CVX": 0.12383542754779836,
+                        "NFLX": 0.18998266312705944,
+                        "CSCO": 0.08182101668610997
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "CVX": 0.2794289319339853,
+                        "NFLX": 1.0681812535763673,
+                        "CSCO": 0.3344708437276934
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "CVX": 0.3733834369735534,
+                        "NFLX": 1.1440790777775307,
+                        "CSCO": 0.36660693734047173
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "CVX": 0.5054121448870307,
+                        "NFLX": 1.1633667469332631,
+                        "CSCO": 0.37962200731129075
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "CVX": 2.995317459033969,
+                        "NFLX": 2.9951678376118562,
+                        "CSCO": 2.9955556277388573
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "CVX": 0.22124769498890295,
+                        "NFLX": 0.3511660252265294,
+                        "CSCO": 0.13730352441340776
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "CVX": 0.10177430672428762,
+                        "NFLX": 0.2805968476203713,
+                        "CSCO": 0.12116282811647297
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "CVX": 0.7154188565487378,
+                        "NFLX": 1.2592917613131953,
+                        "CSCO": 0.42027063049592006
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "CVX": 0.13855007002016428,
+                        "NFLX": 0.4288909391252483,
+                        "CSCO": 0.1598423688930162
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "CVX": 0.02290577577474366,
+                        "NFLX": 0.029674394545660912,
+                        "CSCO": 0.01775041697117577
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "CVX": 0.029365588926880612,
+                        "NFLX": 0.03401715114354104,
+                        "CSCO": 0.018831612145121048
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CVX": 0.4661642724208692,
+                        "NFLX": 0.5400055334202363,
+                        "CSCO": 0.2989425751344833
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "CVX": 0.04111459614922166,
+                        "NFLX": 0.046692818906105736,
+                        "CSCO": 0.02571831986915244
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CVX": 0.6526739799941662,
+                        "NFLX": 0.7412255210287844,
+                        "CSCO": 0.40826567107313144
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "CVX": 0.04559121205143482,
+                        "NFLX": 0.051599469056072086,
+                        "CSCO": 0.028919072693621706
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "CVX": 0.0009746348807058925,
+                        "NFLX": 0.0008128426018682956,
+                        "CSCO": 0.0008130535220976644
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "CVX": 0.022603314982796552,
+                        "NFLX": 0.026229394041497146,
+                        "CSCO": 0.013932172014132346
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "CVX": 0.013312956009772713,
+                        "NFLX": 0.015518521638597713,
+                        "CSCO": 0.0078060020847758585
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "CVX": 0.005630635640499484,
+                        "NFLX": 0.0053878915840470335,
+                        "CSCO": 0.004176219389570622
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "CVX": 0.0024953470890832974,
+                        "NFLX": 0.0009582699456201848,
+                        "CSCO": 0.0010216212347558403
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "CVX": 0.001867442695259438,
+                        "NFLX": 0.0008946986372354317,
+                        "CSCO": 0.0009320677858356269
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "CVX": 0.0013796110342045279,
+                        "NFLX": 0.0008798652655969767,
+                        "CSCO": 0.0009001125060663757
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "CVX": 0.00023278740281906712,
+                        "NFLX": 0.0003417524650616175,
+                        "CSCO": 0.00011406982837999976
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "CVX": 0.0031515454745962347,
+                        "NFLX": 0.002914877631219651,
+                        "CSCO": 0.0024886652969670344
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "CVX": 0.006851161106860448,
+                        "NFLX": 0.003647959698969949,
+                        "CSCO": 0.0028201926421727104
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "CVX": 0.005032636734183141,
+                        "NFLX": 0.0023866346858827073,
+                        "CSCO": 0.0021377468234821907
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "CVX": 0.030440888741954355,
+                        "NFLX": 0.03449458725104136,
+                        "CSCO": 0.019250393774624657
+                    }
+                }
+            },
+            "cvar_999": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063
+                    }
+                }
+            },
+            "hrp": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "AAPL": 0.3514847024746216,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "NFLX": 0.2579487099278358,
+                        "AMD": 0.523515390545931
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "AAPL": 0.3287517381796665,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "NFLX": 0.4776779013616111,
+                        "AMD": 0.5266045534304432
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "CSCO": 0.9187992972757996,
+                        "AAPL": 1.193607938093318,
+                        "MSFT": 1.1748594751422572,
+                        "CVX": 1.0326591790830206,
+                        "NFLX": 1.0183795798012412,
+                        "AMD": 1.520446550585429
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "AAPL": 1.069149335668398,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "NFLX": 0.5400055334202363,
+                        "AMD": 0.9941338090140152
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "AAPL": 1.5123351261136853,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "NFLX": 0.7412255210287844,
+                        "AMD": 1.4411179147231348
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "CSCO": 0.0003417025163589139,
+                        "AAPL": 0.0013947805653754825,
+                        "MSFT": 0.0011830729758554343,
+                        "CVX": 0.0006972721719071251,
+                        "NFLX": 0.0010236059917771263,
+                        "AMD": 0.002077442025975917
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "AAPL": 0.3514847024746216,
+                        "MSFT": 0.29813438991556945,
+                        "CVX": 0.17571258732059553,
+                        "NFLX": 0.2579487099278358,
+                        "AMD": 0.523515390545931
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "CSCO": 0.0003292466405039129,
+                        "AAPL": 0.0004288797831593334,
+                        "MSFT": 0.00040156123026697854,
+                        "CVX": 0.0005638028094952334,
+                        "NFLX": 0.0009054610216239406,
+                        "AMD": 0.0011004458559272878
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "CSCO": 0.08297015340698606,
+                        "AAPL": 0.10807770535615202,
+                        "MSFT": 0.1011934300272786,
+                        "CVX": 0.1420783079927988,
+                        "NFLX": 0.22817617744923302,
+                        "AMD": 0.2773123556936765
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "CSCO": 0.018145154739045707,
+                        "AAPL": 0.02070941291199085,
+                        "MSFT": 0.0200389927458188,
+                        "CVX": 0.023744532202071983,
+                        "NFLX": 0.030090879376049158,
+                        "AMD": 0.033172968753599485
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "AAPL": 0.3287517381796665,
+                        "MSFT": 0.3181091479779835,
+                        "CVX": 0.376932763225484,
+                        "NFLX": 0.4776779013616111,
+                        "AMD": 0.5266045534304432
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "CSCO": 0.00017652701073608886,
+                        "AAPL": 0.00021434642118864917,
+                        "MSFT": 0.00020049324063910236,
+                        "CVX": 0.0002876157127362656,
+                        "NFLX": 0.0004805797327035534,
+                        "AMD": 0.00052367197519042
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "CSCO": 0.044484806705494394,
+                        "AAPL": 0.05401529813953959,
+                        "MSFT": 0.0505242966410538,
+                        "CVX": 0.07247915960953893,
+                        "NFLX": 0.12110609264129546,
+                        "AMD": 0.13196533774798586
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "CSCO": 0.013286346779159757,
+                        "AAPL": 0.014640574482876319,
+                        "MSFT": 0.014159563575163691,
+                        "CVX": 0.01695923679698664,
+                        "NFLX": 0.021922128836031264,
+                        "AMD": 0.022883880247685708
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "CSCO": 0.21091421646132438,
+                        "AAPL": 0.2324119147968529,
+                        "MSFT": 0.22477610335855056,
+                        "CVX": 0.2692195379416935,
+                        "NFLX": 0.3480030066555395,
+                        "AMD": 0.3632703370053573
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "CSCO": 0.011815818576861859,
+                        "AAPL": 0.014612161438530889,
+                        "MSFT": 0.014032928007672522,
+                        "CVX": 0.015294003833907307,
+                        "NFLX": 0.019837529542499645,
+                        "AMD": 0.02435421766341545
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "CSCO": -0.5347792711997288,
+                        "AAPL": 0.053801357649714145,
+                        "MSFT": 0.013095214699203616,
+                        "CVX": -0.24903271809296199,
+                        "NFLX": -1.336054349808762,
+                        "AMD": 0.20265001277415304
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "CSCO": 15.092072329100148,
+                        "AAPL": 8.023306497851163,
+                        "MSFT": 9.819952325125028,
+                        "CVX": 22.876494156880938,
+                        "NFLX": 25.024138577279906,
+                        "AMD": 5.23302810825666
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "CSCO": 0.0059079092884309296,
+                        "AAPL": 0.007306080719265444,
+                        "MSFT": 0.0070164640038362595,
+                        "CVX": 0.007647001916953655,
+                        "NFLX": 0.009918764771249823,
+                        "AMD": 0.012177108831707726
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "CSCO": 1.636031203189518e-06,
+                        "AAPL": 1.4757898947570519e-06,
+                        "MSFT": 1.583481272996292e-06,
+                        "CVX": 7.271833735917838e-06,
+                        "NFLX": 2.0516281787808902e-05,
+                        "AMD": 6.33709803977058e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "CSCO": 9.959738606302346e-07,
+                        "AAPL": 7.056429690743487e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "CVX": 3.954709740226081e-06,
+                        "NFLX": 1.7538737452612462e-05,
+                        "AMD": 2.6787662947512513e-06
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "CSCO": 0.02452614825687638,
+                        "AAPL": 0.03175959087008973,
+                        "MSFT": 0.029281962550674945,
+                        "CVX": 0.030848226131336087,
+                        "NFLX": 0.03902514828050141,
+                        "AMD": 0.050899220731250416
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "CSCO": 0.043774330655809136,
+                        "AAPL": 0.04618160664549658,
+                        "MSFT": 0.04446211417933759,
+                        "CVX": 0.052375458267515856,
+                        "NFLX": 0.0659602773779179,
+                        "AMD": 0.07053464350257696
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "CSCO": 0.08182101668610997,
+                        "AAPL": 0.07500035286007681,
+                        "MSFT": 0.0825778410542349,
+                        "CVX": 0.12383542754779836,
+                        "NFLX": 0.18998266312705944,
+                        "AMD": 0.09581840397048567
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "CSCO": 0.3344708437276934,
+                        "AAPL": 0.22557233809399957,
+                        "MSFT": 0.2859137657119857,
+                        "CVX": 0.2794289319339853,
+                        "NFLX": 1.0681812535763673,
+                        "AMD": 0.6618618607377431
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "CSCO": 0.36660693734047173,
+                        "AAPL": 0.25733277077294753,
+                        "MSFT": 0.32315881238105165,
+                        "CVX": 0.3733834369735534,
+                        "NFLX": 1.1440790777775307,
+                        "AMD": 0.7675846250889717
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "CSCO": 0.37962200731129075,
+                        "AAPL": 0.27621433694479863,
+                        "MSFT": 0.3439794918332313,
+                        "CVX": 0.5054121448870307,
+                        "NFLX": 1.1633667469332631,
+                        "AMD": 0.8034985012953423
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "CSCO": 2.9955556277388573,
+                        "AAPL": 2.9945516911702166,
+                        "MSFT": 2.9947498217806525,
+                        "CVX": 2.995317459033969,
+                        "NFLX": 2.9951678376118562,
+                        "AMD": 2.9942034193405647
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "CSCO": 0.13730352441340776,
+                        "AAPL": 0.12864686298087769,
+                        "MSFT": 0.1473903695709361,
+                        "CVX": 0.22124769498890295,
+                        "NFLX": 0.3511660252265294,
+                        "AMD": 0.14638954769626722
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "CSCO": 0.12116282811647297,
+                        "AAPL": 0.07827562270928971,
+                        "MSFT": 0.08936084976937288,
+                        "CVX": 0.10177430672428762,
+                        "NFLX": 0.2805968476203713,
+                        "AMD": 0.21312410137889407
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "CSCO": 0.42027063049592006,
+                        "AAPL": 0.3353459405453888,
+                        "MSFT": 0.41012547607891636,
+                        "CVX": 0.7154188565487378,
+                        "NFLX": 1.2592917613131953,
+                        "AMD": 0.8919219488269297
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "CSCO": 0.1598423688930162,
+                        "AAPL": 0.1068381961300305,
+                        "MSFT": 0.13191539527171708,
+                        "CVX": 0.13855007002016428,
+                        "NFLX": 0.4288909391252483,
+                        "AMD": 0.3018244152775702
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "CSCO": 0.01775041697117577,
+                        "AAPL": 0.021669348977982093,
+                        "MSFT": 0.020833175166065004,
+                        "CVX": 0.02290577577474366,
+                        "NFLX": 0.029674394545660912,
+                        "AMD": 0.03578807347364054
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "CSCO": 0.018831612145121048,
+                        "AAPL": 0.06735007753734525,
+                        "MSFT": 0.05903854504375157,
+                        "CVX": 0.029365588926880612,
+                        "NFLX": 0.03401715114354104,
+                        "AMD": 0.06262454353743967
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "AAPL": 1.069149335668398,
+                        "MSFT": 0.9372078477171096,
+                        "CVX": 0.4661642724208692,
+                        "NFLX": 0.5400055334202363,
+                        "AMD": 0.9941338090140152
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "CSCO": 0.02571831986915244,
+                        "AAPL": 0.09526815815915039,
+                        "MSFT": 0.08355292658388007,
+                        "CVX": 0.04111459614922166,
+                        "NFLX": 0.046692818906105736,
+                        "AMD": 0.09078189553041437
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "AAPL": 1.5123351261136853,
+                        "MSFT": 1.326361590315505,
+                        "CVX": 0.6526739799941662,
+                        "NFLX": 0.7412255210287844,
+                        "AMD": 1.4411179147231348
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "CSCO": 0.028919072693621706,
+                        "AAPL": 0.09545340511346788,
+                        "MSFT": 0.08430692263286661,
+                        "CVX": 0.04559121205143482,
+                        "NFLX": 0.051599469056072086,
+                        "AMD": 0.08530111928401708
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "CSCO": 0.0008130535220976644,
+                        "AAPL": 0.004159229013200773,
+                        "MSFT": 0.002884661024149076,
+                        "CVX": 0.0009746348807058925,
+                        "NFLX": 0.0008128426018682956,
+                        "AMD": 0.0023291746869871324
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "CSCO": 0.013932172014132346,
+                        "AAPL": 0.04391683038615737,
+                        "MSFT": 0.040402789731324364,
+                        "CVX": 0.022603314982796552,
+                        "NFLX": 0.026229394041497146,
+                        "AMD": 0.040814810052689804
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "CSCO": 0.0078060020847758585,
+                        "AAPL": 0.030202079717196136,
+                        "MSFT": 0.026608563215944223,
+                        "CVX": 0.013312956009772713,
+                        "NFLX": 0.015518521638597713,
+                        "AMD": 0.029452789761388928
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "CSCO": 0.004176219389570622,
+                        "AAPL": 0.018596986709884317,
+                        "MSFT": 0.014326760796257968,
+                        "CVX": 0.005630635640499484,
+                        "NFLX": 0.0053878915840470335,
+                        "AMD": 0.02168103349556749
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "CSCO": 0.0010216212347558403,
+                        "AAPL": 0.006183296130903495,
+                        "MSFT": 0.004137866439936295,
+                        "CVX": 0.0024953470890832974,
+                        "NFLX": 0.0009582699456201848,
+                        "AMD": 0.0031387849175359642
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "CSCO": 0.0009320677858356269,
+                        "AAPL": 0.005420143579793572,
+                        "MSFT": 0.0036609646109864325,
+                        "CVX": 0.001867442695259438,
+                        "NFLX": 0.0008946986372354317,
+                        "AMD": 0.0027064664378017183
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "CSCO": 0.0009001125060663757,
+                        "AAPL": 0.005049631314591136,
+                        "MSFT": 0.0034393706716358942,
+                        "CVX": 0.0013796110342045279,
+                        "NFLX": 0.0008798652655969767,
+                        "AMD": 0.002585495831823973
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "CSCO": 0.00011406982837999976,
+                        "AAPL": 0.00046577274638075374,
+                        "MSFT": 0.0003950490178682069,
+                        "CVX": 0.00023278740281906712,
+                        "NFLX": 0.0003417524650616175,
+                        "AMD": 0.000693821272314707
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "CSCO": 0.0024886652969670344,
+                        "AAPL": 0.010841932193735694,
+                        "MSFT": 0.008026799710859294,
+                        "CVX": 0.0031515454745962347,
+                        "NFLX": 0.002914877631219651,
+                        "AMD": 0.014191190960479274
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "CSCO": 0.0028201926421727104,
+                        "AAPL": 0.017818837041458,
+                        "MSFT": 0.013239276248029987,
+                        "CVX": 0.006851161106860448,
+                        "NFLX": 0.003647959698969949,
+                        "AMD": 0.009747569667320828
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "CSCO": 0.0021377468234821907,
+                        "AAPL": 0.01305507408303604,
+                        "MSFT": 0.008968422324161337,
+                        "CVX": 0.005032636734183141,
+                        "NFLX": 0.0023866346858827073,
+                        "AMD": 0.006882948896183284
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "CSCO": 0.019250393774624657,
+                        "AAPL": 0.06436651912305712,
+                        "MSFT": 0.05678793397669562,
+                        "CVX": 0.030440888741954355,
+                        "NFLX": 0.03449458725104136,
+                        "AMD": 0.05804844531533787
+                    }
+                }
+            },
+            "max_information": {
+                "strategy_symbol_stats_main": {
+                    "annual_expected_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665
+                    },
+                    "beta": {
+                        "PFE": 0.5676913844886845,
+                        "MMM": 0.7904369177239234,
+                        "CSCO": 0.9187992972757996,
+                        "MSFT": 1.1748594751422572,
+                        "NFLX": 1.0183795798012412,
+                        "CVX": 1.0326591790830206,
+                        "AAPL": 1.193607938093318
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853
+                    }
+                },
+                "strategy_symbol_stats_descriptive": {
+                    "daily_mean_return": {
+                        "PFE": 0.00016158587788819417,
+                        "MMM": -2.4253631667265487e-05,
+                        "CSCO": 0.0003417025163589139,
+                        "MSFT": 0.0011830729758554343,
+                        "NFLX": 0.0010236059917771263,
+                        "CVX": 0.0006972721719071251,
+                        "AAPL": 0.0013947805653754825
+                    },
+                    "annual_mean_return": {
+                        "PFE": 0.040719641227824926,
+                        "MMM": -0.006111915180150903,
+                        "CSCO": 0.0861090341224463,
+                        "MSFT": 0.29813438991556945,
+                        "NFLX": 0.2579487099278358,
+                        "CVX": 0.17571258732059553,
+                        "AAPL": 0.3514847024746216
+                    },
+                    "daily_variance": {
+                        "PFE": 0.00030676126463173,
+                        "MMM": 0.00031453120850384944,
+                        "CSCO": 0.0003292466405039129,
+                        "MSFT": 0.00040156123026697854,
+                        "NFLX": 0.0009054610216239406,
+                        "CVX": 0.0005638028094952334,
+                        "AAPL": 0.0004288797831593334
+                    },
+                    "annual_variance": {
+                        "PFE": 0.07730383868719597,
+                        "MMM": 0.07926186454297006,
+                        "CSCO": 0.08297015340698606,
+                        "MSFT": 0.1011934300272786,
+                        "NFLX": 0.22817617744923302,
+                        "CVX": 0.1420783079927988,
+                        "AAPL": 0.10807770535615202
+                    },
+                    "daily_standard_deviation": {
+                        "PFE": 0.0175146014693949,
+                        "MMM": 0.017735027727744025,
+                        "CSCO": 0.018145154739045707,
+                        "MSFT": 0.0200389927458188,
+                        "NFLX": 0.030090879376049158,
+                        "CVX": 0.023744532202071983,
+                        "AAPL": 0.02070941291199085
+                    },
+                    "annual_standard_deviation": {
+                        "PFE": 0.27803567880255214,
+                        "MMM": 0.28153483717467376,
+                        "CSCO": 0.2880454016418003,
+                        "MSFT": 0.3181091479779835,
+                        "NFLX": 0.4776779013616111,
+                        "CVX": 0.376932763225484,
+                        "AAPL": 0.3287517381796665
+                    },
+                    "daily_semi_variance": {
+                        "PFE": 0.00014218110519443198,
+                        "MMM": 0.00015837564357627315,
+                        "CSCO": 0.00017652701073608886,
+                        "MSFT": 0.00020049324063910236,
+                        "NFLX": 0.0004805797327035534,
+                        "CVX": 0.0002876157127362656,
+                        "AAPL": 0.00021434642118864917
+                    },
+                    "annual_semi_variance": {
+                        "PFE": 0.03582963850899686,
+                        "MMM": 0.039910662181220836,
+                        "CSCO": 0.044484806705494394,
+                        "MSFT": 0.0505242966410538,
+                        "NFLX": 0.12110609264129546,
+                        "CVX": 0.07247915960953893,
+                        "AAPL": 0.05401529813953959
+                    },
+                    "daily_semi_deviation": {
+                        "PFE": 0.011923971871588425,
+                        "MMM": 0.012584738518390962,
+                        "CSCO": 0.013286346779159757,
+                        "MSFT": 0.014159563575163691,
+                        "NFLX": 0.021922128836031264,
+                        "CVX": 0.01695923679698664,
+                        "AAPL": 0.014640574482876319
+                    },
+                    "annual_semi_deviation": {
+                        "PFE": 0.18928718527411426,
+                        "MMM": 0.19977653060662764,
+                        "CSCO": 0.21091421646132438,
+                        "MSFT": 0.22477610335855056,
+                        "NFLX": 0.3480030066555395,
+                        "CVX": 0.2692195379416935,
+                        "AAPL": 0.2324119147968529
+                    },
+                    "mean_absolute_deviation": {
+                        "PFE": 0.012342601801818833,
+                        "MMM": 0.012240241217552824,
+                        "CSCO": 0.011815818576861859,
+                        "MSFT": 0.014032928007672522,
+                        "NFLX": 0.019837529542499645,
+                        "CVX": 0.015294003833907307,
+                        "AAPL": 0.014612161438530889
+                    }
+                },
+                "strategy_symbol_stats_moments": {
+                    "skew": {
+                        "PFE": 0.3374936619309926,
+                        "MMM": 0.03534390433911209,
+                        "CSCO": -0.5347792711997288,
+                        "MSFT": 0.013095214699203616,
+                        "NFLX": -1.336054349808762,
+                        "CVX": -0.24903271809296199,
+                        "AAPL": 0.053801357649714145
+                    },
+                    "kurtosis": {
+                        "PFE": 7.187748875574465,
+                        "MMM": 9.164867737095605,
+                        "CSCO": 15.092072329100148,
+                        "MSFT": 9.819952325125028,
+                        "NFLX": 25.024138577279906,
+                        "CVX": 22.876494156880938,
+                        "AAPL": 8.023306497851163
+                    },
+                    "first_lower_partial_moment": {
+                        "PFE": 0.006171300900909418,
+                        "MMM": 0.006120120608776413,
+                        "CSCO": 0.0059079092884309296,
+                        "MSFT": 0.0070164640038362595,
+                        "NFLX": 0.009918764771249823,
+                        "CVX": 0.007647001916953655,
+                        "AAPL": 0.007306080719265444
+                    },
+                    "fourth_central_moment": {
+                        "PFE": 6.763849479335643e-07,
+                        "MMM": 9.066792757378964e-07,
+                        "CSCO": 1.636031203189518e-06,
+                        "MSFT": 1.583481272996292e-06,
+                        "NFLX": 2.0516281787808902e-05,
+                        "CVX": 7.271833735917838e-06,
+                        "AAPL": 1.4757898947570519e-06
+                    },
+                    "fourth_lower_partial_moment": {
+                        "PFE": 2.5733576693512e-07,
+                        "MMM": 4.159779099940776e-07,
+                        "CSCO": 9.959738606302346e-07,
+                        "MSFT": 8.052267845528324e-07,
+                        "NFLX": 1.7538737452612462e-05,
+                        "CVX": 3.954709740226081e-06,
+                        "AAPL": 7.056429690743487e-07
+                    }
+                },
+                "strategy_symbol_stats_risk_measures": {
+                    "value_at_risk_at_95": {
+                        "PFE": 0.024005262893665447,
+                        "MMM": 0.02594800926063523,
+                        "CSCO": 0.02452614825687638,
+                        "MSFT": 0.029281962550674945,
+                        "NFLX": 0.03902514828050141,
+                        "CVX": 0.030848226131336087,
+                        "AAPL": 0.03175959087008973
+                    },
+                    "conditional_var_at_95": {
+                        "PFE": 0.038633457398378465,
+                        "MMM": 0.04175417119738913,
+                        "CSCO": 0.043774330655809136,
+                        "MSFT": 0.04446211417933759,
+                        "NFLX": 0.0659602773779179,
+                        "CVX": 0.052375458267515856,
+                        "AAPL": 0.04618160664549658
+                    },
+                    "entropic_var_at_95": {
+                        "PFE": 0.05396690595410052,
+                        "MMM": 0.06350240829368603,
+                        "CSCO": 0.08182101668610997,
+                        "MSFT": 0.0825778410542349,
+                        "NFLX": 0.18998266312705944,
+                        "CVX": 0.12383542754779836,
+                        "AAPL": 0.07500035286007681
+                    },
+                    "drawdown_at_risk_at_95": {
+                        "PFE": 0.5285909519749405,
+                        "MMM": 0.5893755431597002,
+                        "CSCO": 0.3344708437276934,
+                        "MSFT": 0.2859137657119857,
+                        "NFLX": 1.0681812535763673,
+                        "CVX": 0.2794289319339853,
+                        "AAPL": 0.22557233809399957
+                    },
+                    "conditional_dar_at_95": {
+                        "PFE": 0.5956086231147812,
+                        "MMM": 0.6327045525477185,
+                        "CSCO": 0.36660693734047173,
+                        "MSFT": 0.32315881238105165,
+                        "NFLX": 1.1440790777775307,
+                        "CVX": 0.3733834369735534,
+                        "AAPL": 0.25733277077294753
+                    },
+                    "entropic_dar_at_95": {
+                        "PFE": 0.6187954767259742,
+                        "MMM": 0.6520386408263071,
+                        "CSCO": 0.37962200731129075,
+                        "MSFT": 0.3439794918332313,
+                        "NFLX": 1.1633667469332631,
+                        "CVX": 0.5054121448870307,
+                        "AAPL": 0.27621433694479863
+                    },
+                    "entropic_risk_measure_at_95": {
+                        "PFE": 2.9957236389681228,
+                        "MMM": 2.99591363814266,
+                        "CSCO": 2.9955556277388573,
+                        "MSFT": 2.9947498217806525,
+                        "NFLX": 2.9951678376118562,
+                        "CVX": 2.995317459033969,
+                        "AAPL": 2.9945516911702166
+                    },
+                    "worst_realization": {
+                        "PFE": 0.07734650339391747,
+                        "MMM": 0.09540479602794527,
+                        "CSCO": 0.13730352441340776,
+                        "MSFT": 0.1473903695709361,
+                        "NFLX": 0.3511660252265294,
+                        "CVX": 0.22124769498890295,
+                        "AAPL": 0.12864686298087769
+                    },
+                    "average_drawdown": {
+                        "PFE": 0.17557206071401055,
+                        "MMM": 0.24125522917323974,
+                        "CSCO": 0.12116282811647297,
+                        "MSFT": 0.08936084976937288,
+                        "NFLX": 0.2805968476203713,
+                        "CVX": 0.10177430672428762,
+                        "AAPL": 0.07827562270928971
+                    },
+                    "max_drawdown": {
+                        "PFE": 0.7124762125061408,
+                        "MMM": 0.7014185270748713,
+                        "CSCO": 0.42027063049592006,
+                        "MSFT": 0.41012547607891636,
+                        "NFLX": 1.2592917613131953,
+                        "CVX": 0.7154188565487378,
+                        "AAPL": 0.3353459405453888
+                    },
+                    "ulcer_index": {
+                        "PFE": 0.23741725803242666,
+                        "MMM": 0.3227633670664306,
+                        "CSCO": 0.1598423688930162,
+                        "MSFT": 0.13191539527171708,
+                        "NFLX": 0.4288909391252483,
+                        "CVX": 0.13855007002016428,
+                        "AAPL": 0.1068381961300305
+                    },
+                    "gini_mean_difference": {
+                        "PFE": 0.01833647148458742,
+                        "MMM": 0.01827948584338936,
+                        "CSCO": 0.01775041697117577,
+                        "MSFT": 0.020833175166065004,
+                        "NFLX": 0.029674394545660912,
+                        "CVX": 0.02290577577474366,
+                        "AAPL": 0.021669348977982093
+                    }
+                },
+                "strategy_symbol_stats_ratios": {
+                    "daily_sharpe_ratio": {
+                        "PFE": 0.009225781024509758,
+                        "MMM": -0.0013675553283361377,
+                        "CSCO": 0.018831612145121048,
+                        "MSFT": 0.05903854504375157,
+                        "NFLX": 0.03401715114354104,
+                        "CVX": 0.029365588926880612,
+                        "AAPL": 0.06735007753734525
+                    },
+                    "annual_sharpe_ratio": {
+                        "PFE": 0.14645473344714907,
+                        "MMM": -0.021709267817392217,
+                        "CSCO": 0.2989425751344833,
+                        "MSFT": 0.9372078477171096,
+                        "NFLX": 0.5400055334202363,
+                        "CVX": 0.4661642724208692,
+                        "AAPL": 1.069149335668398
+                    },
+                    "daily_sortino_ratio": {
+                        "PFE": 0.013551346785143739,
+                        "MMM": -0.0019272257132575265,
+                        "CSCO": 0.02571831986915244,
+                        "MSFT": 0.08355292658388007,
+                        "NFLX": 0.046692818906105736,
+                        "CVX": 0.04111459614922166,
+                        "AAPL": 0.09526815815915039
+                    },
+                    "annual_sortino_ratio": {
+                        "PFE": 0.2151209611409098,
+                        "MMM": -0.030593759745410946,
+                        "CSCO": 0.40826567107313144,
+                        "MSFT": 1.326361590315505,
+                        "NFLX": 0.7412255210287844,
+                        "CVX": 0.6526739799941662,
+                        "AAPL": 1.5123351261136853
+                    },
+                    "mean_absolute_deviation_ratio": {
+                        "PFE": 0.013091719273029007,
+                        "MMM": -0.001981466805775457,
+                        "CSCO": 0.028919072693621706,
+                        "MSFT": 0.08430692263286661,
+                        "NFLX": 0.051599469056072086,
+                        "CVX": 0.04559121205143482,
+                        "AAPL": 0.09545340511346788
+                    },
+                    "calmar_ratio": {
+                        "PFE": 0.00022679476879630065,
+                        "MMM": -3.4577974106858155e-05,
+                        "CSCO": 0.0008130535220976644,
+                        "MSFT": 0.002884661024149076,
+                        "NFLX": 0.0008128426018682956,
+                        "CVX": 0.0009746348807058925,
+                        "AAPL": 0.004159229013200773
+                    },
+                    "value_at_risk_ratio_at_95": {
+                        "PFE": 0.006731268830671034,
+                        "MMM": -0.0009347010563950962,
+                        "CSCO": 0.013932172014132346,
+                        "MSFT": 0.040402789731324364,
+                        "NFLX": 0.026229394041497146,
+                        "CVX": 0.022603314982796552,
+                        "AAPL": 0.04391683038615737
+                    },
+                    "conditional_var_ratio_at_95": {
+                        "PFE": 0.004182537333429969,
+                        "MMM": -0.0005808672755737049,
+                        "CSCO": 0.0078060020847758585,
+                        "MSFT": 0.026608563215944223,
+                        "NFLX": 0.015518521638597713,
+                        "CVX": 0.013312956009772713,
+                        "AAPL": 0.030202079717196136
+                    },
+                    "entropic_var_ratio_at_95": {
+                        "PFE": 0.0029941660547600194,
+                        "MMM": -0.0003819324702631317,
+                        "CSCO": 0.004176219389570622,
+                        "MSFT": 0.014326760796257968,
+                        "NFLX": 0.0053878915840470335,
+                        "CVX": 0.005630635640499484,
+                        "AAPL": 0.018596986709884317
+                    },
+                    "drawdown_at_risk_ratio_at_95": {
+                        "PFE": 0.0003056917211398931,
+                        "MMM": -4.1151404989150695e-05,
+                        "CSCO": 0.0010216212347558403,
+                        "MSFT": 0.004137866439936295,
+                        "NFLX": 0.0009582699456201848,
+                        "CVX": 0.0024953470890832974,
+                        "AAPL": 0.006183296130903495
+                    },
+                    "conditional_dar_ratio_at_95": {
+                        "PFE": 0.00027129539703970093,
+                        "MMM": -3.833326561284112e-05,
+                        "CSCO": 0.0009320677858356269,
+                        "MSFT": 0.0036609646109864325,
+                        "NFLX": 0.0008946986372354317,
+                        "CVX": 0.001867442695259438,
+                        "AAPL": 0.005420143579793572
+                    },
+                    "entropic_dar_ratio_at_95": {
+                        "PFE": 0.00026112970111407335,
+                        "MMM": -3.7196617115405395e-05,
+                        "CSCO": 0.0009001125060663757,
+                        "MSFT": 0.0034393706716358942,
+                        "NFLX": 0.0008798652655969767,
+                        "CVX": 0.0013796110342045279,
+                        "AAPL": 0.005049631314591136
+                    },
+                    "entropic_risk_measure_ratio_at_95": {
+                        "PFE": 5.3938846623332866e-05,
+                        "MMM": -8.095571033316474e-06,
+                        "CSCO": 0.00011406982837999976,
+                        "MSFT": 0.0003950490178682069,
+                        "NFLX": 0.0003417524650616175,
+                        "CVX": 0.00023278740281906712,
+                        "AAPL": 0.00046577274638075374
+                    },
+                    "worst_realization_ratio": {
+                        "PFE": 0.002089116777073355,
+                        "MMM": -0.0002542181596422185,
+                        "CSCO": 0.0024886652969670344,
+                        "MSFT": 0.008026799710859294,
+                        "NFLX": 0.002914877631219651,
+                        "CVX": 0.0031515454745962347,
+                        "AAPL": 0.010841932193735694
+                    },
+                    "average_drawdown_ratio": {
+                        "PFE": 0.0009203393594120964,
+                        "MMM": -0.00010053100921534647,
+                        "CSCO": 0.0028201926421727104,
+                        "MSFT": 0.013239276248029987,
+                        "NFLX": 0.003647959698969949,
+                        "CVX": 0.006851161106860448,
+                        "AAPL": 0.017818837041458
+                    },
+                    "ulcer_index_ratio": {
+                        "PFE": 0.0006805987030063527,
+                        "MMM": -7.514369393188802e-05,
+                        "CSCO": 0.0021377468234821907,
+                        "MSFT": 0.008968422324161337,
+                        "NFLX": 0.0023866346858827073,
+                        "CVX": 0.005032636734183141,
+                        "AAPL": 0.01305507408303604
+                    },
+                    "gini_mean_difference_ratio": {
+                        "PFE": 0.008812266745213982,
+                        "MMM": -0.0013268224213230063,
+                        "CSCO": 0.019250393774624657,
+                        "MSFT": 0.05678793397669562,
+                        "NFLX": 0.03449458725104136,
+                        "CVX": 0.030440888741954355,
+                        "AAPL": 0.06436651912305712
+                    }
+                }
+            }
+        },
+        
         "strategy_weight": {
             "min_variance": {
                 "PFE": 0.343993342785679,
