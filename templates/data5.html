@@ -225,12 +225,11 @@
             </div>
         </div>
 
-        <div class="row mb-4">
+        <div class="row mb-4" id="sl-risk-portfolio-detail">
             <div class="col-lg-12 strech-card">
                 <div class="card">
                     <div class="card-body">
                         <div class="symbol-portfolio">
-                            <h3>SL Risk: Portfolios Detail</h3>
                             {{ symbol_portfolios_html_table | safe }}
                         </div>
                         
@@ -619,7 +618,7 @@
                 createPieChart(testingDataInnerContainer, strategy, `${index}-current-stock`, "Testing Allocation: Stocks", currentStockData, 'stocks', '');
                 
                 const trainingDataLink = document.createElement('a');
-                trainingDataLink.href = `${strategy}`;
+                trainingDataLink.href = `#${strategy}`;
                 trainingDataLink.innerHTML = 'Go Back: Training Data';
                 trainingDataLink.classList = 'btn btn-outline-info btn-fw p-2';
                 testingDataNav.append(trainingDataLink);
@@ -1495,6 +1494,31 @@
                 }
             });
         });
+
+        function createStrategyLinks() {
+            // Select all h3 elements inside .symbol-portfolio divs
+            const h3Elements = document.querySelectorAll('.symbol-portfolio h3');
+
+            // Loop through each h3 element
+            h3Elements.forEach(h3 => {
+                const h3Id = h3.id; // Get the ID of the h3 element
+                const h3Text = h3.innerText; // Get the inner text of the h3 element
+                
+                // Check if the h3 element has an ID
+                if (h3Id) {
+                    const linkTag = document.createElement('a');
+                    linkTag.href = `#${h3Id}`; // Use the ID of the h3 as the href value
+                    linkTag.innerText = h3Text; // Use the h3's inner text as the link text
+                    linkTag.classList = 'btn btn-secondary';
+                    
+                    // Append the link to the strategy-link-div
+                    document.getElementById('strategy-link-div').appendChild(linkTag);
+                }
+            });
+        }
+
+
+        createStrategyLinks();
 
 
     </script>

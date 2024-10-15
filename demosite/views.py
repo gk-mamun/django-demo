@@ -931,7 +931,7 @@ def api_data_view_5(request):
    
 
         start_time = time.perf_counter()
-        model_output = mode_output_3
+        model_output = model_output_data
 
         frontier_runs_x = model_output.get('frontier_runs').get('x')
         frontier_runs_y = model_output.get('frontier_runs').get('y')
@@ -1135,17 +1135,21 @@ def api_data_view_5(request):
         all_symbols = list(all_symbols)
 
 
+        # Initialize the final HTML structure
+        all_tables_html = ''
+
         for key in symbol_portfolios:
+            # Retrieve metrics and transform the key
             metrics = symbol_portfolios.get(key)
+            transformed_key = "SL Risk: " + key.replace('symbol_stats_', '').replace('_', ' ').title()
 
-            transformed_key = transform_key(key)
-
+            # Prepare data for each key
+            symbol_portfolios_data = []
             for metric in metrics:
                 transformed_metric = transform_metric(metric)
 
                 row = {
-                    "key": transformed_key,
-                    "metric": transformed_metric,
+                    "metric": transformed_metric,  # Removed "key" from here
                     **{
                         symbol: format_table_value(metric, metrics[metric].get(symbol))
                         for symbol in all_symbols
@@ -1153,25 +1157,33 @@ def api_data_view_5(request):
                 }
                 symbol_portfolios_data.append(row)
 
-        symbol_portfolios_html_table = '<table class="table table-striped">'
-        symbol_portfolios_html_table += '<thead><tr><th class="font-weight-bold">Key</th>'
-        symbol_portfolios_html_table += '<th class="font-weight-bold">Metrics Name</th>'
-        
-        for symbol in all_symbols:
-            symbol_portfolios_html_table += f'<th class="font-weight-bold">{symbol}</th>'
-        
-        symbol_portfolios_html_table += '</tr></thead><tbody>'
-        
-        for row in symbol_portfolios_data:
-            symbol_portfolios_html_table += f'<tr><td class="p-2">{row["key"]}</td>'
-            symbol_portfolios_html_table += f'<td class="p-2">{row["metric"]}</td>'
+            # Build the HTML table for each key (without the "key" column)
+            symbol_portfolios_html_table = f'<h3 id="sl-risk-{key}">{transformed_key}</h3>' 
+            symbol_portfolios_html_table += '<table class="table table-striped">'
+            symbol_portfolios_html_table += '<thead><tr>'
+            symbol_portfolios_html_table += '<th class="font-weight-bold">Metrics Name</th>'
             
+            # Add headers for each symbol
             for symbol in all_symbols:
-                symbol_portfolios_html_table += f'<td class="p-2">{row.get(symbol, "N/A")}</td>'
+                symbol_portfolios_html_table += f'<th class="font-weight-bold">{symbol}</th>'
             
-            symbol_portfolios_html_table += '</tr>'
-        
-        symbol_portfolios_html_table += '</tbody></table>'
+            symbol_portfolios_html_table += '</tr></thead><tbody>'
+            
+            # Add data rows for each metric (without the "key" column)
+            for row in symbol_portfolios_data:
+                symbol_portfolios_html_table += f'<tr><td class="p-2">{row["metric"]}</td>'
+                
+                for symbol in all_symbols:
+                    symbol_portfolios_html_table += f'<td class="table-value-cell p-2">{row.get(symbol, "N/A")}</td>'
+                
+                symbol_portfolios_html_table += '</tr>'
+            
+            symbol_portfolios_html_table += '</tbody></table><br><br>'
+            
+            # Add this table to the final output HTML
+            all_tables_html += symbol_portfolios_html_table
+
+
 
 
         structured_strategies = []
@@ -1216,7 +1228,7 @@ def api_data_view_5(request):
             'covariance_heatmap_data': covariance_heatmap_data,
             'correlation_stock_symbols': correlation_stock_symbols,
             'correlation_heatmap_data': correlation_heatmap_data,
-            'symbol_portfolios_html_table': symbol_portfolios_html_table,
+            'symbol_portfolios_html_table': all_tables_html,
             'strategy_summaries': structured_strategies,
             'symbol_hex_colors': symbol_hex_colors,
             'sector_hex_colors': sector_hex_colors,
