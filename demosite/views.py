@@ -357,7 +357,6 @@ def api_data_view_2(request):
                 # Append the summary_item to summary_tbl
                 summary_tbl.append(summary_item)
 
-        print(summary_tbl)
 
         context = {
             'graph_json_1': graph_json_1,
@@ -798,13 +797,49 @@ def process_stats_data(strategy_symbol_portfolios, stat_type_key, sl_stats_data)
                 sl_stats_data[strategy].append(metric_entry)
 
 
+# Generate table for strategy optimization summary
+def generate_optimization_summary_html_table(data):
+    table_html = '<div class="table-reponsive"><table class="table table-striped">'
+    table_html += '<thead>'
+    table_html += '<tr>'
+    table_html += f'<th class="p-2">Strategy</th>'
+    table_html += '<th class="p-2">Expected Return</th>'
+    table_html += '<th class="p-2">Volatility</th>'
+    table_html += '<th class="p-2">Sharpe Ratio</th>'
+    table_html += '<th class="p-2">Sortino Ratio</th>'
+    table_html += '<th class="p-2">#Symbols</th>'
+    table_html += '<th class="p-2">Top 3 Symbol Allocation</th>'
+    table_html += '<th class="p-2">Top 3 Sector Allocation</th>'
+    table_html += '</tr>'
+    table_html += '</thead>'
+    table_html += '<tbody>'
+
+    for strategy, metrics in data.items():
+        top_3_symbol_allocation = metrics["Top 3 Symbol Allocation"].replace(", ", "<br>")
+        top_3_sector_allocation = metrics["Top 3 Sector Allocation"].replace(", ", "<br>")
+        table_html += '<tr>'
+        table_html += f'<td>{format_strategy_name(strategy)}</td>'
+        table_html += f'<td class="table-value-cell p-2">{format_table_value("Expected Return", metrics["Expected Return"])}</td>'
+        table_html += f'<td class="table-value-cell p-2">{format_table_value("Volatility", metrics["Volatility"])}</td>'
+        table_html += f'<td class="table-value-cell p-2">{format_table_value("Sharpe Ratio", metrics["Sharpe Ratio"])}</td>'
+        table_html += f'<td class="table-value-cell p-2">{format_table_value("Sortino Ratio", metrics["Sortino Ratio"])}</td>'
+        table_html += f'<td class="p-2">{metrics["#Symbols"]}</td>'
+        table_html += f'<td class="p-2" style="line-height: 24px;">{top_3_symbol_allocation}</td>'
+        table_html += f'<td class="p-2" style="line-height: 24px;">{top_3_sector_allocation}</td>'
+        table_html += '</tr>'
+    
+    table_html += '</tbody>'
+    table_html += '</table></div>'
+    
+    return table_html
+
 def api_data_view_4(request):
 
     if request.method == 'POST':
         form_data = process_form(request)
-        print("=========================================================")
-        print("Form Data: ", form_data)
-        print("=========================================================")
+        # print("=========================================================")
+        # print("Form Data: ", form_data)
+        # print("=========================================================")
 
         start_time = time.time()
         # Return-Risk Chart data
@@ -922,6 +957,7 @@ def api_data_view_4(request):
         return render(request, 'data4.html', context)
     
 
+@login_required(login_url='/login/')
 def api_data_view_5(request):
 
     if request.method == 'POST':
@@ -1139,17 +1175,15 @@ def api_data_view_5(request):
         all_tables_html = ''
 
         for key in symbol_portfolios:
-            # Retrieve metrics and transform the key
             metrics = symbol_portfolios.get(key)
             transformed_key = "SL Risk: " + key.replace('symbol_stats_', '').replace('_', ' ').title()
 
-            # Prepare data for each key
             symbol_portfolios_data = []
             for metric in metrics:
                 transformed_metric = transform_metric(metric)
 
                 row = {
-                    "metric": transformed_metric,  # Removed "key" from here
+                    "metric": transformed_metric, 
                     **{
                         symbol: format_table_value(metric, metrics[metric].get(symbol))
                         for symbol in all_symbols
@@ -1184,8 +1218,6 @@ def api_data_view_5(request):
             all_tables_html += symbol_portfolios_html_table
 
 
-
-
         structured_strategies = []
         strategy_summaries = model_output.get('strategy_results', {}).get('strategy_performance', {})
         
@@ -1208,6 +1240,24 @@ def api_data_view_5(request):
             # Append the structured strategy data to the list
             structured_strategies.append(structured_strategy)
             
+
+        top_level_lines_chart_data =   model_output.get('total_return_testing', {})
+        strategy_level_line_chart_data = model_output.get('strategy_results', {}).get('strategy_total_return_testing', {})
+        
+        formatted_top_level_lines_data = []
+    
+        for strategy_name, strategy_data in top_level_lines_chart_data.items():
+            formatted_top_level_lines_data.append({
+                'name': strategy_name,  # Benchmark, min_variance, max_sharpe
+                'x': strategy_data['x'],
+                'y': strategy_data['y']
+            })
+    
+        strategy_optimization_summary = model_output.get('strategy_results', {}).get('strategy_optimization_summary', {})
+        strategy_testing_summary = model_output.get('strategy_results', {}).get('strategy_testing_summary', {})
+        strategy_optimization_summary_table = generate_optimization_summary_html_table(strategy_optimization_summary)
+        strategy_testing_summary_table = generate_optimization_summary_html_table(strategy_testing_summary)
+
 
         end_time = time.perf_counter()
         processing_time = (end_time - start_time)
@@ -1236,7 +1286,13 @@ def api_data_view_5(request):
             'frontier_runs_y': frontier_runs_y,
             'frontier_positions_random_x': frontier_positions_random_x,
             'frontier_positions_random_y': frontier_positions_random_y,
-            'processing_time': processing_time
+            'processing_time': processing_time,
+            'formatted_top_level_lines_data': json.dumps(formatted_top_level_lines_data), 
+            'strategy_level_line_chart_data': json.dumps(strategy_level_line_chart_data),
+            'strategy_optimization_summary': json.dumps(strategy_optimization_summary),
+            'strategy_testing_summary': json.dumps(strategy_testing_summary),
+            'strategy_optimization_summary_table': strategy_optimization_summary_table,
+            'strategy_testing_summary_table': strategy_testing_summary_table,
         }
 
         return render(request, 'data5.html', context)
