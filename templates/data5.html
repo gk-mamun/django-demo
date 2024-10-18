@@ -156,6 +156,44 @@
             gap: 15px;
         }
 
+        .top-nav-btn {
+            padding: 10px 15px !important;
+        }
+
+        #strategy-link-div a {
+            display: flex;
+            align-items: center;
+        }
+
+        #strategy-link-div #strategyDropdown {
+            height: 100%;
+        }
+
+        .dropdown .dropdown-menu {
+            box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        #strategyDropdownMenus a:hover,
+        #strategyDropdownMenus a:active,
+        #strategyDropdownMenus a:focus {
+            background-color: #619040;;
+            color: #fff;
+        }
+
+        .processing-time-container {
+            position: relative;
+        }
+
+        .processing-time-popup {
+            position: absolute;
+            left: 40px;
+            top: 0;
+        }
+
+        .processing-time-container button:hover + .processing-time-container  .processing-time-popup {
+            display: block;
+        }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.0/echarts.min.js"></script>
     <!-- partial -->
@@ -164,21 +202,15 @@
             <img src="{% static 'images/loader.gif' %}" alt="image">
         </div>
         
-        <div id="strategy-link-div" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; position: fixed;top: 80px;left: 290px;width: calc(100% - 320px);z-index: 99; background-color: #fff; padding: 3px;">
-            <a href="#home" class="btn btn-secondary top-nav-btn" style="padding: 5px 15px;"><i class="typcn typcn-arrow-up-thick" style="font-size: 30px;"></i></a>
+        <div id="strategy-link-div" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; position: fixed;top: 65px;left: 290px;width: calc(100% - 320px);z-index: 99; background-color: #fff; padding: 3px;">
+            <a href="#home" class="btn btn-secondary top-nav-btn" style="padding: 5px 15px;"><i class="typcn typcn-arrow-up-thick" style="font-size: 15px;"></i></a>
             <a href="#frontier" class="btn btn-secondary top-nav-btn">Frontiers</a>
             <a href="#strategy-summary" class="btn btn-secondary top-nav-btn">Strategies Summary Table</a>
             <a href="#strategy-summary-data" class="btn btn-secondary top-nav-btn">Strategies Summary</a>
             <a href="#covariance-correlation" class="btn btn-secondary top-nav-btn">Covariance Correlation</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 130px;" id="home">
+        <div class="content-wrapper" id="home">
         
-
-        <div class="processing-time-container card p-3">
-            <div class="processing-time-popup">
-                <p>Processing Time: {{ processing_time }}</p>
-            </div>
-        </div>
         
         <div>
            
@@ -364,6 +396,17 @@
             <div id="charts-container"></div>
         </div>
 
+        <div class="row mb-4" id="strategy-testing-summary">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Strategy Testing Summary</h4>
+                        {{ session_data.strategy_results.strategy_stats_descriptive }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="top-level-private-section">
             <div id="top-level-lock-layer">
                 <div class="top-level-testing-data-unlock-div">
@@ -404,6 +447,7 @@
                 </div>
             </div>
 
+
         </div>
 
         </div>
@@ -442,6 +486,9 @@
         //     "MSFT": "#8dd3c7"
         // };
 
+        // const sessionData = {{ session_data|safe }}
+        // console.log(sessionData)
+
         const symbolHexColors = {{ symbol_hex_colors|safe }}
         const sectorHexColors = {{ sector_hex_colors|safe }}
 
@@ -452,6 +499,21 @@
         const strategyTestingSummary = {{ strategy_testing_summary|safe }} 
 
         const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
+
+        const topStrategyMenuContainer = document.createElement('div');
+        topStrategyMenuContainer.classList = 'nav-item nav-profile dropdown';
+        const topStrategyMenuContainerLink = document.createElement('a');
+        topStrategyMenuContainerLink.innerText = 'Strategies';
+        topStrategyMenuContainerLink.classList = 'nav-link dropdown-toggle btn btn-secondary';
+        topStrategyMenuContainerLink.style.cursor = 'pointer';
+        topStrategyMenuContainerLink.style.color = '#fff';
+        topStrategyMenuContainerLink.setAttribute('data-toggle', "dropdown");
+        topStrategyMenuContainerLink.setAttribute('id', "strategyDropdown");
+        topStrategyMenuContainer.append(topStrategyMenuContainerLink);
+        const topStrategyDropdownMenuContainer = document.createElement('div');
+        topStrategyDropdownMenuContainer.classList = 'dropdown-menu dropdown-menu-right navbar-dropdown';
+        topStrategyDropdownMenuContainer.setAttribute('id', "strategyDropdownMenus");
+        topStrategyMenuContainer.append(topStrategyDropdownMenuContainer);
 
 
         strategyAllocationData.forEach((strategyData, index) => {
@@ -496,8 +558,9 @@
                 const linkTag = document.createElement('a');
                 linkTag.href = `#${strategy}-summary`;
                 linkTag.innerText = formatStrategyName(strategy);
-                linkTag.classList = 'btn btn-secondary';
-                document.getElementById('strategy-link-div').appendChild(linkTag)
+                linkTag.classList = 'dropdown-item';
+                topStrategyDropdownMenuContainer.append(linkTag);
+                document.getElementById('strategy-link-div').appendChild(topStrategyMenuContainer)
 
                 // Create a parent div for both charts
                 const parentDiv = document.createElement('div');
@@ -1049,7 +1112,7 @@
                 series: [{
                     name: 'Sector Allocation',
                     type: 'pie',
-                    radius: ['40%', '70%'],
+                    radius: ['30%', '60%'],
                     avoidLabelOverlap: true,
                     itemStyle: {
                         borderRadius: 10,
@@ -1079,7 +1142,8 @@
                 }]
             };
             sectorChart.setOption(sectorOption);
-            
+
+            new ResizeObserver(() => sectorChart.resize()).observe(parentDiv);
 
         }
 
@@ -1142,6 +1206,8 @@
             };
             // Set the option to the chart
             strategyLevelLineChart.setOption(strategyLevelLineChartOption);
+
+            new ResizeObserver(() => strategyLevelLineChart.resize()).observe(parentDiv);
         }
 
         // Handle popups
@@ -1190,12 +1256,8 @@
             xAxis: {
                 name: 'Risk (%)',
                 type: 'value',
-                min: function(value) {
-                    return value.min - 2.5; // Adjust the padding as necessary
-                },
-                max: function(value) {
-                    return value.max + 2.5; // Adjust the padding as necessary
-                },
+                min: 'dataMin',
+                max: 'dataMax',
                 boundaryGap: [0.1, 0.1],
                 scale: true,
                 nameLocation: 'middle',
@@ -1204,16 +1266,18 @@
             yAxis: {
                 name: 'Return (%)',
                 type: 'value',
-                min: function(value) {
-                    return value.min - 2.5; // Adjust the padding as necessary
-                },
-                max: function(value) {
-                    return value.max + 2.5; // Adjust the padding as necessary
-                },
+                min: 'dataMin',
+                max: 'dataMax',
                 boundaryGap: [0.05, 0.05],
                 scale: true,
                 nameLocation: 'middle', 
                 nameGap: 50,
+            },
+            grid: {
+                left: '30px',
+                right: '10px',
+                bottom: '30px',
+                containLabel: true 
             },
             series: [
                 {
@@ -1244,7 +1308,8 @@
 
         // Set the option and display the chart
         heatMapChart.setOption(heatMapOption);
-
+        const frontierContainer = document.getElementById('frontier');
+        new ResizeObserver(() => heatMapChart.resize()).observe(frontierContainer);
     
         var frontierRuns = {{ frontier_runs|safe }};
         var frontierPositions = {{ frontier_positions|safe }};
@@ -1258,12 +1323,8 @@
             xAxis: {
                 name: 'Risk (%)',
                 type: 'value',
-                min: function(value) {
-                    return value.min - 0.025; // Adjust the padding as necessary
-                },
-                max: function(value) {
-                    return value.max + 0.025; // Adjust the padding as necessary
-                },
+                min: 'dataMin',
+                max: 'dataMax',
                 boundaryGap: [0.1, 0.1],
                 axisLabel: {
                     formatter: function (value) {
@@ -1278,12 +1339,8 @@
             yAxis: {
                 name: 'Return (%)',
                 type: 'value',
-                min: function(value) {
-                    return value.min - 0.025; // Adjust the padding as necessary
-                },
-                max: function(value) {
-                    return value.max + 0.025; // Adjust the padding as necessary
-                }, 
+                min: 'dataMin',
+                max: 'dataMax',
                 boundaryGap: [0.05, 0.05],
                 axisLabel: {
                     formatter: function (value) {
@@ -1294,6 +1351,12 @@
                 scale: true,
                 nameLocation: 'middle', 
                 nameGap: 60,
+            },
+            grid: {
+                left: '30px',
+                right: '10px',
+                bottom: '30px',
+                containLabel: true 
             },
             series: [
                 {
@@ -1342,6 +1405,7 @@
 
         // Use the specified chart configuration and data
         frontierScatterGraph.setOption(frontierOption);
+        new ResizeObserver(() => frontierScatterGraph.resize()).observe(frontierContainer);
 
         // Covariance heatmap
         var covarianceStockSymbols = {{ covariance_stock_symbols|safe }};
@@ -1624,6 +1688,7 @@
 
         // Set the option to the chart
         topLevelLineChart.setOption(topLevelLineChartOption);
+        new ResizeObserver(() => topLevelLineChart.resize()).observe(document.querySelector('#top-level-private-section'));
 
 
         function addDividerLine(parentDiv) {
@@ -1731,7 +1796,7 @@
                     const linkTag = document.createElement('a');
                     linkTag.href = `#${h3Id}`; // Use the ID of the h3 as the href value
                     linkTag.innerText = h3Text; // Use the h3's inner text as the link text
-                    linkTag.classList = 'btn btn-secondary';
+                    linkTag.classList = 'btn btn-secondary ';
                     
                     // Append the link to the strategy-link-div
                     document.getElementById('strategy-link-div').appendChild(linkTag);
@@ -1741,7 +1806,7 @@
             const returnTestingLink = document.createElement('a');
             returnTestingLink.href = `#return-testing`; 
             returnTestingLink.innerText = 'Perfomance Overview'; 
-            returnTestingLink.classList = 'btn btn-secondary';
+            returnTestingLink.classList = 'btn btn-secondary top-nav-btn';
             
             // Append the link to the strategy-link-div
             document.getElementById('strategy-link-div').appendChild(returnTestingLink);
@@ -1754,7 +1819,7 @@
             if (popup) {
                 setTimeout(() => {
                     popup.style.display = 'none';
-                }, 3000);  // 3000 milliseconds = 3 seconds
+                }, 5000);  // 3000 milliseconds = 3 seconds
             }
         }
 
@@ -1799,6 +1864,55 @@
         document.addEventListener('DOMContentLoaded', function() {
             createPasswordLock(testingLockInput, testingLockBtn, testingLockLayer, testingLockPassword)
         })
+
+        const strategyDropdownBtn = document.querySelector('#strategyDropdown');
+        const strategyDropdownMenus = document.querySelector('#strategyDropdownMenus');
+        const strategyDropdownLinks = document.querySelectorAll('#strategyDropdownMenus a');
+
+        strategyDropdownBtn.addEventListener('click', function() {
+            this.classList.toggle('show');
+            strategyDropdownMenus.classList.toggle('show');
+        })
+
+        strategyDropdownLinks.forEach((btn) => {
+            btn.addEventListener('click', function() {
+                strategyDropdownBtn.classList.toggle('show');
+                strategyDropdownMenus.classList.toggle('show');
+            })
+        })
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var strategyLinkDiv = document.getElementById('strategy-link-div');
+            var hideTimeout;
+
+            // Function to hide the menu
+            function hideMenu() {
+                strategyLinkDiv.style.transition = 'transform 0.5s ease-in-out';
+                strategyLinkDiv.style.transform = 'translateY(-120%)'; // Slide up
+                strategyDropdownBtn.classList.remove('show');
+                strategyDropdownMenus.classList.remove('show');
+            }
+
+            // Function to show the menu
+            function showMenu() {
+                strategyLinkDiv.style.transition = 'transform 0.5s ease-in-out';
+                strategyLinkDiv.style.transform = 'translateY(0)'; // Slide down
+            }
+
+            // Hide menu after 3 seconds of page load
+            setTimeout(hideMenu, 3000);
+
+            // Show menu when user scrolls, hide again after 2 seconds of no scroll
+            var scrollTimeout;
+            window.addEventListener('scroll', function() {
+                showMenu(); // Show menu on scroll
+                clearTimeout(scrollTimeout); // Reset timeout if user keeps scrolling
+
+                // Set timeout to hide after 2 seconds of no scroll
+                scrollTimeout = setTimeout(hideMenu, 2000);
+            });
+        });
+
 
     </script>
 

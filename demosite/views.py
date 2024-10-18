@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 from plotly.utils import PlotlyJSONEncoder
 import time
 import re
+from datetime import datetime
 from .model_result_new import model_output_data
 from .model_result_3 import mode_output_3
 
@@ -521,11 +522,41 @@ def api_data_view_3(request):
     # print("Strategies: ", output_data['strategies'])
     return render(request, 'data3.html', context)
 
+def convert_to_standard_date_format(date_str):
+    # List of common date formats to try
+    date_formats = [
+        '%Y-%m-%d',  # Example: 2024-10-16
+        '%d/%m/%Y',  # Example: 16/10/2024
+        '%m/%d/%Y',  # Example: 10/16/2024
+        '%d-%m-%Y',  # Example: 16-10-2024
+        '%m-%d-%Y',  # Example: 10-16-2024
+        '%Y/%m/%d',  # Example: 2024/10/16
+        '%d.%m.%Y',  # Example: 16.10.2024
+        '%m.%d.%Y',  # Example: 10.16.2024
+    ]
+    
+    parsed_date = None
+
+    
+    # Try parsing the input date string using the formats
+    for fmt in date_formats:
+        try:
+            parsed_date = datetime.strptime(date_str, fmt)
+            break
+        except ValueError:
+            continue 
+    
+    if parsed_date:
+        # Convert to the desired format: YYYY-MM-DD
+        return parsed_date.strftime('%Y-%m-%d')
+    else:
+        # Raise an error or return None if parsing fails
+        raise ValueError("Invalid date format")
 
 def process_form(rq):
     # Fetch form data
-    start_date = rq.POST.get('start_date')
-    end_date = rq.POST.get('end_date')
+    start_date = convert_to_standard_date_format(rq.POST.get('start_date'))
+    end_date = convert_to_standard_date_format(rq.POST.get('end_date'))
     
     # Calculation parameters
     return_calculation = rq.POST.get('return_calculation')
@@ -728,8 +759,10 @@ def format_strategy_name(strategy_name):
     
     return strategy_name
 
+
 def transform_key(key):
     return key.replace('_', ' ').title()
+
 
 def transform_metric(metric):
     transformed_metric = metric.replace('_', ' ').title()
@@ -738,17 +771,7 @@ def transform_metric(metric):
 float_metrics = {
     'annual_sharpe_ratio', 'annual_sortino_ratio', 'beta', 'skew', 'kurtosis', 'daily_sharpe_ratio', 'daily_sortino_ratio', 'entropic_risk_measure_at_95', 'ulcer_index', 'mean_absolute_deviation_ratio', 'first_lower_partial_moment_ratio', 'value_at_risk_ratio_at_95', 'conditional_var_ratio_at_95',  'entropic_risk_measure_ratio_at_95', 'entropic_var_ratio_at_95', 'worst_realization_ratio', 'drawdown_at_risk_ratio_at_95', 'conditional_dar_ratio_at_95',  'calmar_ratio', 'average_drawdown_ratio', 'entropic_dar_ratio_at_95', 'ulcer_index_ratio', 'gini_mean_difference_ratio'
 }
-# Reusable function to format the value based on the metric type
-# def format_table_value(metric_name, value):
-#     if metric_name in float_metrics:
-#         if 'e-' in str(value):
-#             base, exponent = str(value).split('e-')
-            
-#             return f"{float(base):.2f}e-{exponent}"
-#         else:
-#             return f"{value:.2f}"
-#     else:
-#         return f"{(value * 100):.2f}%"
+
 
 def format_table_value(metric_name, value):
     # Format the value based on the metric name
@@ -774,7 +797,6 @@ def format_table_value(metric_name, value):
         )
 
     return html_output
-
 
 # SL data processing function
 def process_stats_data(strategy_symbol_portfolios, stat_type_key, sl_stats_data):
@@ -963,7 +985,7 @@ def api_data_view_5(request):
     if request.method == 'POST':
         form_data = process_form(request)
         # Form data
-        # print("Form Data: ", form_data)
+        print("Form Data: ", form_data)
    
 
         start_time = time.perf_counter()
@@ -1267,8 +1289,6 @@ def api_data_view_5(request):
         # time_model_output_allocation = 7
         # time_model_total = time_model_data_processing + time_model_execusion + time_model_output_allocation
         # total_processing_time = processing_time + time_model_total
-        
-
 
         context = {
             'frontier_runs': frontier_runs,
@@ -1292,7 +1312,7 @@ def api_data_view_5(request):
             'strategy_optimization_summary': json.dumps(strategy_optimization_summary),
             'strategy_testing_summary': json.dumps(strategy_testing_summary),
             'strategy_optimization_summary_table': strategy_optimization_summary_table,
-            'strategy_testing_summary_table': strategy_testing_summary_table,
+            'strategy_testing_summary_table': strategy_testing_summary_table
         }
 
         return render(request, 'data5.html', context)

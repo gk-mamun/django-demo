@@ -8,7 +8,12 @@
     --primary-color: #619040;
     --primary-light-color: #bbceb0;
     --primary-dark-color: #4c8722;
-  }
+}
+
+
+.text-color-primary {
+    color: #619040 !important;
+}
 
 
 .btn-secondary {

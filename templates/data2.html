@@ -92,6 +92,12 @@
         #tickerSectorPiechart {
             margin-top: 25px;
         }
+
+        .input-form-row {
+            display: grid;
+            grid-template-columns: 600px auto;
+            grid-gap: 20px;
+        }
         
     </style>
 
@@ -99,8 +105,9 @@
       <div class="main-panel">        
         <div class="content-wrapper">
             <form method="POST" action="{% url 'api-data5' %}">  
-                <div class="row">
-                    <div class="col-md-4 grid-margin stretch-card">
+                <div class="input-form-row">
+
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
                             
@@ -113,7 +120,7 @@
                                                     <label class="form-label">Start Date</label>
                                                 </div>
                                                 <div>
-                                                    <input type="date" class="form-control p-2" name="start_date" value="2020-01-01">
+                                                    <input type="date" class="form-control p-2" name="start_date" value="">
                                                 </div>
                                             </div>
                                             <div class="custom-input-group">
@@ -121,7 +128,7 @@
                                                     <label class="form-label">End Date</label>
                                                 </div>
                                                 <div>
-                                                    <input type="date" class="form-control p-2" name="end_date" value="2024-01-01">
+                                                    <input type="date" class="form-control p-2" name="end_date" value="">
                                                 </div>
                                             </div>
                                             <div class="p-2 rounded-2 bg-branding mt-2 mb-3">Calculation Inputs</div>
@@ -185,7 +192,7 @@
                                             </div>
                                             <div class="custom-input-group">
                                                 <div>
-                                                    <label class="form-label">TRV (Max)</label>
+                                                    <label class="form-label">TVR (Max)</label>
                                                 </div>
                                                 <div>
                                                     <input type="number" class="form-control p-2" name="target_volatility_for_max_return" step="0.25" value="0.25">
@@ -253,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 grid-margin stretch-card">
+                    <div class="">
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-ticker-container">
@@ -471,6 +478,7 @@
             }
             
 
+            
             function createPieChart(data) {
                 const chatParentDiv = document.querySelector('#tickerSectorPiechart');
 
@@ -485,6 +493,8 @@
                 cartDiv.style.height = '250px';
                 chatParentDiv.appendChild(cartDiv);
                 
+                data.sort((a, b) => b.value - a.value);
+                
                 let ColorArray = data.map(item => sectorHexColors[item.name] || '#ccc');
 
                 // Create the sector allocation chart using the provided pie chart option
@@ -496,7 +506,7 @@
                     series: [{
                         name: 'Sector Allocation',
                         type: 'pie',
-                        radius: ['40%', '70%'],
+                        radius: ['30%', '50%'],
                         avoidLabelOverlap: true,
                         itemStyle: {
                             borderRadius: 10,
@@ -530,6 +540,8 @@
                     sectorChart.resize();
                 });
             }
+
+
       </script>
 
 
