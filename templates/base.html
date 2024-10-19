@@ -25,6 +25,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <script src="{% static 'js/vendor.bundle.base.js' %}"></script>
+  <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.js" integrity="sha384-BBDmZzVt6vjz5YbQqZPtFZW82o8QotoM7RUp5xOxV3nSJ8u2pSdtzFAbGKzTlKtg" crossorigin="anonymous"></script>
 
   <style>
         .line {
@@ -87,6 +88,7 @@
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
           <ul class="navbar-nav mr-lg-2">
+            {% if request.path == '/api-data5/' and request.method == 'POST' %}
             <li class="nav-item dropdown d-flex show" id="processingTimeDropdownContainer">
               <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="processingTimeDropdown" href="#" data-toggle="dropdown" aria-expanded="true">
                 <img src="{% static 'images/clock.png' %}" width="30px" alt="">
@@ -112,6 +114,7 @@
                 {% endif %}
               </div>
             </li>
+            {% endif %}
             <li class="nav-item  d-none d-lg-flex">
               <a class="nav-link" href="#">
                 Top Menu 1
@@ -143,7 +146,7 @@
                 <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="{% static 'images/user-1.jpg' %}" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -155,7 +158,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="{% static 'images/user-1.jpg' %}" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
@@ -167,7 +170,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="{% static 'images/user-1.jpg' %}" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
@@ -282,7 +285,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'tickers' %}">
+              <a class="nav-link" href="{% url 'runs_mvoh' %}">
                 <i class="typcn typcn-document-text menu-icon"></i>
                 <span class="menu-title">Runs</span>
               </a>
@@ -355,6 +358,10 @@
 
         // Save the current state in localStorage
         localStorage.setItem('sidebarIconOnly', document.body.classList.contains('sidebar-icon-only'));
+    });
+
+    document.body.addEventListener('htmx:configRequest', function(evt) {
+        evt.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     });
 
   </script>

@@ -818,7 +818,6 @@ def process_stats_data(strategy_symbol_portfolios, stat_type_key, sl_stats_data)
                 
                 sl_stats_data[strategy].append(metric_entry)
 
-
 # Generate table for strategy optimization summary
 def generate_optimization_summary_html_table(data):
     table_html = '<div class="table-reponsive"><table class="table table-striped">'
@@ -1322,6 +1321,7 @@ def api_data_view_5(request):
             'strategy_testing_summary_table': strategy_testing_summary_table,
             'strategy_covariance_heatmap_data': strategy_covariance_data,
             'strategy_correlation_heatmap_data': strategy_correlation_data,
+            
         }
 
         return render(request, 'data5.html', context)
@@ -1346,9 +1346,3 @@ def api_data_view_5(request):
     return render(request, 'data6.html', context)
 
 
-def tickers_view(request):
-
-
-    context = {}
-
-    return render(request, 'tickers.html',  context)

@@ -1,0 +1,28 @@
+{% if runs %}
+<table class="table table-striped" id="run-list-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="runTableBody" hx-confirm="Are you sure you want to delete this run?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
+      {% for run in runs %}
+        <tr data-run-id="{{ run.id }}">
+          <td class="p-2">{{ forloop.counter }}</td>
+          <td class="p-2">{{ run.title }}</td>
+          <td class="p-2">
+            
+            <button class="btn btn-danger btn-sm" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#confirmationModal"
+                  data-run-id="{{ run.id }}">
+            Delete
+          </button>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}

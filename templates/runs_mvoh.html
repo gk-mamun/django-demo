@@ -1,0 +1,600 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .select2-container .select2-search--inline {
+            width: 100%;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__rendered,
+        .select2-container--default .select2-selection--multiple .select2-selection__clear {
+            display: none !important;
+        }
+        .select2-container--default .select2-search--inline .select2-search__field {
+            padding: 5px;
+            margin-top: 0;
+            line-height: 20px;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+            color: #000;
+        }
+        .table td {
+            padding: .25rem 0.75rem;
+        }
+        #companyTable td {
+            padding: 0.5rem;
+        }
+        .select2-container {
+            width: 100%;
+        }
+        .select2-container--default .select2-results__option[aria-disabled=true] {
+            visibility: hidden;
+            height: 0;
+            padding: 0;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #619040;
+        }
+        #ticker-search-container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: auto 150px;
+        }
+        #ticker-asset-number-container {
+            padding: 5px;
+            line-height: 20px;
+        }
+
+        table .form-control {
+            font-size: 12px;
+        }
+
+        .custom-input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .custom-input-group > div {
+            width: 50%;
+        }
+        .custom-input-group .form-label,
+        .custom-input-group .form-control {
+            font-size: 12px;
+        }
+
+        .select2-container .select2-search--inline {
+            height: 40px;
+        }
+
+        .form-ticker-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-responsive {
+            margin-bottom: 15px;
+            max-height: 600px;
+        }
+
+        .submit-btn-container {
+            text-align: right;
+            margin-top: auto;
+        }
+
+        .btn.btn-danger {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        #tickerSectorPiechart {
+            margin-top: 25px;
+        }
+
+        .input-form-row {
+            display: grid;
+            grid-template-columns: 600px auto;
+            grid-gap: 20px;
+        }
+
+        .modal-content {
+          height: 90vh;
+        }
+
+        #confirmationModal .modal-content {
+          height: auto;
+        }
+
+        .modal-dialog form {
+          width: 100%;
+        }
+
+        tr.htmx-swapping td {
+          opacity: 0;
+          transition: opacity 1s ease-out;
+        }
+      
+    </style>
+
+      <!-- partial -->
+      <div class="main-panel">        
+        <div class="content-wrapper">
+            
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <h4 class="card-title">MVOH Runs</h4>
+                    <button
+                      hx-trigger="click"
+                      data-bs-toggle="modal"
+                      data-bs-target="#save-run-modal"
+                      class="btn btn-secondary p-2">
+                      Add New Run
+                    </button>
+                  </div>
+                  <div class="table-responsive" id="run-list-container">
+                    
+
+                    {% include 'template-parts/run-list.html' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+
+        <div id="save-run-modal"
+            class="modal modal-blur fade"
+            style="display: none"
+            aria-hidden="false"
+            tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+              <form 
+                id="saveRunForm"
+                hx-post="{% url 'save-run' %}" 
+                hx-target="#run-list-container"
+              >
+              {% csrf_token %}
+                <div class="modal-content">
+                  <div class="modal-header" style="padding: 0.8rem 1.875rem">
+                    <div class="row" style="min-width: 585px; align-items: center;margin-left: 0;">
+                      <label class="col-sm-3 font-weight-bold bg-branding" style="margin: 0;height: 35px; display: flex;align-items: center;justify-content: center;border-radius: 3px;">Run Name: </label>
+                      <div class="col-sm-9">
+                        <input type="text" name="title" class="form-control p-2"  placeholder="Type a title for the run..." required>
+                      </div>
+                    </div>
+                      <!-- Close button -->
+                      <button type="button" class="btn btn-inverse-danger p-2" data-bs-dismiss="modal" aria-label="Close"><i class="typcn typcn-times"></i></button>
+                  </div>
+                  
+                    <div class="input-form-row">
+                        <div class="">
+                            <div class="card">
+                                <div class="card-body">
+                                
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="row m-0 col-lg-12 p-0">
+                                              <div class="col-lg-6">
+                                                <div class="p-2 rounded-2 bg-branding mt-2 mb-3 border-r-5">Dates</div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Start Date</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="date" class="form-control p-2" name="start_date" value="2020-01-01">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">End Date</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="date" class="form-control p-2" name="end_date" value="2024-01-01">
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              <div class="col-lg-6">
+                                                <div class="p-2 rounded-2 bg-branding mt-2 mb-3 border-r-5">Calculation Inputs</div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Return Calculation</label>
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-control p-2" name="return_calculation">
+                                                            <option value="Arithmetic">Arithmetic</option>
+                                                            <option value="Logarithmic">Logarithmic</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Price Frequency</label>
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-control p-2" name="price_frequency">
+                                                            <option value="Daily">Daily</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Risk Free Rate</label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control p-2" name="risk_free_rate" value="0">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Investment Amount</label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control p-2" name="invested_amount" value="10000">
+                                                    </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="p-2 rounded-2 bg-branding mt-2 mb-3 border-r-5">Portfolio Optimization Inputs</div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Benchmark Portfolio</label>
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-control p-2" name="benchmark_portfolio">
+                                                            <option value="market_cap_weight">Market Cap Weight</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">TRV (Min)</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="target_return_for_min_volatility" step="0.25" value="0.25">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">TVR (Max)</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="target_volatility_for_max_return" step="0.25" value="0.25">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Default Win Weight</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="default_min_weight" step="0.01" value="0">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Default Max Weight</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="default_max_weight" step="0.01" value="1">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Frontier Runs</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="frontier_runs" step="1" value="100">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">MC Simulations</label>
+                                                    </div>
+                                                    <div>
+                                                        <input type="number" class="form-control p-2" name="monte_carlo_simulations" step="1" value="10000">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Solver</label>
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-control p-2" name="solver">
+                                                            <option value="CLARABEL">CLARABEL</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-input-group">
+                                                    <div>
+                                                        <label class="form-label">Dendogram Segment</label>
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-control p-2" name="dendogram_segment">
+                                                            <option value="Sector">Sector</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-ticker-container">
+                                        <div id="ticker-search-container">
+                                            <select id="stockSelect" class="stock-select form-control" multiple="multiple" >
+                                            </select>
+                                            <div id="ticker-asset-number-container">
+                                                Assets: <span id="ticker-asset-number">0</span>
+                                            </div>
+                                        </div>
+                                        
+                      
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="bg-branding">
+                                                  <tr class="border-r-5">
+                                                    <th class="p-1">#</th>
+                                                    <th class="p-1">Ticker</th>
+                                                    <th class="p-1">Company</th>
+                                                    <th class="p-1">Sector</th>
+                                                    <th class="p-1">Market Cap</th>
+                                                    <th class="p-1">Benchmark</th>
+                                                    <th class="p-1">A Min</th>
+                                                    <th class="p-1">A Max</th>
+                                                    <th class="p-1"></th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody id="companyTable">
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+    
+                                        <div class="submit-btn-container">
+                                            <button type="submit" class="btn bg-branding">Save Run</button>
+                                        </div>
+    
+                                    </div>
+    
+    
+                                
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  
+                </div>
+              </form>
+            </div>
+        </div>
+
+
+        <!-- Confirmation Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close btn btn-inverse-danger p-2" data-bs-dismiss="modal" aria-label="Close"><i class="typcn typcn-times"></i></button>
+              </div>
+              <form 
+                id="deleteRunForm"
+                hx-post="{% url 'delete-run' %}" 
+                hx-target="#run-list-container"
+              >
+                <div class="modal-body">
+                  Are you sure you want to delete this run?
+                      {% csrf_token %}
+                      <input type="hidden" name="run_id" id="run_id" value="">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light py-3 px-4" data-bs-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-danger py-3 px-4">Delete</button>
+                  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright © bootstrapdash.com</span>
+            </div>
+          </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+   
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      <script>
+          const jsonUrl = "{% static 'tricker.json' %}";
+          let rowCount = 0;
+          let sectorCount = {};
+
+          fetch(jsonUrl)
+              .then(response => response.json())
+              .then(data => {
+                  let options = data.map(item => `<option value="${item.id}">${item.Symbol} - ${item.Shortname}</option>`);
+                  document.getElementById('stockSelect').innerHTML = options.join('');
+  
+                  $('#stockSelect').select2({
+                      placeholder: "Select stocks",
+                      allowClear: true
+                  });
+  
+                  $('#stockSelect').on('select2:select', function(e) {
+                      const selectedId = e.params.data.id;
+                      const selectedItem = data.find(item => item.id == selectedId);
+  
+                      if (selectedItem) {
+                          addRow(selectedItem);
+                      }
+                  });
+  
+                  $('#stockSelect').on('select2:unselect', function(e) {
+                      const unselectedId = e.params.data.id;
+                      removeRow(unselectedId);
+                  });
+              })
+              .catch(error => console.error('Error fetching JSON:', error));
+
+
+            function addRow(item) {
+                rowCount++;
+                document.querySelector('#ticker-asset-number').innerText = rowCount;
+                updateSectorCount(item.Sector, 1);
+
+                const tbody = document.getElementById('companyTable');
+                const newRow = `
+                    <tr id="row-${item.id}">
+                        <td class="p-1 row-index"></td> <!-- Row number -->
+                        <td class="p-1"><input type="text" name="symbols[]" value="${item.Symbol}" class="form-control p-1" readonly/></td>
+                        <td class="p-1"><input type="text" name="shortnames[]" value="${item.Shortname}" class="form-control p-1" readonly/></td>
+                        <td class="p-1"><input type="text" name="sectors[]" value="${item.Sector || ''}" class="form-control p-1" readonly /></td>
+                        <td class="p-1"><input type="text" name="marketcaps[]" value="${(item.Marketcap || '').toLocaleString('en-US')}" class="form-control p-1" readonly /></td>
+                        <td class="p-1"><input type="text" name="baws[]" value="0" class="form-control p-1" /></td>
+                        <td class="p-1"><input type="text" name="amins[]" value="0" class="form-control p-1" /></td>
+                        <td class="p-1"><input type="text" name="amaxs[]" value="1" class="form-control p-1" /></td>
+                        <td class="p-1">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(${item.id}, event)">x</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', newRow);
+                hideOption(item.id);
+                reIndexRows(); // Re-index after adding
+                // Scroll the .table-responsive div to the bottom
+                const tableContainer = document.querySelector('.table-responsive');
+                tableContainer.scrollTop = tableContainer.scrollHeight;
+            }
+
+  
+            function removeRow(id, event) {
+                if (event) {
+                    event.preventDefault();
+                }
+
+                const row = document.getElementById(`row-${id}`);
+                if (row) {
+                    const sector = row.querySelector('input[name="sectors[]"]').value; // Get the sector of the removed row
+                    updateSectorCount(sector, -1); // Decrement the sector count
+                    row.remove(); // Remove the row from the table
+                }
+
+                const selectElement = $('#stockSelect');
+                const selectedValues = selectElement.val();
+                const newSelectedValues = selectedValues.filter(val => val != id);
+                selectElement.val(newSelectedValues).trigger('change');
+                
+                rowCount--;
+                document.querySelector('#ticker-asset-number').innerText = rowCount;
+
+                showOption(id);
+                reIndexRows(); // Re-index after removing
+            }
+
+            // Function to re-index rows
+            function reIndexRows() {
+                const rows = document.querySelectorAll('#companyTable tr');
+                rows.forEach((row, index) => {
+                    const rowIndexCell = row.querySelector('.row-index');
+                    if (rowIndexCell) {
+                        rowIndexCell.textContent = index + 1; // Set the row number
+                    }
+                });
+            }
+
+            // Updated function to update sector count with decrement
+            function updateSectorCount(sector, increment) {
+                if (!sector) return; // Skip if no sector information
+                if (!sectorCount[sector]) {
+                    sectorCount[sector] = 0;
+                }
+                sectorCount[sector] += increment;
+
+                // If sector count is zero, remove it from the sectorCount object
+                if (sectorCount[sector] <= 0) {
+                    delete sectorCount[sector];
+                }
+            }
+
+            // Hide the selected option
+            function hideOption(id) {
+                let option = $(`#stockSelect option[value='${id}']`);
+                option.prop('disabled', true); // Disable the option
+                $('#stockSelect').trigger('change'); // Refresh select2 to reflect changes
+            }
+
+            // Show the unselected option
+            function showOption(id) {
+                let option = $(`#stockSelect option[value='${id}']`);
+                option.prop('disabled', false); // Re-enable the option
+                $('#stockSelect').trigger('change'); // Refresh select2 to reflect changes
+            }
+
+            // Convert sectorCount to the format required for the ECharts pie chart
+            function formatSectorDataForChart(sectorCount) {
+                const formattedData = Object.keys(sectorCount).map(sector => {
+                    return {
+                        name: sector,
+                        value: sectorCount[sector]
+                    };
+                });
+                return formattedData;
+            }
+
+            // Close the save run modal after submitting the form
+            document.getElementById('saveRunForm').addEventListener('htmx:afterRequest', function(event) {
+                // Hide the save run modal
+                var saveModal = document.getElementById('save-run-modal');
+                var saveModalInstance = bootstrap.Modal.getInstance(saveModal);
+                if (saveModalInstance) {
+                    saveModalInstance.hide();
+                }
+            });
+
+            // When the confirmation modal is shown, set the run ID in the hidden input
+            document.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget; // Button that triggered the modal
+                var runId = button.getAttribute('data-run-id'); // Extract info from data-* attributes
+                var modal = document.getElementById('confirmationModal'); // Get modal
+                modal.querySelector('#run_id').value = runId; // Set the run ID in the hidden input
+            });
+
+            // Close the confirmation modal after the delete run form is submitted
+            document.getElementById('deleteRunForm').addEventListener('htmx:afterRequest', function(event) {
+                // Hide the confirmation modal
+                var confirmModal = document.getElementById('confirmationModal');
+                var confirmModalInstance = bootstrap.Modal.getInstance(confirmModal);
+                if (confirmModalInstance) {
+                    confirmModalInstance.hide();
+                }
+            });
+
+
+
+      </script>
+
+{% endblock content %}
