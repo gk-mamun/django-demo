@@ -1161,6 +1161,7 @@ def api_data_view_5(request):
 
         })
 
+        # top level heatmap
         covariance_data = model_output.get('covariance', {})
         covariance_stock_symbols = list(covariance_data.keys())
         covariance_heatmap_data = []
@@ -1176,6 +1177,9 @@ def api_data_view_5(request):
             for j, stock_y in enumerate(correlation_stock_symbols):
                 correlation_heatmap_data.append([i, j, correlation_data[stock_x][stock_y]])
 
+        # Strategy level heatmap
+        strategy_covariance_data = model_output.get('strategy_results', {}).get('strategy_covariance', {})
+        strategy_correlation_data = model_output.get('strategy_results', {}).get('strategy_correlation', {})
 
         symbol_portfolios_data = []
 
@@ -1265,6 +1269,7 @@ def api_data_view_5(request):
 
         top_level_lines_chart_data =   model_output.get('total_return_testing', {})
         strategy_level_line_chart_data = model_output.get('strategy_results', {}).get('strategy_total_return_testing', {})
+
         
         formatted_top_level_lines_data = []
     
@@ -1274,6 +1279,8 @@ def api_data_view_5(request):
                 'x': strategy_data['x'],
                 'y': strategy_data['y']
             })
+
+    
     
         strategy_optimization_summary = model_output.get('strategy_results', {}).get('strategy_optimization_summary', {})
         strategy_testing_summary = model_output.get('strategy_results', {}).get('strategy_testing_summary', {})
@@ -1312,7 +1319,9 @@ def api_data_view_5(request):
             'strategy_optimization_summary': json.dumps(strategy_optimization_summary),
             'strategy_testing_summary': json.dumps(strategy_testing_summary),
             'strategy_optimization_summary_table': strategy_optimization_summary_table,
-            'strategy_testing_summary_table': strategy_testing_summary_table
+            'strategy_testing_summary_table': strategy_testing_summary_table,
+            'strategy_covariance_heatmap_data': strategy_covariance_data,
+            'strategy_correlation_heatmap_data': strategy_correlation_data,
         }
 
         return render(request, 'data5.html', context)

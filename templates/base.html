@@ -94,8 +94,9 @@
               <div class="dropdown-menu dropdown-menu-left navbar-dropdown preview-list show" aria-labelledby="processingTimeDropdown">
                 {% if processing_time %}
                   <p class="mb-0 font-weight-bold float-left dropdown-header">Processing Time</p>
+                 
+                  <!-- Processing time item -->
                   <a class="dropdown-item preview-item">
-                    
                     <div class="preview-thumbnail">
                       <h6 class="font-weight-medium text-dark mb-0">Server Time</h6>
                     </div>
@@ -105,6 +106,7 @@
                       </p>
                     </div>
                   </a>
+
                 {% else %}
                   <p class="mb-0 font-weight-normal float-left dropdown-header">There is no processing time.</p>
                 {% endif %}
@@ -282,7 +284,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'tickers' %}">
                 <i class="typcn typcn-document-text menu-icon"></i>
-                <span class="menu-title">Tickers</span>
+                <span class="menu-title">Runs</span>
               </a>
             </li>
             <li class="nav-item">

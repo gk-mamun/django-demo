@@ -126,7 +126,7 @@
         }
         
         #charts-container > div > div > div.testing-data-navigation {
-            margin: 20px 0 30px !important;
+            margin: 20px 60px 30px 0 !important;
         }
 
         #top-level-private-section {
@@ -396,7 +396,7 @@
             <div id="charts-container"></div>
         </div>
 
-        <div class="row mb-4" id="strategy-testing-summary">
+        <!-- <div class="row mb-4" id="strategy-testing-summary">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -405,7 +405,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div id="top-level-private-section">
             <div id="top-level-lock-layer">
@@ -498,6 +498,11 @@
         const strategyOptimizationSummary = {{ strategy_optimization_summary|safe }} 
         const strategyTestingSummary = {{ strategy_testing_summary|safe }} 
 
+        // Strategy Level heat map
+        const strategyCovarianceHeatmapData = {{ strategy_covariance_heatmap_data|safe }}
+        const strategyCorrelationHeatmapSymbol = {{ strategy_correlation_heatmap_data|safe }}
+
+
         const strategySummaryDataContainer = document.querySelector('#strategy-summary-data');
 
         const topStrategyMenuContainer = document.createElement('div');
@@ -570,9 +575,9 @@
                 parentDiv.style.gridGap = '20px';
                 parentDiv.style.backgroundColor = '#fff';
                 parentDiv.style.padding = '30px';
+                parentDiv.style.position = 'relative';
                 parentDiv.classList = 'strategy-summary-row';
                 document.getElementById('charts-container').appendChild(parentDiv);
-                
 
                 const titleDiv = document.createElement('div');
                 titleDiv.setAttribute('id', `${strategy}`);
@@ -583,11 +588,7 @@
                 titleDiv.style.alignItems = 'center';
                 const strategyTitle = document.createElement('h2');
                 strategyTitle.innerText = `${formatStrategyName(strategy)}`;
-                const strategyPopupCloseBtn = document.createElement('button');
-                strategyPopupCloseBtn.classList = 'btn btn-inverse-danger strategy-popup-close-btn';
-                strategyPopupCloseBtn.innerText = 'X';
                 titleDiv.append(strategyTitle);
-                titleDiv.append(strategyPopupCloseBtn);
                 parentDiv.append(titleDiv);
 
                 const sectionNavDiv = document.createElement('div')
@@ -608,7 +609,17 @@
                 sectionTopLink.href = `#${strategy}`;
                 sectionTopLink.innerHTML = `<i class="typcn typcn-arrow-up-thick" style="font-size: 15px;"></i>`;
                 sectionTopLink.classList = 'btn btn-outline-info btn-fw p-2';
+                sectionNavDiv.style.paddingRight = '70px';
                 sectionNavDiv.append(sectionTopLink);
+
+                // Popup modal close button
+                const strategyPopupCloseBtn = document.createElement('button');
+                strategyPopupCloseBtn.classList = 'btn btn-inverse-danger strategy-popup-close-btn';
+                strategyPopupCloseBtn.innerText = 'X';
+                strategyPopupCloseBtn.style.position = 'absolute';
+                strategyPopupCloseBtn.style.right = '0px';
+                strategyPopupCloseBtn.style.top = '0px';
+                sectionNavDiv.append(strategyPopupCloseBtn);
 
                 // Prepare stock data
                 const stockData = purchaseAllocations.map(item => ({ value: item.value, name: item.name }));
@@ -642,6 +653,10 @@
                 createPieChart(parentDiv, strategy, `${index}-sector`, "Training Allocation: Sectors", sectorData, 'sectors', '');
 
                 addDividerLine(parentDiv);
+
+                // Strategy level heatmap
+                createStrategyCovarienceHeatmap(parentDiv, 'Covariance', strategyCovarianceHeatmapData[strategy], `${index}-covariance-heatmap`);
+                createStrategyCovarienceHeatmap(parentDiv, 'Correlation', strategyCorrelationHeatmapSymbol[strategy], `${index}-correlation-heatmap`);
 
                 // Create and append the tables
                 let tableId = `${strategy}-${index}-performance`;
@@ -747,6 +762,7 @@
                 testingDataInnerContainer.style.gridGap = '20px';
                 testingDataInnerContainer.style.margin = '30px 0';
                 testingDataInnerContainer.style.position = 'relative';
+                testingDataInnerContainer.style.zIndex = 1;
                 // Lock layer
                 const testingDataLockContainer = document.createElement('div');
                 testingDataLockContainer.style.position = 'absolute';
@@ -871,11 +887,11 @@
                 createSectionLinkAndAppend(tableId, testingDataNav, 'Perfomance Overview', 'tbl-toggle-btn');
 
                 tableId = `${strategy}-${index}-optimization-summary`;
-                const strategyOptimizationSummaryTable = createPerformanceTable('Strategy Optimization Summary', tableId, strategyOptimizationSummary[strategy], 'test');
+                const strategyOptimizationSummaryTable = createPerformanceTable('', tableId, strategyOptimizationSummary[strategy], 'test');
                 testingDataInnerContainer.appendChild(strategyOptimizationSummaryTable);
 
                 tableId = `${strategy}-${index}-testing-summary`;
-                const strategyTestingSummaryTable = createPerformanceTable('Strategy Testing Summary', tableId, strategyTestingSummary[strategy], 'test');
+                const strategyTestingSummaryTable = createPerformanceTable('', tableId, strategyTestingSummary[strategy], 'test');
                 testingDataInnerContainer.appendChild(strategyTestingSummaryTable);
 
             });
@@ -1186,7 +1202,12 @@
                 },
                 xAxis: {
                     type: 'category',
-                    data: strategyLineChartData.xy_benchmark.x  
+                    data: strategyLineChartData.xy_benchmark.x,
+                    axisLabel: {
+                    formatter: function (value) {
+                        return value.split("T")[0]; // Removes time part
+                    }
+                }
                 },
                 yAxis: {
                     type: 'value'
@@ -1195,7 +1216,10 @@
                     {
                         name: 'Benchmark',
                         type: 'line',
-                        data: strategyLineChartData.xy_benchmark.y  // Y values for the benchmark
+                        data: strategyLineChartData.xy_benchmark.y,
+                        lineStyle: {
+                            type: 'dashed'
+                        }
                     },
                     {
                         name: 'Strategy',
@@ -1208,6 +1232,97 @@
             strategyLevelLineChart.setOption(strategyLevelLineChartOption);
 
             new ResizeObserver(() => strategyLevelLineChart.resize()).observe(parentDiv);
+        }
+
+        function createStrategyCovarienceHeatmap(parentDiv, heatmapTitle, data, heatmapId) {
+            // Get axis data (the asset names)
+            let xAxisData = Object.keys(data);
+            let seriesData = [];
+
+            // Loop through data to populate seriesData array for the heatmap
+            xAxisData.forEach((key1, i) => {
+                xAxisData.forEach((key2, j) => {
+                    let value = data[key1][key2];
+                    // If value is undefined, use 0 as default
+                    if (value === undefined) {
+                        value = 0;
+                    }
+                    // Push the values into the series data in the format [xIndex, yIndex, value]
+                    seriesData.push([i, j, value]);
+                });
+            });
+
+            // Create a new div element for the heatmap
+            const heatmapDiv = document.createElement('div');
+            heatmapDiv.id = heatmapId;
+            heatmapDiv.style.width = '100%';
+            heatmapDiv.style.height = '700px';
+            parentDiv.appendChild(heatmapDiv);
+
+            // Initialize the ECharts instance
+            let heatmap = echarts.init(heatmapDiv);
+
+            // Define the chart options
+            let option = {
+                title: {
+                    text: heatmapTitle,
+                    left: 'center'
+                },
+                tooltip: {
+                    position: 'top'
+                },
+                grid: {
+                    height: '50%',
+                    width: '80%',
+                    top: '10%'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: xAxisData,
+                    splitArea: {
+                        show: true
+                    }
+                },
+                yAxis: {
+                    type: 'category',
+                    data: xAxisData.slice().reverse(),
+                    splitArea: {
+                        show: true
+                    }
+                },
+                visualMap: {
+                    min: Math.min(...seriesData.map(d => d[2])), // Dynamic min based on data
+                    max: Math.max(...seriesData.map(d => d[2])), // Dynamic max based on data
+                    calculable: true,
+                    orient: 'horizontal',
+                    left: 'center',
+                    bottom: '15%',
+                    inRange: {
+                        color: ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026']
+                    }
+                },
+                series: [{
+                    name: 'Covariance',
+                    type: 'heatmap',
+                    data: seriesData,
+                    label: {
+                        show: true,
+                        formatter: function(params) {
+                            let value = Array.isArray(params.value) ? params.value[2] : params.value;
+                            return value !== null && value !== undefined ? value.toFixed(2) : '';
+                        }
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+
+            // Set the option for the chart
+            heatmap.setOption(option);
         }
 
         // Handle popups
@@ -1256,8 +1371,10 @@
             xAxis: {
                 name: 'Risk (%)',
                 type: 'value',
-                min: 'dataMin',
-                max: 'dataMax',
+                min: 0,
+                max: function (value) {
+                    return value.max;  // Adjust max dynamically based on data
+                },
                 boundaryGap: [0.1, 0.1],
                 scale: true,
                 nameLocation: 'middle',
@@ -1266,9 +1383,17 @@
             yAxis: {
                 name: 'Return (%)',
                 type: 'value',
-                min: 'dataMin',
-                max: 'dataMax',
+                min: 0,
+                max: function (value) {
+                    return value.max;  // Adjust max dynamically based on data
+                },
                 boundaryGap: [0.05, 0.05],
+                axisLabel: {
+                    formatter: function (value) {
+                        return (value).toFixed(2);  // Format to 2 decimal places
+                    },
+                    interval: 0.01  // Set interval to 1%
+                },
                 scale: true,
                 nameLocation: 'middle', 
                 nameGap: 50,
@@ -1323,8 +1448,10 @@
             xAxis: {
                 name: 'Risk (%)',
                 type: 'value',
-                min: 'dataMin',
-                max: 'dataMax',
+                min: 0,
+                max: function (value) {
+                    return value.max;  // Adjust max dynamically based on data
+                },
                 boundaryGap: [0.1, 0.1],
                 axisLabel: {
                     formatter: function (value) {
@@ -1339,8 +1466,10 @@
             yAxis: {
                 name: 'Return (%)',
                 type: 'value',
-                min: 'dataMin',
-                max: 'dataMax',
+                min: 0,
+                max: function (value) {
+                    return value.max;  // Adjust max dynamically based on data
+                },
                 boundaryGap: [0.05, 0.05],
                 axisLabel: {
                     formatter: function (value) {
@@ -1650,8 +1779,7 @@
         }
 
         // Top Level line chart
-        const topLevelLineChartData= JSON.parse('{{ formatted_top_level_lines_data|safe }}');
-
+        const topLevelLineChartData = JSON.parse('{{ formatted_top_level_lines_data|safe }}');
         var topLevelLineChart = echarts.init(document.getElementById('top-level-line-chart'));
 
         // Build the series dynamically
@@ -1659,15 +1787,20 @@
             name: formatStrategyName(item.name),  // Apply formatStrategyName to the series names
             type: 'line',
             data: item.y.map((y, index) => [item.x[index], y]),  
-            showSymbol: false
+            showSymbol: false,
+            lineStyle: {
+                type: item.name === 'benchmark' ? 'dashed' : 'solid' 
+            }
+            
         }));
 
+        
         var topLevelLineChartOption = {
             tooltip: {
                 trigger: 'axis'
             },
             legend: {
-                data: topLevelLineChartData.map(item => formatStrategyName(item.name)),  // Format legend names
+                data: topLevelLineChartData.map(item => formatStrategyName(item.name)),  
                 left: 'right'
             },
             grid: {
@@ -1678,7 +1811,12 @@
             },
             xAxis: {
                 type: 'category',
-                boundaryGap: false
+                boundaryGap: false,
+                axisLabel: {
+                    formatter: function (value) {
+                        return value.split("T")[0]; // Removes time part
+                    }
+                }
             },
             yAxis: {
                 type: 'value'
@@ -1688,6 +1826,7 @@
 
         // Set the option to the chart
         topLevelLineChart.setOption(topLevelLineChartOption);
+
         new ResizeObserver(() => topLevelLineChart.resize()).observe(document.querySelector('#top-level-private-section'));
 
 
@@ -1865,25 +2004,28 @@
             createPasswordLock(testingLockInput, testingLockBtn, testingLockLayer, testingLockPassword)
         })
 
+        // Top menu section show/hide
         const strategyDropdownBtn = document.querySelector('#strategyDropdown');
         const strategyDropdownMenus = document.querySelector('#strategyDropdownMenus');
         const strategyDropdownLinks = document.querySelectorAll('#strategyDropdownMenus a');
+        const strategyLinkDiv = document.getElementById('strategy-link-div');
 
         strategyDropdownBtn.addEventListener('click', function() {
             this.classList.toggle('show');
             strategyDropdownMenus.classList.toggle('show');
-        })
+        });
 
         strategyDropdownLinks.forEach((btn) => {
             btn.addEventListener('click', function() {
                 strategyDropdownBtn.classList.toggle('show');
                 strategyDropdownMenus.classList.toggle('show');
-            })
-        })
+            });
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
-            var strategyLinkDiv = document.getElementById('strategy-link-div');
             var hideTimeout;
+            var scrollTimeout;
+            var hoverTimeout;
 
             // Function to hide the menu
             function hideMenu() {
@@ -1903,7 +2045,6 @@
             setTimeout(hideMenu, 3000);
 
             // Show menu when user scrolls, hide again after 2 seconds of no scroll
-            var scrollTimeout;
             window.addEventListener('scroll', function() {
                 showMenu(); // Show menu on scroll
                 clearTimeout(scrollTimeout); // Reset timeout if user keeps scrolling
@@ -1911,7 +2052,19 @@
                 // Set timeout to hide after 2 seconds of no scroll
                 scrollTimeout = setTimeout(hideMenu, 2000);
             });
+
+            // When the user hovers over the menu, prevent it from hiding
+            strategyLinkDiv.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout); // Prevent menu from hiding when hovered
+                clearTimeout(scrollTimeout); // Cancel any scheduled scroll-based hiding
+            });
+
+            // When the user leaves the menu, set a timeout to hide it after 3 seconds
+            strategyLinkDiv.addEventListener('mouseleave', function() {
+                hoverTimeout = setTimeout(hideMenu, 3000); // Hide menu after 3s when mouse leaves
+            });
         });
+
 
 
     </script>
