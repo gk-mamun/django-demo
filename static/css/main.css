@@ -59,3 +59,34 @@
 .border-r-5 {
     border-radius: 5px;
 }
+
+.sidebar-light .sidebar {
+    position: fixed;
+}
+
+.main-panel {
+    margin-left: 255px;
+}
+
+.sidebar-light .sidebar .nav.sub-menu .nav-item .nav-link {
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.sidebar-light .sidebar .nav.sub-menu .nav-item.active-run-item .nav-link {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.sidebar .nav.sub-menu .nav-item::after {
+    content: '';
+    height: 14px;
+    bottom: 7px;
+    background: #8e95aa;
+}
+
+.sidebar-light .sidebar .nav.sub-menu .nav-item.active-run-item::after {
+    width: 4px;
+    background-color: var(--primary-color);
+}

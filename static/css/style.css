@@ -23371,7 +23371,7 @@ body.avgrund-active {
   padding: 0;
 }
 
-.sidebar .nav.sub-menu .nav-item::before {
+/* .sidebar .nav.sub-menu .nav-item::before {
   content: '';
   width: 2px;
   height: 8px;
@@ -23380,7 +23380,7 @@ body.avgrund-active {
   top: 3px;
   border-radius: 0;
   background: #8e95aa;
-}
+} */
 
 .sidebar .nav.sub-menu .nav-item::after {
   content: '';
@@ -24444,6 +24444,7 @@ body.avgrund-active {
   }
   .sidebar-icon-only .main-panel {
     width: calc(100% - 70px);
+    margin-left: 70px;
   }
 }
 

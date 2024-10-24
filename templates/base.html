@@ -231,18 +231,18 @@
               </div>
             </li>
             <li class="nav-item nav-profile dropdown">
-              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="{% url 'logout' %}" data-toggle="dropdown" id="profileDropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
-                <span class="nav-profile-name">Logout</span>
+                <span class="nav-profile-name">{{ user.name }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                 <a class="dropdown-item">
                 <i class="typcn typcn-cog text-primary"></i>
                 Settings
                 </a>
-                <a class="dropdown-item">
-                <i class="typcn typcn-power text-primary"></i>
-                Logout
+                <a class="dropdown-item" href="{% url 'logout' %}">
+                  <i class="typcn typcn-power text-primary"></i>
+                  Logout
                 </a>
               </div>
             </li>
@@ -290,26 +290,33 @@
                 <span class="menu-title">Runs</span>
               </a>
             </li>
+            <!-- Display the runs stored in the session -->
+
+            {% if session_mvoh_runs %}
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" data-toggle="collapse" href="#session-mvoh-runs" aria-expanded="true" aria-controls="ui-basic">
                 <i class="typcn typcn-briefcase menu-icon"></i>
-                <span class="menu-title">Menu One</span>
+                <span class="menu-title">Current MVOH Runs</span>
                 <i class="typcn typcn-chevron-right menu-arrow"></i>
               </a>
-              <div class="collapse" id="ui-basic">
+              <div class="collapse show" id="session-mvoh-runs">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="#">Submenu 1</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Submenu 2</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="#">Submenu 3</a></li>
+                  {% for run in session_mvoh_runs %}
+
+                    <li class="nav-item {% if request.resolver_match.kwargs.id == run.run_id and 'session-mvoh-run' in request.path %}active-run-item{% endif %}">
+                      <a 
+                        class="nav-link" 
+                        href="{% url 'session-mvoh-run' run.run_id %}">
+                        {{ run.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="typcn typcn-document-text menu-icon"></i>
-                <span class="menu-title">Menu Two</span>
-              </a>
-            </li>
+            {% endif %}
+
+
           </ul>
           
         </nav>

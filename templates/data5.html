@@ -27,14 +27,15 @@
             height: 100vh;
             z-index: 9999;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 50px 100px;
+            padding: 50px;
             overflow: hidden;
             display: none;
         }
 
         #charts-container {
             height: 100%;
-            overflow-y: auto;
+            background-color: #fff;
+            overflow: auto;
             scroll-behavior: smooth;
         }
 
@@ -576,6 +577,7 @@
                 parentDiv.style.backgroundColor = '#fff';
                 parentDiv.style.padding = '30px';
                 parentDiv.style.position = 'relative';
+                parentDiv.style.minWidth = '1470px';
                 parentDiv.classList = 'strategy-summary-row';
                 document.getElementById('charts-container').appendChild(parentDiv);
 

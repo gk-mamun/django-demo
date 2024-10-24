@@ -65,6 +65,7 @@ def register_view(request):
 
 @login_required(login_url='/login/')
 def logout_view(request):
+    request.session.flush()
     logout(request)
     return redirect('login')
 
@@ -188,7 +189,6 @@ def api_data_view(request):
     
     # Convert the x_y_data to JSON
     x_y_data_json = json.dumps(x_y_data)
-    print(table_data) 
 
     context = {
         'data': x_y_data_json,
@@ -522,6 +522,7 @@ def api_data_view_3(request):
     # print("Strategies: ", output_data['strategies'])
     return render(request, 'data3.html', context)
 
+
 def convert_to_standard_date_format(date_str):
     # List of common date formats to try
     date_formats = [
@@ -552,6 +553,7 @@ def convert_to_standard_date_format(date_str):
     else:
         # Raise an error or return None if parsing fails
         raise ValueError("Invalid date format")
+
 
 def process_form(rq):
     # Fetch form data
@@ -983,12 +985,22 @@ def api_data_view_5(request):
 
     if request.method == 'POST':
         form_data = process_form(request)
-        # Form data
-        print("Form Data: ", form_data)
    
 
         start_time = time.perf_counter()
         model_output = model_output_data
+
+        mvoh_runs = request.session.get('mvoh_runs', [])
+
+        new_mvoh_run = {
+            'run_id': len(mvoh_runs) + 1,  
+            'title': 'Run ' + str(len(mvoh_runs) + 1),
+            'form_data': form_data,
+            'output': model_output
+        }
+
+        mvoh_runs.append(new_mvoh_run)
+        request.session['mvoh_runs'] = mvoh_runs
 
         frontier_runs_x = model_output.get('frontier_runs').get('x')
         frontier_runs_y = model_output.get('frontier_runs').get('y')
